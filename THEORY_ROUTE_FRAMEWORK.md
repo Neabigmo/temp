@@ -12610,6 +12610,28 @@ R174 的系数正性缺口，但仍不关闭 `d_N` escape、bare `RK=1=>full-exa
 原始 `P_3K` provenance、对称 even sector 或非 Gaussian genuine exact law；整体
 发表性判断仍为“无”。
 
+## 83.41 R177：all-`d` wall 的显式下界与 `d_N` 逃逸代价（2026-09-09）
+
+R176 的正性证明保留 `Z=omega^(d-1)q_(d-1)>0` 项后，对 `d=2s+1>=5` 给出
+`Delta_d >= (2/3)d(d+1)^2 Z`。仿射展开的 `k=s` 项进一步给出
+`Z>=2^(-d-1)binom(d,s)3^(s+1)`，所以
+
+`C_d >= sqrt((2d)!)/(2*d!) * 6*d*(d+1)/((d+2)(d+3))
+       * 2^(-2d-1)*3^(-s)*binom(d,s)`。
+
+这把 R174/R176 wall 的系数尺度变成完全显式的可代入下界。若底层是
+`g_N^(0)=P_(q^N)h_N` 且 `d_N` 为首个非零 odd 阶，则
+`C_(d_N)a_(d_N)(g_N^(0))^2<=q^(N*d_N)`。它强化了固定 odd 阶的 backward 衰减，
+但下界本身随 `d` 衰减，不能消除 `d_N->infinity` 或首系数同步变小。R177 的证据
+等级为 `PROVED UNDER GENUINE FULL-EXACT + FULL-SF`，有限整数复核由
+`r177_quantitative_cross_wall/audit_r177.js` 完成；整体发表性判断仍为“无”。
+
+## 83.42 R176 网页端回执状态（2026-09-09）
+
+R176 短消息已进入 `理论推进审计` 历史，但网页线程随后再次返回 `systemError`，
+没有 assistant 理论正文。故 R176/R177 的本机证明只记为已投递、未审查，不把网页
+消息状态或连接自检当作数学回执；网页恢复后应先读取 R176。
+
 ## 83.39 R175 网页端回执状态（2026-09-09）
 
 R175 经恢复重试后已进入网页历史，但线程再次返回 `systemError`，没有 assistant

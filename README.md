@@ -145,3 +145,8 @@ R176 已解决 R174 的全阶系数正性：通过三次单位根滤波与
 `Q(x)=(1+x)(1+omega x)` 的仿射中心展开，证明所有 odd `d>=3` 的 `C_d>0`。
 这把 `d=3,5,7` 的有限证据升级为 genuine full-exact + full-SF 下的全阶
 cross-harmonic wall；原始题设的完整 rigidity 和独立发表性判断仍为“无”。
+
+R177 又从该证明保留一个正项，给出 `C_d` 的显式下界及
+`C_(d_N)a_(d_N)(g_N^(0))^2<=q^(N*d_N)` 的定量形式；它强化了固定 odd sector，
+但没有消灭 moving-degree escape。R176 网页端消息已入历史但未生成理论正文，故
+本机证据等级与整体发表性结论不变。
