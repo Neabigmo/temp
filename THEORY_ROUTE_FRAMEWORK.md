@@ -11980,3 +11980,11 @@ Theorem**：研究 `E_d(t)=sum beta_{d,n}t^n` 在 `n` 与 `M` 同阶、且
 bulk negativity 或 all-order bulk positivity；只有后者成立，才有理由把 active
 first-failure mass 推进到 Hermite turning/Airy scale。该目标目前标记为
 `OPEN / WEB-REVIEW`，不是已证定理。
+
+## 83.10 R157 网页端部署状态（2026-09-09）
+
+R157 已发送至同一研究对话，基线为本机已推送的 `d7e0952`。网页端已确认开始读取
+公开文件，并把 universal shape 进一步压缩为
+`Phi_d(t)=t+even powers`、`E_d(t)=e^tA_d(t^2)` 以及相应的一变量收缩方程；其
+收敛半径/奇点和 `n~M` 部分和仍在计算中。此时状态是 `WEB-IN-PROGRESS`，不是
+`PROVED` 或 `DONE`；必须等待完整回复并进行本机核验后，才能更新 R157 结论。

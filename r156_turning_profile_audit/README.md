@@ -118,3 +118,10 @@ Theorem**：研究 `E_d(t)=sum beta_{d,n}t^n` 在 `n` 与 `M` 同阶、以及
 `t~sgn(a)(x/sqrt(M))^d tau^(d/2)` 的联合行为，二择一证明全阶 bulk negativity 或
 全阶 bulk positivity，再决定是否能进入 Hermite turning/Airy 区域。该回执本身已被
 记录，但其中涉及全阶形状的渐近仍标为 `OPEN / WEB-REVIEW`，不可当作定理。
+
+## R157 当前状态（2026-09-09）
+
+R157 已发送到同一网页研究对话；网页端已确认读取公开基线并开始从
+`Phi_d(t)=t+even powers` 推出 `E_d(t)=e^t A_d(t^2)` 及其一变量收缩方程，正在继续
+分析收敛半径/奇点和 `n~M` 联合尺度。当前仅记为 `WEB-IN-PROGRESS`；等待完整回复
+后再做本机逐项审计，不重发、不把中间文本升级为结论。
