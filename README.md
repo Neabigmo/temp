@@ -52,5 +52,5 @@ R158-A 已把 R157 的正 majorant 写成条件性 formal-interface lemma；最�
 cone 同时应作为原始主轴的重要已闭合必要条件：对 genuine full-exact `t`-preimage，
 `sum t^(-m)|beta_(m,r)|^2<=1` 的全阶预算成立；它不能替代 `P_3K` 到 primitive
 angular charge 的定量非退化桥。网页端 R161–R163 目前只有用户消息、没有 assistant
-理论正文；因此下一轮应优先审查该 charge bridge，而不是把有限谱探针或网页无回执
-当成主命题结论。整体发表性判断仍保持诚实的 `无`。
+理论正文；R164 也未形成理论回执。因此下一轮应优先审查该 charge bridge，而
+不是把有限谱探针或网页无回执当成主命题结论。整体发表性判断仍保持诚实的 `无`。

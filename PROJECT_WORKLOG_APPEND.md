@@ -6519,3 +6519,11 @@ majorant 更接近原始命题。当前唯一缺口改写为 varying-bottom 情�
 `P_3K!=0` 是否迫使归一化 primitive angular charge 不塌缩；若不能，则需构造
 满足全部 exact/positive 约束的 charge-collapse obstruction。R99–R102 已有公式
 仍不能单独完成最终 rigidity。
+
+### R164 网页端投递与回执状态（2026-09-09）
+
+R164 将研究主线从 scalar majorant 重新接回 genuine backward charge cone，要求
+网页端审查 `S_1(t)<=1`、首个奇阶 charge map，以及 varying-bottom 情形的
+`P_3K`–primitive-charge 非退化问题。消息发送后读取同一网页历史仍未出现 R164，
+线程回到系统错误。因此本轮没有网页理论正文可审计；R164 的数学内容只以本机
+`e91cbf9` 的全局路线记录为准，不把投递状态当作证明。

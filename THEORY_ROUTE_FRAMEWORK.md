@@ -12204,3 +12204,11 @@ Hermite 系数预算，比 R158-A 更贴近原始主命题；R100 的低阶深�
 约束的 charge-collapse obstruction。`P_3K` 与 `chi_1` 的零集关系不能替代定量
 下界；本条路线仍不解决 genuine full-exact 之外的 scalar `RK=1` 接口、全阶
 对称 even-sector 或空间桥。整体发表性结论不变。
+
+## 83.19 R164 网页端投递与回执状态（2026-09-09）
+
+R164 已尝试把研究重新聚焦到 genuine backward charge cone 与
+`P_3K`–primitive angular charge 桥，要求审查 `S_1(t)<=1` 及 varying-bottom
+非退化问题；但读取同一网页历史未出现 R164 的 assistant 理论正文，线程随后
+回到系统错误。因此该轮不计为数学结果，后续仍以 R99–R102 的 genuine necessary
+conditions 和本机 `e91cbf9` 全局记录为依据。
