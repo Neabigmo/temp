@@ -12402,3 +12402,26 @@ R169，线程状态为 `systemError`，没有出现 R170 用户消息或 assista
 因此网页端没有审查 R170；该故障不构成数学结论。当前以本机提交 `49e9185` 的
 R170 条件性 theorem、R169 零点归约和 R158 全局发表性审计为准，不重复发送同一
 任务；网页恢复后应先确认 R170 是否真正进入历史，再继续下一轮。
+
+## 83.30 R171：用 exact tail 关闭完整解析性假设（2026-09-09）
+
+R170 的主要技术余项是空间 `log` 投影逐项解析性。本机 R171 将要求削弱为有限阶
+实渐近：令 `r=sqrt(t)`、`u_r=P_(r^2)h-1`。由 `h-1 in L^2(gamma)` 和
+`||psi_n||_p<=(p-1)^(n/2)`，Hermite 系数给出高频尾的 `L^p` 界；R132 的
+exact-row square-exponential tail 与 Mehler positivity 给出 `g_r` 的显式下界，
+而 Mehler kernel 的 L2 Cauchy-Schwarz 给出 `log g_r` 的二次增长上界。将空间
+按 `|u_r|<=1/2` 与其补集分裂，并取足够大的固定 `p`，可把三阶 Taylor 余项
+控制为 `o(r^(3d))`，无需声称完整 complex analyticity。
+
+在 `d>=5` 时，SF 消去所有 even mode `4,...,2d-2`；首个 odd mode之后的 odd tail
+从 `d+2` 起，未被消去的 even tail从 `2d` 起。二次投影到 `psi_3` 只有 odd/even
+交叉，首项 `(d,2d)` 因 `d+3<2d` 不可见，故为 `o(r^(3d))`；三次项唯一的
+`r^(3d)` 来源是 `(d,d,d)`，给出 `(T_d/3)a_d^3` 且 `T_d>0`。因此 R170 的
+spatial non-flatness 可在 `Genuine all-row + full-SF + finite tail estimates`
+下成立，而不再额外假设完整空间解析 germ。
+
+本机 `r171_tail_based_spatial_nonflat_audit/audit_r171.py` 已核验模式间隔、
+Hermite 组合式正性、余项阶数和固定-q tower 缩放。证据等级为
+`PROVED UNDER STATED GENUINE ALL-ROW + FULL-SF HYPOTHESES`；解析估计仍需网页端
+逐行审查。原始 `P_3K` 定义、`RK=1=>all-row`、非 Gaussian genuine law 的存在/排除
+和最终 rigidity 仍 OPEN，整体发表性判断仍为“无”。

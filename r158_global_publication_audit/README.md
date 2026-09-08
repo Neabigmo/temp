@@ -146,6 +146,20 @@ spatial `P_3 K` 三座桥。
 
 **无（目前没有足够独立、完整、可审稿的发表性结果）**。
 
+## 13. R171：空间 odd-sector non-flatness 的 tail-based 加强（2026-09-09）
+
+R171 将 R170 的“完整空间 log 解析 germ”前提削弱为有限阶渐近：R132 的
+exact-row square-exponential tail/Mehler lower bound、Mehler L2 upper bound 和
+Gaussian hypercontractive Hermite-tail estimate 足以控制三阶 log Taylor 余项。
+在 full-SF 消去低阶 even modes 后，`d>=5` 的空间 `ell_3` leading term 仍为
+`T_d a_d^3 r^(3d)/3`，其中 `T_d>0`；`d=3` 回到 R132 的线性 cubic term。
+
+因此这是 R170 可写入论文的更弱条件性版本；但 weighted-tail 估计仍需逐行完成，
+且原始 `P_3K` 是否就是 `ell_3^sp`、`RK=1=>full-exact/all-row` 和 asymmetric
+genuine exact law 的存在/排除仍未解决。全局独立、完整、可审稿发表性判断仍为：
+
+**无（目前没有足够独立、完整、可审稿的发表性结果）**。
+
 ## 12. R170：空间 odd-sector non-flatness 的进一步条件性闭合（2026-09-09）
 
 在 genuine analytic full-SF 假设、且空间 charge 明确为

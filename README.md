@@ -21,6 +21,7 @@
 15. `r158_global_publication_audit/README.md`：全局证据等级与诚实的发表性审计。
 16. `r169_spatial_ou_zero_accumulation_audit/README.md`：空间 charge 沿 OU 轨道的解析非 flatness 与固定-q 零点归约。
 17. `r170_spatial_odd_sector_nonflat_audit/README.md`：首个非零 odd sector 对空间 `ell_3` 非 flatness 的条件性定理。
+18. `r171_tail_based_spatial_nonflat_audit/README.md`：用 exact-tail 与超收缩削弱空间 log 展开的解析性假设。
 
 ## 分支体系
 
@@ -93,3 +94,9 @@ lemma，不构造 law，也不改变整体发表性结论“无”。网页端�
 
 R170 的网页审查投递未落入历史；回读仍为 R169 且线程为 `systemError`，没有网页端
 理论正文。R170 目前只是本机条件性 theorem，不能写成网页端已确认结果。
+
+R171 又削弱了 R170 的前提：只需有限阶 log Taylor 渐近，不需完整 complex analyticity。
+利用 R132 的 exact-tail/Mehler 下界、Mehler 的 L2 上界和 Gaussian hypercontractivity，
+可控制三阶余项；在 full-SF 消去低阶 even modes 后，所有首个 odd sector 仍给出
+空间 `ell_3` 的非零 leading term。该结果仍要求原始空间 charge convention 和
+genuine full-SF/all-row，不能推出 bare `RK=1` 或最终 rigidity。

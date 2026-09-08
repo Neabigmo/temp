@@ -6653,3 +6653,21 @@ R170 具体审查任务尝试发送到同一网页研究对话，但回读时历
 审查本机的 odd-sector non-flatness theorem；这不是数学上的否定。记录保持以本机
 `audit_r170.py` 和提交 `49e9185` 为准，不重复投递同一任务；网页恢复后先确认
 R170 是否进入历史。
+
+### R171 用 exact-tail 推出有限阶 spatial log 渐近（2026-09-09）
+
+本机继续削弱 R170 的完整解析性假设。由 Hermite 系数的 `L^p` 超收缩尾界，
+R132 的 exact-row square-exponential tail/Mehler positivity 下界，以及 Mehler kernel
+的 L2 Cauchy-Schwarz 上界，可在 `|u_r|<=1/2` 与补集上分别控制三阶 log Taylor
+余项，得到 `o(r^(3d))` 的有限阶渐近；不需要完整 complex analyticity。
+
+对 `d>=5`，SF 消去 `4,...,2d-2` 的 even modes；首个 odd mode后 odd tail至少从
+`d+2` 起，剩余 even tail至少从 `2d` 起。二次 `(d,2d)` 投影因 `d+3<2d` 为零，
+三次项的唯一 leading channel 是 `(d,d,d)`，系数为严格正的
+`T_d a_d^3/3`。R171 因而把 R170 的 spatial non-flatness 推进到
+`Genuine all-row + full-SF + finite tail estimates` 条件下。
+
+`audit_r171.py` 通过模式间隔、组合式正性、余项阶数和 tower 缩放检查；证据等级为
+`PROVED UNDER STATED GENUINE ALL-ROW + FULL-SF HYPOTHESES`。网页端仍需审查完整的
+weighted-tail 估计；原始 `P_3K` 定义、scalar `RK=1` 接口和 genuine asymmetric law
+存在/排除仍 OPEN，整体发表性判断保持“无”。
