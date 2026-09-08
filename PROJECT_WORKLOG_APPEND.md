@@ -6336,3 +6336,49 @@ existence/uniqueness lemma。由 `|r_j|<=sqrt(2/3)`，对 fixed odd `d>=5` 有
 
 该提升仍没有给出 analytic convergence、奇点、系数控制、`n~M` partial-sum
 符号或 genuine positive realization；因此整体发表性结论不变。
+
+### R157 网页回执后的 majorant 审计与全局分层（2026-09-09）
+
+网页端已经完成 R157。它声称在 universal sparse formal shape 的一变量方程上，
+利用 odd-`d` 几何不等式、generalized Holder 和 Hermite 绝对值估计，得到正
+majorant
+
+`D(s)B(s)^3-6B(s)+5=0`, `D(s)=3cosh(sqrt(s))-2`,
+
+并据此给出 `T*=arcosh(82/75)`、completed formal branch 的低能区正性，以及
+`liminf |a|^(2/d) M_d^sharp(a) >= e^(-1/4)T*^(2/d)/8`。
+
+由于这些是网页端新推导，不能直接视为已经完成的本机证明。本机新增
+`r157_universal_shape_audit/audit_web_majorant_r157.py`，并运行通过：
+
+`R157_WEB_MAJORANT_ALGEBRA_PASSED`
+
+`R157_WEB_MAJORANT_D5_FINITE_DOMINATION_PASSED`
+
+`R157_WEB_GEOMETRY_HOLDER_BOOKKEEPING_PASSED`
+
+`R157_WEB_HERMITE_BOUND_AND_SINGULAR_CONSTANTS_PASSED`
+
+`R157_WEB_MAJORANT_AUDIT_COMPLETED`
+
+复算值为 `T*=0.428757663860`、`s*=0.183833134319`，以及
+`tau_safe(d=5)=0.069377900139`。审计还核对了 majorant 方程中容易出错的系数：
+`m=0` 非线性项相对直接 pivot 只贡献 `1/3`，`m>=1` 项贡献 `1`，所以确实得到
+`6b_n=[s^n](3cosh(sqrt(s))-2)B^3`，而不是把所有项粗略处理成同一比例。
+
+当前应采用的证据分层：
+
+`LOCAL-AUDITED / CONDITIONAL`：在既定 full-SF universal one-variable formal
+reduction 前提下，majorant 代数、常数和已知低阶系数支配自洽；
+
+`WEB-DRAFT / NOT YET INDEPENDENTLY PROVED`：解析半径、全阶 ordinary partial-sum
+正性、Hermite completed bulk 正性和 first-failure lower rate 的整条定理链；
+
+`OPEN`：reduction 的全阶适用性、formal-to-genuine-law 桥、所有 tau 的全局符号、
+literal edge-escape B、full completed branch 的 bulk-negative A，以及原始
+positive backward-OU exact zero-set rigidity。
+
+这使 R157 成为目前最像“可整理成独立论文定理模块”的候选，但还不能声称已有
+足够独立、完整、可审稿的发表成果。整体发表性结论继续为：
+
+`无（目前没有足够独立、完整、可审稿的发表性结果）`。

@@ -100,6 +100,52 @@ singularity location/type, the joint `n~M` partial-sum asymptotic, all-order
 bulk negativity or positivity, and the passage from the formal branch to a
 nonnegative genuine law.
 
+## R157 web majorant: local audit boundary (2026-09-09)
+
+The completed web response proposed the positive majorant
+
+`D(s) B(s)^3 - 6 B(s) + 5 = 0`,
+
+where `D(s)=3 cosh(sqrt(s))-2`. The factor `3` in the non-cosh terms is
+important: non-linear terms from the `m=0` product are bounded by `h_(d,n)`
+and therefore carry a factor `1/3` after division by the direct pivot
+`3 h_(d,n)`, whereas terms with `m>=1` are bounded by `3 h_(d,n)`. Thus the
+formal majorant recurrence is
+
+`6 b_n = [s^n] D(s) B(s)^3` for `n>=1`,
+
+which is equivalent to the displayed algebraic equation with `b_0=1`.
+
+The companion script `audit_web_majorant_r157.py` exactly checks:
+
+- the algebraic recurrence through degree six and positivity of its rational
+  coefficients;
+- domination of the locally audited `d=5` coefficients through `s^3`;
+- the odd-`d` geometric inequality and the exponent bookkeeping behind the
+  generalized Holder bound;
+- the termwise Hermite majorant arithmetic and the constants
+  `T*=arcosh(82/75)` and `tau_safe=e^(-1/4) T*^(2/d)/8`.
+
+This is a `LOCAL-AUDITED / CONDITIONAL` arithmetic check of the web
+derivation, not an independent proof of the full theorem. The conditional
+inputs are the full-SF one-variable reduction and its all-order formal
+recurrence. The remaining boundaries are: whether the previous sparse
+completion really supplies that reduction for the intended object; the exact
+formal-to-spatial/genuine-law interpretation; and any claim about edge
+escape, negative bulk, or the literal global alternatives A/B.
+
+Run:
+
+```text
+F:\\anaconda3\\python.exe -u r157_universal_shape_audit\\audit_web_majorant_r157.py
+```
+
+Expected final marker:
+
+```text
+R157_WEB_MAJORANT_AUDIT_COMPLETED
+```
+
 The result is a useful structural lemma and a clean next interface, but it is
 not yet an independent publishable theorem.  The global publication verdict
 therefore remains: **无（目前没有足够独立、完整、可审稿的发表性结果）**.

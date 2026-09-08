@@ -12061,3 +12061,35 @@ R157 已发送至同一研究对话，基线为本机已推送的 `d7e0952`。�
 `PROVED UNDER THE STATED FORMAL REDUCTION`，不是 genuine law；它只排除了“形式递推
 在某一有限/无限阶因 pivot 直接消失”的障碍。收敛半径、系数增长、奇点以及
 `n~M` 部分和符号仍然完全 OPEN。
+
+## 83.12 R157 网页候选 majorant 的本机逐项审计（2026-09-09）
+
+网页端完成 R157 后提出了一个候选的全阶正 majorant：若 universal sparse
+shape 的形式一变量方程确为
+
+`<cosh(sqrt(s) p_d) product_j A_d(s q_j)>=1`,
+
+且 `h_(d,n)=<q_1^n>`，则由 `|p_d|<=max_j|u_j|` 与 generalized Holder 得到
+非线性项的统一 `h_(d,n)` 尺度。更细地，`m=0` 的非线性产品只需 `h_(d,n)`，
+而 `m>=1` 的 `p_d` 项用 `3 h_(d,n)` 控制；除去三个线性项后，正 majorant
+`B(s)=1+sum b_n s^n` 满足
+
+`(3 cosh(sqrt(s))-2) B(s)^3 - 6 B(s) + 5 = 0`.
+
+本机新增 `r157_universal_shape_audit/audit_web_majorant_r157.py`，通过了：
+
+- 该代数递推至 `s^6` 的精确有理数核验，且 `b_n>0`；
+- 与已本机核验的 d=5 `a_1,a_2,a_3` 的绝对值支配；
+- 奇数 d 几何不等式的代数情形与 Holder 指数 bookkeeping；
+- Hermite 绝对值 majorant 的逐项组合不等式；
+- `T*=arcosh(82/75)=0.428757663860...`、`s*=T*^2=0.183833134319...` 及
+  `tau_safe=e^(-1/4)T*^(2/d)/8`，其中 d=5 时为 `0.069377900139...`。
+
+因此目前最准确的证据分层是：R157 majorant/低能区正性/首失效阶下界是
+`WEB-DRAFT + LOCAL-AUDITED ARITHMETIC + CONDITIONAL`；其条件输入仍是上一阶段
+full-SF 到 universal one-variable equation 的形式化闭合。尚未本机独立完成的是：
+该 reduction 对目标对象的全阶适用性、formal branch 到空间密度/真正 iid law 的桥、
+所有 `tau` 的全局符号、edge escape 以及 literal A/B。故这是一条有潜在发表价值的
+定理模块候选，但当前整体发表判断仍为：
+
+`无（目前没有足够独立、完整、可审稿的发表性结果）`。
