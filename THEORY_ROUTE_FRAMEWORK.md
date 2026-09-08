@@ -12281,3 +12281,60 @@ R166 已写入同一网页历史并一度显示活动，但等待后网页端再
 写成网页端已确认的定理。后续若网页端恢复，应先读取 R166 的完整消息；在此之前以
 本机 `r166_varying_bottom_reduction/audit_r166.py` 的结构审计和明确假设边界为准，
 不重复发送同一长任务。
+
+## 83.24 R168：空间 log-density charge 的固定-q 最终层 persistence（2026-09-09）
+
+R166 的 OU 协变只覆盖 R102 analytic log-MGF charge；它不能自动覆盖原始项目中
+可能使用的空间 `K_sp=log g` charge。为推进这条真正的空间线，本机新增
+`r168_spatial_ou_persistence_audit/`，只对明确对象
+
+`ell_3^sp(g)=<log g,psi_3>`
+
+作局部处理。若 genuine full-exact/all-row 底层 `h` 满足 `m_3(h)!=0`，并且 R132
+的 expansion
+
+`ell_3^sp(P_t h)=t^(3/2)m_3(h)/sqrt(6)+R_h(t)`,
+`|R_h(t)|<=C_h t^3`, `0<t<=1/64`,
+
+成立，则取充分小的 `t_h` 后，`ell_3^sp(P_t h)` 在 `(0,t_h]` 中严格非零。固定
+任意 `q in (0,1)`，于是 `g_N^(j)=P_(q^(N-j))h` 对所有充分大的 `N` 都满足
+
+`g_N^(j)=P_q g_N^(j+1)`,
+`||g_N^(0)-1||_2<=8q^(3N/2)`,
+`ell_3^sp(g_N^(0))!=0`。
+
+这条结论的价值是：在 `m_3!=0` 的 spatial 子类中，离散序列的“恰好落在零点”
+问题可由 leading term 排除，不需要假定 R102 式的全参数协变。其证据等级是
+`PROVED UNDER STATED HYPOTHESES`；本机 `audit_r168.py` 只核验余项三角不等式、
+固定-q 指数和半群/L2 收敛，未构造任何 genuine asymmetric exact law。
+
+边界必须显式保留：`ell_3^sp` 不等于 `P_3K_MGF`、`C_g=log B_g` 或未定义的
+原始 `P_3K`；`m_3(h)=0` 的高 odd sector、scalar `RK=1=>all-row`、genuine
+非 Gaussian exact law existence/exclusion 以及最终 rigidity 仍 `OPEN`。
+
+## 83.25 下一轮网页端的全局脉络与发表性审计任务（2026-09-09）
+
+用户要求网页端在继续局部推进前，先从原始 Positive Backward-Tower Exact
+Zero-Set Rigidity 全面梳理路线：A. exact defect/Fock/Hermite；B. genuine
+full-exact/all-row 与 OU smoothing；C. R99--R102 backward Herglotz/Parseval
+charge cone 与 log-MGF zero-set；D. R132 的 Carleman/tail/L2 smoothing 和空间
+log-density 弱桥；E. R133--R140 的 first-odd Jacobi、finite-row blindness、
+shell/Bochner obstruction；F. R157--R158-A 的 formal majorant；G. R166 的
+log-MGF varying-bottom/single-law reduction；H. R168 的 spatial `ell_3` local
+persistence。
+
+网页端必须对每个模块分别给出：精确假设、确切结论、证据等级（`PROVED`、
+`PROVED UNDER STATED HYPOTHESES`、`CONDITIONAL`、`FORMAL`、`FINITE-ONLY`、
+`OBSTRUCTION`、`OPEN`）、可否写入论文的范围、以及不能跨越的逻辑桥。必须明确
+区分 `RK=1`、genuine full-exact/all-row、spatial `P_3K_sp`、`ell_3^sp`、
+`P_3K_MGF`、Bargmann `C_g`、`chi_1`、首个 odd Hermite 系数和原始 rigidity。
+
+若这些模块尚未组成独立、完整、可审稿的结果，网页端必须直说：
+
+**无（目前没有足够独立、完整、可审稿的发表性结果）。**
+
+这不是停止研究，而是先形成可信的总纲；全局盘点后只允许部署一个最小下一步：
+审查原始空间 `P_3K_sp` 的定义是否就是 `ell_3^sp`，以及 R168 能否在该定义下扩展
+到 `m_3=0` 的首个非零高 odd sector。网页端开始工作前必须阅读本框架、
+`PROJECT_WORKLOG_APPEND.md`、`r158_global_publication_audit/README.md`、
+`r166_varying_bottom_reduction/README.md` 和 `r168_spatial_ou_persistence_audit/README.md`。

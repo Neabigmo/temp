@@ -16,6 +16,9 @@
 10. `r131_normalized_defect_audit/README.md`：genuine (L^2) 归一化缺陷接口与 M=7 exact algebra。
 11. `r132_exact_law_smoothing_audit/README.md`：all-row exact law 的统一 OU 平滑、log-density 弱桥接与障碍审计。
 12. `r133_first_odd_jacobi_audit/README.md`：首个奇 Hermite/Jacobi 精确包、有限行盲区与 R134 全阶 cascade 任务。
+13. `r166_varying_bottom_reduction/README.md`：在 log-MGF charge 协变假设下把 varying-bottom 塔化简为 single-law 问题。
+14. `r168_spatial_ou_persistence_audit/README.md`：空间 `ell_3=<log g,psi_3>` 的小-t 非消失与固定-q 最终层 persistence。
+15. `r158_global_publication_audit/README.md`：全局证据等级与诚实的发表性审计。
 
 ## 分支体系
 
@@ -61,3 +64,19 @@ R166 在本机先完成了一个结构性化简：在 genuine full-exact 类的�
 `L^2` 收敛和 `P_3K` OU 协变成立时，原始 varying-bottom 非零 charge 塔与存在
 一个 `P_3K` 非零 genuine exact 单律等价；因此未归一化 primitive charge 的统一
 下界不是正确的独立目标。详见 `r166_varying_bottom_reduction/README.md`。
+
+R168 进一步处理空间对象的最小局部情形：若明确采用
+`P_3K_sp(g)=ell_3(g)=<log g,psi_3>`，并且 genuine all-row 底层 `h` 的三阶矩
+`m_3(h)` 非零，则 R132 的
+`ell_3(P_t h)=t^(3/2)m_3(h)/sqrt(6)+O(t^3)` 给出固定 `q` 网格上从某个深度起
+所有底层 charge 都非零，同时 `||P_(q^N)h-1||_2<=8q^(3N/2)`。这只是
+`PROVED UNDER STATED HYPOTHESES` 的局部 lemma；它不等同于 R102 log-MGF charge，
+不处理 `m_3=0` 的高 odd sector，也不构造 genuine 非 Gaussian exact law。
+
+当前应交给网页端的下一轮首要任务是：先完整重建全路线，逐项标出真正已闭合、
+仅条件性、仅有限/形式、obstruction 和 OPEN 的内容，并在独立完整可审稿结果尚
+不存在时明确回答“无”；随后再审查空间 `P_3K_sp` 的定义与 R168 这条局部 persistence
+是否能在原始对象上合法使用。网页端开始工作前必须先读取
+`THEORY_ROUTE_FRAMEWORK.md`、`PROJECT_WORKLOG_APPEND.md`、
+`r158_global_publication_audit/README.md`、`r166_varying_bottom_reduction/README.md`
+和 `r168_spatial_ou_persistence_audit/README.md`。

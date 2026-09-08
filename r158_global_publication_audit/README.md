@@ -146,6 +146,29 @@ spatial `P_3 K` 三座桥。
 
 **无（目前没有足够独立、完整、可审稿的发表性结果）**。
 
+## 11. R168：空间 charge 局部 persistence 与全局发表性复核（2026-09-09）
+
+本机 R168 对 R132 的 log-density 弱桥接作了一个有限范围的离散化：若明确把
+空间量定义为 `ell_3^sp=<log g,psi_3>`，并有 genuine all-row 底层 `h` 的
+`m_3(h)!=0`，则
+
+`ell_3^sp(P_t h)=t^(3/2)m_3(h)/sqrt(6)+O(t^3)`
+
+给出固定 `q` 网格上最终非零；结合 `||P_(q^N)h-1||_2<=8q^(3N/2)`，得到一个
+条件性的 arbitrarily-deep spatial-charge tower construction。该模块可作为
+R132 后的局部 lemma 候选，但不构造 genuine asymmetric exact law，亦不处理
+`m_3=0` 的高 odd sector。
+
+重要边界：空间 `ell_3^sp`、R102 `P_3K_MGF`、Bargmann `C_g` 和项目原始 `P_3K`
+不能混写；`RK=1=>full-exact/all-row` 仍没有无条件证明。因而全局独立、完整、
+可审稿发表性判断仍为：
+
+**无（目前没有足够独立、完整、可审稿的发表性结果）**。
+
+下一轮网页端必须先完成全局路线审计，再决定 R168 是否能合法接入原始 charge；
+必须逐项给出假设、结论、证据等级、可发表范围和未闭合桥，不得用这个局部 lemma
+替代原始 Positive Backward-Tower Exact Zero-Set Rigidity。
+
 ## 10. R166：重新校准 varying-bottom 的最小问题（2026-09-09）
 
 在 genuine full-exact、`L^2`、前向 OU 闭包和 `P_3K` OU 协变假设下，本机新增

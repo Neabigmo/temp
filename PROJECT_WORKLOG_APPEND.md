@@ -6579,3 +6579,32 @@ R166 已在同一网页历史顶部显示并短暂处于活动状态；等待后
 systemError，仍没有 assistant 理论正文。故 R166 只记为已投递任务，本机等价化简
 和四项结构审计是当前唯一新增证据；网页端尚未对其证明或缺口作出判断。后续恢复
 时先读取 R166，不再重复扩大数值或局部 minor。
+
+### R168 空间 log-density charge 的局部 persistence（2026-09-09）
+
+为避免 R166 把 log-MGF charge 的协变误当成原始空间 charge 的 persistence，本机
+新增 `r168_spatial_ou_persistence_audit/README.md` 与 `audit_r168.py`。模块明确取
+`ell_3^sp(g)=<log g,psi_3>`，并沿用 R132 的 genuine all-row local expansion：
+
+`ell_3^sp(P_t h)=t^(3/2)m_3(h)/sqrt(6)+O(t^3)`。
+
+若底层 genuine full-exact `h` 的 `m_3(h)!=0`，余项三角不等式给出某个 `t_h>0`
+使 `ell_3^sp(P_t h)!=0` 对所有 `0<t<=t_h` 成立。固定 `q in (0,1)` 后，
+`g_N^(j)=P_(q^(N-j))h` 形成任意深 positive exact tower，且
+`||g_N^(0)-1||_2<=8q^(3N/2)`、`ell_3^sp(g_N^(0))!=0` 对充分大 `N` 成立。
+
+这是 `PROVED UNDER STATED HYPOTHESES` 的局部离散 persistence lemma；审计脚本
+通过主项/余项不等式、固定-q 指数、半群和 L2 收敛检查。它不构造 genuine 非高斯
+exact law，不覆盖 `m_3=0` 的高 odd sector，也不证明原始 `P_3K` 就是 `ell_3^sp`。
+因此不能替代 R102 的 log-MGF charge，也不能关闭 scalar `RK=1` 接口或最终 rigidity。
+
+### R168 下一轮网页端全局审计要求（2026-09-09）
+
+下一轮在继续本机局部工作之外，必须引导网页端先梳理全部脉络，逐模块明确：
+已闭合的 genuine 必要条件、条件性接口、形式/有限探针、genuine obstruction、
+仍然 OPEN 的桥，以及每项是否足以构成独立可审稿论文结果。网页端必须把
+`RK=1`、full-exact/all-row、spatial `P_3K_sp`、`ell_3^sp`、`P_3K_MGF`、
+`C_g`、`chi_1` 和首个 odd Hermite 系数分开；如果当前没有独立完整的发表性结果，
+要明确回答“无”。网页端工作前必须读取 `THEORY_ROUTE_FRAMEWORK.md`、本工作日志、
+`r158_global_publication_audit/README.md`、`r166_varying_bottom_reduction/README.md`
+和 `r168_spatial_ou_persistence_audit/README.md`。
