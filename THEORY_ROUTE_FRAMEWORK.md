@@ -12093,3 +12093,16 @@ full-SF 到 universal one-variable equation 的形式化闭合。尚未本机独
 定理模块候选，但当前整体发表判断仍为：
 
 `无（目前没有足够独立、完整、可审稿的发表性结果）`。
+
+补充的 majorant 局部结果：令 `s*=T*^2`，`B*=5/4`，则隐函数在正实临界点
+具有平方根展开
+
+`B(s)=5/4-K sqrt(1-s/s*)+O(1-s/s*)`,
+
+其中 `K=(25/32)sqrt(T* sinh(T*))`。因此正 majorant 系数满足
+
+`b_n ~ K/(2sqrt(pi)) s*^(-n)n^(-3/2)`。
+
+本机数值三重卷积递推到 180 阶与该 transfer constant 相符。这只加强了 majorant
+本身的奇点审计；由于目前只有 `|a_(d,n)|<=b_n`，不能把它升级为真实
+`A_d` 的匹配大阶渐近，也不能由此解决全 tau 的 Hermite saddle。

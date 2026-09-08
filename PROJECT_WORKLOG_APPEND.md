@@ -6399,3 +6399,25 @@ R158 当作完成，也不能把“无回执”解释成数学结论。为避免
 density -> first-failure lower bound` 的接口；整体发表性结论保持：
 
 `无（目前没有足够独立、完整、可审稿的发表性结果）`。
+
+### R157 majorant 平方根奇点与大阶审计（2026-09-09）
+
+在网页端尚未返回 R158 全局回执期间，本机继续推进 R157 的唯一技术接口。对
+
+`F(s,B)=(3cosh(sqrt(s))-2)B^3-6B+5`
+
+在临界点 `B*=5/4`、`s*=T*^2` 处做二阶隐函数展开，得到
+
+`B(s)=5/4-K sqrt(1-s/s*)+O(1-s/s*)`,
+
+`K=(25/32)sqrt(T* sinh(T*))`。
+
+因此正 majorant 的系数 transfer law 为
+
+`b_n ~ K/(2sqrt(pi)) s*^(-n)n^(-3/2)`。
+
+本机在 `audit_web_majorant_r157.py` 中加入数值三重卷积递推，计算至 180 阶，
+通过 `R157_WEB_MAJORANT_SQRT_SINGULARITY_ASYMPTOTIC_PASSED`；数值常数为
+`K=0.340106372849`、`K/(2sqrt(pi))=0.095942236430`。该结果只属于正
+majorant，不提供实际 `A_d` 系数的下界或相同大阶，因此仍不能解决
+`n/M -> xi` 的 generalized-Hermite saddle，也不改变整体发表性结论。

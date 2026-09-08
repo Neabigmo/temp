@@ -126,6 +126,24 @@ The companion script `audit_web_majorant_r157.py` exactly checks:
 - the termwise Hermite majorant arithmetic and the constants
   `T*=arcosh(82/75)` and `tau_safe=e^(-1/4) T*^(2/d)/8`.
 
+The same audit also expands the positive majorant at its first positive
+singularity.  With `s*=T*^2` and
+
+`K=(25/32) sqrt(T* sinh(T*))`,
+
+the positive branch has
+
+`B(s)=5/4-K sqrt(1-s/s*)+O(1-s/s*)`.
+
+Consequently its coefficients satisfy the transfer-law prediction
+
+`b_n ~ K/(2 sqrt(pi)) s*^(-n) n^(-3/2)`.
+
+The numerical triangular recurrence through order 180 agrees with this
+constant.  This strengthens the audit of the majorant barrier, but it is only
+an asymptotic statement for `B`; coefficient domination gives no matching
+lower bound for the actual universal shape `A_d`.
+
 This is a `LOCAL-AUDITED / CONDITIONAL` arithmetic check of the web
 derivation, not an independent proof of the full theorem. The conditional
 inputs are the full-SF one-variable reduction and its all-order formal

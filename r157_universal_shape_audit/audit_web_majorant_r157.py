@@ -12,6 +12,7 @@ import math
 import random
 from typing import Dict
 
+import mpmath as mp
 import sympy as sp
 
 from audit_r157 import solve_even_factor
@@ -96,10 +97,52 @@ def check_hermite_majorant_and_constants() -> None:
         print(f"R157_TAU_SAFE_D{d}={tau_safe:.12f}")
 
 
+def numeric_majorant_coefficients(order: int) -> list[mp.mpf]:
+    """Compute positive B coefficients by the triangular majorant recurrence."""
+    mp.mp.dps = 80
+    b = [mp.mpf(1)]
+    cubic = [mp.mpf(1)]
+    dcoef = [mp.mpf(1)] + [mp.mpf(3) / mp.factorial(2 * m)
+                            for m in range(1, order + 1)]
+    for n in range(1, order + 1):
+        # Set b_n=0 temporarily. Compute the lower-order B^3 coefficient via
+        # B^2*B, and reuse already computed cubic coefficients in D*B^3.
+        lower_cubic_n = sum(
+            (sum(b[i] * b[k - i]
+                 for i in range(k + 1)
+                 if i < len(b) and k - i < len(b))) * b[n - k]
+            for k in range(1, n + 1)
+            if n - k < len(b)
+        )
+        source = lower_cubic_n + sum(dcoef[m] * cubic[n - m]
+                                     for m in range(1, n + 1))
+        b_n = source / 3
+        b.append(b_n)
+        cubic.append(lower_cubic_n + 3 * b_n)
+    return b
+
+
+def check_majorant_square_root_asymptotic() -> None:
+    """Audit the singular barrier's square-root constant numerically."""
+    t_star = mp.acosh(mp.mpf(82) / 75)
+    s_star = t_star**2
+    K = mp.mpf(25) / 32 * mp.sqrt(t_star * mp.sinh(t_star))
+    b = numeric_majorant_coefficients(180)
+    # b_n ~ K/(2 sqrt(pi)) s_star^(-n) n^(-3/2).
+    for n in (80, 120, 180):
+        scaled = b[n] * s_star**n * n**mp.mpf("1.5")
+        target = K / (2 * mp.sqrt(mp.pi))
+        assert abs(scaled / target - 1) < mp.mpf("0.08")
+    print("R157_WEB_MAJORANT_SQRT_SINGULARITY_ASYMPTOTIC_PASSED")
+    print(f"R157_MAJORANT_K={float(K):.12f}")
+    print(f"R157_MAJORANT_ASYMPTOTIC_CONSTANT={float(target):.12f}")
+
+
 if __name__ == "__main__":
     check_majorant_recurrence()
     check_domination_against_local_shape()
     check_odd_geometry_and_holder_bookkeeping()
     check_hermite_majorant_and_constants()
+    check_majorant_square_root_asymptotic()
     print("R157_WEB_MAJORANT_AUDIT_COMPLETED")
     print("R157_SCOPE_EXPLICIT: algebra/scaling checks only; formal reduction, global edge behavior, and genuine law remain open")
