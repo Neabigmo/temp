@@ -6479,3 +6479,17 @@ equation 下用周期角向平均递推 `A_5(s)` 至 `n=200`，采用 `L=4096` �
 这只是有限形式的系数比值 proxy，不能推出 `A_5` 的收敛半径、奇点或 genuine
 law。一次 `n=400` 普通双精度试跑发生下溢并产生 `NaN`，已剔除，不能当作数学
 失败。证据等级保持 `FINITE-ONLY / EXPLORATORY`，整体发表性结论不变。
+
+### R162 formal majorant lemma 的量词补全（2026-09-09）
+
+R161 已投递到同一网页研究对话，但读取时仍只有用户消息，没有新的理论回执。
+在等待期间，本机没有继续扩大低阶计算，而是把 R158-A 的核心接口补成可独立
+引用的 formal lemma：对每个 `n` 明确假设 `q_i>=0`、`h_n>0`、总次数为 `n`
+的混合矩 Hölder 上界，以及 `|p_d|^(2m)<=sum_i q_i^m`；随后把 universal
+equation 的 `s^n` 系数拆成 `m=0` 去掉三个当前 linear terms 的余项和 `m>=1`
+的 cosh 余项，逐项给出两个 majorant 上界，得到
+`6b_n=[s^n]((3cosh(sqrt(s))-2)B^3)`。
+
+这使 pivot `3h_n` 的正性、归纳只依赖低阶系数、以及常数 `6` 的来源都显式化。
+该 lemma 可作为论文中的条件性接口模块；它仍不补 full-SF 到 universal equation、
+formal-to-genuine-law、全 `tau` 符号或原始 rigidity 的缺口。整体发表性判断不变。

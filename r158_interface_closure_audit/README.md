@@ -52,6 +52,40 @@ linear tuple 后，混合乘积只需 `h_(d,n)` 控制；当 `m>=1` 时，
 这正等价于上面的代数方程。这里的 `6` 不能被误写成 `3`：它来自左侧直接
 pivot 的 `3 b_n` 与右侧 `m=0` 中被移除的三个 `b_n`。
 
+### 量词补全：一个可独立引用的 formal majorant lemma
+
+上面的“递推由绝对值系数逐阶支配”可以改写成如下明确版本。设对每个
+`n>=1` 有 `q_i>=0`、`h_n=<q_1^n> > 0`，并满足
+
+`< product_i q_i^(ell_i) > <= h_n` whenever `ell_i>=0` and `sum_i ell_i=n`,
+
+以及 `|p_d|^(2m) <= sum_i q_i^m`。后一个几何不等式对本问题的 odd `d` 来自
+`|p_d|<=max_i|u_i|`；前一个不等式由广义 Hölder 直接给出，因为所有 `q_i`
+具有同一边缘矩 `h_n`。若形式级 universal equation 对所有阶成立，则其 `s^n`
+系数可唯一解出：直接项是 `3h_n a_(d,n)`，而且 `3h_n>0`。
+
+具体地，记 `P(s)=product_i A_d(s q_i)`，并把 `m=0` 的 `s^n` 系数中三个
+linear terms `a_(d,n)q_i^n` 删除，余项记为 `R_(0,n)`。逐项取绝对值并用
+上述两条矩不等式，归纳假设 `|a_(d,k)|<=b_k (k<n)` 给出
+
+`|R_(0,n)| <= h_n [s^n](B^3-1-3(B-1))`,
+
+以及所有 `m>=1` 的 cosh 项之和不超过
+
+`3h_n [s^n]((cosh(sqrt(s))-1)B^3)`。
+
+因此
+
+`|a_(d,n)| <= (1/3)[s^n](B^3-1-3(B-1))
+              +[s^n]((cosh(sqrt(s))-1)B^3)`.
+
+令右端取等号定义 `b_n`，并归纳即可得到 `|a_(d,n)|<=b_n`；移项后恰好是
+`6b_n=[s^n]((3cosh(sqrt(s))-2)B^3)`，即
+`(3cosh(sqrt(s))-2)B^3-6B+5=0`。这补全了 pivot 的正性、量词和归纳的
+依赖关系；它是一个可以在论文中作为“formal/interface lemma”单独陈述的结果。
+其结论仍严格限于已假设的 universal equation 与归一化，不能替代从原始对象到
+该方程的 full-SF 证明，也不能替代 formal-to-genuine-law 桥。
+
 ## majorant 内部的无条件结论
 
 对于这个正 majorant 本身，判别条件 `F=F_B=0`，其中
