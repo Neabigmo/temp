@@ -48,3 +48,53 @@ R155 已成功发送并在同一对话中运行。网页端目前报告了两条
 `PROVED/LOCAL-AUDITED` 边界。尤其需要检查：区间指标是否属于所用函数空间、尾能量
 不等式的归一化、外侧指数率的适用范围，以及它们是否真的与
 `Theta_M(I)>b_lambda/(a_lambda+b_lambda)` 合并。网页端完整回复出现前，不作最终数学判断。
+
+## R155 网页端最终回执与本机复核
+
+网页端 R155 已完成。它给出了从主问题、compatible tower、R132 到 R154 的全历史
+分层，并明确给出发表性结论：
+
+`无（目前没有足够独立、完整、可审稿的发表性结果）`
+
+这不是说全部工作没有价值，而是说目前尚未把任一技术模块和原始 full-SF / positive
+backward-tower 主命题闭合成一条可独立审稿的完整定理。当前最有技术含量、也最接近
+可写成论文骨架的两组内容是：
+
+* R147--R150：dual regression、Laguerre/反射缺陷与 nonlinear odd-to-even compensation；
+* R151--R155：critical Hermite geometry、Toeplitz obstruction、full-section coercivity
+  package、Christoffel localization，以及 bulk/outer-tail estimates。
+
+它们的共同缺口仍是 `RK=1 => genuine full-SF/all-row`、genuine positive realization、
+moving-top sparse branch 的 sign/depth profile，以及 `P_3 K` 的 spatial bridge。因此
+不能把“有独立技术价值”误写成“已有发表结果”。
+
+本机用 `F:\\anaconda3\\python.exe r155_global_publication_audit\\audit_r155.py` 实际运行并通过：
+
+* Hermite--Sobolev 投影尾能量的 `1-C_L x_0^2/(M+1)` 标度及
+  `x_0=y_0/\\sqrt{lambda}`、`M=tau/lambda` 的换元；
+* coherent state 的 Poisson 投影质量、subcritical rate
+  `I_-(c)=log(4/c^2)-1+c^2/4`；
+* Gaussian hypercontractive outer-tail 优化得到的
+  `J(c)=(c/2)\\sqrt{c^2-4}-2 arcosh(c/2)`；
+* `N=2M+1` Gauss--Hermite 节点对 degree-`2M` Gram integrand 的精确次数和 singleton
+  rank-one criterion。
+
+这些复核支持以下证据等级，但没有替代主命题所需的 sign-profile 定理：
+
+* `PROVED UNDER STATED HYPOTHESES`：标准 Gaussian Hermite normalization 下的
+  Sobolev/Poisson/hypercontractive/finite-quadrature 公式；
+* `LOCAL-AUDITED`：上述公式的标度、优化与有限代数接口；
+* `CONDITIONAL`：把它们用于 R137 completed sparse branch，须先知道负区间位置、
+  `a_lambda`、补集 `b_lambda` 和 full-SF 统一包络；
+* `OPEN`：first-failing branch 是否落在 bulk、turning zone 或 outer quadrature annulus，
+  以及 `a_lambda/b_lambda` 是否达到局部化阈值。
+
+一个逻辑修正必须保留：
+`Theta_M(I)>b/(a+b)` 是两层包络下的精确充分证书（对该 piecewise envelope sharp），
+不是任意 `g` 的负 Gram 方向的普遍必要条件。因此 outer-tail 指数估计严格阻断的是
+“依赖该局部化证书的 moderate-depth outer well”，不应夸大成所有可能负方向的 no-go。
+
+R156 的唯一下一步是 **Completed-Sparse Gauss-Node Turning-Profile Theorem**：在 fixed odd
+`d` 的 first-failing section 直接研究 Gauss--Hermite 节点值 `G_{j,M}`，证明 bulk
+negative node 加深度比，或证明所有失败序列逃到 turning scale 且深度比消失。未闭合该
+桥接前，发表性结论继续保持“无”。

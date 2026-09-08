@@ -6161,3 +6161,36 @@ R155 已在同一研究对话成功发送。网页端在全历史审计和 R154 
 当前只能记为 `WEB-DRAFT / UNVERIFIED`。需待网页端完整回复后，本机重新核验函数空间
 归属、归一化、尾能量不等式、指数率和 `a_lambda/b_lambda` 阈值合并；不能把这段中间
 文本当作已证定理或发表性结果。
+
+## 2026-09-09 — R155 最终全局审计与 R156 部署边界
+
+网页端 R155 已给出完整历史表：R8--R11 的 posterior/escort/Fredholm 主线、R132--R138
+的 square-exponential / sparse-Hankel / infinite-tail 边界、R140--R150 的 shell/
+bispectrum/regression/Laguerre/reflection 技术包，以及 R151--R154 的 Hermite/
+Toeplitz/coercivity/Christoffel 路线。它明确区分了“技术上有价值”和“已有独立可投稿
+结果”，最终结论仍是：
+
+`无（目前没有足够独立、完整、可审稿的发表性结果）`
+
+当前最值得保留为论文候选模块的是 R147--R150 的 dual-regression/反射补偿链和
+R151--R155 的 critical Hermite--Christoffel 链；但 `RK=1=>full-SF/all-row`、genuine
+positive realization、moving-top sign profile 与 spatial `P_3K` bridge 都还没有闭合。
+
+本机实际执行：
+
+`F:\\anaconda3\\python.exe r155_global_publication_audit\\audit_r155.py`
+
+通过 Hermite--Sobolev tail scale、coherent/Poisson rate、outer hypercontractive rate
+`J(c)`、以及 `N=2M+1` Gauss--Hermite finite criterion 的公式和次数检查。证据等级只
+提升为标准假设下的 `PROVED/LOCAL-AUDITED` 公式接口；将接口应用到 R137 completed
+sparse branch 仍是 `CONDITIONAL/OPEN`。
+
+纠正网页端一个容易过强的表述：`Theta_M(I)>b/(a+b)` 是两层包络下的充分证书，且在
+piecewise envelope 模型中 sharp；它不是任意 `g` 的负 Gram 方向普遍必要条件。故
+outer-tail 指数结果只阻断依赖该证书的 moderate-depth outer-well 路线，不能声称
+无条件排除所有负方向。
+
+下一步 R156 只研究 **Completed-Sparse Gauss-Node Turning-Profile Theorem**：在 first
+failure 的 Gauss--Hermite 节点上判定 bulk negative node，或证明所有失败序列逃到
+turning scale 并且深度比消失。该命题是 R137 radius collapse 与 R154 localization
+criterion 之间的唯一剩余桥接。

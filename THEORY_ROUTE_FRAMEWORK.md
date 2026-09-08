@@ -11870,3 +11870,43 @@ R155 已在同一网页对话成功回显并开始执行。网页端当前尝试
 不稳定，这些内容目前只标记为 `WEB-DRAFT / UNVERIFIED`，不进入 PROVED 或
 LOCAL-AUDITED。最终必须核验归一化、区间指标的函数空间、指数率适用条件，以及与
 `Theta_M(I)>b_lambda/(a_lambda+b_lambda)` 的真正合并；全历史发表性审计也尚未完成。
+
+## 83.6 R155 最终全局回执与本机公式审计（2026-09-09）
+
+网页端 R155 已完成全历史复盘。它把 R8--R154 分成已证、有限/本机审计、条件性、
+形式性、阻碍和开放项，并将当前发表性结论明确写为：
+
+`无（目前没有足够独立、完整、可审稿的发表性结果）`
+
+这不是对已有工作的否定。当前最具独立技术价值、但尚未闭合为可投稿主定理的模块是：
+
+* R147--R150 的 dual regression / Laguerre / reflection-deficit / nonlinear compensation；
+* R151--R155 的 critical Hermite shape、Toeplitz obstruction、full-section coercivity、
+  Christoffel localization 与 moving-tail estimates。
+
+仍未打通的主桥是 `RK=1=>genuine full-SF/all-row`、genuine positive realization、
+moving-top completed sparse branch 的 sign/depth profile，以及 ordinary/Bargmann 到
+spatial `P_3 K` 的桥。因此不能把这些模块直接包装成已有发表结果。
+
+本机用可用的 Anaconda 解释器运行 `r155_global_publication_audit/audit_r155.py`，通过了：
+
+`R155_HERMITE_TAIL_SCALE_CHECK_PASSED`
+
+`R155_COHERENT_POISSON_SCALING_CHECK_PASSED`
+
+`R155_HYPERCONTRACTIVE_RATE_CHECK_PASSED`
+
+`R155_GAUSS_HERMITE_DISCRETE_CRITERION_CHECK_PASSED`
+
+这只把网页端的新公式提升到 `PROVED UNDER STATED HYPOTHESES / LOCAL-AUDITED` 的
+公式层级；应用到 R137 branch 仍是 `CONDITIONAL/OPEN`。特别要修正措辞：
+`Theta_M(I)>b/(a+b)` 是两层包络下的充分负方向证书（对该 envelope sharp），不是
+任意函数负 Gram 的普遍必要条件；所以 outer-tail 结果是对该证书路线的严格阻碍，
+不是所有 negative direction 的无条件 no-go。
+
+### R156 唯一继续方向
+
+研究 fixed odd `d` 的 first-failing Gauss--Hermite node profile：要么证明存在 bulk
+negative node 且 `a_M/b_M` 保持足够比例，从而由 R154 得到显式负特征值；要么证明
+失败节点必逃至 `x=2\\sqrt M+sM^{-1/6}` 的 turning scale，且深度比降到局部化阈值以下。
+这正是 R137 的 radius collapse 与 R154 的 localization criterion 之间尚缺的桥。
