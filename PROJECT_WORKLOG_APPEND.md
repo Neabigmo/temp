@@ -6751,3 +6751,10 @@ R173 之后本机把 same-factor identity 推到首个 nonlinear threshold。用
 `d=3,5,7` 的正性常数。证据等级为 `PROVED UNDER GENUINE FULL-EXACT + FULL-SF`
 （所有 `d` 的 `C_d>0` 仍 OPEN）；该 wall 不能关闭 `d_N` escape、bare `RK=1`
 接口或最终 rigidity，整体发表性结论仍为“无”。
+
+### R174 网页端回执状态（2026-09-09）
+
+R174 审查任务投递后，回读未见 R174 用户消息或 assistant 理论正文，网页线程仍停在
+旧回执状态。因此本轮只记录本机的 cross-harmonic 精确公式和 `d=3,5,7` 有限实例
+审计；不把网页故障当数学否定，也不把任务投递当作理论回执。所有 `d` 的 `C_d>0`
+仍为 OPEN。

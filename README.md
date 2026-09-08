@@ -129,3 +129,6 @@ R174 将 R173 在首个 nonlinear threshold `2d` 处继续推进：`r=2` angular
 首项精确为 `beta_(2d,2)=L_d a_(2d)+Q_d a_d^2`；full-SF 的 `z^(2d)` 系数又给出
 `a_(2d)` 关于 `a_d^2` 的精确关系，从而得到 `|C_d|a_d^2<=t^d` 的 cross-harmonic
 backward wall。`d=3,5,7` 的常数均为正且已核验；所有 `d` 的常数正性仍 OPEN。
+
+R174 任务投递后网页端仍未返回理论正文，回读未见 R174 用户消息，线程继续处于
+旧回执状态；本机不把网页端审查写成已完成。
