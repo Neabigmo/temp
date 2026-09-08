@@ -12638,6 +12638,25 @@ R177 短消息未在网页历史中形成新理论正文；线程仍停留在 R1
 `systemError`。故 R177 只记为本机已证明、已审计、网页未审查，不重复制造长消息，
 也不改变 R176/R177 的证据等级与整体发表性判断。
 
+## 83.44 R178：cross-wall 系数的 Stirling 尺度（2026-09-09）
+
+R177 的显式下界对 `d=2s+1` 为
+
+`underlineC_d=[3d(d+1)/((d+2)(d+3))]
+2^(-2d-1)3^(-s)sqrt((2d)!)/(s!(s+1)!)`。
+
+Stirling 展开给出
+`underlineC_d ~ 3/(sqrt(2)*pi^(3/4)) d^(-3/4)3^(-s)`，即
+`~3sqrt(3)/(sqrt(2)*pi^(3/4))d^(-3/4)3^(-d/2)`。所以 wall 的倒数至多为
+`O(d^(3/4)3^(d/2))`，并在 tower 底部给出
+
+`a_(d_N)(g_N^(0))^2 <= O(d_N^(3/4)(sqrt(3)q^N)^(d_N))`。
+
+该式量化了 moving-degree escape 的代价，但不是 `a_(d_N)` 的下界，故不能
+排除系数同步趋零。R178 仍是 genuine full-exact/full-SF 下的定量条件性推论，
+不关闭 `d_N` escape、bare `RK=1`、原始 `P_3K` provenance 或最终 rigidity；
+整体发表性判断仍为“无”。
+
 ## 83.39 R175 网页端回执状态（2026-09-09）
 
 R175 经恢复重试后已进入网页历史，但线程再次返回 `systemError`，没有 assistant
