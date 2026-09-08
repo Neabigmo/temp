@@ -6542,3 +6542,11 @@ Hermite 系数和原始 rigidity；若没有足够独立、完整、可审稿的
 “无”。全局盘点后只部署一个最小理论任务，即审查 varying-bottom 下
 `P_3K` 到 primitive angular charge 的 uniform noncollapse（或给出最强的
 charge-collapse obstruction），不再扩展无关数值计算。
+
+### R165 网页端回执状态（2026-09-09）
+
+R165 已成功写入同一网页历史，顶部显示完整消息；等待后读取确认网页端又回到
+systemError，仍没有 assistant 理论正文。故 R165 只记为已投递的全局审计任务，
+不记为理论成果，也不把系统故障解释为“发表性无”的数学证明。后续恢复网页端时
+应先读取 R165 并审查其全局证据地图、发表性分层和唯一最小任务；在此之前不继续
+扩展无关数值工作。
