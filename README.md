@@ -91,6 +91,5 @@ flat-orbit law。R169 仍是 `PROVED UNDER STATED ANALYTIC HYPOTHESES` 的 reduc
 lemma，不构造 law，也不改变整体发表性结论“无”。网页端若恢复，应先阅读 R168、R169
 并围绕这个 non-flatness 问题推进。
 
-R168 全局审计消息已在恢复导航后写入同一网页历史，但读取时线程再次为
-`systemError`，未产生网页端 assistant 理论正文；因此网页端尚未完成这次全局盘点。
-本机记录不把该故障当作数学结论，整体发表性判断仍为“无”。
+R170 的网页审查投递未落入历史；回读仍为 R169 且线程为 `systemError`，没有网页端
+理论正文。R170 目前只是本机条件性 theorem，不能写成网页端已确认结果。

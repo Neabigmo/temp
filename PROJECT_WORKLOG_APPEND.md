@@ -6645,3 +6645,11 @@ L2 指数检查；它不证明 `P_3K=ell_3^sp`，不处理 `m_3=0` 的 non-flatn
 证据等级为 `PROVED UNDER STATED ANALYTIC FULL-SF HYPOTHESES`；空间逐项解析性、
 原始 `P_3K` 定义、scalar `RK=1` 接口和 genuine asymmetric law existence/exclusion
 仍 OPEN，整体发表性判断保持“无”。
+
+### R170 网页端投递状态（2026-09-09）
+
+R170 具体审查任务尝试发送到同一网页研究对话，但回读时历史顶部仍为 R169，线程
+状态为 `systemError`，没有 R170 用户消息或 assistant 理论正文。因此网页端尚未
+审查本机的 odd-sector non-flatness theorem；这不是数学上的否定。记录保持以本机
+`audit_r170.py` 和提交 `49e9185` 为准，不重复投递同一任务；网页恢复后先确认
+R170 是否进入历史。
