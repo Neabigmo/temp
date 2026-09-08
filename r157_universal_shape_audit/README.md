@@ -144,6 +144,15 @@ constant.  This strengthens the audit of the majorant barrier, but it is only
 an asymptotic statement for `B`; coefficient domination gives no matching
 lower bound for the actual universal shape `A_d`.
 
+The nearest-singularity claim for `B` can also be checked at the discriminant
+level: `F=F_B=0` forces uniquely `B=5/4` and `D(s)=32/25`.  Writing
+`s=z^2`, all solutions of `cosh(z)=82/75` are
+`z=+-T*+2 pi i k`; the `k=0` pair gives `s=s*`, while every `k!=0` solution
+has `|s|=T*^2+(2 pi k)^2>s*`.  Thus the positive square-root singularity is
+the unique dominant finite singularity of this algebraic majorant branch,
+which justifies the displayed transfer law.  It still says nothing about a
+matching lower asymptotic for `A_d`.
+
 This is a `LOCAL-AUDITED / CONDITIONAL` arithmetic check of the web
 derivation, not an independent proof of the full theorem. The conditional
 inputs are the full-SF one-variable reduction and its all-order formal

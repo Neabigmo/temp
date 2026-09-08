@@ -128,6 +128,10 @@ def check_majorant_square_root_asymptotic() -> None:
     s_star = t_star**2
     K = mp.mpf(25) / 32 * mp.sqrt(t_star * mp.sinh(t_star))
     b = numeric_majorant_coefficients(180)
+    exact = majorant_coefficients(6)
+    for n in range(7):
+        exact_value = mp.mpf(int(exact[n].p)) / int(exact[n].q)
+        assert abs(b[n] - exact_value) < mp.mpf("1e-70")
     # b_n ~ K/(2 sqrt(pi)) s_star^(-n) n^(-3/2).
     for n in (80, 120, 180):
         scaled = b[n] * s_star**n * n**mp.mpf("1.5")
