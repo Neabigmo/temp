@@ -104,3 +104,11 @@ genuine full-SF/all-row，不能推出 bare `RK=1` 或最终 rigidity。
 R171 的网页审查尚未进入历史；回读仍停留在 R170 且线程为 `systemError`，没有网页端
 理论正文。本机 R171 已把 R170 的完整解析性要求削弱为 exact-tail 下的有限阶 log
 渐近，但它仍是条件性结果，不能写成网页端已确认结论。
+
+R172 新增 `r172_p3k_provenance_audit/`，专门审计原始 `P_3K` 的对象身份：空间
+`ell_3^sp=<log g,psi_3>`、R102 的 `P_3K_MGF`、Bargmann `C_g=log B_g` 和
+R101 的 angular `chi_1` 必须分开。当前没有证据把它们无条件识别为同一量，故原始
+`P_3K` provenance 仍为 `OPEN/UNRESOLVED`；R168–R171 只能作为空间对象上的条件性
+结果。R172 的整体发表性复核仍诚实记为“无”，但保留这些模块作为潜在 lemma/
+conditional theorem。网页端下一轮必须先读 R172 与全框架，给出全局证据分层和发表性
+判断，不得继续偷换 charge 对象。

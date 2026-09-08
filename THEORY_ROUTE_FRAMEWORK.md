@@ -12433,3 +12433,30 @@ R171 的具体审查任务尝试发送到同一网页研究对话，但回读历
 网页端尚未审查 R171；本机 `44e77a4` 的 tail-based 有限阶证明只记为本机条件性
 理论，不升级为网页端确认。整体发表性判断仍为“无”，网页恢复后应先确认 R171
 是否真正进入历史。
+
+## 83.32 R172：原始 `P_3K` 对象溯源审计（2026-09-09）
+
+本轮先停止继续把不同三阶/奇阶量拼在一起，建立 provenance 审计。当前必须分开：
+
+1. 空间 log-density 量 `K_sp=log g` 与 `ell_3^sp=<K_sp,psi_3>`；
+2. normalized Bargmann log `C_g=log B_g` 及其 same-factor/Jacobi 结构；
+3. R102 的 analytic log-MGF charge `P_3K_MGF` 及其 cumulant 展开、OU 协变；
+4. R101 genuine positive angular cone 的 primitive charge `chi_1`/`beta_(m,1)`。
+
+R101 已明确把 angular charge 写成 “deliberately separate from `P_3 K`”，R133
+也明确 `C_g=log B(e^{K_sp})` 一般不等于对 `K_sp` 做 Bargmann 变换；R102 的
+公式虽然闭合了一个 analytic log-MGF 对象，却没有单独证明它就是项目最初未给出
+完整定义的空间 `P_3K`。因此本机新增 `r172_p3k_provenance_audit/README.md`
+并将原始 `P_3K` 的定义/身份记录为 `OPEN/UNRESOLVED`。
+
+安全保留的逻辑是：R99–R101 的 genuine backward cone 必要条件、R102/R166 的
+log-MGF 线、R132–R133 的 full-SF/all-row 结构、R168–R171 的 spatial `ell_3`
+条件性 persistence/non-flatness 各自成立于各自假设下。尚不能安全推出
+`P_3K_original=ell_3^sp=P_3K_MGF=chi_1`，也不能由 scalar `RK=1` 自动推出
+genuine full-SF/all-row。故原始 positive backward-tower rigidity 仍 OPEN，且
+“已有独立、完整、可审稿发表结果”的诚实总评继续是“无”。
+
+R172 的 auditable scope 仅是 documentation/provenance：`audit_r172.py` 验证上述
+边界在本机记录中确实存在，不新增 hash、baseline、contract 或发布门禁。下一轮
+网页端开始前必须读取总框架、工作日志以及 R158、R166、R168–R172，并先给出全局
+证据分层、原始 `P_3K` 定义是否恢复、每个模块的发表性级别和不偷换对象的总评。

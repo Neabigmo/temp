@@ -6678,3 +6678,20 @@ R171 具体审查任务尝试发送到同一网页研究对话，但回读历史
 `systemError`，没有 R171 用户消息或 assistant 理论正文。故网页端尚未审查 R171；
 本机 tail-based 有限阶证明以提交 `44e77a4` 为准，不把网页故障当作数学结论，也
 不重复投递同一任务。
+
+### R172 原始 `P_3K` 的对象溯源审计（2026-09-09）
+
+本轮新增 `r172_p3k_provenance_audit/README.md` 与 `audit_r172.py`，把此前容易
+发生的对象偷换显式列为一个独立 OPEN 接口。空间
+`ell_3^sp=<log g,psi_3>`、Bargmann `C_g=log B_g`、R102 analytic
+`P_3K_MGF` 以及 R101 angular `chi_1`/`beta_(m,1)` 各自的定义、假设和证据等级
+不同；R101 已明示 angular charge 与 `P_3 K` 分离，R133 已明示 `C_g` 与空间
+`log g` 不可混同。因此当前不能声称原始 `P_3K` 已被其中任一对象识别，不能把
+R168–R171 空间结论直接落回原始命题，也不能把 R166 log-MGF 化简推广到空间线。
+
+本机审计结论为 `OPEN/UNRESOLVED PROVENANCE`。R99–R102、R132–R133、R168–R171
+仍保留为各自假设下的 genuine 必要条件、结构 lemma 或 conditional theorem；但
+截至 R172，独立、完整、可审稿的原始问题发表性结果仍为“无”。网页端下一轮必须
+先读取全框架和本工作日志，明确恢复/否认原始 `P_3K` 定义，逐项标出 `PROVED`、
+`CONDITIONAL`、`FORMAL`、`OBSTRUCTION`、`OPEN`，再决定下一条最小数学推进；不得
+把“消息已发送”或网页错误当作理论回执。
