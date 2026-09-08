@@ -181,3 +181,9 @@ R182 网页发送调用未形成理论正文。本机新增
 `r182_positive_density_zero_shell_tail`，将第一非配对零点壳的 odd-cumulant
 下界加强为正下密度子序列结果；它排除了极稀疏尾部逃逸，但仍未形成 uniform
 正性矛盾，整体发表性判断仍为“无”。
+
+R183 网页端发送后仍未形成理论正文。本机新增
+`r183_scale_free_shell_cone_obstruction`：用精确单位根指数和证明零点壳平均
+能量可以保持而 odd 系数只在 `1/J` 密度阶次出现，故现有 shell energy、Cauchy
+和 OU 缩放不能单独提供 uniform cone coercivity。该 obstruction 不是 genuine
+MGF 反例，整体发表性判断仍为“无”。

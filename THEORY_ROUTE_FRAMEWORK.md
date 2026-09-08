@@ -12732,3 +12732,18 @@ HYPOTHESES`；整体发表性仍为“无”。
 矛盾，因为 `R_Delta` 和第一壳强度可随 law 改变。证据等级为
 `PROVED UNDER HADAMARD SQUARE-EXPONENTIAL HYPOTHESES`，审计已通过，整体发表性
 仍为“无”。
+
+## 83.50 R183：scale-free shell-to-cone obstruction（2026-09-09）
+
+网页端 R183 发送后再次出现 `systemError`，未形成理论正文；本机新增
+`r183_scale_free_shell_cone_obstruction`。`J` 个等权单位根给出精确
+`A_k=J 1_{J|k}`，所以 shell 的平均二次能量非零，但可见 odd 阶次密度仅为
+`1/J`，R182 的 `p_0` 仅为 `1/(2J-1)`；对任意固定有限窗口，取 `J` 足够大
+即可完全 cancellation。即使归一化 `S_2=1`，仍有 `B^2/S_2=J`。
+
+因此 R182 正密度尾、R139 能量上界、R181 Cauchy 估计和 OU 齐次缩放之间，尚
+不能推出 uniform positive-cone/Hankel coercivity。该模型是精确 shell-only
+obstruction，不是 genuine MGF 反例；下一真正接口必须控制壳模态数/`B^2/S_2`、
+建立 shell-to-cone coercive map，或直接量化 moving-degree 的 `eta_d(a)`。
+证据等级为 `PROVED UNDER HADAMARD SHELL HYPOTHESES` 加
+`EXACT-AUDITED`；整体发表性仍为“无”。

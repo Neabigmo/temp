@@ -6925,3 +6925,19 @@ OU 缩放 `C_(o,t)(z)=C_o(sqrt(t)z)`、`R_Delta(t)=R_Delta/sqrt(t)` 说明同步
 半径、壳强度与 R150 的 `eta_d(a)` 仍无联合 uniform 控制，故尚未关闭无限尾
 escape。`audit_r182.js` 已通过周期指数和、密度估计、外壳衰减和 OU 换元审计；
 整体发表性判断仍为“无”。
+
+### R183：scale-free shell-to-cone obstruction（2026-09-09）
+
+网页端 R183 发送后再次出现 `systemError`，未形成理论正文；本机新增
+`r183_scale_free_shell_cone_obstruction`。对 `J` 个等权单位根
+`A_k^(J)=sum_(j=0)^(J-1) exp(2*pi*i*j*k/J)`，离散 Fourier 正交性给出
+`A_k=J`（`J|k`）或 `0`（否则）。于是 `S_2=B=J`、R182 的通用密度下界
+为 `p_0=1/(2J-1)`，而实际可见阶次密度是 `1/J`；平均二次能量保持非零，
+但任意固定有限阶窗口在 `J` 足够大时完全 cancellation。归一化为
+`b_j=1/sqrt(J)` 后仍有 `S_2=1`、`B^2/S_2=J`，说明 shell energy、Cauchy
+上界和 OU 缩放不能单独给出 uniform shell-to-Hankel/cone coercivity。
+
+该族是精确的 finite-shell obstruction model，不是 genuine MGF 反例；R183
+把唯一缺口具体化为首壳模态数/`B^2/S_2` 的统一控制、shell-to-cone coercive
+不等式或 `eta_d(a)` 的 moving-degree 下界。`audit_r183.js` 已通过；整体
+发表性判断仍为“无”。
