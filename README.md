@@ -198,3 +198,8 @@ R185 网页端发送后暂未形成理论正文。本机新增
 `r185_phase_collision_onset_obstruction`：固定四个共轭单位根模态和整数重数差，
 通过相位近碰撞把任意有限 odd window 的壳信号压到任意小，说明 R184 的正密度
 不能替代 degree alignment。该模型不是 genuine MGF 反例，整体发表性判断仍为“无”。
+
+R186 网页端重发未进入历史，本机新增
+`r186_primitive_rank_escape_dichotomy`，将 primitive inverse-OU 的有限失败阶
+与 Gaussian 极限下的 rank escape 量词明确化；这把主问题重新拉回全局
+`uniform inverse-Hankel rank closure`，整体发表性判断仍为“无”。

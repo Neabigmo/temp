@@ -6973,3 +6973,19 @@ analytic escape 缩小为大壳或 uniform shell-gap/onset/degree-alignment 问�
 Vandermonde lower bound 或直接的 shell-to-Hankel onset estimate。模型满足
 real-conjugation/整数 shell data，但不构成 genuine MGF 反例；审计已通过，
 整体发表性仍为“无”。
+
+### R186：primitive inverse-Hankel rank-escape dichotomy（2026-09-09）
+
+网页端 R186 重发调用返回线程标识，但复核显示未写入历史，线程仍停在 R185
+`systemError`；本机不把它当网页端理论回执。为回到全局主轴，本机新增
+`r186_primitive_rank_escape_dichotomy`，收紧 R13–R15 的量词：对每个 genuine
+primitive law 和固定 `r>1`，inverse-OU formal Hankel 链必在有限阶失败，否则
+Hamburger + Carleman 会产生正的 `r`-backward preimage，违反 primitiveness；但
+若 primitive laws 在统一 square-exponential 包络下收敛到 Gaussian，则每个
+固定 Hankel 阶最终严格正定，故失败阶必满足 `M_r(pi_N)->infinity`。
+
+这把全局 Bochner-tail escape 精确压缩为 uniform inverse-Hankel rank closure，
+也说明 depth decay 只控制 OU amplitude，不控制 primitive shape。该结论是
+R13–R15 的 global quantifier consolidation，不是原始 rigidity；`P_3K`、
+bare `RK=1` 到 genuine full-exact/all-row 和 spatial bridge 仍分离。审计已通过，
+整体发表性判断仍为“无”。

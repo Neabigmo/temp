@@ -12780,3 +12780,18 @@ Vandermonde lower bound，或绕过零点壳直接建立 Hankel onset estimate�
 满足共轭和整数重数差的 formal shell obstruction，不是 genuine counterexample；
 证据等级为 `PROVED UNDER HADAMARD SHELL DATA` 加 `CONDITIONAL`，整体发表性
 仍为“无”。
+
+## 83.53 R186：primitive inverse-Hankel rank-escape dichotomy（2026-09-09）
+
+网页端 R186 重发调用返回线程标识，但复核未发现消息进入历史，线程仍停在
+R185 `systemError`；本机新增 `r186_primitive_rank_escape_dichotomy`，把 R13–R15
+的全局结论收紧为：每个 genuine primitive law 对固定 `r>1` 都有有限 inverse-
+Hankel 失败阶，否则 Hamburger + Carleman 给出正的 backward preimage；若
+primitive laws 在统一 square-exponential 包络下趋于 Gaussian，则每个固定阶
+Hankel 最终严格正定，失败阶只能 `M_r->infinity`。
+
+因此 depth decay 只作用于 OU orbit amplitude，不能直接约束 primitive shape；
+原始问题的剩余核心是 `uniform inverse-Hankel rank closure`，而不是再增加有限
+零点壳扫描。证据等级为 `PROVED UNDER GENUINE FULL-EXACT + SQUARE-EXPONENTIAL
+HYPOTHESES` 加 `EXACT-AUDITED`；bare `RK=1` 桥、原始 `P_3K` identification、
+charge survival 和最终 rigidity 仍 `OPEN`，整体发表性仍为“无”。
