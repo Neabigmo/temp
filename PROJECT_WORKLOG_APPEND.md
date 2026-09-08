@@ -6495,3 +6495,11 @@ equation 的 `s^n` 系数拆成 `m=0` 去掉三个当前 linear terms 的余项�
 `a,b,-(a+b)` 后，`|a^d+b^d-(a+b)^d|<=(a+b)^d`；Hölder 则把总次数
 `ell_1+ell_2+ell_3=n` 的混合矩压到 `h_n`。该 lemma 可作为论文中的条件性接口模块；它仍不补 full-SF 到 universal equation、
 formal-to-genuine-law、全 `tau` 符号或原始 rigidity 的缺口。整体发表性判断不变。
+
+### R163 网页端恢复尝试与状态（2026-09-09）
+
+R163 以最新本机提交 `d943f5b` 为依据，要求网页端直接完成 formal majorant
+lemma 的逐项证明审查。消息进入同一历史对话并短暂显示活动，随后网页端回到
+系统错误；读取确认没有生成 assistant 理论正文。因此 R163 不计为数学成果，
+也不把网页故障当作原始命题的 `OPEN` 证明。当前可用的数学证据仍以 R158-A
+条件性 lemma 与本机审计为准。
