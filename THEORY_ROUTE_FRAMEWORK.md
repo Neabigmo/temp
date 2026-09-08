@@ -12239,3 +12239,32 @@ R165 已通过恢复后的同一网页研究对话成功写入历史，顶部可
 不是数学结果，也不能据此宣称网页端已经完成全局盘点。恢复后应优先读取 R165，
 逐项核对其证据分层与“无”的发表性判断；若网页端仍无回执，不再重复扩大局部
 计算，继续以本机 R99--R102 genuine 记录和 R158-A conditional 边界为准。
+
+## 83.22 R166：varying-bottom 与 single-law 的等价化简（2026-09-09）
+
+R165 尚未产生网页端理论正文。本机对其“uniform noncollapse”目标做了优先级审查，
+得到一个更基础的结构性命题：在 genuine positive centered/variance-one full-exact
+类对前向 `P_s` 闭包、密度属于 `L^2(gamma)`、以及
+`P_3K(P_s mu;z)=P_3K(mu;sqrt(s)z)` 的前提下，
+
+`存在一个 P_3K 非零 genuine exact 单律`
+`<=>`
+`存在任意固定 q 的 arbitrarily-deep varying-bottom 非零 charge tower`。
+
+正向构造是 `g_N^(j)=P_(q^(N-j))h`；递推来自半群律，底层满足
+`||P_(q^N)h-1||_2^2 <= q^(3N)||h-1||_2^2`，而 `P_3K` 的首个非零解析系数只被
+正数 `q^(Nd/2)` 缩放，故每个有限 `N` 仍非零。反向只需取塔的任意一个底层。
+
+同一缩放还给出 `S_3(t;P_s mu)=S_3(t/s;mu)` 与
+`tau_ang(P_s mu)=s tau_ang(mu)`（在相同 admissible range 下）。因此若非对称
+genuine 单律存在，其 OU 轨道本身就是 unnormalised charge-collapse mechanism；
+未归一化 charge 的统一下界不能作为独立中间定理。OU-invariant 归一化的 gap 仍
+可能有用，但其本质已是单律非对称排除问题，而不是 backward divisibility 自动提供
+的较弱结论。
+
+本机新增 `r166_varying_bottom_reduction/README.md` 与 `audit_r166.py`，核验塔的
+指数递推、`L^2` OU 收敛不等式、`P_3K` 非零缩放和 charge/`tau` 缩放。该模块不
+构造 asymmetric genuine law；对 bare scalar `RK=1` 仍为 CONDITIONAL。下一步网页
+端应审查这条等价化简，并把主攻从未归一化 uniform noncollapse 调整为：排除一个
+`P_3K` 非零 genuine exact 单律，或给出满足完整 one-body factorization 的 genuine
+obstruction。

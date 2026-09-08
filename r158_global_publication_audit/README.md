@@ -146,6 +146,19 @@ spatial `P_3 K` 三座桥。
 
 **无（目前没有足够独立、完整、可审稿的发表性结果）**。
 
+## 10. R166：重新校准 varying-bottom 的最小问题（2026-09-09）
+
+在 genuine full-exact、`L^2`、前向 OU 闭包和 `P_3K` OU 协变假设下，本机新增
+`r166_varying_bottom_reduction/README.md`：原始 varying-bottom 非零 charge 塔
+的存在，与存在一个 `P_3K` 非零 genuine exact 单律等价。构造为
+`g_N^(j)=P_(q^(N-j))h`，并有 `L^2` 收敛与非零解析 germ 的严格缩放证明。
+
+该化简同时显示，若非对称单律存在，R101 的未归一化 `tau_ang` 会按 OU 参数线性
+塌缩；故“uniform primitive charge noncollapse”若不作 OU-invariant 归一化，不是
+可独立成立的较弱桥。真正的单一主问题应回到排除 `P_3K` 非零 genuine exact law，
+或构造满足 one-body factorization 的 genuine obstruction。此模块不构造反例，
+也不把 genuine 结论转移到 bare scalar `RK=1`。
+
 ## 7. 下一轮唯一任务
 
 只做 **R158-A：把 R157 majorant 写成条件性定理并逐行闭合其接口**。网页端需要

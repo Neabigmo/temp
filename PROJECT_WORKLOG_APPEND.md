@@ -6550,3 +6550,20 @@ systemError，仍没有 assistant 理论正文。故 R165 只记为已投递的�
 不记为理论成果，也不把系统故障解释为“发表性无”的数学证明。后续恢复网页端时
 应先读取 R165 并审查其全局证据地图、发表性分层和唯一最小任务；在此之前不继续
 扩展无关数值工作。
+
+### R166 本机结构化简：varying-bottom tower 等价于 single-law exclusion（2026-09-09）
+
+R165 仍无网页理论正文。本机先审查其 uniform noncollapse 目标，发现 genuine 类下
+更基础且更强的等价关系：若存在一个 `P_3K` 非零的 genuine full-exact `L^2`
+单律 `h`，则对任意 `q in (0,1)` 取
+`g_N^(j)=P_(q^(N-j))h`，便得到任意深、正、exact 的 backward tower；
+`||g_N^(0)-1||_2^2<=q^(3N)||h-1||_2^2`，且
+`P_3K(g_N^(0);z)=P_3K(h;q^(N/2)z)` 对每个有限 N 仍非零。反向则显然：任意一层
+非零 `P_3K` 本身就是 single-law witness。
+
+因此原始 varying-bottom 存在性等价于“存在一个非对称 genuine exact 单律”（在
+R102 的 zero-set bridge 假设下）。同时 `S_3(t;P_s mu)=S_3(t/s;mu)`、
+`tau_ang(P_s mu)=s tau_ang(mu)`，说明如果该单律存在，未归一化 charge 会沿 OU
+轨道塌缩；uniform noncollapse 不能被当作独立的较弱目标。新模块
+`r166_varying_bottom_reduction` 的纯结构审计通过后，需将网页端下一任务改为审查
+此等价化简及其 genuine one-body factorization 缺口。

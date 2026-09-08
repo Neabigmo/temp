@@ -56,3 +56,8 @@ angular charge 的定量非退化桥。网页端 R161–R163 目前只有用户�
 消息，但等待后网页端再次回到 systemError，仍未生成 assistant 理论正文。因此
 R165 的全局审计尚未完成；不能把网页无回执或有限谱探针当成主命题结论。整体
 发表性判断仍保持诚实的 `无`。
+
+R166 在本机先完成了一个结构性化简：在 genuine full-exact 类的前向 OU 闭包、
+`L^2` 收敛和 `P_3K` OU 协变成立时，原始 varying-bottom 非零 charge 塔与存在
+一个 `P_3K` 非零 genuine exact 单律等价；因此未归一化 primitive charge 的统一
+下界不是正确的独立目标。详见 `r166_varying_bottom_reduction/README.md`。
