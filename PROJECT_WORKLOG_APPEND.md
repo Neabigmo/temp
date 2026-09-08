@@ -6757,3 +6757,20 @@ R173 之后本机把 same-factor identity 推到首个 nonlinear threshold。用
 R174 审查任务经后续回读已进入网页历史，但仍未出现 assistant 理论正文。因此本轮
 只记录本机的 cross-harmonic 精确公式和 `d=3,5,7` 有限实例审计；不把消息进入历史
 当作理论回执。所有 `d` 的 `C_d>0` 仍为 OPEN。
+
+### R175 `C_d>0` 的单一组合缺口（2026-09-09）
+
+本机继续处理 R174 的全阶正性，而不是扩大 Hermite 展开。对 odd `d` 定义
+`J_d={j:0<=j<=d, j=-d (mod 3)}`、`u_j=binom(d,j)`、
+`S_0=sum_{J_d}u_j^2` 和 `S_3=sum_{j,j+3 in J_d}u_j u_(j+3)`。换元
+`j=(d-3r)/2` 后，精确得到 `B_d=9*6^(-d)S_0`、`H_d=9*6^(-d)S_3`，以及
+`L_d/A_d=d(d-1)(d-2)/((d+1)(d+2)(d+3))`。故 `C_d>0` 等价于整数 gap
+
+`Delta_d=((d+1)(d+2)(d+3))S_3-d(d-1)(d-2)S_0>0`。
+
+新增 `r175_all_d_cross_constant_audit/README.md` 和 `audit_r175.js`，用 BigInt
+逐个精确核验 odd `3<=d<=501` 的 `Delta_d>0`。这把 R174 的所有 `d` 正性压缩
+成一个明确的模 3 二项式相关不等式；但有限核验不是全阶证明，且 gap 随 `d` 很快
+变小。证据等级为 `PROVED EXACT REDUCTION + LOCALLY EXACT-AUDITED`；
+`Delta_d>0` 对所有 odd `d`、`d_N` 逃逸、bare `RK=1` 接口和原始 `P_3K` 身份仍
+OPEN，整体发表性判断仍为“无”。

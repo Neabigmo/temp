@@ -12550,3 +12550,27 @@ intertwining 给出精确 wall
 R174 审查任务经后续回读已进入网页历史，但仍未出现 assistant 理论正文。因此本机
 只保留 R174 的本地精确公式与 `d=3,5,7` 有限实例审计，不把消息进入历史写成网页
 审查完成；所有 `d` 的 `C_d>0` 仍明确标为 OPEN。
+
+## 83.38 R175：`C_d>0` 的单一模 3 组合缺口（2026-09-09）
+
+R174 的全阶正性可以精确化成一个有限二项式相关不等式。对 odd `d` 令
+`J_d={j in [0,d]: j=-d (mod 3)}`、`u_j=binom(d,j)`，并设
+`S_0=sum_{j in J_d}u_j^2`、`S_3=sum_{j in J_d,j+3<=d}u_j u_(j+3)`。则 R174
+的有限和满足 `B_d=9*6^(-d)S_0`、`H_d=9*6^(-d)S_3`，而
+
+`L_d/A_d=d(d-1)(d-2)/((d+1)(d+2)(d+3))`。
+
+因此 `C_d>0` 当且仅当
+
+`S_3/S_0>d(d-1)(d-2)/((d+1)(d+2)(d+3))`,
+
+或等价地
+
+`Delta_d=((d+1)(d+2)(d+3))S_3-d(d-1)(d-2)S_0>0`。
+
+`r175_all_d_cross_constant_audit/audit_r175.js` 已用 BigInt 精确核验所有 odd
+`3<=d<=501` 的 gap 严格为正，marker 为
+`R175_MOD3_BINOMIAL_GAP_POSITIVE_THROUGH_501`。这只是有限审计；gap 随 `d`
+快速变小，所有 odd `d` 的证明仍 OPEN。R175 的证据等级为
+`PROVED EXACT REDUCTION + LOCALLY EXACT-AUDITED`，没有关闭 `d_N` 逃逸、bare
+`RK=1`、原始 `P_3K` provenance 或最终 rigidity，整体发表性判断仍为“无”。
