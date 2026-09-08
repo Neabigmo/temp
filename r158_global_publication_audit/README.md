@@ -152,3 +152,29 @@ spatial `P_3 K` 三座桥。
 完成前提、量词、归一化、`s` 与 `t` 半径转换、Hermite 截断和 first-failure
 下界的完整证明；本机只核验对应精确系数、常数、有限截断残差和任何新出现的
 关键不等式。若其中任一环节失败，必须给出修正版，而不是继续扩展有限低阶扫描。
+
+## 8. R162–R163 更新：全局状态与 formal-interface 的进一步闭合（2026-09-09）
+
+在网页端 R162/R163 尚未产生 assistant 理论正文期间，本机把 R158-A 的中间步骤
+进一步写成了可独立引用的条件性 lemma。明确假设 `q_i>=0`、`h_n>0`、总次数为
+`n` 的混合矩满足 Hölder 上界，以及 odd-`d` 几何给出的
+`|p_d|^(2m)<=sum_i q_i^m` 后，universal equation 的当前系数 pivot 严格为
+`3h_n`；去掉 `m=0` 的三个当前 linear terms 后，归纳得到
+
+`|a_(d,n)|<=b_n`,
+`6b_n=[s^n]((3cosh(sqrt(s))-2)B(s)^3)`。
+
+odd-`d` 的几何步骤由 `r_1+r_2+r_3=0` 重排为 `a,b,-(a+b)` 直接证明，Hölder
+的指数总和为 `n`。因此，“formal universal equation -> positive majorant”这一
+局部接口已比此前更明确；但它仍是 `CONDITIONAL / FORMAL-INTERFACE`，因为
+full-SF 全阶 reduction、Hermite 同归一化、formal-to-genuine-law 和首失效桥
+仍未由原始对象独立给出。
+
+本机 `d=5` 周期谱探针到 `n=200` 只属于 `FINITE-ONLY / EXPLORATORY`；它不能
+推出实际收敛半径、奇点或全阶交替符号。最新记录已提交为 `9fb488f`，并同步到
+`main` 与 `theory/r129-active`。整体发表性判断保持：
+
+**无（目前没有足够独立、完整、可审稿的发表性结果）**。
+
+网页端恢复后的唯一任务仍是：逐行审查上述 formal-interface lemma，并在每一条
+前提无法从原始对象推出时给出最小缺口；不要以网页无回执或有限数值替代证明。
