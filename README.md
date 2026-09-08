@@ -121,5 +121,6 @@ R172 全局审计任务已进入网页历史，但该线程随后仍为 `systemE
 R173 继续推进 R102 的原始-charge 工作分支：对首个非零 odd 阶 `d`，证明在
 `d<=m<3d` 的窗口中 `beta_(m,1)=Lambda_m a_m`，从而任意正 `t`-preimage 满足
 `sum Lambda_m^2 t^(-m)a_m(g)^2<=1`，并给出首个 R102 log-MGF 系数的显式 backward
-wall。该高阶 finite-window cone lemma 已通过本机精确 support audit，但仍不能
-处理 `d_N` 逃逸或原始 rigidity。
+wall（当前安全形式为非严格 `<=`）。该高阶 finite-window cone lemma 已通过本机精确 support audit，但仍不能
+处理 `d_N` 逃逸或原始 rigidity。R173 任务投递后网页端仍未返回理论正文，回读停在
+R172/systemError，故本机不把网页端审查写成已完成。

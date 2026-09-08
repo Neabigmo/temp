@@ -12493,11 +12493,11 @@ odd 的总阶为偶数，三个 odd 的最小总阶为 `3d`。故
 
 `sum_(m odd, d<=m<3d) Lambda_m^2 t^(-m)a_m(g)^2 <= 1`.       (R173)
 
-特别地 `|a_d(g)|<t^(d/2)/Lambda_d`。在 R102 工作定义下，因
+特别地 `|a_d(g)|<=t^(d/2)/Lambda_d`。在 R102 工作定义下，因
 `[z^m]P_3K_MGF=beta_(m,1)/sqrt(m!)`，还得到
 
 `sum_(m odd, d<=m<3d) m!t^(-m)|[z^m]P_3K_MGF(g;z)|^2<=1`,
-`|[z^d]P_3K_MGF(g;z)|<t^(d/2)/sqrt(d!)`.
+`|[z^d]P_3K_MGF(g;z)|<=t^(d/2)/sqrt(d!)`.
 
 这是 `PROVED UNDER GENUINE FULL-EXACT + FULL-SF HYPOTHESES` 的 finite-window
 高阶 cone theorem；`r173_linear_window_backward_cone/audit_r173.py` 已通过精确
@@ -12505,3 +12505,10 @@ degree/parity support audit。它不能排除 varying-bottom 中 `d=d_N` 向无�
 不能给出 uniform coefficient noncollapse，也不能关闭 symmetric even sector、
 bare `RK=1=>full-exact` 或最终 rigidity。其最小价值是把 R101 的全阶 cone 具体化
 为首个 odd sector 到 `3d` 阈值前的整段高 Hermite 约束。
+
+## 83.35 R173 网页端回执状态（2026-09-09）
+
+R173 审查任务尝试发送到同一历史对话后，回读仍停留在 R172，未出现 R173 用户
+消息或 assistant 理论正文，线程此前状态为 `systemError`。网页端尚未审查 R173；
+本机只记为“未获理论回执”，不把网页故障当作数学否定。后续网页恢复时应先读取
+R173，再继续检查其 no-mixing、cone budget 和 `d_N` 逃逸边界。

@@ -27,13 +27,13 @@
 
 `sum_(m odd, d<=m<3d) Lambda_m^2 t^(-m) a_m(g)^2 <= 1`.      (R173)
 
-特别地，首个 odd 模式满足严格 backward wall
+特别地，首个 odd 模式满足 one-mode backward wall
 
-`|a_d(g)| < t^(d/2)/Lambda_d`,
+`|a_d(g)| <= t^(d/2)/Lambda_d`,
 
 或等价地
 
-`t > |Lambda_d a_d(g)|^(2/d)`.
+`t >= |Lambda_d a_d(g)|^(2/d)`.
 
 这比只写一个 degree-`d` 系数界更强：它控制首个 odd sector 到 cubic
 threshold `3d` 之前的整个 finite window，并且所有项都来自 genuine positive
@@ -55,8 +55,8 @@ odd 指标，则总阶至少为 `3d`。所以 `d<=m<3d` 时唯一可能项是一
 `beta_(m,1)(g)=t^(m/2) beta_(m,1)(h)`,
 
 而 genuine positivity 给出 `sum_m |beta_(m,1)(h)|^2<=1`。丢掉窗口外的
-非负项即得 (R173)。严格号来自正的绝对连续 preimage；一般概率 preimage
-给非严格号。
+非负项即得 (R173)。本轮只使用并主张非严格号；若要升级为严格号，还需另加
+角向条件分布的非退化证明。
 
 ## 与原始 `P_3K` 的关系
 
@@ -74,7 +74,7 @@ R102 的最强可用工作定义是 analytic log-MGF charge：
 
 特别是
 
-`|[z^d]P_3K_MGF(g;z)| < t^(d/2)/sqrt(d!)`.
+`|[z^d]P_3K_MGF(g;z)| <= t^(d/2)/sqrt(d!)`.
 
 这不是把 log-MGF charge 识别成空间 `ell_3^sp`；空间对象仍须单独处理。
 历史工作日志把 R102 定义记为“从早期 R4 恢复”，但早期 R4 原文并未随仓库保存，
@@ -94,7 +94,7 @@ R102 的最强可用工作定义是 analytic log-MGF charge：
 ## 证据等级
 
 - `PROVED UNDER GENUINE FULL-EXACT + FULL-SF HYPOTHESES`：linear-window 的
-  combinatorial no-mixing、R173 cone budget 和 strict one-mode wall。
+  combinatorial no-mixing、R173 cone budget 和非严格 one-mode wall。
 - `PROVED / LOCALLY AUDITED`：R101 的 genuine angular cone、OU intertwining 及
   R102 工作定义下的 coefficient conversion。
 - `CONDITIONAL`：从 bare scalar `RK=1` 进入 genuine full-exact/full-SF 类。

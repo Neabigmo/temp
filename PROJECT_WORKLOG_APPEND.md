@@ -6720,10 +6720,18 @@ cubic angular charge 都无 nonlinear mixing：
 `beta_(m,1)=Lambda_m a_m`，其中 `Lambda_m>0`。因此任何 genuine positive
 `t`-preimage 都满足 finite-window 预算
 `sum_(m odd,d<=m<3d)Lambda_m^2 t^(-m)a_m(g)^2<=1`，特别是
-`|a_d(g)|<t^(d/2)/Lambda_d`。在 R102 工作定义下，这等价给出
-`|[z^d]P_3K_MGF(g;z)|<t^(d/2)/sqrt(d!)`。
+`|a_d(g)|<=t^(d/2)/Lambda_d`。在 R102 工作定义下，这等价给出
+`|[z^d]P_3K_MGF(g;z)|<=t^(d/2)/sqrt(d!)`。本轮不额外主张角向 cone 的严格号。
 
 这条结果的证据等级为 `PROVED UNDER GENUINE FULL-EXACT + FULL-SF HYPOTHESES`，
 本机精确 degree/parity support audit 已通过。它把 R101 的全阶 cone 具体化为
 首个 odd sector 的整段高 Hermite 约束，但不能阻止 `d_N` 随塔深度逃向无穷，也不
 能关闭 bare `RK=1` 接口或最终 rigidity；整体独立完整发表性结论仍为“无”。
+
+### R173 网页端回执状态（2026-09-09）
+
+R173 审查任务已尝试发送到同一历史对话，但回读仍停留在 R172，未出现 R173
+用户消息或 assistant 理论正文，线程此前状态为 `systemError`。故网页端尚未审查
+这条高阶 cone lemma；本机只记录“未获理论回执”，不把网页故障当成数学否定。若
+网页恢复，下一次应先读取 R173，再审查 `d<=m<3d` 的 no-mixing 与 `d_N` escape
+缺口；在此之前以本机提交为准。
