@@ -12670,3 +12670,18 @@ R175 经恢复重试后已进入网页历史，但线程再次返回 `systemErro
 R178 短提示未进入网页历史；回读仍停留在 R177，网页线程没有生成 assistant
 理论正文。本机不把网页错误当数学否定，也不重复刷同一任务；R178 以本机推导和
 R177 精确审计为准。
+
+## 83.46 R179：OU 齐次 backward wall 的 no-go（2026-09-09）
+
+网页端 R179 的发送调用返回成功但未进入历史，回读仍停留在 R178 并标为
+`systemError`；本机不将其当数学审查。R179 本机新增尺度型 no-go：若存在 genuine
+full-exact 非高斯 exact law `h`，且前向 OU 闭包，则 `P_(q^N)h` 自动给出任意深
+varying-bottom 塔；任意 Hermite/角向齐次多项式按总 grade `M` 缩放为
+`t^(M/2)`，所以 `sum t^(-M)|Gamma(P_t h)|^2` 恰好等于底层 `sum|Gamma(h)|^2`。
+
+特别地，R173 的 linear-window cone 与 R176/R177 的 `C_d a_d^2<=t^d` 在 OU 轨道
+上都会变成 `N` 无关的单律约束。因而这些 wall 无论提高阶数或改善渐近，均不能
+单独关闭 varying-bottom；研究主轴应回到 single-law exclusion、formal-to-genuine
+尾部桥、bare `RK=1=>all-row` 或原始 `P_3K` identification。该结论在
+`r179_homogeneous_wall_scale_no_go` 中有精确有理数审计，证据等级为
+`PROVED UNDER STATED GENUINE HYPOTHESES`；整体发表性仍为“无”。

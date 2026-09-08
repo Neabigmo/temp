@@ -6855,3 +6855,18 @@ R175 经过一次短消息恢复重试后已进入同一网页研究历史，但
 R178 短提示未进入网页历史；回读仍停留在 R177，网页线程没有生成 assistant 理论
 正文。本轮因此不再重复投递，R178 只记为本机已推导、已做尺度 sanity check、网页
 未审查；桥接自检正常不等于网页理论回执。
+
+### R179：OU 齐次 backward wall 的 no-go（2026-09-09）
+
+网页端 R179 发送调用返回成功但没有进入历史，线程随后仍返回 `systemError`；这不是
+数学回执。本机转而把下一条真正的理论推进写成 `r179_homogeneous_wall_scale_no_go`：
+若存在一个 genuine full-exact 非高斯 exact law `h`，且类对前向 OU 闭包，则
+`g_N^(j)=P_(q^(N-j))h` 自动生成任意深塔。对 Hermite/角向系数的标准权重，任意
+齐次多项式都按其总 Hermite grade 缩放；故 R173 的 cone budget、R176/R177 的
+`C_d a_d(g)^2<=t^d` 在 `g=P_t h` 上分别精确约化为 `N` 无关的底层约束。
+
+这给出 `PROVED UNDER STATED GENUINE HYPOTHESES` 的尺度型 no-go：继续提高齐次
+backward wall 的阶数或改善 `C_d` 渐近，不能单独排除 varying-bottom；必须回到单个
+genuine exact law 的排除、formal-to-genuine 尾部桥、bare `RK=1=>all-row`，或
+原始 `P_3K` 对象溯源。`audit_r179.js` 用有理数精确核验各类缩放恒等式；整体发表性
+判断仍为“无”。

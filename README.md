@@ -160,3 +160,9 @@ R178 给出 R177 系数下界的 Stirling 尺度：
 排除；整体发表性判断仍为“无”。
 
 R178 网页短提示未形成理论回执，线程仍返回错误；本机不将该状态当作数学否定。
+
+R179 网页发送调用再次未形成历史回执。本机新增 `r179_homogeneous_wall_scale_no_go`：
+证明所有 OU 齐次 backward wall 在由单个 genuine exact law 生成的塔上都约化为
+底层的 `N` 无关约束，因此不能单独排除 varying-degree/tower escape。下一主轴回到
+single-law exclusion、formal-to-genuine、`RK=1=>all-row` 或原始 `P_3K` 溯源；整体
+发表性判断仍为“无”。
