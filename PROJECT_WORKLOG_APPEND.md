@@ -6630,3 +6630,18 @@ non-flat，或构造满足全部 exact/positive 约束的 flat-orbit law。R169 
 `PROVED UNDER STATED ANALYTIC HYPOTHESES`，审计脚本通过首项/余项、几何序列和
 L2 指数检查；它不证明 `P_3K=ell_3^sp`，不处理 `m_3=0` 的 non-flatness，也不
 改变整体发表性判断“无”。
+
+### R170 首个非零 odd sector 的空间 non-flatness（2026-09-09）
+
+本机在 R169 的解析零点归约上继续推进。对 genuine analytic full-SF law，若 `d`
+是首个非零 odd cumulant，则 SF 偶阶递推先消去 `a_4,...,a_(2d-2)`。在空间
+`ell_3^sp(P_(r^2)h)=<log(P_(r^2)h),psi_3>` 可逐项展开的假设下，`d=3` 有
+`a_3r^3` 首项；`d>=5` 时线性项为零，唯一可能的 `r^(3d)` 二次 `(d,2d)` 通道
+因 Hermite 度数 `d+3<2d` 无法投影到 `psi_3`，而三次 `(d,d,d)` 通道给出
+`(T_d/3)a_d^3r^(3d)`，其中 `T_d=<psi_d^3,psi_3>>0`。因此空间 charge
+轨道在该假设下必 non-flat，R169 的固定-q 最终层结论扩展到所有首个 odd sector。
+
+`audit_r170.py` 通过组合式正性、二次度数排除、首个三次阶和 tower 缩放检查。
+证据等级为 `PROVED UNDER STATED ANALYTIC FULL-SF HYPOTHESES`；空间逐项解析性、
+原始 `P_3K` 定义、scalar `RK=1` 接口和 genuine asymmetric law existence/exclusion
+仍 OPEN，整体发表性判断保持“无”。

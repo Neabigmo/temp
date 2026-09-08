@@ -20,6 +20,7 @@
 14. `r168_spatial_ou_persistence_audit/README.md`：空间 `ell_3=<log g,psi_3>` 的小-t 非消失与固定-q 最终层 persistence。
 15. `r158_global_publication_audit/README.md`：全局证据等级与诚实的发表性审计。
 16. `r169_spatial_ou_zero_accumulation_audit/README.md`：空间 charge 沿 OU 轨道的解析非 flatness 与固定-q 零点归约。
+17. `r170_spatial_odd_sector_nonflat_audit/README.md`：首个非零 odd sector 对空间 `ell_3` 非 flatness 的条件性定理。
 
 ## 分支体系
 

@@ -146,6 +146,22 @@ spatial `P_3 K` 三座桥。
 
 **无（目前没有足够独立、完整、可审稿的发表性结果）**。
 
+## 12. R170：空间 odd-sector non-flatness 的进一步条件性闭合（2026-09-09）
+
+在 genuine analytic full-SF 假设、且空间 charge 明确为
+`ell_3^sp=<log g,psi_3>` 时，本机 R170 把 R169 的 non-flatness 假设推进为一个
+首个 odd sector theorem：`d=3` 的 leading term 是 `a_3r^3`；`d>=5` 时 SF 消去
+低阶偶坐标，二次 `(d,2d)` 通道不能投影到 `psi_3`，三次通道给出严格正的
+`T_d a_d^3/3` 系数。因此固定-q varying-bottom 的 spatial 离散 persistence 在
+这些假设下不再依赖 `m_3!=0`。
+
+这仍不是原始问题的闭合：空间逐项 log 解析性尚未由 exact tail 自动推出，原始
+`P_3K` 的定义与 `ell_3^sp` 的关系尚需确认，`RK=1=>full-exact/all-row` 和
+asymmetric genuine exact law 的存在/排除仍 OPEN。故 R170 是可写入论文的条件性
+局部 theorem/reduction，而全局独立、完整、可审稿发表性判断仍为：
+
+**无（目前没有足够独立、完整、可审稿的发表性结果）**。
+
 ## 11. R168：空间 charge 局部 persistence 与全局发表性复核（2026-09-09）
 
 本机 R168 对 R132 的 log-density 弱桥接作了一个有限范围的离散化：若明确把

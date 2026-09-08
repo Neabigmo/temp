@@ -12370,3 +12370,27 @@ non-flat；若 flat，则需构造满足 exact/positive 约束的 flat-orbit law
 R169 的解析性前提是否可由 genuine all-row square-exponential tail 推出，并判断
 原始空间 charge 是否确实属于该轨道。不得将“消息进入历史”或网页 `systemError`
 当作数学回执。
+
+## 83.28 R170：首个非零 odd sector 强制空间 log-density non-flatness（2026-09-09）
+
+本机进一步审计 R169 的 non-flatness 缺口。在 genuine centered/variance-one、
+`L^2`、原点解析的 normalized Bargmann log 和 full same-factor identity 下，若
+`d>=3` 是首个非零 odd cumulant，则 SF 的偶阶递推给出
+`a_4=a_6=...=a_(2d-2)=0`。令 `u_r=P_(r^2)h-1`，并假设空间 log 投影的
+`log(1+u_r)` 级数可逐项展开到所需阶数，则：
+
+* `d=3` 时 `ell_3^sp(P_(r^2)h)=a_3r^3+O(r^4)`，R132 给出更精确的 cubic coefficient；
+* `d>=5` 时，线性项因 `a_3=0` 消失，二次项只可能先遇到 `(d,2d)`，但
+  `<psi_d psi_(2d),psi_3>=0`（因为 `d+3<2d`），四次及以上项阶数至少 `4d`，
+  因而首项为 `(T_d/3)a_d^3r^(3d)`，其中 `T_d=<psi_d^3,psi_3> >0`。
+
+显式 Hermite product formula 给出 `T_d` 为四个正 summand 的和；本机
+`audit_r170.py` 已核验其正性、二次度数排除和 R169 tower 缩放。于是若原始
+`P_3K_sp` 确实定义为 `ell_3^sp`，R169 的固定-q 归约可覆盖所有首个 odd sector，
+而不再只覆盖 `m_3!=0`。证据等级为
+`PROVED UNDER STATED ANALYTIC FULL-SF HYPOTHESES`。
+
+仍不能跨越：空间 log 逐项解析性是否由 exact square-exponential tail 自动推出、
+原始 `P_3K` 的定义、`RK=1=>full-exact/all-row`、以及 asymmetric genuine exact
+law 的存在/排除。故这是一条可写入论文的条件性 theorem/reduction，整体独立、
+完整、可审稿发表性判断仍为“无”。
