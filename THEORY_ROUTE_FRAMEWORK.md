@@ -12575,6 +12575,41 @@ R174 的全阶正性可以精确化成一个有限二项式相关不等式。对
 `PROVED EXACT REDUCTION + LOCALLY EXACT-AUDITED`，没有关闭 `d_N` 逃逸、bare
 `RK=1`、原始 `P_3K` provenance 或最终 rigidity，整体发表性判断仍为“无”。
 
+## 83.40 R176：所有 odd `d` 的 `C_d>0` 全阶证明（2026-09-09）
+
+R175 的单一模 3 相关 gap 可以完全解决。令 `omega=exp(2*pi*i/3)`、`d=2s+1`，
+`Q(x)=(1+x)(1+omega*x)`，`q_m=[x^m]Q(x)^d`。有
+
+`q_d=sum_j binom(d,j)^2 omega^j`,
+`q_(d-3)=sum_j binom(d,j)binom(d,j+3)omega^j`。
+
+对 `J_d={j:j=-d mod 3}` 的 root filter，令 `X=omega^d q_d`、
+`Y=omega^d q_(d-3)`、`A=binom(2d,d)`、`T=binom(2d,d-3)`，则
+
+`S_0=(A+2X)/3`, `S_3=(T+2Y)/3`,
+`Delta_d=D S_3-n S_0=(2/3)(D Y-n X)`,
+
+其中 `n=d(d-1)(d-2)`、`D=(d+1)(d+2)(d+3)`，且 `T/A=n/D`。
+
+作 `x=omega(1+y)/2`，利用 `1+omega=-omega^2` 得
+`Q(x)=(y^2+3)/4`。因此在 `Q(x)^d` 的 `x^d` 系数中所有非零项同为负号，
+在 `x^(d-1)` 系数中所有非零项同为正号。于是
+`X=omega^d q_d<0`，`Z=omega^(d-1)q_(d-1)>0`。
+
+系数递推 `Qq'=dQ'q` 在中心三项上给出
+
+`omega^d(Dq_(d-3)-nq_d)=d*((d+1)^2 Z+d(5-d)X)`。
+
+`d>=5` 时右端严格正；`d=3` 直接为 `162`。故 `Delta_d>0` 对所有 odd
+`d>=3`，从而 R174 的 `C_d>0` 已由有限实例升级为全阶定理。新增
+`r176_all_d_cross_constant_positivity`，其 `audit_r176.js` 用整数算术核验
+R176-1 至 R176-3 和 odd `3<=d<=501`。
+
+证据等级为 `PROVED UNDER GENUINE FULL-EXACT + FULL-SF`。这条结果真正关闭了
+R174 的系数正性缺口，但仍不关闭 `d_N` escape、bare `RK=1=>full-exact/all-row`、
+原始 `P_3K` provenance、对称 even sector 或非 Gaussian genuine exact law；整体
+发表性判断仍为“无”。
+
 ## 83.39 R175 网页端回执状态（2026-09-09）
 
 R175 经恢复重试后已进入网页历史，但线程再次返回 `systemError`，没有 assistant

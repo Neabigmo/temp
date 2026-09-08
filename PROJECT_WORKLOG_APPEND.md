@@ -6775,6 +6775,30 @@ R174 审查任务经后续回读已进入网页历史，但仍未出现 assistan
 `Delta_d>0` 对所有 odd `d`、`d_N` 逃逸、bare `RK=1` 接口和原始 `P_3K` 身份仍
 OPEN，整体发表性判断仍为“无”。
 
+### R176：所有 odd `d` 的 `C_d>0`（2026-09-09）
+
+本轮找到并核验了 R175 组合缺口的全阶证明。令 `omega^3=1`、`d=2s+1`，
+`Q(x)=(1+x)(1+omega*x)`，`q_m=[x^m]Q(x)^d`。root-of-unity filter 给出
+`S_0=(A+2X)/3`、`S_3=(T+2Y)/3`，其中 `X=omega^d q_d`、
+`Y=omega^d q_(d-3)`、`A=binom(2d,d)`、`T=binom(2d,d-3)`，从而
+`Delta_d=(2/3)(D Y-n X)`，`n=d(d-1)(d-2)`、`D=(d+1)(d+2)(d+3)`。
+
+作 `x=omega(1+y)/2` 后有 `Q(x)=(y^2+3)/4`。由于 `Q(x)^d` 只含偶次 `y`
+幂，中心系数的展开中所有非零项同号：`X<0`，并且
+`Z=omega^(d-1)q_(d-1)>0`。由 `Qq'=dQ'q` 在中心附近的三项递推，精确得到
+
+`omega^d(Dq_(d-3)-nq_d)=d*((d+1)^2 Z+d(5-d)X)`。
+
+对 `d>=5` 右端严格为正（第一项正，第二项非负）；`d=3` 直接为 `162`。因而
+`Delta_d>0`，进而 R174 的 `C_d>0` 对所有 odd `d>=3` 成立，而非只对
+`d=3,5,7`。新增 `r176_all_d_cross_constant_positivity/README.md` 和
+`audit_r176.js`，用整数等式核验该推导及 odd `3<=d<=501`。
+
+证据等级升级为 `PROVED UNDER GENUINE FULL-EXACT + FULL-SF` 的全阶
+cross-harmonic wall；这仍不是原始题设的完整解，因为 `RK=1=>full-exact/all-row`
+及原始 `P_3K` identification、`d_N` escape 和非 Gaussian genuine exact law
+仍 OPEN。整体独立完整发表性判断暂不改变，仍为“无”。
+
 ### R175 网页端回执状态（2026-09-09）
 
 R175 经过一次短消息恢复重试后已进入同一网页研究历史，但网页线程再次返回
