@@ -12184,3 +12184,23 @@ R163 已进入同一网页研究历史并短暂处于活动状态，但随后回
 确认没有生成 assistant 理论正文。因此本轮只记为网页回执故障，不把它解释成
 数学结论。继续研究时应以 `d943f5b` 中的 formal majorant lemma 为本机权威版本，
 等待网页端对其作出逐项审查。
+
+## 83.18 回到原始主轴：genuine backward charge cone（2026-09-09）
+
+网页端 R163 仍无 assistant 理论正文。为避免把 R158-A scalar majorant 当成原始
+rigidity，本轮重新整合 R99–R102 的 genuine 结果：对 full-exact 三拷贝 law 的
+角向 charge `chi_r` 与 Hermite 系数 `beta_(m,r)`，正性给出点态 Herglotz 锥；
+若 `g=P_t h` 且两者均为 genuine full-exact，则
+
+`sum_(m>=3|r|, m congruent r (mod 2)) t^(-m)|beta_(m,r)(g)|^2 <= 1`。
+
+对 `r=1` 且 `d` 为首个非零奇阶，有
+`beta_(d,1)=Lambda_d a_d`、`Lambda_d>0`，所以固定 asymmetric genuine base
+具有严格正的最小 backward 参数。这是直接作用于正 backward preimage 的全阶高
+Hermite 系数预算，比 R158-A 更贴近原始主命题；R100 的低阶深度证书是其投影。
+
+仍未闭合的最小桥是：在 `P_3K(g^(0))!=0` 且 `g^(0)->1` 的 varying-bottom
+情形，证明归一化 primitive angular charge 不塌缩，或构造满足全部 exact/positive
+约束的 charge-collapse obstruction。`P_3K` 与 `chi_1` 的零集关系不能替代定量
+下界；本条路线仍不解决 genuine full-exact 之外的 scalar `RK=1` 接口、全阶
+对称 even-sector 或空间桥。整体发表性结论不变。

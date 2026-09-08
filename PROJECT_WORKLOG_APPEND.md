@@ -6503,3 +6503,19 @@ lemma 的逐项证明审查。消息进入同一历史对话并短暂显示活�
 系统错误；读取确认没有生成 assistant 理论正文。因此 R163 不计为数学成果，
 也不把网页故障当作原始命题的 `OPEN` 证明。当前可用的数学证据仍以 R158-A
 条件性 lemma 与本机审计为准。
+
+### R164 回到 genuine backward charge cone 主轴（2026-09-09）
+
+网页端 R163 仍无理论正文。本轮全局复盘后不继续扩大 R158-A 的 scalar
+majorant，而重新接回 R99–R102：在 genuine full-exact 三拷贝 law 下，角向
+Herglotz/Parseval 锥与 OU intertwining 给出
+`sum_(m>=3|r|, m congruent r (mod 2)) t^(-m)|beta_(m,r)(g)|^2 <= 1`
+对每个 genuine positive `t`-preimage 成立。若 `r=1` 且 `d` 是首个非零奇阶，
+则 `beta_(d,1)=Lambda_d a_d`、`Lambda_d>0`，从而得到固定 asymmetric base 的
+严格 backward 深度上界。
+
+这条结果直接约束 positive backward preimage 的高 Hermite 系数，较 scalar
+majorant 更接近原始命题。当前唯一缺口改写为 varying-bottom 情形下
+`P_3K!=0` 是否迫使归一化 primitive angular charge 不塌缩；若不能，则需构造
+满足全部 exact/positive 约束的 charge-collapse obstruction。R99–R102 已有公式
+仍不能单独完成最终 rigidity。

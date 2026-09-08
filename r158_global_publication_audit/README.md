@@ -178,3 +178,34 @@ full-SF 全阶 reduction、Hermite 同归一化、formal-to-genuine-law 和首�
 
 网页端恢复后的唯一任务仍是：逐行审查上述 formal-interface lemma，并在每一条
 前提无法从原始对象推出时给出最小缺口；不要以网页无回执或有限数值替代证明。
+
+## 9. 回到原始主轴：genuine 高 Hermite/角向 Herglotz 锥（2026-09-09）
+
+为避免把 R158-A 的 scalar majorant 当成主命题本身，需要重新把 R99–R102 的
+genuine backward-cone 结果放回全局路线。对 genuine full-exact 三拷贝 law `mu`，
+定义角向 Fourier charge `nu_r`、密度 `chi_r` 及 Hermite 系数 `beta_(m,r)`。
+正性给出点态 Toeplitz/Herglotz 锥；若 `mu=P_t nu` 且两者都属于 genuine
+full-exact 类，则 OU intertwining 与 Parseval 严格给出
+
+`sum_(m>=3|r|, m congruent r (mod 2)) t^(-m)|beta_(m,r)(mu)|^2 <= 1`.
+
+这是真正作用于 backward preimage 的全阶高 Hermite 系数预算，不是 relaxed
+Hankel ghost 或有限形式递推。对 `r=1`，若 `d` 是第一个非零奇 Hermite 阶，
+则 `beta_(d,1)=Lambda_d a_d` 且 `Lambda_d>0`；因此任意固定 asymmetric genuine
+base 都有严格正的最小可逆 OU 参数/最大 backward 深度。R100 的
+`F_m(t;g)>0` 与 skew–kurtosis 唯一根证书是这个全阶锥的低阶投影。
+
+这条线比 R158-A 更直接地触及原始 positive backward-tower：若能证明 primitive
+angular charge 在 `g^(0)->1` 的归一化下不塌缩，便可直接排除任意深 tower。当前
+不能偷换的是：`P_3K`（log-cumulant/spatial charge）与 `chi_1` 的零集等价需要
+genuine full-exact、解析性和 moment-determinacy；其**定量非退化下界**仍 OPEN，
+且 varying-bottom sequence 允许各自的 charge budget 趋向零。故这条线给出了比
+scalar majorant 更贴近主命题的最小 OPEN：
+
+`P_3K(g^(0)) != 0  ->  a normalized primitive angular charge lower bound`
+
+或一个满足全部已知 exact/positive 约束的 charge-collapse obstruction。R99–R102
+的已闭合公式可以写入论文的 genuine necessary-condition 部分；它们仍不能单独
+推出最终 rigidity。整体发表性结论保持：
+
+**无（目前没有足够独立、完整、可审稿的发表性结果）**。
