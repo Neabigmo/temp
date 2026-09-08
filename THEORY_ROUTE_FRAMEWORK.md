@@ -12512,3 +12512,35 @@ R173 审查任务尝试发送到同一历史对话后，回读仍停留在 R172�
 消息或 assistant 理论正文，线程此前状态为 `systemError`。网页端尚未审查 R173；
 本机只记为“未获理论回执”，不把网页故障当作数学否定。后续网页恢复时应先读取
 R173，再继续检查其 no-mixing、cone budget 和 `d_N` 逃逸边界。
+
+## 83.36 R174：`2d` 阶 cross-harmonic backward wall（2026-09-09）
+
+R173 的 linear window 在 `2d` 阶遇到第一个真正 nonlinear interface。本机定义
+`c_(n,r)=3*6^(-n/2) binom(n,(n-3r)/2)`（非法二项式取零），并令
+`A_d=c_(2d,0)`、`B_d=sum_(r odd)c_(d,r)c_(d,-r)`、
+`H_d=sum_(r odd)c_(d,r)c_(d,2-r)`、`L_d=c_(2d,2)`。支持与 parity 分类表明，
+在 `beta_(2d,2)` 中只有线性 `(2d,0,0)` 和 quadratic `(d,d,0)`：
+
+`beta_(2d,2)=L_d a_(2d)+Q_d a_d^2`,
+`Q_d=sqrt((2d)!)/d! * (H_d-L_d)/2`.
+
+若 `g=P_t h` 且两者 genuine full-exact，`r=2` 的 Herglotz/Parseval cone 与 OU
+intertwining 给出精确 wall
+
+`|L_d a_(2d)(g)+Q_d a_d(g)^2| <= t^d`.       (R174-B)
+
+另一方面，full-SF 的 `z^(2d)` 比较给出
+
+`a_(2d)=sqrt((2d)!)/(2*d!)*(1-B_d/A_d)*a_d^2`.       (R174-C)
+
+故有
+
+`|C_d|a_d(g)^2<=t^d`,
+`C_d=sqrt((2d)!)/(2*d!)*(H_d-L_d*B_d/A_d)`.
+
+这条 `PROVED UNDER GENUINE FULL-EXACT + FULL-SF` 的 cross-harmonic wall 在
+`d=3,5,7` 的正性常数已由 `r174_cross_harmonic_2d_wall/audit_r174.py` 精确核验：
+`C_3=3sqrt(5)/80`、`C_5=25sqrt(7)/448`、
+`C_7=245sqrt(858)/41472`。所有 `d` 的 `C_d>0` 尚未证明，故不得把该有限表
+升级为全阶 uniform 结论。R174 仍不能关闭 `d_N` escape、bare `RK=1` 接口、
+对称 even sector 或非 Gaussian exact law 排除。

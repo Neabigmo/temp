@@ -6735,3 +6735,19 @@ R173 审查任务已尝试发送到同一历史对话，但回读仍停留在 R1
 这条高阶 cone lemma；本机只记录“未获理论回执”，不把网页故障当成数学否定。若
 网页恢复，下一次应先读取 R173，再审查 `d<=m<3d` 的 no-mixing 与 `d_N` escape
 缺口；在此之前以本机提交为准。
+
+### R174 `2d` 阶 cross-harmonic backward wall（2026-09-09）
+
+R173 之后本机把 same-factor identity 推到首个 nonlinear threshold。用 D3 根滤波
+系数 `c_(n,r)=3*6^(-n/2)binom(n,(n-3r)/2)`，支持分类给出
+`beta_(2d,2)=L_d a_(2d)+Q_d a_d^2`，其中
+`Q_d=sqrt((2d)!)/d!*(H_d-L_d)/2`。若存在 genuine positive `t`-preimage，则
+`|L_d a_(2d)(g)+Q_d a_d(g)^2|<=t^d`。full-SF 的 `z^(2d)` 系数比较又给出
+`a_(2d)=sqrt((2d)!)/(2*d!)*(1-B_d/A_d)a_d^2`，从而
+`|C_d|a_d(g)^2<=t^d`，其中
+`C_d=sqrt((2d)!)/(2*d!)*(H_d-L_dB_d/A_d)`。
+
+`r174_cross_harmonic_2d_wall/audit_r174.py` 已精确核验支持、闭合公式及
+`d=3,5,7` 的正性常数。证据等级为 `PROVED UNDER GENUINE FULL-EXACT + FULL-SF`
+（所有 `d` 的 `C_d>0` 仍 OPEN）；该 wall 不能关闭 `d_N` escape、bare `RK=1`
+接口或最终 rigidity，整体发表性结论仍为“无”。
