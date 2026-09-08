@@ -6909,3 +6909,19 @@ OU 缩放 `C_(o,t)(z)=C_o(sqrt(t)z)`、`R_Delta(t)=R_Delta/sqrt(t)` 说明同步
 选取 Cauchy 半径时该不等式仍只是底层约束，不会关闭塔。证据等级为
 `PROVED UNDER HADAMARD + R150 HYPOTHESES`，审计 marker 为
 `R181_CAUCHY_REPLENISHMENT_BRIDGE_PASSED`；整体发表性判断仍为“无”。
+
+### R182：第一非配对零点壳的正下密度 odd-tail 下界（2026-09-09）
+
+网页端 R182 发送调用成功但未形成理论正文；本机继续推进零点尾接口。若第一
+非配对零点壳半径为 `R_Delta`，重数差为 `delta_j`，则归一化 odd cumulants 是
+有限单位圆指数和 `A_k`。Cesàro 正交性给出 `mean|A_k|^2=S_2=sum|delta_j|^2`；
+由 `|A_k|<=B=sum|delta_j|`，至少有下密度
+`p_0=(S_2/2)/(B^2-S_2/2)` 的阶次满足 `|A_k|>=sqrt(S_2/2)`。第一壳外的
+严格半径间隙使其误差指数衰减，故在正下密度子序列上
+
+`|kappa_(2k+1)|/(2k)! >= (sqrt(S_2/2)/2)R_Delta^(-(2k+1))`。
+
+这比单纯 limsup 更强，排除了“odd tail 只在极稀疏阶次出现”的逃逸；但第一壳
+半径、壳强度与 R150 的 `eta_d(a)` 仍无联合 uniform 控制，故尚未关闭无限尾
+escape。`audit_r182.js` 已通过周期指数和、密度估计、外壳衰减和 OU 换元审计；
+整体发表性判断仍为“无”。

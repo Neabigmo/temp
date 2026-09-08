@@ -176,3 +176,8 @@ Hankel 相容性问题。新增 `r180_infinite_odd_tail_escape_dichotomy`，整�
 R181 网页发送调用未形成理论正文。本机新增 `r181_cauchy_replenishment_bridge`，
 以 Cauchy 估计把非配对零点半径与 R150 的高 odd replenishment 阈值接成精确不等式；
 剩余缺口是联合 uniform 控制，不是更多低阶展开。整体发表性判断仍为“无”。
+
+R182 网页发送调用未形成理论正文。本机新增
+`r182_positive_density_zero_shell_tail`，将第一非配对零点壳的 odd-cumulant
+下界加强为正下密度子序列结果；它排除了极稀疏尾部逃逸，但仍未形成 uniform
+正性矛盾，整体发表性判断仍为“无”。

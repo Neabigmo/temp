@@ -12718,3 +12718,17 @@ Hankel cone 不相容，或构造 genuine obstruction。新增
 OU 同步缩放 Cauchy 半径后也只还原底层约束。它把下一真正目标具体化为
 `M_o` 与 `eta_d` 的联合比较，证据等级为 `PROVED UNDER HADAMARD + R150
 HYPOTHESES`；整体发表性仍为“无”。
+
+## 83.49 R182：第一非配对零点壳的正下密度 odd-tail 下界（2026-09-09）
+
+网页端 R182 发送调用成功但未形成理论正文；本机新增
+`r182_positive_density_zero_shell_tail`。若第一非配对零点壳半径为 `R_Delta`，
+其归一化 odd cumulants 是有限单位圆指数和 `A_k`。Cesàro 正交性与有界性给出
+正下密度 `p_0=(S_2/2)/(B^2-S_2/2)` 的 `|A_k|>=sqrt(S_2/2)`；第一壳外的
+半径间隙再给出正下密度子序列上的
+`|kappa_(2k+1)|/(2k)! >= const*R_Delta^(-(2k+1))`。
+
+这排除了极稀疏 odd-tail escape，但仍不能给出与 R150 `eta_d(a)` 的联合 uniform
+矛盾，因为 `R_Delta` 和第一壳强度可随 law 改变。证据等级为
+`PROVED UNDER HADAMARD SQUARE-EXPONENTIAL HYPOTHESES`，审计已通过，整体发表性
+仍为“无”。
