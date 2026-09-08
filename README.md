@@ -100,3 +100,7 @@ R171 又削弱了 R170 的前提：只需有限阶 log Taylor 渐近，不需完
 可控制三阶余项；在 full-SF 消去低阶 even modes 后，所有首个 odd sector 仍给出
 空间 `ell_3` 的非零 leading term。该结果仍要求原始空间 charge convention 和
 genuine full-SF/all-row，不能推出 bare `RK=1` 或最终 rigidity。
+
+R171 的网页审查尚未进入历史；回读仍停留在 R170 且线程为 `systemError`，没有网页端
+理论正文。本机 R171 已把 R170 的完整解析性要求削弱为 exact-tail 下的有限阶 log
+渐近，但它仍是条件性结果，不能写成网页端已确认结论。

@@ -6671,3 +6671,10 @@ R132 的 exact-row square-exponential tail/Mehler positivity 下界，以及 Meh
 `PROVED UNDER STATED GENUINE ALL-ROW + FULL-SF HYPOTHESES`。网页端仍需审查完整的
 weighted-tail 估计；原始 `P_3K` 定义、scalar `RK=1` 接口和 genuine asymmetric law
 存在/排除仍 OPEN，整体发表性判断保持“无”。
+
+### R171 网页端投递状态（2026-09-09）
+
+R171 具体审查任务尝试发送到同一网页研究对话，但回读历史仍为 R170，线程状态为
+`systemError`，没有 R171 用户消息或 assistant 理论正文。故网页端尚未审查 R171；
+本机 tail-based 有限阶证明以提交 `44e77a4` 为准，不把网页故障当作数学结论，也
+不重复投递同一任务。

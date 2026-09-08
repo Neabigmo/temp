@@ -12425,3 +12425,11 @@ Hermite 组合式正性、余项阶数和固定-q tower 缩放。证据等级为
 `PROVED UNDER STATED GENUINE ALL-ROW + FULL-SF HYPOTHESES`；解析估计仍需网页端
 逐行审查。原始 `P_3K` 定义、`RK=1=>all-row`、非 Gaussian genuine law 的存在/排除
 和最终 rigidity 仍 OPEN，整体发表性判断仍为“无”。
+
+## 83.31 R171 网页端投递状态（2026-09-09）
+
+R171 的具体审查任务尝试发送到同一网页研究对话，但回读历史仍停留在 R170，
+线程状态为 `systemError`，没有出现 R171 用户消息或 assistant 理论正文。因此
+网页端尚未审查 R171；本机 `44e77a4` 的 tail-based 有限阶证明只记为本机条件性
+理论，不升级为网页端确认。整体发表性判断仍为“无”，网页恢复后应先确认 R171
+是否真正进入历史。
