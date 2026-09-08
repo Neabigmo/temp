@@ -99,9 +99,8 @@ def solve_even_factor(d: int, order: int) -> dict[int, sp.Expr]:
         for radius in radii:
             updated = [Laurent.zero() for _ in range(n + 1)]
             for degree in range(n + 1):
-                for k in range(degree + 1):
-                    ak = coefficients.get(k, candidate if k == n else 0)
-                    updated[degree] = updated[degree] + radius.power(k).scale(ak)
+                ak = coefficients.get(degree, candidate if degree == n else 0)
+                updated[degree] = radius.power(degree).scale(ak)
             product = [
                 sum((product[degree - k] * updated[k]
                      for k in range(degree + 1)), Laurent.zero())
@@ -167,8 +166,7 @@ def check_formal_shape() -> None:
     product = [Laurent.one()] + [Laurent.zero() for _ in range(order)]
     for radius in radii:
         updated = [
-            sum((radius.power(k).scale(even_factor[k])
-                 for k in range(degree + 1)), Laurent.zero())
+            radius.power(degree).scale(even_factor[degree])
             for degree in range(order + 1)
         ]
         product = [

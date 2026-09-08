@@ -6305,9 +6305,9 @@ Laurent-polynomial 模型中，固定 odd `d`、`E_d(t)=exp(t)A_d(t^2)`，验证
 审计范围为 `d=5,7,9,11`、`n=1,...,8` 的 `mu_{d,n}` 与 `Delta_{d,n}` 的正性，以及 `d=5` 到 `s^3` 的
 exact formal recursion/residual。具体得到
 
-`A_5(s)=1-(2617/84)s+(54284751977/186234048)s^2`
+`A_5(s)=1-(25/84)s+(14995625/186234048)s^2`
 
-`-(126007733040112291/156514818620160)s^3+O(s^4)`。
+`-(733418534375/31302963724032)s^3+O(s^4)`。
 
 这是一条可复核的结构性 partial lemma，证据等级为
 `PROVED UNDER STATED FINITE FORMAL MODEL / LOCAL-AUDITED`。它仍不触及 R157 的
