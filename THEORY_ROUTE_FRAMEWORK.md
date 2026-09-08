@@ -11926,3 +11926,57 @@ R156 已在同一网页研究对话部署，公开基线为 `9c12b63`；本机�
 所有失败节点逃到 `|x|/sqrt(M)->2` 并将深度比压到 bulk Christoffel 阈值以下，随后
 才进入 `x=2sqrt(M)+sM^(-1/6)` 的 Airy scale。若两者均无法证明，只保留最强 partial
 lemma 并明确 `CONDITIONAL/OPEN`，不把 formal completion 当 genuine law。
+
+## 83.8 R156 本机有限节点审计（2026-09-09）
+
+本机运行 `r156_turning_profile_audit/audit_r156.py`，对 fixed `d=5`、`a=1/50` 的
+formal full-SF sparse completion 计算到 degree `24`，并对 `M=1,...,12` 重放
+`N=2M+1` Gauss--Hermite quadrature。结果通过 sparse completion、quadrature exact
+replay，并确认：
+
+`M=7` 起 Gauss 节点出现负值，但 `Gamma_M` 仍正定；到 `M=12` 时
+`lambda_min(Gamma_M)=0.134921`，而最小节点值为 `-1.442312`，仍没有首个 Gram
+失效层落在本次审计范围内。
+
+脚本另对网页端的 quadratic prefix 做了独立有限复核：`d=5`、`a=10^{-2}`、临界
+`M=9` 时，最小节点值 `-11.079375`、负节点数为 `3`，且
+`lambda_min(Gamma_M)=-5.384434`。这支持“quadratic model 存在 bulk negative block”
+这一模型层结论，但不支持把它升级为 all-order completed branch 的 A。
+
+这是一条有用但严格有限的负结果：
+
+`negative Gauss node != first Hankel/Gram failure`。
+
+它说明 R156 的 A/B 目标不能用 pointwise node sign 代替，也不能由 R154 的
+Christoffel 充分证书反推一般负方向。R137 的抽象 radius-collapse 结论不受影响，
+但其具体 first-failure 层的节点位置与深度仍未得到。该脚本的正式输出为
+`R156_NEGATIVE_NODE_WITH_GRAM_PSD_PASSED`、
+`R156_FIRST_FAILURE_M=NONE_WITHIN_AUDITED_GRADE` 和
+`R156_SCOPE_EXPLICIT`；证据等级继续是 `LOCAL-AUDITED / FORMAL / FINITE-ONLY`，
+不是 genuine law 或 A/B 渐近定理。
+
+因此当前整体发表性判断仍必须写成：
+
+`无（目前没有足够独立、完整、可审稿的发表性结果）`
+
+## 83.9 网页端 R156 完成回执与 R157 部署（2026-09-09）
+
+网页端在读取 `9c12b63` 基线后完成了 R156。其有效贡献应分为三层：第一，给出了
+fixed-`d` sparse formal recursion 的 weighted-homogeneous universal shape 候选
+`B_{d,a}(z)=E_d(az^d)`；第二，重新严格写出 first-failure 的定义、存在性、
+`M_d^sharp(a)->infinity` 以及真实 Gauss node 负值的有限必要条件；第三，在
+quadratic prefix 模型中给出了 bulk negative block 和负特征值裕量的证明框架。
+
+本机已经核验 quadratic prefix 的一个有限实例，但本机对 all-order formal branch 的
+审计显示：`M=7` 起节点可为负而 `Gamma_M` 仍正定。因此网页端的 quadratic
+bulk theorem 必须保留在 `FINITE-ONLY / FORMAL`；它不能直接证明 completed branch
+的 A。网页端也承认 literal edge-escape B 尚未证明，因为 pointwise negative node
+不等于 active negative mass，R155 的 outer-tail certificate obstruction 也不能升级
+成一般 no-go。
+
+网页端给出的下一唯一桥为 **R157 — Universal Sparse-Shape Partial-Sum / Singularity
+Theorem**：研究 `E_d(t)=sum beta_{d,n}t^n` 在 `n` 与 `M` 同阶、且
+`t~sgn(a)(x/sqrt(M))^d tau^(d/2)` 时的全阶联合行为。需要二择一证明 all-order
+bulk negativity 或 all-order bulk positivity；只有后者成立，才有理由把 active
+first-failure mass 推进到 Hermite turning/Airy scale。该目标目前标记为
+`OPEN / WEB-REVIEW`，不是已证定理。

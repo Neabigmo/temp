@@ -6172,6 +6172,25 @@ Toeplitz/coercivity/Christoffel 路线。它明确区分了“技术上有价值
 
 `无（目前没有足够独立、完整、可审稿的发表性结果）`
 
+### R156 网页端完成回执与 R157 部署（2026-09-09）
+
+网页端完成 R156 后给出三项可保留内容：fixed-`d` sparse formal recursion 的
+weighted-homogeneous universal one-variable shape 候选；first-failure 的定义、
+存在性、`M_d^sharp(a)->infinity` 与真实 Gauss-node 负值必要条件；以及 quadratic
+prefix 模型的 bulk negative block/负特征值裕量。网页端明确 literal edge-escape B
+没有证明。
+
+本机 R156 审计已验证 quadratic prefix 的有限实例，但也验证 all-order formal
+completion 在 `M=7,...,12` 可出现负节点而 Gram 仍正定。因此 quadratic 结论不能越级
+成 completed branch 的 A；active negative mass 仍是缺失桥。网页端的结论已按
+`FINITE-ONLY / FORMAL / OPEN` 记录，整体发表性结论仍为“无”。
+
+网页端下一步部署为 **R157 — Universal Sparse-Shape Partial-Sum / Singularity
+Theorem**：研究 universal shape `E_d(t)=sum beta_{d,n}t^n` 在 `n~M` 与
+`t~sgn(a)(x/sqrt(M))^d tau^(d/2)` 下的联合行为，二择一证明全阶 bulk negativity
+或全阶 bulk positivity；只有后者成立后才进入 turning/Airy 分析。R157 目前是
+`OPEN / WEB-REVIEW`。
+
 当前最值得保留为论文候选模块的是 R147--R150 的 dual-regression/反射补偿链和
 R151--R155 的 critical Hermite--Christoffel 链；但 `RK=1=>full-SF/all-row`、genuine
 positive realization、moving-top sign profile 与 spatial `P_3K` bridge 都还没有闭合。
@@ -6210,3 +6229,38 @@ integrand 精确；所有节点值非负则 `Gamma_M` PSD，非 PSD 必出现真
 B，证明负节点逃至 Hermite edge `|x|/sqrt(M)->2` 且深度比逃过 bulk localization
 阈值，再进入 Airy scale。若暂不能证明，必须退回可核验 partial lemma 并标为
 `CONDITIONAL/OPEN`。R155 的发表性判断继续为“无”。
+
+### R156 本机有限计算结果（2026-09-09）
+
+本机修正并运行 `r156_turning_profile_audit/audit_r156.py`。参数为 `d=5`、
+`a=1/50`，full-SF even recursion 只求到 cumulant degree `24`，然后审计
+`M=1,...,12` 的 formal moments、Hermite Gram 与 `2M+1` 个 Gauss--Hermite nodes。
+脚本通过：
+
+`R156_SPARSE_FORMAL_COMPLETION_FINITE_GRADE_PASSED`
+
+`R156_GAUSS_HERMITE_EXACT_REPLAY_PASSED`
+
+`R156_NEGATIVE_NODE_WITH_GRAM_PSD_PASSED`
+
+`R156_QUADRATIC_MODEL_BULK_AUDIT_PASSED`
+
+`R156_AUDIT_COMPLETED`
+
+具体现象是 `M=7` 起节点最小值已经为负，但 Gram 最小特征值仍为正；`M=12` 时
+二者分别为 `-1.442312` 与 `0.134921`，且
+`R156_FIRST_FAILURE_M=NONE_WITHIN_AUDITED_GRADE`。所以当前可核验的有限结论是：
+
+`negative Gauss node != first Hankel/Gram failure`。
+
+脚本还单独复核了网页端的 quadratic prefix：`d=5`、`a=10^{-2}`、临界 `M=9` 时，
+最小节点值为 `-11.079375`、负节点数为 `3`，并有
+`lambda_min(Gamma_M)=-5.384434`。这只核验 finite quadratic model 的 bulk failure，
+不核验 all-order completed branch 的 A。
+
+这不是对 R137 的反例，也不是 genuine iid 结论；它只是排除了一个过强的局部推断，
+并明确指出 A/B 需要研究负节点的群体质量、相对深度和 Christoffel 局部化，而不是
+只看单点符号。正式证据等级为 `LOCAL-AUDITED / FORMAL / FINITE-ONLY / OPEN`，
+整体发表性判断不变：
+
+`无（目前没有足够独立、完整、可审稿的发表性结果）`
