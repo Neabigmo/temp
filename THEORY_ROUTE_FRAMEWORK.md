@@ -12268,3 +12268,11 @@ genuine 单律存在，其 OU 轨道本身就是 unnormalised charge-collapse me
 端应审查这条等价化简，并把主攻从未归一化 uniform noncollapse 调整为：排除一个
 `P_3K` 非零 genuine exact 单律，或给出满足完整 one-body factorization 的 genuine
 obstruction。
+
+## 83.23 R166 网页端回执状态（2026-09-09）
+
+R166 已写入同一网页历史并一度显示活动，但等待后网页端再次回到 `systemError`，
+读取没有出现 assistant 理论正文。因此网页端尚未审查 R166，也不能把本机结构化简
+写成网页端已确认的定理。后续若网页端恢复，应先读取 R166 的完整消息；在此之前以
+本机 `r166_varying_bottom_reduction/audit_r166.py` 的结构审计和明确假设边界为准，
+不重复发送同一长任务。

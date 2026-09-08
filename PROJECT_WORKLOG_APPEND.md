@@ -6567,3 +6567,10 @@ R102 的 zero-set bridge 假设下）。同时 `S_3(t;P_s mu)=S_3(t/s;mu)`、
 轨道塌缩；uniform noncollapse 不能被当作独立的较弱目标。新模块
 `r166_varying_bottom_reduction` 的纯结构审计通过后，需将网页端下一任务改为审查
 此等价化简及其 genuine one-body factorization 缺口。
+
+### R166 网页端回执状态（2026-09-09）
+
+R166 已在同一网页历史顶部显示并短暂处于活动状态；等待后读取确认网页端回到
+systemError，仍没有 assistant 理论正文。故 R166 只记为已投递任务，本机等价化简
+和四项结构审计是当前唯一新增证据；网页端尚未对其证明或缺口作出判断。后续恢复
+时先读取 R166，不再重复扩大数值或局部 minor。
