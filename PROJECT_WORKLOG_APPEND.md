@@ -6273,3 +6273,40 @@ B，证明负节点逃至 Hermite edge `|x|/sqrt(M)->2` 且深度比逃过 bulk 
 `E_d(t)=e^tA_d(t^2)` 与一变量收缩方程，随后研究收敛半径/奇点及 `n~M` 的全阶
 部分和。当前为 `WEB-IN-PROGRESS`；发送后的网页轮次仍在运行，不能把中间文本写成
 数学结论，也不重复发送。
+
+### R157 本机精确有限核验（2026-09-09）
+
+网页端仍未返回完整正文。本机先将网页端已经明确的结构写成独立审计：在 D3 exact
+Laurent-polynomial 模型中，固定 odd `d`、`E_d(t)=exp(t)A_d(t^2)`，验证
+
+`<cosh(sqrt(s)p_d) product_j A_d(sR_j)>=1`，其中 `R_j=r_j^(2d)`。
+
+新增系数的 pivot 为
+
+`Delta_{d,n}=1-3*binom(2dn,dn)/6^(dn)`。
+
+本机运行 `r157_universal_shape_audit/audit_r157.py`，通过：
+
+`R157_D3_CONTRACTION_PIVOTS_PASSED`
+
+`R157_ONE_VARIABLE_RECURSION_PASSED`
+
+`R157_EVEN_LOG_SHAPE_PASSED`
+
+`R157_FINITE_FORMAL_RESIDUAL_PASSED`
+
+`R157_AUDIT_COMPLETED`
+
+审计范围为 `d=5,7,9,11`、`n=1,...,8` 的正 pivot，以及 `d=5` 到 `s^3` 的
+exact formal recursion/residual。具体得到
+
+`A_5(s)=1-(2617/84)s+(54284751977/186234048)s^2`
+
+`-(126007733040112291/156514818620160)s^3+O(s^4)`。
+
+这是一条可复核的结构性 partial lemma，证据等级为
+`PROVED UNDER STATED FINITE FORMAL MODEL / LOCAL-AUDITED`。它仍不触及 R157 的
+核心 all-order convergence/singularity、`n~M` partial-sum sign，以及 formal branch
+到 genuine positive law 的桥。因此不能把它写成完整发表性定理；整体结论仍为：
+
+`无（目前没有足够独立、完整、可审稿的发表性结果）`

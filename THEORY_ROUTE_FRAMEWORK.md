@@ -11988,3 +11988,42 @@ R157 已发送至同一研究对话，基线为本机已推送的 `d7e0952`。�
 `Phi_d(t)=t+even powers`、`E_d(t)=e^tA_d(t^2)` 以及相应的一变量收缩方程；其
 收敛半径/奇点和 `n~M` 部分和仍在计算中。此时状态是 `WEB-IN-PROGRESS`，不是
 `PROVED` 或 `DONE`；必须等待完整回复并进行本机核验后，才能更新 R157 结论。
+
+## 83.11 R157 本机有限形式核验（2026-09-09）
+
+网页端尚未返回可核验的完整 R157 正文；为保持研究链条前进，本机先对其已经明确
+写出的 universal-shape 一变量方程做独立精确有限审计。脚本位于
+`r157_universal_shape_audit/audit_r157.py`，使用 D3 的 exact Laurent-polynomial
+表示，避免把浮点采样误写成证明。
+
+对 fixed odd `d`，令 `E_d(t)=exp(t)A_d(t^2)`，并写 `R_j=r_j^(2d)`、
+`p_d=sum_j r_j^d`。full-SF 的形式方程为
+
+`<cosh(sqrt(s)p_d) product_j A_d(sR_j)>=1`。
+
+新增系数 `a_n=[s^n]A_d` 的线性系数是
+
+`<sum_j R_j^n>=3*binom(2dn,dn)/6^(dn)`，
+
+因此方程移项后的 pivot 为
+
+`Delta_{d,n}=1-3*binom(2dn,dn)/6^(dn)`。
+
+本机精确检查了 `d=5,7,9,11`、`n=1,...,8` 的
+`0<Delta_{d,n}<1`，并对 `d=5` 的 `A_5` 求到 `s^3`，检查 truncated residual
+在 `s^1,s^2,s^3` 全部严格为零。得到
+
+`A_5(s)=1-(2617/84)s+(54284751977/186234048)s^2`
+
+`-(126007733040112291/156514818620160)s^3+O(s^4)`。
+
+脚本通过 `R157_D3_CONTRACTION_PIVOTS_PASSED`、
+`R157_ONE_VARIABLE_RECURSION_PASSED`、`R157_EVEN_LOG_SHAPE_PASSED`、
+`R157_FINITE_FORMAL_RESIDUAL_PASSED` 和 `R157_AUDIT_COMPLETED`。
+
+这一步的准确意义是：R157 的一变量形式递推在已审计有限阶上非奇异，并且确实满足
+形式方程；证据等级为 `PROVED UNDER STATED FINITE FORMAL MODEL / LOCAL-AUDITED`。
+它没有给出 uniform all-order bound、正收敛半径、奇点、`n~M` 部分和的渐近，亦没有
+给出全阶 bulk sign 或 genuine nonnegative realization。故仍不能改变整体发表性结论：
+
+`无（目前没有足够独立、完整、可审稿的发表性结果）`
