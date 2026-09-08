@@ -12685,3 +12685,21 @@ varying-bottom 塔；任意 Hermite/角向齐次多项式按总 grade `M` 缩放
 尾部桥、bare `RK=1=>all-row` 或原始 `P_3K` identification。该结论在
 `r179_homogeneous_wall_scale_no_go` 中有精确有理数审计，证据等级为
 `PROVED UNDER STATED GENUINE HYPOTHESES`；整体发表性仍为“无”。
+
+## 83.47 R180：无限 odd tail escape dichotomy（2026-09-09）
+
+网页端 R180 发送调用成功但未形成历史正文；本机不把网页错误当数学回执。R180
+本机把 R137、R138、R150 的 genuine 假设下结论合并为 single-law reduction：有限
+odd cumulant support 会使 `K_o` 成为 odd polynomial，而 exact tail 的二次增长界
+强迫 `K_o=0`，故 asymmetric law 必须有无限 odd tail；非配对零点半径
+`R_Delta<infinity` 进一步给出
+`limsup_(m odd)(|kappa_m|/(m-1)!)^(1/m)=1/R_Delta>0`。R150 还要求首 odd packet
+之后在有限窗口出现高 odd replenishment `|c_n|>eta_d(a)`。
+
+所以任何 hypothetical asymmetric genuine law 必须落入“无限 odd、非配对零点、
+高 odd replenishment”的窄 escape 类。OU 平滑按 `kappa_m(P_t h)=t^(m/2)kappa_m(h)`
+与 `zeta->zeta/sqrt(t)` 将其整体推向 Gaussian，但不消灭有限 `t` 的非零 germ。
+这不是最终排除，而是一个 `PROVED UNDER STATED GENUINE HYPOTHESES` 与
+`SYNTHESIS/CONDITIONAL` 的结构性二分；下一主轴是证明该 escape 与正密度/全阶
+Hankel cone 不相容，或构造 genuine obstruction。新增
+`r180_infinite_odd_tail_escape_dichotomy`，整体发表性仍为“无”。

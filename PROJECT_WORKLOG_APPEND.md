@@ -6870,3 +6870,23 @@ backward wall 的阶数或改善 `C_d` 渐近，不能单独排除 varying-botto
 genuine exact law 的排除、formal-to-genuine 尾部桥、bare `RK=1=>all-row`，或
 原始 `P_3K` 对象溯源。`audit_r179.js` 用有理数精确核验各类缩放恒等式；整体发表性
 判断仍为“无”。
+
+### R180：无限 odd tail escape dichotomy（2026-09-09）
+
+网页端 R180 发送调用返回成功但仍未形成历史正文；本机不把它当作理论回执。为继续
+单律主轴，本机合并 R137、R138 与 R150 得到结构性 reduction：在 genuine
+full-exact/full-SF、全阶尾界和局部 MGF 解析假设下，任何 asymmetric law 都必须有
+无穷多个非零 odd cumulants；若 odd support 有限，则 `K_o` 是 odd polynomial，而
+`|K_o(t)|<=A+B t^2` 强迫其为零。另一方面，非对称性要求存在有限半径的非配对 MGF
+零点，且
+`limsup_(m odd)(|kappa_m|/(m-1)!)^(1/m)=1/R_Delta>0`。
+
+再结合 R150 的 fixed-degree robust Hankel replenishment：首 odd 系数 `c_d=a` 固定
+后，高 odd 系数不能在某个有限窗口内全部小于 `eta_d(a)`。因此若原始命题失败，
+其 genuine law 必须同时进入“无限 odd、非配对零点、有限窗口高 odd replenishment”
+的窄逃逸类；OU 平滑只把零点推向 `zeta/sqrt(t)` 并同步压低每个固定系数。
+
+这仍不是反例或最终排除，而是把 OPEN single-law 问题进一步压缩成“证明该无限尾
+escape 与正密度/全阶 Hankel cone 不相容，或构造满足所有条件的 genuine law”二选一。
+证据等级为 `PROVED UNDER STATED GENUINE HYPOTHESES` 加 `SYNTHESIS/CONDITIONAL`；
+`audit_r180.js` 已通过精确代数 sanity check，整体发表性判断仍为“无”。

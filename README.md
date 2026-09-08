@@ -166,3 +166,9 @@ R179 网页发送调用再次未形成历史回执。本机新增 `r179_homogene
 底层的 `N` 无关约束，因此不能单独排除 varying-degree/tower escape。下一主轴回到
 single-law exclusion、formal-to-genuine、`RK=1=>all-row` 或原始 `P_3K` 溯源；整体
 发表性判断仍为“无”。
+
+R180 网页发送调用仍未形成理论正文。本机合并 R137/R138/R150，证明任何假想
+asymmetric genuine exact law 都必须具有无限 odd tail、有限半径非配对 MGF 零点和
+高 odd replenishment；这把剩余 OPEN 压缩为一个明确的无限尾 escape 与正性/全阶
+Hankel 相容性问题。新增 `r180_infinite_odd_tail_escape_dichotomy`，整体发表性
+判断仍为“无”。
