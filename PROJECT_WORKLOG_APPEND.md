@@ -6527,3 +6527,18 @@ R164 将研究主线从 scalar majorant 重新接回 genuine backward charge con
 `P_3K`–primitive-charge 非退化问题。消息发送后读取同一网页历史仍未出现 R164，
 线程回到系统错误。因此本轮没有网页理论正文可审计；R164 的数学内容只以本机
 `e91cbf9` 的全局路线记录为准，不把投递状态当作证明。
+
+### R165 全局脉络与发表性审计投递准备（2026-09-09）
+
+读取同一网页研究对话确认 R164 仍没有 assistant 理论正文。为响应用户要求，下一
+轮不再只追逐局部接口，而要求网页端先给出全局证据地图和诚实的发表性盘点：从原始
+Positive Backward-Tower Exact Zero-Set Rigidity，经过 R99--R102 genuine charge
+cone、R100/R132 的必要条件与局部证书、R133--R135 的 Jacobi/finite-row
+obstruction，到 R157/R158-A 的 scalar formal majorant，逐项写清假设、定理、
+证据等级、可写入论文的范围以及不能跨越的逻辑缺口。
+
+本轮交接要求网页端明确区分 `P_3K` 零集等价、定量大小、`chi_1` charge、首个奇阶
+Hermite 系数和原始 rigidity；若没有足够独立、完整、可审稿的发表性结果，必须回答
+“无”。全局盘点后只部署一个最小理论任务，即审查 varying-bottom 下
+`P_3K` 到 primitive angular charge 的 uniform noncollapse（或给出最强的
+charge-collapse obstruction），不再扩展无关数值计算。

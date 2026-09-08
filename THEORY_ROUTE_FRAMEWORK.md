@@ -12212,3 +12212,21 @@ R164 已尝试把研究重新聚焦到 genuine backward charge cone 与
 非退化问题；但读取同一网页历史未出现 R164 的 assistant 理论正文，线程随后
 回到系统错误。因此该轮不计为数学结果，后续仍以 R99–R102 的 genuine necessary
 conditions 和本机 `e91cbf9` 全局记录为依据。
+
+## 83.20 R165 全局脉络与发表性审计任务（2026-09-09）
+
+R164 读取后仍没有网页端 assistant 理论正文，故本轮不把网页故障误记为数学结论。
+下一轮向同一历史研究对话投递 R165，要求网页端先完整重建从原始
+Positive Backward-Tower Exact Zero-Set Rigidity 到当前各证据层的路线图：明确列出
+R99--R102 genuine backward Hermite/Herglotz charge cone、R100 低阶深度证书、
+R132 的 exact-row/Carleman 局部结果、R133--R135 Jacobi/finite-row obstruction、
+R157--R158-A scalar formal majorant，以及它们各自的假设、结论和不能互相替代的
+缺口。
+
+R165 还要求逐项标记：哪些结果可作为 genuine necessary-condition 写入论文，哪些
+只能标作 conditional/interface、local-audited 或 finite-only；特别区分 exact
+zero-set equivalence、定量非退化、`P_3K`、`chi_1`、首个奇阶 Hermite 系数和原始
+rigidity。若当前没有足够独立、完整、可审稿的发表性结果，网页端必须明确回答
+“无”，而不是用局部漂亮公式替代该判断。全局审计后只部署一个最小理论任务，优先
+处理 `P_3K` 到 primitive angular charge 的 uniform noncollapse；不得扩展无关数值
+计算或把 R158-A formal 结论升级为 genuine law。
