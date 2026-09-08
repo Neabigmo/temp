@@ -29,6 +29,27 @@ recursion is non-singular at each audited order (for the displayed equation,
 the relevant direct coefficient is `mu_{d,n}>0`; `Delta_{d,n}` is not the same
 coefficient).
 
+## Exact formal triangular lemma
+
+Assuming the displayed one-variable reduction is the correct formal
+full-SF reduction, write `A_d(s)=1+sum_{n>=1} a_n s^n`.  At order `s^n`, the
+only occurrence of the new coefficient `a_n` comes from choosing `a_n s^n`
+in exactly one of the three factors.  Hence
+
+`[s^n](F_d(A_d;s)-1) = mu_{d,n} a_n + P_{d,n}(a_1,...,a_{n-1})`,
+
+where `P_{d,n}` is already determined by lower coefficients and
+
+`mu_{d,n}=3*binom(2dn,dn)/6^(dn)>0`.
+
+Consequently the formal equation has a unique coefficient-by-coefficient
+solution, with `a_n=-P_{d,n}/mu_{d,n}` for every `n`.  For fixed odd `d>=5`,
+`mu_{d,n}<1` as well, since
+`mu_{d,n} <= 3*(2/3)^(dn) < 1`; the complementary quantity
+`Delta_{d,n}=1-mu_{d,n}` is therefore positive.  This is an all-order formal
+existence/uniqueness statement conditional on the one-variable reduction, not
+an analytic existence theorem.
+
 ## Local audit
 
 Run:
@@ -67,9 +88,12 @@ are
 
 ## Evidence boundary
 
-`PROVED UNDER THE STATED FINITE FORMAL MODEL / LOCAL-AUDITED`: exact finite
-coefficient recursion, positive pivots at the listed orders, and exact
-truncated residual cancellation.
+`PROVED UNDER THE STATED FORMAL REDUCTION`: all-order triangular formal
+existence/uniqueness, conditional on the displayed one-variable equation and
+the exact coefficient formula for `mu_{d,n}`.
+
+`LOCAL-AUDITED`: exact finite coefficient recursion, positivity of `mu` and
+`Delta` at the listed orders, and exact truncated residual cancellation.
 
 `OPEN`: uniform all-order coefficient bounds, a positive convergence radius,
 singularity location/type, the joint `n~M` partial-sum asymptotic, all-order

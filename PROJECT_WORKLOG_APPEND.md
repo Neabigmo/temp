@@ -6315,3 +6315,24 @@ exact formal recursion/residual。具体得到
 到 genuine positive law 的桥。因此不能把它写成完整发表性定理；整体结论仍为：
 
 `无（目前没有足够独立、完整、可审稿的发表性结果）`
+
+### R157 形式递推的全阶提升（条件性记录）
+
+进一步逐项检查可得到：若把网页端的一变量 reduction 作为形式前提，令
+`A_d(s)=1+sum_(n>=1)a_n s^n`，则 `s^n` 系数中新的 `a_n` 只能出现在三个
+`A_d(sR_j)` 因子中的一个，故
+
+`[s^n](F_d(A_d;s)-1)=mu_(d,n)a_n+P_(d,n)(a_1,...,a_(n-1))`，
+
+其中 `P_(d,n)` 只依赖低阶系数，且
+
+`mu_(d,n)=3*binom(2dn,dn)/6^(dn)>0`。
+
+所以形式方程在每个 `n` 唯一确定 `a_n=-P_(d,n)/mu_(d,n)`，这是
+`PROVED UNDER THE STATED FORMAL REDUCTION` 的 all-order formal triangular
+existence/uniqueness lemma。由 `|r_j|<=sqrt(2/3)`，对 fixed odd `d>=5` 有
+`mu_(d,n)<=3(2/3)^(dn)<1`，但 `Delta_(d,n)=1-mu_(d,n)` 只是互补收缩缺陷，
+不能误称为当前方程的直接系数。
+
+该提升仍没有给出 analytic convergence、奇点、系数控制、`n~M` partial-sum
+符号或 genuine positive realization；因此整体发表性结论不变。

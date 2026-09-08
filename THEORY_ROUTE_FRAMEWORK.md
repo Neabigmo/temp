@@ -12031,3 +12031,33 @@ R157 已发送至同一研究对话，基线为本机已推送的 `d7e0952`。�
 给出全阶 bulk sign 或 genuine nonnegative realization。故仍不能改变整体发表性结论：
 
 `无（目前没有足够独立、完整、可审稿的发表性结果）`
+
+### R157 可提升的最强形式命题
+
+在接受上述一变量 full-SF reduction 作为形式前提的条件下，可以不依赖有限阶计算
+证明一个全阶 triangular lemma。令
+
+`A_d(s)=1+sum_(n>=1)a_n s^n`，
+
+并记一变量方程左端减去 1 为 `F_d(A_d;s)-1`。在 `s^n` 系数中，`a_n` 只能从
+三个因子中的恰好一个贡献；含两个 `a_n` 的项次数至少为 `2n`，而 cosh 的非恒等
+项只会增加次数。因此
+
+`[s^n](F_d(A_d;s)-1)=mu_(d,n)a_n+P_(d,n)(a_1,...,a_(n-1))`，
+
+其中
+
+`mu_(d,n)=3*binom(2dn,dn)/6^(dn)>0`。
+
+所以对每个固定 odd `d>=5`，形式方程逐阶唯一确定 `a_n`，即
+
+`a_n=-P_(d,n)/mu_(d,n)`。
+
+此外 `|r_j|<=sqrt(2/3)` 给出
+
+`0<mu_(d,n)<=3(2/3)^(dn)<1`，
+
+故互补缺陷 `Delta_(d,n)=1-mu_(d,n)` 也严格为正。这个命题的证据等级是
+`PROVED UNDER THE STATED FORMAL REDUCTION`，不是 genuine law；它只排除了“形式递推
+在某一有限/无限阶因 pivot 直接消失”的障碍。收敛半径、系数增长、奇点以及
+`n~M` 部分和符号仍然完全 OPEN。
