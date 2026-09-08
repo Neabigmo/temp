@@ -19,6 +19,7 @@
 13. `r166_varying_bottom_reduction/README.md`：在 log-MGF charge 协变假设下把 varying-bottom 塔化简为 single-law 问题。
 14. `r168_spatial_ou_persistence_audit/README.md`：空间 `ell_3=<log g,psi_3>` 的小-t 非消失与固定-q 最终层 persistence。
 15. `r158_global_publication_audit/README.md`：全局证据等级与诚实的发表性审计。
+16. `r169_spatial_ou_zero_accumulation_audit/README.md`：空间 charge 沿 OU 轨道的解析非 flatness 与固定-q 零点归约。
 
 ## 分支体系
 
@@ -80,6 +81,14 @@ R168 进一步处理空间对象的最小局部情形：若明确采用
 `THEORY_ROUTE_FRAMEWORK.md`、`PROJECT_WORKLOG_APPEND.md`、
 `r158_global_publication_audit/README.md`、`r166_varying_bottom_reduction/README.md`
 和 `r168_spatial_ou_persistence_audit/README.md`。
+
+R169 又把空间线压缩了一步：若 `F_h(r)=ell_3^sp(P_(r^2)h)` 在 `r=0` 附近解析且
+不恒等为零，则解析函数有限阶零点性质保证 `F_h(q^(N/2))!=0` 对所有充分大 `N`；
+结合 R132 的 L2 平滑即可生成任意深塔。故固定-q 的离散零点不是主障碍，最小缺口
+改为证明空间 charge 轨道 non-flat，或构造满足全部 genuine exact/positive 约束的
+flat-orbit law。R169 仍是 `PROVED UNDER STATED ANALYTIC HYPOTHESES` 的 reduction
+lemma，不构造 law，也不改变整体发表性结论“无”。网页端若恢复，应先阅读 R168、R169
+并围绕这个 non-flatness 问题推进。
 
 R168 全局审计消息已在恢复导航后写入同一网页历史，但读取时线程再次为
 `systemError`，未产生网页端 assistant 理论正文；因此网页端尚未完成这次全局盘点。

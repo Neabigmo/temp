@@ -12347,3 +12347,26 @@ R168 全局审计消息在恢复导航后已成功出现在同一网页研究历
 “无”。在网页端恢复前，本机以 `be31a70` 的 R168 局部 lemma、R99--R102
 genuine 必要条件和 R158 全局发表性审计为准；整体独立、完整、可审稿结果仍记为
 “无”。不再重复发送同一长任务。
+
+## 83.27 R169：空间 OU 轨道的解析零点归约（2026-09-09）
+
+R168 已处理 `m_3(h)!=0` 的 `t^(3/2)` leading term。本机进一步定义
+
+`F_h(r)=ell_3^sp(P_(r^2)h)`。
+
+若 `F_h` 在 `r=0` 附近有收敛解析展开且不恒等为零，令 `k` 为首个非零系数阶，
+则 `F_h(r)=c_k r^k(1+O(r))`，故存在 `r_1>0` 使所有 `0<r<r_1` 都非零；固定
+`q` 后 `r=q^(N/2)` 最终落入该区间。因此 `q^N` 离散采样本身不是障碍。结合
+genuine full-exact 前向 OU 闭包和 R132 的
+`||P_(q^N)h-1||_2<=8q^(3N/2)`，得到相应的任意深 spatial `ell_3` 非零塔。
+
+这把空间路线的最小缺口压缩为：原始空间 `P_3K_sp` 是否等于 `ell_3^sp`，以及对
+每个相关 genuine asymmetric exact `h`，轨道 `r -> ell_3^sp(P_(r^2)h)` 是否
+non-flat；若 flat，则需构造满足 exact/positive 约束的 flat-orbit law。R169 的
+解析零点归约是 `PROVED UNDER STATED ANALYTIC HYPOTHESES`，但没有证明 non-flatness，
+没有构造 law，也不涉及 `P_3K_MGF` 或 Bargmann `C_g`。
+
+网页端当前应先完成 R168 全局审计消息的证据分层；若恢复，下一条具体任务是审查
+R169 的解析性前提是否可由 genuine all-row square-exponential tail 推出，并判断
+原始空间 charge 是否确实属于该轨道。不得将“消息进入历史”或网页 `systemError`
+当作数学回执。
