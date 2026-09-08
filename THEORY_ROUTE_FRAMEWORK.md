@@ -12764,3 +12764,19 @@ obstruction，不是 genuine MGF 反例；下一真正接口必须控制壳模�
 不是完整 cone/Hankel 矛盾；剩余卡点为大壳逃逸、壳隙起点和与 R150 有限 degree
 window 的对齐。证据等级为 `PROVED UNDER R112 + HADAMARD HYPOTHESES` 加
 `CONDITIONAL PROPOSITION`，整体发表性仍为“无”。
+
+## 83.52 R185：phase collision 与 replenishment window 起始阶次（2026-09-09）
+
+网页端 R185 发送后暂未形成理论正文；本机新增
+`r185_phase_collision_onset_obstruction`。即使 R184 在小壳区间统一了首壳模态
+数和 `p_0`，共轭单位根四模态族
+`A_k=2(cos(k theta)-cos(k(theta+delta)))` 仍满足固定
+`J=4,S_2=B=4,p_0=1/7`，却有 `|A_k|<=2k delta`。令 `delta` 随预设窗口长度
+缩小，便可把整个 R150 window 推迟到任意大的 onset 之后。
+
+故 uniform positive density 与 uniform degree alignment 严格不同；Jensen
+数量界不能推出相位分离。剩余唯一接口是 genuine MGF 的 angular separation/
+Vandermonde lower bound，或绕过零点壳直接建立 Hankel onset estimate。该族是
+满足共轭和整数重数差的 formal shell obstruction，不是 genuine counterexample；
+证据等级为 `PROVED UNDER HADAMARD SHELL DATA` 加 `CONDITIONAL`，整体发表性
+仍为“无”。

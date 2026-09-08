@@ -6958,3 +6958,18 @@ odd-cumulant 下界常数为 `1/(2sqrt(2))`（阶次起点仍可能依赖 law）
 analytic escape 缩小为大壳或 uniform shell-gap/onset/degree-alignment 问题，
 但尚未把 `p_0>=1/17` 对齐到 R150 的 `eta_d(a)`，整体发表性判断仍为“无”。
 `audit_r184.js` 已通过。
+
+### R185：phase collision 与 replenishment window 起始阶次（2026-09-09）
+
+网页端 R185 发送后暂未形成理论正文；本机新增
+`r185_phase_collision_onset_obstruction`。即使 R184 已得 `J<=9` 和
+`p_0>=1/17`，首壳相位仍可近碰撞。取共轭单位根
+`lambda=(e^(i theta),e^(-i theta),e^(i(theta+delta)),e^(-i(theta+delta)))`
+及整数权 `b=(1,1,-1,-1)`，则 `J=4,S_2=B=4,p_0=1/7` 固定，但
+`A_k=2(cos(k theta)-cos(k(theta+delta)))` 满足 `|A_k|<=2k delta`。
+因此任意有限 window `[0,L]` 都能由 `delta<=eta/(2L)` 完全压低；看到固定
+幅度 `alpha` 的起始阶至少为 `alpha/(2delta)`。这说明 R184 的 uniform density
+不能对齐 R150 的 finite window，真正缺口是 genuine phase separation、
+Vandermonde lower bound 或直接的 shell-to-Hankel onset estimate。模型满足
+real-conjugation/整数 shell data，但不构成 genuine MGF 反例；审计已通过，
+整体发表性仍为“无”。
