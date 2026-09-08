@@ -6382,3 +6382,20 @@ positive backward-OU exact zero-set rigidity。
 足够独立、完整、可审稿的发表成果。整体发表性结论继续为：
 
 `无（目前没有足够独立、完整、可审稿的发表性结果）`。
+
+### R158 全局审计任务已投递（2026-09-09）
+
+本轮已向同一网页研究对话投递 R158，要求它基于当前公开记录完成全局理论脉络、
+证据等级和发表性审计，并把 R157 整理成唯一下一目标。消息已经进入目标对话，
+但网页端当前只记录了用户消息，没有生成新的数学回执；因此本轮不能把网页端的
+R158 当作完成，也不能把“无回执”解释成数学结论。为避免重复轮次，下一次继续时
+应先读取该对话的最新状态，再决定是否恢复发送。
+
+本机对应的可直接阅读记录是
+`r158_global_publication_audit/README.md`；公开仓库当前两条研究分支均为
+`83b1c0e`。该记录已经明确：R157 只到
+`LOCAL-AUDITED ARITHMETIC / CONDITIONAL`，最小下一任务是闭合
+`full-SF sparse completion -> universal equation -> majorant -> finite Hermite
+density -> first-failure lower bound` 的接口；整体发表性结论保持：
+
+`无（目前没有足够独立、完整、可审稿的发表性结果）`。
