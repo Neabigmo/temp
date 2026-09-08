@@ -6562,11 +6562,16 @@ R165 仍无网页理论正文。本机先审查其 uniform noncollapse 目标，
 非零 `P_3K` 本身就是 single-law witness。
 
 因此原始 varying-bottom 存在性等价于“存在一个非对称 genuine exact 单律”（在
-R102 的 zero-set bridge 假设下）。同时 `S_3(t;P_s mu)=S_3(t/s;mu)`、
+R102 的 log-MGF zero-set bridge 且原始 `P_3K` 采用该定义时）。同时
+`S_3(t;P_s mu)=S_3(t/s;mu)`、
 `tau_ang(P_s mu)=s tau_ang(mu)`，说明如果该单律存在，未归一化 charge 会沿 OU
 轨道塌缩；uniform noncollapse 不能被当作独立的较弱目标。新模块
 `r166_varying_bottom_reduction` 的纯结构审计通过后，需将网页端下一任务改为审查
 此等价化简及其 genuine one-body factorization 缺口。
+
+记号警告：若原始 `P_3K` 是空间 `log g` charge，而不是 R102 的 log-MGF charge，
+R166 的 OU 非零保持尚未覆盖该对象；这成为单独的 persistence OPEN，不能把两种
+`P_3K` 合并。
 
 ### R166 网页端回执状态（2026-09-09）
 

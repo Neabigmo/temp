@@ -8865,6 +8865,11 @@ modulus、difference law、Schur–Abel modulus 或 radial product magnitude 的
 `int qh_0dnu=4`；这不是 genuine exact counterexample，只是精确的 profile
 obstruction。
 
+记号边界：这里的 `P_3K` 必须理解为 R102 的 analytic log-MGF charge。R133 已指出
+空间 `log g` 的 charge 与 `log B_g`/log-MGF charge 不是同一对象；R166 没有证明
+空间 charge 沿 `P_s` 的同样协变或非零保持。因此若原始命题中的 `P_3K` 是 spatial
+`P_3K_sp`，上述化简还要额外补一条 OU-persistence lemma，当前不能偷换。
+
 令 `rho=(log f)'`、
 `Sigma_0=sum_j rho(X_j)`、
 `Sigma_R=sum_j(X_j-Xbar)rho(X_j)`。在

@@ -208,16 +208,18 @@ Hankel ghost 或有限形式递推。对 `r=1`，若 `d` 是第一个非零奇 H
 base 都有严格正的最小可逆 OU 参数/最大 backward 深度。R100 的
 `F_m(t;g)>0` 与 skew–kurtosis 唯一根证书是这个全阶锥的低阶投影。
 
-这条线比 R158-A 更直接地触及原始 positive backward-tower：若能证明 primitive
-angular charge 在 `g^(0)->1` 的归一化下不塌缩，便可直接排除任意深 tower。当前
-不能偷换的是：`P_3K`（log-cumulant/spatial charge）与 `chi_1` 的零集等价需要
-genuine full-exact、解析性和 moment-determinacy；其**定量非退化下界**仍 OPEN，
-且 varying-bottom sequence 允许各自的 charge budget 趋向零。故这条线给出了比
-scalar majorant 更贴近主命题的最小 OPEN：
+这条线比 R158-A 更直接地触及原始 positive backward-tower，但 R166 进一步校准了
+目标：若 `P_3K` 指 R102 的 log-MGF charge，且 genuine 类前向 OU 闭包、`L^2`
+收敛和 OU 协变成立，则 varying-bottom 非零塔的存在等价于一个 `P_3K` 非零
+genuine exact 单律的存在。此时未归一化 primitive charge 沿 OU 轨道必可塌缩，
+不能把它包装成独立较弱的 uniform lower bound。若原始 `P_3K` 指空间 `log g`
+charge，则所需的 OU-persistence lemma 仍 OPEN；两种 charge 不得混写。真正的
+最小 OPEN 应改写为：
 
-`P_3K(g^(0)) != 0  ->  a normalized primitive angular charge lower bound`
+`exclude one P_3K_MGF-nonzero genuine exact law`
 
-或一个满足全部已知 exact/positive 约束的 charge-collapse obstruction。R99–R102
+或构造满足完整 one-body factorization 的 genuine obstruction；只有在选定一个
+OU-invariant normalization 后，才有意义讨论 primitive shape 的 uniform gap。R99–R102
 的已闭合公式可以写入论文的 genuine necessary-condition 部分；它们仍不能单独
 推出最终 rigidity。整体发表性结论保持：
 
