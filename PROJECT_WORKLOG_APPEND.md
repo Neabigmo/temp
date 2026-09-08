@@ -6392,8 +6392,8 @@ R158 当作完成，也不能把“无回执”解释成数学结论。为避免
 应先读取该对话的最新状态，再决定是否恢复发送。
 
 本机对应的可直接阅读记录是
-`r158_global_publication_audit/README.md`；公开仓库当前两条研究分支均为
-`6ef72f1`。该记录已经明确：R157 只到
+`r158_global_publication_audit/README.md`；当时记录的公开仓库基线为
+`6ef72f1`，当前两条研究分支已更新至 `7f1435f`。该记录已经明确：R157 只到
 `LOCAL-AUDITED ARITHMETIC / CONDITIONAL`，最小下一任务是闭合
 `full-SF sparse completion -> universal equation -> majorant -> finite Hermite
 density -> first-failure lower bound` 的接口；整体发表性结论保持：
