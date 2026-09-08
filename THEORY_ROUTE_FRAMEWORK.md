@@ -12444,16 +12444,19 @@ R171 的具体审查任务尝试发送到同一网页研究对话，但回读历
 4. R101 genuine positive angular cone 的 primitive charge `chi_1`/`beta_(m,1)`。
 
 R101 已明确把 angular charge 写成 “deliberately separate from `P_3 K`”，R133
-也明确 `C_g=log B(e^{K_sp})` 一般不等于对 `K_sp` 做 Bargmann 变换；R102 的
-公式虽然闭合了一个 analytic log-MGF 对象，却没有单独证明它就是项目最初未给出
-完整定义的空间 `P_3K`。因此本机新增 `r172_p3k_provenance_audit/README.md`
-并将原始 `P_3K` 的定义/身份记录为 `OPEN/UNRESOLVED`。
+也明确 `C_g=log B(e^{K_sp})` 一般不等于对 `K_sp` 做 Bargmann 变换。另一方面，
+历史工作日志记录网页端曾从早期 R4 恢复 R102 的 analytic log-MGF 定义；但早期
+R4 原文没有随当前仓库保存。因此本轮新增 `r172_p3k_provenance_audit/README.md`
+并将状态精确写成：**R102 是原始 `P_3K` 的最强工作重建，早期来源的完全核验仍
+为 `OPEN/UNRESOLVED`**。这比把原始量宣布为未定义更准确，也仍禁止把它偷换成
+空间 `ell_3^sp`、Bargmann `C_g` 或 angular `chi_1`。
 
 安全保留的逻辑是：R99–R101 的 genuine backward cone 必要条件、R102/R166 的
 log-MGF 线、R132–R133 的 full-SF/all-row 结构、R168–R171 的 spatial `ell_3`
 条件性 persistence/non-flatness 各自成立于各自假设下。尚不能安全推出
-`P_3K_original=ell_3^sp=P_3K_MGF=chi_1`，也不能由 scalar `RK=1` 自动推出
-genuine full-SF/all-row。故原始 positive backward-tower rigidity 仍 OPEN，且
+`P_3K_original=ell_3^sp=chi_1`，也不能把 R102 工作定义未经来源核验就扩展到
+空间版本；更不能由 scalar `RK=1` 自动推出 genuine full-SF/all-row。故原始
+positive backward-tower rigidity 仍 OPEN，且
 “已有独立、完整、可审稿发表结果”的诚实总评继续是“无”。
 
 R172 的 auditable scope 仅是 documentation/provenance：`audit_r172.py` 验证上述
@@ -12468,3 +12471,37 @@ R172 全局审计任务已经进入同一历史网页对话，但回读显示线
 分层—发表性—下一步”的审查，本机不能把网页投递当作数学回执。当前仍以 R172
 provenance audit 和前述各模块的本机证据等级为准：原始 `P_3K` 身份
 `OPEN/UNRESOLVED`，整体发表性判断为“无”。
+
+## 83.34 R173：首个 odd sector 的 linear-window backward cone（2026-09-09）
+
+历史记录的 provenance 需要精确分层：R102 已记载网页端从早期 R4 恢复了
+analytic log-MGF 形式的 `P_3K`，所以 R102 是当前最强的原始-charge 工作定义；
+但早期 R4 原文没有保存在仓库中，来源逐字核验仍为 `OPEN`。这不影响在该工作
+定义下继续推导，也不允许把它偷换成空间 `ell_3^sp`、Bargmann `C_g` 或 R101
+`chi_1`。
+
+在 R102 工作分支上，本机 R173 证明了一个新的高 Hermite 正性窗口。设 genuine
+centered/variance-one full-exact law 的首个非零 odd Hermite 系数为 `a_d`，且
+full-SF 偶阶递推给出 `a_4=...=a_(2d-2)=0`。R101 的 cubic map 对所有 odd
+`d<=m<3d` 都没有 nonlinear monomial：odd+even 的最小正阶为 `d+2d`，两个
+odd 的总阶为偶数，三个 odd 的最小总阶为 `3d`。故
+
+`beta_(m,1)=Lambda_m a_m`,
+`Lambda_m=3*(sqrt(2/3)/2)^m binom(m,(m-3)/2)>0`.
+
+若 `g=P_t h` 且两者都属 genuine full-exact 类，R101 的 Parseval cone 给出
+
+`sum_(m odd, d<=m<3d) Lambda_m^2 t^(-m)a_m(g)^2 <= 1`.       (R173)
+
+特别地 `|a_d(g)|<t^(d/2)/Lambda_d`。在 R102 工作定义下，因
+`[z^m]P_3K_MGF=beta_(m,1)/sqrt(m!)`，还得到
+
+`sum_(m odd, d<=m<3d) m!t^(-m)|[z^m]P_3K_MGF(g;z)|^2<=1`,
+`|[z^d]P_3K_MGF(g;z)|<t^(d/2)/sqrt(d!)`.
+
+这是 `PROVED UNDER GENUINE FULL-EXACT + FULL-SF HYPOTHESES` 的 finite-window
+高阶 cone theorem；`r173_linear_window_backward_cone/audit_r173.py` 已通过精确
+degree/parity support audit。它不能排除 varying-bottom 中 `d=d_N` 向无穷逃逸，
+不能给出 uniform coefficient noncollapse，也不能关闭 symmetric even sector、
+bare `RK=1=>full-exact` 或最终 rigidity。其最小价值是把 R101 的全阶 cone 具体化
+为首个 odd sector 到 `3d` 阈值前的整段高 Hermite 约束。

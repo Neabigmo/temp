@@ -4,10 +4,12 @@
 
 ## 结论先行
 
-本轮没有证明项目最初命题中的 `P_3K` 等于此前任一条局部线路所使用的
-charge。当前最稳妥、也是必须写入总框架的状态是：
+本轮把项目历史中已有的 R102 定义级恢复与“早期 R4 原文已在仓库中核验”区分开来。
+当前最强的可用工作定义是 R102 的 analytic log-MGF charge；但本机没有保存早期
+R4 原文，故原始来源的完全 provenance 仍需核验。与此同时，不能把该工作定义与
+空间 log-density、Bargmann 或 angular observable 偷换成同一对象。当前必须写入总框架的状态是：
 
-> **原始 `P_3K` 的 provenance/定义接口仍为 `OPEN/UNRESOLVED`。**
+> **R102 是原始 `P_3K` 的最强工作重建；其早期来源核验仍为 `OPEN/UNRESOLVED`。**
 
 因此 R168–R171 的空间 non-flatness 结果、R102/R166 的 log-MGF 结果、R101
 的 angular Herglotz cone 结果以及 R133 的 Bargmann/Jacobi 结果必须保留为
@@ -69,19 +71,21 @@ Herglotz/Parseval cone 坐标。它给出很强的 backward-preimage 必要条�
 不可安全组合的是以下三条未经补证的跳步：
 
 * `P_3K_original = ell_3^sp`；
-* `P_3K_original = P_3K_MGF` 或 `P_3K_original = chi_1`；
+* `P_3K_original = P_3K_MGF`（作为来源已完全核验的结论）或
+  `P_3K_original = chi_1`；
 * scalar `RK(g)=1` 自动推出 genuine full-SF/all-row 以及上述任一 observable
   的协变性。
 
 ## 3. 对原始开放命题的影响
 
-在原始 `P_3K` 定义尚未从早期项目记录中恢复或重新证明前，不能声称 R168–R171
-已经解决了“`P_3K(g^(0)) != 0`”的题设，也不能把 R102 的单律化简写成空间版
-rigidity。原命题仍至少包含四个独立障碍：
+在 R102 作为工作定义、但早期 R4 来源尚未逐字核验的状态下，R102/R166 只能
+解决该 log-MGF 版本；不能声称 R168–R171 已解决“原始 `P_3K(g^(0)) != 0)`”
+的空间版本，也不能把 R102 的单律化简写成空间版 rigidity。原命题仍至少包含
+四个独立障碍：
 
 * `RK=1` 到 genuine full-exact/all-row 的接口；
 * 正 backward OU tower 的长期/全阶 cone 约束；
-* 原始 `P_3K` 的对象身份及其与可计算 charge 的桥；
+* 原始 `P_3K` 的来源核验，以及它与空间 charge 的对象桥；
 * 排除非 Gaussian genuine exact law，或构造其反例。
 
 所以截至 R172，整体“是否已有独立、完整、可审稿的发表性结果”的回答仍是：
@@ -97,7 +101,8 @@ rigidity。原命题仍至少包含四个独立障碍：
 网页端首先应读取总框架、工作日志以及 R158、R166、R168、R169、R170、R171、
 R172 记录，然后逐项给出：
 
-1. 原始 `P_3K` 的最早定义或明确承认仍未恢复；
+1. 原始 `P_3K` 是否就是历史中 R102 恢复的 log-MGF 定义；若是，明确标为
+   “工作定义已恢复、早期来源待核验”；
 2. 上述 A–D 四类对象的精确定义与相互关系；
 3. 每条结论的证据等级：`PROVED`、`CONDITIONAL`、`FORMAL`、`OBSTRUCTION`
    或 `OPEN`；

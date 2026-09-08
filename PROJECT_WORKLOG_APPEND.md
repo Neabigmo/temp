@@ -6689,7 +6689,8 @@ R171 具体审查任务尝试发送到同一网页研究对话，但回读历史
 `log g` 不可混同。因此当前不能声称原始 `P_3K` 已被其中任一对象识别，不能把
 R168–R171 空间结论直接落回原始命题，也不能把 R166 log-MGF 化简推广到空间线。
 
-本机审计结论为 `OPEN/UNRESOLVED PROVENANCE`。R99–R102、R132–R133、R168–R171
+本机审计结论为：R102 是原始 `P_3K` 的最强工作重建，但早期 R4 来源的完全核验仍为
+`OPEN/UNRESOLVED PROVENANCE`。R99–R102、R132–R133、R168–R171
 仍保留为各自假设下的 genuine 必要条件、结构 lemma 或 conditional theorem；但
 截至 R172，独立、完整、可审稿的原始问题发表性结果仍为“无”。网页端下一轮必须
 先读取全框架和本工作日志，明确恢复/否认原始 `P_3K` 定义，逐项标出 `PROVED`、
@@ -6703,3 +6704,26 @@ assistant 理论正文。故网页端尚未完成本轮全局梳理；本机记�
 不把网页错误当数学否定，也不把投递成功升级为审查完成。后续如网页恢复，应先读取
 R172 用户消息，再逐项返回全局证据分层、原始 `P_3K` provenance、发表性判断和单一
 下一步；在此之前继续以 `7a1a731` 的本机审计为准。
+
+### R173 首个 odd sector 的 linear-window positive backward cone（2026-09-09）
+
+本机依据历史记录修正 R172 的 provenance 表述：R102 已由网页端从早期 R4
+恢复出 analytic log-MGF 形式的 `P_3K`，但早期 R4 原文不在当前仓库，因此准确
+状态是“R102 工作定义已恢复、来源完全核验 OPEN”。R102/R166 可继续作为原始
+charge 的工作分支；仍不得把它们偷换为空间 `ell_3^sp`、Bargmann `C_g` 或 R101
+angular `chi_1`。
+
+在该分支上新增 `r173_linear_window_backward_cone/README.md` 与 `audit_r173.py`。
+对 genuine centered/variance-one full-exact law，若 `d` 是首个非零 odd Hermite
+阶，且 full-SF 偶阶递推消去 `a_4,...,a_(2d-2)`，则所有 odd `d<=m<3d` 的
+cubic angular charge 都无 nonlinear mixing：
+`beta_(m,1)=Lambda_m a_m`，其中 `Lambda_m>0`。因此任何 genuine positive
+`t`-preimage 都满足 finite-window 预算
+`sum_(m odd,d<=m<3d)Lambda_m^2 t^(-m)a_m(g)^2<=1`，特别是
+`|a_d(g)|<t^(d/2)/Lambda_d`。在 R102 工作定义下，这等价给出
+`|[z^d]P_3K_MGF(g;z)|<t^(d/2)/sqrt(d!)`。
+
+这条结果的证据等级为 `PROVED UNDER GENUINE FULL-EXACT + FULL-SF HYPOTHESES`，
+本机精确 degree/parity support audit 已通过。它把 R101 的全阶 cone 具体化为
+首个 odd sector 的整段高 Hermite 约束，但不能阻止 `d_N` 随塔深度逃向无穷，也不
+能关闭 bare `RK=1` 接口或最终 rigidity；整体独立完整发表性结论仍为“无”。

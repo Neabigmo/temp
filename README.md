@@ -105,14 +105,21 @@ R171 的网页审查尚未进入历史；回读仍停留在 R170 且线程为 `s
 理论正文。本机 R171 已把 R170 的完整解析性要求削弱为 exact-tail 下的有限阶 log
 渐近，但它仍是条件性结果，不能写成网页端已确认结论。
 
-R172 新增 `r172_p3k_provenance_audit/`，专门审计原始 `P_3K` 的对象身份：空间
+R172 新增 `r172_p3k_provenance_audit/`，专门审计原始 `P_3K` 的对象身份：历史记录
+中 R102 已恢复出 analytic log-MGF 工作定义，但早期 R4 原文没有随仓库保存；空间
 `ell_3^sp=<log g,psi_3>`、R102 的 `P_3K_MGF`、Bargmann `C_g=log B_g` 和
-R101 的 angular `chi_1` 必须分开。当前没有证据把它们无条件识别为同一量，故原始
-`P_3K` provenance 仍为 `OPEN/UNRESOLVED`；R168–R171 只能作为空间对象上的条件性
-结果。R172 的整体发表性复核仍诚实记为“无”，但保留这些模块作为潜在 lemma/
-conditional theorem。网页端下一轮必须先读 R172 与全框架，给出全局证据分层和发表性
-判断，不得继续偷换 charge 对象。
+R101 的 angular `chi_1` 仍必须分开。故当前最准确的表述是“R102 工作定义已恢复，
+原始来源的完全核验仍为 `OPEN/UNRESOLVED`”；R168–R171 只能作为空间对象上的
+条件性结果，R102/R166 只能作为 log-MGF 版本的结果。R172 的整体发表性复核仍诚实
+记为“无”，但保留这些模块作为潜在 lemma/conditional theorem。网页端下一轮必须
+先读 R172 与全框架，给出全局证据分层和发表性判断，不得继续偷换 charge 对象。
 
 R172 全局审计任务已进入网页历史，但该线程随后仍为 `systemError`，没有 assistant
 理论正文。因此网页端尚未完成这次全局梳理；本机只记录“已投递、无理论回执”，不把
 网页状态升级为数学结论。
+
+R173 继续推进 R102 的原始-charge 工作分支：对首个非零 odd 阶 `d`，证明在
+`d<=m<3d` 的窗口中 `beta_(m,1)=Lambda_m a_m`，从而任意正 `t`-preimage 满足
+`sum Lambda_m^2 t^(-m)a_m(g)^2<=1`，并给出首个 R102 log-MGF 系数的显式 backward
+wall。该高阶 finite-window cone lemma 已通过本机精确 support audit，但仍不能
+处理 `d_N` 逃逸或原始 rigidity。
