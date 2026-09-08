@@ -12106,3 +12106,30 @@ full-SF 到 universal one-variable equation 的形式化闭合。尚未本机独
 本机数值三重卷积递推到 180 阶与该 transfer constant 相符。这只加强了 majorant
 本身的奇点审计；由于目前只有 `|a_(d,n)|<=b_n`，不能把它升级为真实
 `A_d` 的匹配大阶渐近，也不能由此解决全 tau 的 Hermite saddle。
+
+## 83.13 R158-A 条件性接口定理的本机闭合记录（2026-09-09）
+
+网页端的 R158 全局审计消息及补充催办已经进入同一研究对话，但截至本记录时尚未
+生成新的理论回执。为继续推进而不重复发送，本机把 R157 的最小接口写入
+`r158_interface_closure_audit/README.md`：在明确接受 full-SF sparse completion 的
+全阶 universal one-variable equation、Hermite 归一化与系数对应关系这三项前提后，
+逐行整理
+
+`full-SF -> universal equation -> positive majorant -> zero-free disk -> ordinary
+partial-sum positivity -> candidate first-failure rate`。
+
+本机新增 `r158_interface_closure_audit/audit_r158_interface.py`，精确核验 majorant
+系数至 `b_10`、临界点 `B*=5/4`、`D*=32/25`、
+`T*=arcosh(82/75)=0.428757663860...`、平方根常数
+`K=0.340106372849...` 以及 `c^2=8` 导出的 `exp(-1/4)/8` 尺度因子；并重跑
+R157 majorant 原审计至阶 180，全部通过。
+
+这使 R157 的最强准确表述成为：`PROVED UNDER STATED FORMAL REDUCTION` 的
+条件性接口定理候选，加上 `LOCAL-AUDITED` 的代数/常数核验；不能升级为原始
+genuine positive law、全 tau 符号、literal edge escape 或 Positive
+Backward-Tower Rigidity。整体发表性结论仍是：
+
+`无（目前没有足够独立、完整、可审稿的发表性结果）`。
+
+当前唯一下一任务仍为：等待网页端对 R158 全局审计给出实质回执后，逐条对照这份
+接口记录；若其任一前提不能证明，保留条件性结论并记录反例/缺口，不扩大有限计算。

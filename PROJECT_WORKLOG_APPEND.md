@@ -6421,3 +6421,28 @@ density -> first-failure lower bound` 的接口；整体发表性结论保持：
 `K=0.340106372849`、`K/(2sqrt(pi))=0.095942236430`。该结果只属于正
 majorant，不提供实际 `A_d` 系数的下界或相同大阶，因此仍不能解决
 `n/M -> xi` 的 generalized-Hermite saddle，也不改变整体发表性结论。
+
+### R158-A 条件性接口整理与本机核验（2026-09-09）
+
+网页端 R158 全局审计消息及补充催办已经进入同一研究对话，但当前仍没有新的
+理论回执。本机继续部署下一唯一技术接口，新增
+`r158_interface_closure_audit/README.md` 与
+`r158_interface_closure_audit/audit_r158_interface.py`，明确把
+
+`full-SF sparse completion -> universal equation -> majorant -> zero-free disk
+-> ordinary partial-sum positivity -> candidate first-failure rate`
+
+写成条件性定理，并把 full-SF 全阶适用性、Hermite 归一化、formal-to-genuine-law
+三项前提单独列出。新脚本精确核验 majorant 系数至 `b_10`、
+`B*=5/4`、`D*=32/25`、`T*=0.428757663860...`、
+`K=0.340106372849...` 与 `exp(-1/4)/8` 尺度转换；随后重跑 R157 原审计至阶
+180，全部通过。
+
+证据等级仍为 `PROVED UNDER STATED FORMAL REDUCTION / LOCAL-AUDITED` 加上
+`CONDITIONAL / WEB-DRAFT`，并非 genuine law 或原始 rigidity 的证明。整体发表性
+结论继续保持：
+
+`无（目前没有足够独立、完整、可审稿的发表性结果）`。
+
+本轮网页端没有生成回执，因此不再重复发送；下一次先读取同一对话的新状态，再
+决定是否继续投递。
