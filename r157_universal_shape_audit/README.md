@@ -18,12 +18,16 @@ formal full-SF identity reduces to
 `< cosh(sqrt(s) p_d(theta)) product_j A_d(s R_j(theta)) > = 1`,
 
 where `R_j = r_j^(2d)` and `<...>` is the zero Laurent coefficient/angular
-average.  The coefficient of the new unknown `a_n=[s^n]A_d` has pivot
+average.  The direct coefficient multiplier of the new unknown `a_n=[s^n]A_d` is
 
-`1 - 3*binom(2dn,dn)/6^(dn)`.
+`mu_{d,n}=3*binom(2dn,dn)/6^(dn)`.
 
-For `d=5,7,9,11` and `n=1,...,8`, these pivots are strictly between zero and
-one.  Thus the finite formal recursion is non-singular at each audited order.
+Its complementary contraction defect is
+`Delta_{d,n}=1-mu_{d,n}`.  For `d=5,7,9,11` and `n=1,...,8`, both `mu_{d,n}`
+and `Delta_{d,n}` lie strictly between zero and one.  Thus the finite formal
+recursion is non-singular at each audited order (for the displayed equation,
+the relevant direct coefficient is `mu_{d,n}>0`; `Delta_{d,n}` is not the same
+coefficient).
 
 ## Local audit
 

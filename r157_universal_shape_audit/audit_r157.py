@@ -78,7 +78,7 @@ def direction(j: int) -> Laurent:
 
 
 def pivot(d: int, n: int) -> sp.Expr:
-    """Coefficient pivot 1 - <sum_j r_j^(2dn)> at s^n."""
+    """Complementary contraction defect 1 - <sum_j r_j^(2dn)> at s^n."""
     return sp.factor(
         1 - 3 * sp.binomial(2 * d * n, d * n) / sp.Integer(6) ** (d * n)
     )
@@ -115,7 +115,8 @@ def solve_even_factor(d: int, order: int) -> dict[int, sp.Expr]:
         assert len(solution) == 1, (d, n, equation, solution)
         coefficients[n] = sp.factor(solution[0])
 
-        # The coefficient of a_n is the negative of the positive pivot.
+        # In the displayed equation, the direct coefficient of a_n is
+        # mu_{d,n}=<sum_j R_j^n>; ``pivot`` is its complementary defect.
         actual_pivot = sp.simplify(sp.diff(equation, candidate))
         assert sp.simplify(actual_pivot + pivot(d, n) - 1) == 0
 

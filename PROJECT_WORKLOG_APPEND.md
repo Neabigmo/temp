@@ -6281,9 +6281,14 @@ Laurent-polynomial 模型中，固定 odd `d`、`E_d(t)=exp(t)A_d(t^2)`，验证
 
 `<cosh(sqrt(s)p_d) product_j A_d(sR_j)>=1`，其中 `R_j=r_j^(2d)`。
 
-新增系数的 pivot 为
+对所写的一变量方程，新增系数的直接线性系数是
 
-`Delta_{d,n}=1-3*binom(2dn,dn)/6^(dn)`。
+`mu_{d,n}=3*binom(2dn,dn)/6^(dn)`；其互补收缩缺陷才是
+
+`Delta_{d,n}=1-mu_{d,n}`。
+
+两者必须区分：有限递推的非奇异性在当前方程中使用 `mu_{d,n}>0`，不能把
+`Delta_{d,n}` 直接称为同一个 pivot。
 
 本机运行 `r157_universal_shape_audit/audit_r157.py`，通过：
 
@@ -6297,7 +6302,7 @@ Laurent-polynomial 模型中，固定 odd `d`、`E_d(t)=exp(t)A_d(t^2)`，验证
 
 `R157_AUDIT_COMPLETED`
 
-审计范围为 `d=5,7,9,11`、`n=1,...,8` 的正 pivot，以及 `d=5` 到 `s^3` 的
+审计范围为 `d=5,7,9,11`、`n=1,...,8` 的 `mu_{d,n}` 与 `Delta_{d,n}` 的正性，以及 `d=5` 到 `s^3` 的
 exact formal recursion/residual。具体得到
 
 `A_5(s)=1-(2617/84)s+(54284751977/186234048)s^2`
