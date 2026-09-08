@@ -6949,7 +6949,8 @@ genuine full-exact envelope `E exp(X^2/8)<=2` 对 normalized Bargmann MGF 给出
 `|B_mu(x+iy)|<=2 exp(3|z|^2/2)`。Jensen 在 `r=1,R=2` 上于是给出
 `n_mu(1)<10`，即首个非配对壳若 `R_Delta<=1`，其代表数 `J<=9`。因此
 `B^2/S_2<=J<=9`、`p_0>=1/17`；若重数差为整数且壳非空，`S_2>=1`，R182
-的首壳 odd-cumulant 归一化幅度至少为 `1/sqrt(2)`（渐近阶次上）。
+的首壳主项归一化幅度至少为 `1/sqrt(2)`；扣除外壳误差后，最终显示的
+odd-cumulant 下界常数为 `1/(2sqrt(2))`（阶次起点仍可能依赖 law）。
 
 若 `R_Delta>1`，forward OU 不能取 `t=R_Delta^2`；直接 Jensen 只给出
 `J<=1+(6/log 2)R_Delta^2` 和
