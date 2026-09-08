@@ -6608,3 +6608,11 @@ exact law，不覆盖 `m_3=0` 的高 odd sector，也不证明原始 `P_3K` 就�
 要明确回答“无”。网页端工作前必须读取 `THEORY_ROUTE_FRAMEWORK.md`、本工作日志、
 `r158_global_publication_audit/README.md`、`r166_varying_bottom_reduction/README.md`
 和 `r168_spatial_ou_persistence_audit/README.md`。
+
+### R168 网页端回执状态（2026-09-09）
+
+R168 全局审计消息在恢复导航后已成功写入同一网页研究历史顶部；等待后读取确认
+线程再次回到 `systemError`，没有生成 assistant 理论正文。故本轮只记为“已投递、
+未审查”，不把网页故障当作数学结论，也不把本机 R168 局部 lemma 升级为网页端
+确认。若网页端恢复，应先读取该 R168 消息；在此之前不重复发送同一长任务，整体
+发表性判断继续保持“无（目前没有足够独立、完整、可审稿的发表性结果）”。

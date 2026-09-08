@@ -80,3 +80,7 @@ R168 进一步处理空间对象的最小局部情形：若明确采用
 `THEORY_ROUTE_FRAMEWORK.md`、`PROJECT_WORKLOG_APPEND.md`、
 `r158_global_publication_audit/README.md`、`r166_varying_bottom_reduction/README.md`
 和 `r168_spatial_ou_persistence_audit/README.md`。
+
+R168 全局审计消息已在恢复导航后写入同一网页历史，但读取时线程再次为
+`systemError`，未产生网页端 assistant 理论正文；因此网页端尚未完成这次全局盘点。
+本机记录不把该故障当作数学结论，整体发表性判断仍为“无”。
