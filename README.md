@@ -172,3 +172,7 @@ asymmetric genuine exact law 都必须具有无限 odd tail、有限半径非配
 高 odd replenishment；这把剩余 OPEN 压缩为一个明确的无限尾 escape 与正性/全阶
 Hankel 相容性问题。新增 `r180_infinite_odd_tail_escape_dichotomy`，整体发表性
 判断仍为“无”。
+
+R181 网页发送调用未形成理论正文。本机新增 `r181_cauchy_replenishment_bridge`，
+以 Cauchy 估计把非配对零点半径与 R150 的高 odd replenishment 阈值接成精确不等式；
+剩余缺口是联合 uniform 控制，不是更多低阶展开。整体发表性判断仍为“无”。

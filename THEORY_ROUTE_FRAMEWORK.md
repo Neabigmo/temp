@@ -12703,3 +12703,18 @@ odd cumulant support 会使 `K_o` 成为 odd polynomial，而 exact tail 的二�
 `SYNTHESIS/CONDITIONAL` 的结构性二分；下一主轴是证明该 escape 与正密度/全阶
 Hankel cone 不相容，或构造 genuine obstruction。新增
 `r180_infinite_odd_tail_escape_dichotomy`，整体发表性仍为“无”。
+
+## 83.48 R181：Cauchy odd-tail / Hankel replenishment bridge（2026-09-09）
+
+网页端 R181 发送调用成功但未形成理论正文；本机新增
+`r181_cauchy_replenishment_bridge`。令 `C_o=(C-C(-z))/2`，在 Hadamard
+非配对零点假设下，`C_o` 的解析半径至少到 `R_Delta`；Cauchy 给出
+`|c_n|<=M_o(rho)rho^(-n)`。R150 的 fixed-degree robust replenishment 又给出
+某个 `d<n<2M_d(a)` 的 `|c_n|>eta_d(a)`，故有精确桥
+`eta_d(a)<M_o(rho)max rho^(-n)`，`rho>=1` 时为
+`eta_d(a)<=M_o(rho)rho^(-(d+2))`。
+
+这不是最终矛盾，因为 `M_o(rho)`、`M_d(a)`、`eta_d(a)` 尚无联合 uniform 控制；
+OU 同步缩放 Cauchy 半径后也只还原底层约束。它把下一真正目标具体化为
+`M_o` 与 `eta_d` 的联合比较，证据等级为 `PROVED UNDER HADAMARD + R150
+HYPOTHESES`；整体发表性仍为“无”。

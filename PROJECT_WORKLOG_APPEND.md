@@ -6890,3 +6890,22 @@ full-exact/full-SF、全阶尾界和局部 MGF 解析假设下，任何 asymmetr
 escape 与正密度/全阶 Hankel cone 不相容，或构造满足所有条件的 genuine law”二选一。
 证据等级为 `PROVED UNDER STATED GENUINE HYPOTHESES` 加 `SYNTHESIS/CONDITIONAL`；
 `audit_r180.js` 已通过精确代数 sanity check，整体发表性判断仍为“无”。
+
+### R181：Cauchy odd-tail / Hankel replenishment bridge（2026-09-09）
+
+网页端 R181 发送调用成功但未形成理论正文；本机继续推进定量接口。令
+`C_o(z)=(C(z)-C(-z))/2`，在 Hadamard 非配对零点假设下，成对零点在 `C_o` 中
+抵消，故对 `rho<R_Delta` 有 `M_o(rho)=max_|z|=rho |C_o(z)|` 与
+`|c_n|<=M_o(rho)rho^(-n)`。结合 R150 的 robust replenishment，某个
+`d<n<2M_d(a)` 满足 `|c_n|>eta_d(a)`，从而得到
+
+`eta_d(a)<M_o(rho) max_(d<n<2M_d(a), n odd)rho^(-n)`；
+
+当 `rho>=1` 时尤其有 `eta_d(a)<=M_o(rho)rho^(-(d+2))`。这把非配对零点解析
+尺度与正性/Hankel 高 odd 补偿放进同一精确不等式，明确剩余缺口是 `M_o`、`M_d`
+和 `eta_d` 在 `d->infinity,a->0` 下的联合 uniform 比较，而不是再做低阶扫描。
+
+OU 缩放 `C_(o,t)(z)=C_o(sqrt(t)z)`、`R_Delta(t)=R_Delta/sqrt(t)` 说明同步
+选取 Cauchy 半径时该不等式仍只是底层约束，不会关闭塔。证据等级为
+`PROVED UNDER HADAMARD + R150 HYPOTHESES`，审计 marker 为
+`R181_CAUCHY_REPLENISHMENT_BRIDGE_PASSED`；整体发表性判断仍为“无”。
