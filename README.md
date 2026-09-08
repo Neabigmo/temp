@@ -187,3 +187,9 @@ R183 网页端发送后仍未形成理论正文。本机新增
 能量可以保持而 odd 系数只在 `1/J` 密度阶次出现，故现有 shell energy、Cauchy
 和 OU 缩放不能单独提供 uniform cone coercivity。该 obstruction 不是 genuine
 MGF 反例，整体发表性判断仍为“无”。
+
+R184 网页端发送后暂未形成理论正文。本机新增
+`r184_jensen_zero_count_small_shell`：由 R112 的统一 square-exponential 包络
+和 Jensen 计数，在首壳半径 `R_Delta<=1` 时得到 `J<=9`、`p_0>=1/17`；
+这缩小了小壳区间的模态退化，但仍未对齐 R150 的 `eta_d(a)`，整体发表性判断
+仍为“无”。

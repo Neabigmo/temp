@@ -6941,3 +6941,19 @@ escape。`audit_r182.js` 已通过周期指数和、密度估计、外壳衰减�
 把唯一缺口具体化为首壳模态数/`B^2/S_2` 的统一控制、shell-to-cone coercive
 不等式或 `eta_d(a)` 的 moving-degree 下界。`audit_r183.js` 已通过；整体
 发表性判断仍为“无”。
+
+### R184：Jensen 零点计数与 small-shell regime（2026-09-09）
+
+网页端 R184 发送后暂未形成理论正文；本机继续推进 R183 的唯一缺口。R112 的
+genuine full-exact envelope `E exp(X^2/8)<=2` 对 normalized Bargmann MGF 给出
+`|B_mu(x+iy)|<=2 exp(3|z|^2/2)`。Jensen 在 `r=1,R=2` 上于是给出
+`n_mu(1)<10`，即首个非配对壳若 `R_Delta<=1`，其代表数 `J<=9`。因此
+`B^2/S_2<=J<=9`、`p_0>=1/17`；若重数差为整数且壳非空，`S_2>=1`，R182
+的首壳 odd-cumulant 归一化幅度至少为 `1/sqrt(2)`（渐近阶次上）。
+
+若 `R_Delta>1`，forward OU 不能取 `t=R_Delta^2`；直接 Jensen 只给出
+`J<=1+(6/log 2)R_Delta^2` 和
+`p_0>=1/(1+(12/log 2)R_Delta^2)`，故大壳区间仍可退化。R184 把当前
+analytic escape 缩小为大壳或 uniform shell-gap/onset/degree-alignment 问题，
+但尚未把 `p_0>=1/17` 对齐到 R150 的 `eta_d(a)`，整体发表性判断仍为“无”。
+`audit_r184.js` 已通过。

@@ -12747,3 +12747,19 @@ obstruction，不是 genuine MGF 反例；下一真正接口必须控制壳模�
 建立 shell-to-cone coercive map，或直接量化 moving-degree 的 `eta_d(a)`。
 证据等级为 `PROVED UNDER HADAMARD SHELL HYPOTHESES` 加
 `EXACT-AUDITED`；整体发表性仍为“无”。
+
+## 83.51 R184：Jensen 零点计数与 small-shell regime（2026-09-09）
+
+网页端 R184 发送后暂未形成理论正文；本机新增
+`r184_jensen_zero_count_small_shell`。R112 的 genuine full-exact 统一包络
+`E exp(X^2/8)<=2` 推出 `|B_mu(z)|<=2 exp(3|z|^2/2)`。Jensen 在单位圆壳
+外半径 2 计数得到 `n_mu(1)<10`，所以当首非配对壳 `R_Delta<=1` 时，
+`J<=9`、`B^2/S_2<=9`、`p_0>=1/17`；整数重数差还给出 `S_2>=1`，从而
+R182 的归一化首壳幅度至少为 `1/sqrt(2)`。
+
+对 `R_Delta>1`，合法 forward OU 不能把壳移到单位圆；一般 Jensen 只给出
+`J<=1+(6/log 2)R_Delta^2` 与
+`p_0>=1/(1+(12/log 2)R_Delta^2)`。因此这是真正的 small-shell 条件性改进，
+不是完整 cone/Hankel 矛盾；剩余卡点为大壳逃逸、壳隙起点和与 R150 有限 degree
+window 的对齐。证据等级为 `PROVED UNDER R112 + HADAMARD HYPOTHESES` 加
+`CONDITIONAL PROPOSITION`，整体发表性仍为“无”。
