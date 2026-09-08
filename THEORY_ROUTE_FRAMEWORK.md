@@ -12172,6 +12172,8 @@ R158-A 的证明接口进一步写成可独立引用的条件性 lemma：若对�
 `6b_n=[s^n]((3cosh(sqrt(s))-2)B^3)`。
 
 这补强了“conditional/interface theorem”中最容易发生系数误读的部分，并确认
-常数 `6` 的来源。它仍属于 `CONDITIONAL / FORMAL-INTERFACE`：没有补上原始对象
+常数 `6` 的来源；此外 odd-`d` 的 `|p_d|` 控制可由
+`r_1+r_2+r_3=0 -> (a,b,-(a+b))` 直接证明，Hölder 的总次数也确实是 `n`。
+它仍属于 `CONDITIONAL / FORMAL-INTERFACE`：没有补上原始对象
 的 full-SF reduction、genuine law、全 `tau` 符号、edge escape 或空间 `P_3K`
 桥；整体发表性结论仍为：`无（目前没有足够独立、完整、可审稿的发表性结果）`。

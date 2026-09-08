@@ -64,6 +64,20 @@ pivot 的 `3 b_n` 与右侧 `m=0` 中被移除的三个 `b_n`。
 具有同一边缘矩 `h_n`。若形式级 universal equation 对所有阶成立，则其 `s^n`
 系数可唯一解出：直接项是 `3h_n a_(d,n)`，而且 `3h_n>0`。
 
+这里的 odd-`d` 几何不等式本身也不需要数值猜测。由
+`r_1+r_2+r_3=0`，除全零情形外，可将三个实数重排为 `a,b,-(a+b)`，其中
+`a,b>=0`。当 `d` 为奇数时
+`p_d=a^d+b^d-(a+b)^d`（差一个整体符号），所以
+`|p_d|=(a+b)^d-a^d-b^d <= (a+b)^d=max_i|u_i|`。
+取 `2m` 次方并用最大值不超过和，便得
+`|p_d|^(2m)<=sum_i q_i^m`。
+同样，若 `ell_1+ell_2+ell_3=n`，广义 Hölder 给出
+
+`<product_i q_i^(ell_i)> <= product_i <q_i^n>^(ell_i/n)=h_n`。
+
+因此这两步的量词和总次数均已闭合；真正仍外置的不是这两个角向不等式，而是
+原始对象能否全阶、同归一化地落入该 universal equation。
+
 具体地，记 `P(s)=product_i A_d(s q_i)`，并把 `m=0` 的 `s^n` 系数中三个
 linear terms `a_(d,n)q_i^n` 删除，余项记为 `R_(0,n)`。逐项取绝对值并用
 上述两条矩不等式，归纳假设 `|a_(d,k)|<=b_k (k<n)` 给出

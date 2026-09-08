@@ -6491,5 +6491,7 @@ equation 的 `s^n` 系数拆成 `m=0` 去掉三个当前 linear terms 的余项�
 `6b_n=[s^n]((3cosh(sqrt(s))-2)B^3)`。
 
 这使 pivot `3h_n` 的正性、归纳只依赖低阶系数、以及常数 `6` 的来源都显式化。
-该 lemma 可作为论文中的条件性接口模块；它仍不补 full-SF 到 universal equation、
+同时补写了 odd-`d` 几何的直接证明：由 `r_1+r_2+r_3=0` 重排为
+`a,b,-(a+b)` 后，`|a^d+b^d-(a+b)^d|<=(a+b)^d`；Hölder 则把总次数
+`ell_1+ell_2+ell_3=n` 的混合矩压到 `h_n`。该 lemma 可作为论文中的条件性接口模块；它仍不补 full-SF 到 universal equation、
 formal-to-genuine-law、全 `tau` 符号或原始 rigidity 的缺口。整体发表性判断不变。
