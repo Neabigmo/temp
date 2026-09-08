@@ -6194,3 +6194,19 @@ outer-tail 指数结果只阻断依赖该证书的 moderate-depth outer-well 路
 failure 的 Gauss--Hermite 节点上判定 bulk negative node，或证明所有失败序列逃到
 turning scale 并且深度比消失。该命题是 R137 radius collapse 与 R154 localization
 criterion 之间的唯一剩余桥接。
+
+## 2026-09-09 — R156 Completed-Sparse Gauss-Node Turning-Profile 部署
+
+R156 已向同一网页研究对话发送，公开基线为 `9c12b63`；本机新增
+`r156_turning_profile_audit/README.md`，仅记录定义与边界，不宣称 A/B 分支已证。
+
+目标是 fixed odd `d` 的 formal full-SF sparse completion，在 first-failing section
+`M_d^sharp(a)` 的 `2M+1` 阶 Gauss--Hermite nodes 上研究
+`G_{j,M}=g_{d,a,M}(x_{j,M})`。已有有限推论是：quadrature 对 degree-`2M` Gram
+integrand 精确；所有节点值非负则 `Gamma_M` PSD，非 PSD 必出现真实节点负值。该推论
+仍是 `FINITE-ONLY/FORMAL`，不能当作 genuine iid realization。
+
+网页端被要求严格二择一：A，证明 bulk negative node 与统一相对深度并导出负特征值；或
+B，证明负节点逃至 Hermite edge `|x|/sqrt(M)->2` 且深度比逃过 bulk localization
+阈值，再进入 Airy scale。若暂不能证明，必须退回可核验 partial lemma 并标为
+`CONDITIONAL/OPEN`。R155 的发表性判断继续为“无”。

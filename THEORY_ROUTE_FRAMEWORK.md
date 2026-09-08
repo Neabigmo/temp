@@ -11910,3 +11910,19 @@ spatial `P_3 K` 的桥。因此不能把这些模块直接包装成已有发表�
 negative node 且 `a_M/b_M` 保持足够比例，从而由 R154 得到显式负特征值；要么证明
 失败节点必逃至 `x=2\\sqrt M+sM^{-1/6}` 的 turning scale，且深度比降到局部化阈值以下。
 这正是 R137 的 radius collapse 与 R154 的 localization criterion 之间尚缺的桥。
+
+## 83.7 R156 节点转折轮廓部署（2026-09-09）
+
+R156 已在同一网页研究对话部署，公开基线为 `9c12b63`；本机新增
+`r156_turning_profile_audit/README.md`，但尚未把任一 A/B 分支写成定理。
+
+固定 odd `d`、formal full-SF sparse completion `B_{d,a}`、first-failing section
+`M=M_d^sharp(a)`，令 `lambda=|a|^{2/d}`、`tau=lambda M`，直接研究
+`G_{j,M}=g_{d,a,M}(x_{j,M})`。有限层已知：`N=2M+1` Gauss--Hermite quadrature
+对 `g_{d,a,M}p^2` 精确；全节点非负推出 `Gamma_M` PSD，故非 PSD 必有真实节点
+`G_{j,M}<0`。这是 `FINITE-ONLY/FORMAL` 必要条件，不是 genuine iid 反例。
+
+网页端必须二择一：证明 bulk negative node 加相对深度比，给出负特征值裕量；或证明
+所有失败节点逃到 `|x|/sqrt(M)->2` 并将深度比压到 bulk Christoffel 阈值以下，随后
+才进入 `x=2sqrt(M)+sM^(-1/6)` 的 Airy scale。若两者均无法证明，只保留最强 partial
+lemma 并明确 `CONDITIONAL/OPEN`，不把 formal completion 当 genuine law。
