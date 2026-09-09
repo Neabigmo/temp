@@ -292,3 +292,10 @@ exact row，精确得到 `F_4=(16/27)kappa_8`，故 `kappa_8=0`；随后以
 `a=-18c(4-3c^2)/(2-c^2)` 使 `H_4` 正定。该结果说明第四行没有继续压缩
 小非零 cubic 分支，是有限 Hankel 可行性/检测阶逃逸结果，不是 all-row 反例。
 审计已通过，原始 rigidity 与整体独立发表性仍为“无”。
+
+R201 新增 `r201_fifth_row_hankel_escape`：第五个 exact row 精确给出
+`F_5=(32/81)(kappa_10+60c kappa_7)`，因此只确定 `kappa_10`，留下
+`kappa_9`。在 `kappa_7=kappa_10=0` 且 `0<|c|<=0.1` 时，可显式选择
+`kappa_9=B(c)/(2D_3)` 使 `H_3,H_4,H_5` 同时正定。该结果是有限行/有限
+Hankel escape lemma，不是 all-row 反例；审计已通过，原始 rigidity 与整体
+独立发表性仍为“无”。

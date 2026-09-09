@@ -7248,3 +7248,30 @@ PSD obstruction，但对 `c` 足够小行列式仍为正，不能排除小非零
 第四 exact row 与下一 Hankel block 没有进一步压缩小 `c` 区域；这是
 `FINITE HANKEL FEASIBILITY/ESCAPE`，不是 representing-measure 或 all-row
 结论。`audit_r200.js` 已通过，整体独立发表性仍为“无”。
+
+### R201：第五 radial row 仍允许小 cubic 的 Hankel escape（2026-09-09）
+
+本机在 R200 branch 上加入 `F_5=E Q^5-3840=0`。令
+`kappa_3=c,kappa_4=kappa_5=0,kappa_6=-3c^2,kappa_7=a,kappa_8=0,
+kappa_9=d,kappa_10=e`，则
+
+`m_9=d+1260c+36a+28c^3`，
+`m_10=e+945+4410c^2+120ca`，
+
+且精确 product expansion 给出
+`F_5=(32/81)(e+60ca)`。所以第五行只强制
+`kappa_10=-60c kappa_7`，不约束 `kappa_9`。
+
+进一步取 `a=e=0`、`u=c^2`，写
+`D_3=12-30u-6u^2`，
+`B=-5760c+21600c^3-4968c^5-252c^7`，
+`C=34560-604800u+705888u^2-2685096u^3-259497u^4+2646u^5`。
+直接计算得到
+
+`det H_5=-D_3 d^2+B d+C`。
+
+取 `d=B/(2D_3)`。对 `0<|c|<=1/10`，可严格验证 `H_3,H_4` 正定且
+`C>0`，于是 `H_5` 也正定。故前五个 radial rows 与固定 Hankel block
+仍不能排除小非零 cubic；这是 `PROVED` 的 finite-row/Hankel escape，
+不是 representing measure、all-row law 或原始 counterexample。
+`audit_r201.js` 已通过，整体独立发表性仍为“无”。

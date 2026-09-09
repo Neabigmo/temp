@@ -13037,3 +13037,23 @@ all-row counterexample；它证明固定低阶 Hankel obstruction 在此处不�
 并把核心进一步压缩为随阶数移动的 odd cumulant/recurrence 自由度是否能被全局
 正性统一控制。与 R186 rank closure、R188 `(MT_r)` 仍是不同接口，原始
 rigidity 与整体独立发表性仍 OPEN/“无”。
+
+## 83.67 R201：第五 radial row 仍允许小 cubic 的 Hankel escape（2026-09-09）
+
+在 R200 branch 上，累积量--矩公式给出
+`m_9=kappa_9+1260c+36kappa_7+28c^3` 与
+`m_10=kappa_10+945+4410c^2+120c kappa_7`。第五 product row 精确化为
+
+`F_5=(32/81)(kappa_10+60c kappa_7)`。
+
+因此 `F_5=0` 只确定 `kappa_10=-60c kappa_7`，留下 `kappa_9`。取
+`kappa_7=kappa_10=0` 后，`H_5` 的行列式关于 `d=kappa_9` 为
+
+`-D_3d^2+B(c)d+C(c)`,
+
+其中 `D_3=12-30c^2-6c^4`，且 `B,C` 为 R201 记录中的显式多项式。取
+`d=B/(2D_3)`；对 `0<|c|<=1/10`，`H_3,H_4` 正定，且 `C(c)>0`，所以
+`H_5` 也正定。该有限层结果证明第五行仍没有提供统一的小 cubic 正性墙，
+把核心进一步压缩到随阶数移动的 odd cumulant/recurrence 自由度；它不等于
+genuine representing-measure、`(MT_r)`、primitive rank closure 或 all-row
+counterexample。原始 rigidity 与整体独立发表性仍 OPEN/“无”。
