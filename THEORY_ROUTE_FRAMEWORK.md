@@ -12929,3 +12929,19 @@ minor 具有严格谱隙，R192 小参数 formal/genuine 局部扰动不能统�
 固定 `r>1` 的 uniform inverse-Hankel/derivative-kernel 阶界；若不能，构造只
 满足 envelope 的 abstract rank-escape 族。原始 rigidity 与整体独立发表性仍为
 OPEN/“无”。
+
+## 83.61 R195：square-exponential envelope does not bound inverse-Hankel order（2026-09-09）
+
+R112 的 envelope 本身不足以给 inverse-Hankel failure order 一个统一上界。
+对每个 `N`，用 `2N+2` 个有限互不相交区间构造非零有界 `h_N`，使其对
+`1,x,...,x^(2N)` 全部正交；取 `p_N=gamma(1+h_N)` 并令
+`||h_N||_infinity<=1/2`。则 `p_N` 是 genuine positive centered variance-one
+law，保持前 `2N` 个 Gaussian moments，且
+`E exp(X^2/8)<=sqrt(3)<2` 与 `N` 无关。
+
+于是对任意固定 `r>1`，其 inverse-OU candidate 的 `2N` 阶 Taylor jet 与
+Gaussian 相同，所有阶 `m<=N` 的 inverse-Hankel block 都严格正定。该族不是
+full-exact/same-factor law，因此是 `ENVELOPE-ONLY OBSTRUCTION`，不是原始
+counterexample；但它严格排除只用 R112 尾界闭合 R186 rank closure 的路线。
+R195 的剩余接口是 product identity 对这种有限矩 camouflage 的首个跨副本
+检测阶，而非继续研究单变量 tail。

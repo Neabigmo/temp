@@ -7114,3 +7114,22 @@ confluent-Bochner/导数核检验，继而才可能与 R186 rank closure、R188 
 failure-order escape 结构相似但层次不同，不循环。原始 `RK=1` 桥、`P_3K`
 身份桥、`(MT_r)`、uniform rank closure 和 tower rigidity 仍 OPEN，整体发表性
 仍为“无”。`audit_r194.js` 已通过。
+
+### R195：square-exponential envelope 下的任意阶 inverse-Hankel camouflage（2026-09-09）
+
+本机证明 R112 的统一包络本身不能给 R186 所需的 inverse-Hankel 失败阶上界。
+对任意 `N`，取 `2N+2` 个互不相交有限区间，利用 `(2N+1)x(2N+2)` 矩阵
+`A_(k,j)=integral_(I_j)x^k gamma(x)dx` 的非平凡零空间，构造有界非零
+`h_N` 正交于所有 `x^k`（`0<=k<=2N`）。令 `p_N=gamma(1+h_N)` 且
+`||h_N||_infinity<=1/2`，则 `p_N` 是真正正密度，保持质量、均值、方差和
+前 `2N` 阶 Gaussian 矩，同时统一满足
+`E_(p_N)exp(X^2/8)<=sqrt(3)<2`。
+
+对任意固定 `r>1`，逆 OU 候选
+`K_(N,r)(u)=exp((r^2-1)u^2/2)phi_(N)(ru)` 的 `2N` 阶 Taylor jet 与
+`exp(-u^2/2)` 完全相同，所以所有 `m<=N` 的 inverse-Hankel block 恰为
+Gaussian 严格正定块。该结果是 `PROVED` 的 envelope-only obstruction，说明
+统一尾界不能阻止检测阶逃逸；它不满足 `Q~chi^2_2` 或 same-factor product
+identity，因而不是原始问题反例。R195 与 R186 不循环：前者否定“包络单独
+给 uniform failure order”，后者保留 genuine primitive 子类上的 rank-closure
+问题。`audit_r195.js` 已通过，整体发表性仍为“无”。

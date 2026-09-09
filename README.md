@@ -250,3 +250,10 @@ R194 新增 `r194_confluent_bochner_escape`：将 R193 的点碰撞有限差分 
 confluent PSD stability/escape lemma，不是 genuine counterexample；与 R186
 inverse-Hankel escape 非循环。原始 rigidity、bare `RK=1` 桥、`P_3K` identity
 和整体独立发表性仍 OPEN/“无”。
+
+R195 新增 `r195_envelope_only_hankel_camouflage`：对任意 N 构造 genuine
+positive density，保持前 `2N` 阶 Gaussian moments，同时统一满足
+`E exp(X^2/8)<2`；因此任意固定 `r>1` 的 inverse-Hankel blocks 到阶 N 都与
+Gaussian 完全相同。该结果严格说明 R112 envelope 不能单独阻止 rank escape，
+但构造不满足 full-exact/same-factor product identity，不是原始反例；下一步
+应研究 product identity 对这类 camouflage 的首个跨副本检测阶。
