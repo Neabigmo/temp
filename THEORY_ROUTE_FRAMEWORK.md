@@ -12930,48 +12930,6 @@ minor 具有严格谱隙，R192 小参数 formal/genuine 局部扰动不能统�
 满足 envelope 的 abstract rank-escape 族。原始 rigidity 与整体独立发表性仍为
 OPEN/“无”。
 
-## 83.65 R199：cubic compensation branch 的最低阶 Hankel obstruction（2026-09-09）
-
-R198 的 genuine finite-row 补偿分支为
-`kappa_3=c, kappa_4=kappa_5=0, kappa_6=-3c^2`。其 cumulant--moment
-转换给出
-`(m_0,...,m_6)=(1,0,1,c,3,10c,15+7c^2)`，所以 genuine law 的四阶
-moment block `H_3` 必须满足
-
-`det H_2=2-c^2`,
-`det H_3=12-30c^2-6c^4=6(2-5c^2-c^4)`。
-
-由此得到明确阈值
-`|c|<=c_*:=sqrt((sqrt(33)-5)/2)=0.610...`。若
-`c_*<|c|<sqrt(2)`，则 `H_2` 正定而相对于它的最后 Schur defect
-`det(H_3)/det(H_2)` 为负；若 `|c|>=sqrt(2)`，`H_2` 已先违反 PSD。
-这是 genuine finite-row 的 `PROVED/ANALYTICALLY PROVED` obstruction，
-但 `det H_3>0` 在 `c=0` 附近成立，故它不能排除小非零分支，也不能代替
-R186 inverse-Hankel rank closure、R188 `(MT_r)` 或最终 tower rigidity。
-该结果把 R198 的下一接口收缩为“允许参数趋零时正性检测阶是否逃逸”，而非
-继续无目的地展开 radial Taylor 行；原始 rigidity 与整体独立发表性仍 OPEN/“无”。
-
-## 83.64 R198：finite-row cubic compensation 的精确二阶正规形（2026-09-09）
-
-R197 只说明固定有限行可以通过偶 cumulant 补偿实现非零三阶 cumulant；R198
-把这一补偿在最初两行上写成了完全显式的正规形。记 `c=kappa_3`，并令
-`F_s=E Q^s-2^s s!`。直接展开 `Q` 的多项式并按 cumulant--moment 公式化简，得
-
-`F_2=(4/3)kappa_4`，
-
-而在 `kappa_4=kappa_5=0` 的切片上，
-
-`F_3=(8/9)kappa_6+(8/3)c^2`。
-
-因此前两行同时为零的局部补偿条件恰为 `kappa_4=kappa_5=0` 与
-`kappa_6=-3c^2`。这与 R191/R192 的三阶 formal 径向补偿常数完全一致：若
-`c=6epsilon`，则 `b_2=-3/20` 给出
-`kappa_6=6!b_2 epsilon^2=-3c^2`。R198 是 genuine finite-row moment
-identity 和 formal consistency check，不是 positivity、all-row closure 或
-原始 counterexample；它把下一步问题精确定位为补偿分支上的最低阶 moment-Hankel
-主子式，而不是继续无目的地展开更多 radial Taylor 行。原始 rigidity 与整体
-独立发表性仍 OPEN/“无”。
-
 ## 83.61 R195：square-exponential envelope does not bound inverse-Hankel order（2026-09-09）
 
 R112 的 envelope 本身不足以给 inverse-Hankel failure order 一个统一上界。
@@ -13017,3 +12975,65 @@ counterexample，因为高阶 rows 未控制；其全局含义是 R125 的 all-r
 annihilation；它不是 all-row counterexample，仍必须通过 `M->infinity` 的
 compactness/coercivity 才能处理原始问题。原始 rigidity 与整体独立发表性仍
 OPEN/“无”。
+
+## 83.64 R198：finite-row cubic compensation 的精确二阶正规形（2026-09-09）
+
+R197 只说明固定有限行可以通过偶 cumulant 补偿实现非零三阶 cumulant；R198
+把这一补偿在最初两行上写成了完全显式的正规形。记 `c=kappa_3`，并令
+`F_s=E Q^s-2^s s!`。直接展开 `Q` 的多项式并按 cumulant--moment 公式化简，得
+
+`F_2=(4/3)kappa_4`，
+
+而在 `kappa_4=kappa_5=0` 的切片上，
+
+`F_3=(8/9)kappa_6+(8/3)c^2`。
+
+因此前两行同时为零的局部补偿条件恰为 `kappa_4=kappa_5=0` 与
+`kappa_6=-3c^2`。这与 R191/R192 的三阶 formal 径向补偿常数完全一致：若
+`c=6epsilon`，则 `b_2=-3/20` 给出
+`kappa_6=6!b_2 epsilon^2=-3c^2`。R198 是 genuine finite-row moment
+identity 和 formal consistency check，不是 positivity、all-row closure 或
+原始 counterexample；它把下一步问题精确定位为补偿分支上的最低阶 moment-Hankel
+主子式，而不是继续无目的地展开更多 radial Taylor 行。原始 rigidity 与整体
+独立发表性仍 OPEN/“无”。
+
+## 83.65 R199：cubic compensation branch 的最低阶 Hankel obstruction（2026-09-09）
+
+R198 的 genuine finite-row 补偿分支为
+`kappa_3=c, kappa_4=kappa_5=0, kappa_6=-3c^2`。其 cumulant--moment
+转换给出
+`(m_0,...,m_6)=(1,0,1,c,3,10c,15+7c^2)`，所以 genuine law 的四阶
+moment block `H_3` 必须满足
+
+`det H_2=2-c^2`,
+`det H_3=12-30c^2-6c^4=6(2-5c^2-c^4)`。
+
+由此得到明确阈值
+`|c|<=c_*:=sqrt((sqrt(33)-5)/2)=0.610...`。若
+`c_*<|c|<sqrt(2)`，则 `H_2` 正定而相对于它的最后 Schur defect
+`det(H_3)/det(H_2)` 为负；若 `|c|>=sqrt(2)`，`H_2` 已先违反 PSD。
+这是 genuine finite-row 的 `PROVED/ANALYTICALLY PROVED` obstruction，
+但 `det H_3>0` 在 `c=0` 附近成立，故它不能排除小非零分支，也不能代替
+R186 inverse-Hankel rank closure、R188 `(MT_r)` 或最终 tower rigidity。
+该结果把 R198 的下一接口收缩为“允许参数趋零时正性检测阶是否逃逸”，而非
+继续无目的地展开 radial Taylor 行；原始 rigidity 与整体独立发表性仍 OPEN/“无”。
+
+## 83.66 R200：第四 radial row 不收紧 cubic compensation 的 Hankel 阈值（2026-09-09）
+
+在 R198 分支上再要求 `F_4=E Q^4-384=0`。精确 product expansion 给出
+`F_4=(16/27)kappa_8`，所以 `kappa_8=0`；`kappa_7` 因中心化而不出现在
+总次数八的第四行。令 `a=kappa_7`、`u=c^2`，则
+
+`det H_4=(u-2)a^2-36c(4-3u)a+288-2160u-486u^2-630u^3`。
+
+当 `u<u_*=(sqrt(33)-5)/2` 时，R199 已知 `H_3\succ0`。选择
+`a=-18c(4-3u)/(2-u)` 后，精确化简为
+
+`det H_4=((2-5u-u^2)(-630u^2+1008u+288))/(2-u)>0`。
+
+因此对每个 `0<|c|<sqrt(u_*)`，存在同时通过第四 exact row 且 `H_4\succ0`
+的有限 moment 数据。R200 不是 genuine representing-measure 结果，也不是
+all-row counterexample；它证明固定低阶 Hankel obstruction 在此处不再收紧，
+并把核心进一步压缩为随阶数移动的 odd cumulant/recurrence 自由度是否能被全局
+正性统一控制。与 R186 rank closure、R188 `(MT_r)` 仍是不同接口，原始
+rigidity 与整体独立发表性仍 OPEN/“无”。

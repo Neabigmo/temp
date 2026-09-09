@@ -285,3 +285,10 @@ R199 新增 `r199_hankel_compensation_obstruction`：沿 R198 分支
 `|c|<=sqrt((sqrt(33)-5)/2)=0.610...`；这是固定有限阶的真实 PSD
 obstruction，但小 `c` 仍未被排除，不能升级为 all-row theorem 或原始反例。
 审计已通过，原始 rigidity 与整体独立发表性仍为“无”。
+
+R200 新增 `r200_hankel_fourth_row_escape`：在 R198 补偿分支上加入第四个
+exact row，精确得到 `F_4=(16/27)kappa_8`，故 `kappa_8=0`；随后以
+`a=kappa_7` 调节 `H_4`，在 R199 允许的 `|c|<0.610...` 区域内可取
+`a=-18c(4-3c^2)/(2-c^2)` 使 `H_4` 正定。该结果说明第四行没有继续压缩
+小非零 cubic 分支，是有限 Hankel 可行性/检测阶逃逸结果，不是 all-row 反例。
+审计已通过，原始 rigidity 与整体独立发表性仍为“无”。

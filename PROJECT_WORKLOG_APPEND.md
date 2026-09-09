@@ -7221,3 +7221,30 @@ moment identity 加 `FORMAL CONSISTENCY`，不是 all-row counterexample；
 `6(2-5c^2-c^4)/(2-c^2)` 已为负。这是 `PROVED` 的 finite-row
 PSD obstruction，但对 `c` 足够小行列式仍为正，不能排除小非零补偿分支，
 所以仍不是 all-row rigidity。`audit_r199.js` 已通过，整体独立发表性仍为“无”。
+
+### R200：第四 radial row 不收紧 R199 的 Hankel 阈值（2026-09-09）
+
+本机继续沿 R198 补偿分支并加入 `F_4=E Q^4-384=0`。对
+`kappa_3=c, kappa_4=kappa_5=0, kappa_6=-3c^2`，直接 product expansion
+给出精确恒等式
+
+`F_4=(16/27)kappa_8`。
+
+故第四行只强制 `kappa_8=0`，而 `kappa_7` 不进入该行。令 `a=kappa_7`、
+`u=c^2`，此时
+
+`(m_0,...,m_8)=(1,0,1,c,3,10c,15+7u,a+105c,105+196u)`，
+
+并有
+
+`det H_4=(u-2)a^2-36c(4-3u)a+288-2160u-486u^2-630u^3`。
+
+在 R199 阈值 `u_*=(sqrt(33)-5)/2` 内，取
+`a=-18c(4-3u)/(2-u)`，则
+
+`det H_4=((2-5u-u^2)(-630u^2+1008u+288))/(2-u)>0`。
+
+同时 `H_3` 正定，所以该选择给出 `H_4` 正定的有限 moment 数据。于是
+第四 exact row 与下一 Hankel block 没有进一步压缩小 `c` 区域；这是
+`FINITE HANKEL FEASIBILITY/ESCAPE`，不是 representing-measure 或 all-row
+结论。`audit_r200.js` 已通过，整体独立发表性仍为“无”。
