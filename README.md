@@ -299,3 +299,10 @@ R201 新增 `r201_fifth_row_hankel_escape`：第五个 exact row 精确给出
 `kappa_9=B(c)/(2D_3)` 使 `H_3,H_4,H_5` 同时正定。该结果是有限行/有限
 Hankel escape lemma，不是 all-row 反例；审计已通过，原始 rigidity 与整体
 独立发表性仍为“无”。
+
+R202 新增 `r202_sixth_row_local_escape`：固定 R201 分支后，第六个 exact row
+精确给出 `F_6=(64/243)(kappa_12+120c kappa_9-3213c^4)`，只确定
+`kappa_12`，而 `kappa_11` 不出现。取 R201 的 `kappa_9` 补偿、`kappa_11=0`，
+由 `H_6(0)` 的 Gaussian 正定性和开性得到非零小 `c` 的 `H_6` 正定局部支。
+这是有限行局部逃逸，不是 all-row 反例；审计已通过，原始 rigidity 与整体
+独立发表性仍为“无”。

@@ -13057,3 +13057,20 @@ rigidity 与整体独立发表性仍 OPEN/“无”。
 把核心进一步压缩到随阶数移动的 odd cumulant/recurrence 自由度；它不等于
 genuine representing-measure、`(MT_r)`、primitive rank closure 或 all-row
 counterexample。原始 rigidity 与整体独立发表性仍 OPEN/“无”。
+
+## 83.68 R202：第六 radial row 仍有局部 Hankel escape（2026-09-09）
+
+固定 R201 的 `kappa_7=kappa_8=kappa_10=0`，令 `kappa_9=d`、
+`kappa_11=f`、`kappa_12=g`。则
+
+`m_11=f+17325c+1540c^3+55d`，
+`m_12=g+10395+97020c^2-8162c^4+220cd`，
+
+并且第六 exact row 精确给出
+`F_6=(64/243)(g+120cd-3213c^4)`。
+因此它只确定 `kappa_12=3213c^4-120c kappa_9`，`kappa_11` 仍自由。
+沿 R201 的 `d(c)=B(c)/(2D_3(c))`、取 `f=0`，补偿后的 `H_6(c)` 在
+`c=0` 为 Gaussian 正定 Hankel 块，并连续依赖于 `c`；故正定锥开性给出
+某个 `epsilon>0`，使所有 `|c|<epsilon` 的有限数据满足 `H_6\succ0`。
+这是 finite-row local feasibility，不是 genuine all-row law；它把 R197–R202
+的固定阶逃逸链进一步延长，原始 rigidity 与整体独立发表性仍 OPEN/“无”。

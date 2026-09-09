@@ -7275,3 +7275,24 @@ kappa_9=d,kappa_10=e`，则
 仍不能排除小非零 cubic；这是 `PROVED` 的 finite-row/Hankel escape，
 不是 representing measure、all-row law 或原始 counterexample。
 `audit_r201.js` 已通过，整体独立发表性仍为“无”。
+
+### R202：第六 radial row 的局部 Hankel escape（2026-09-09）
+
+本机固定 R201 的选择 `kappa_7=kappa_8=kappa_10=0`，令
+`kappa_9=d,kappa_11=f,kappa_12=g`。累积量--矩递推给出
+
+`m_11=f+17325c+1540c^3+55d`，
+`m_12=g+10395+97020c^2-8162c^4+220cd`。
+
+直接展开第六 product row 得到
+
+`F_6=(64/243)(g+120cd-3213c^4)`，
+
+故 `F_6=0` 只确定 `kappa_12=3213c^4-120c kappa_9`，而 `kappa_11`
+不进入该 row。沿 R201 的 `d(c)=B(c)/(2D_3(c))`、取 `f(c)=0`，
+补偿后的 `H_6(c)` 在 `c=0` 是 Gaussian 七阶 moment Hankel 正定块，
+且矩阵元素连续；由正定锥开性，存在 `epsilon>0` 使 `H_6(c)\succ0`
+对 `|c|<epsilon` 成立。`audit_r202.js` 已通过。
+
+这是 `PROVED` 的第六行补偿公式与 `FINITE-ROW LOCAL FEASIBILITY`，不是
+all-row positive law 或原始 counterexample；整体独立发表性仍为“无”。
