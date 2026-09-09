@@ -386,3 +386,19 @@ hard-edge 端点和区间拼接；若闭合即可确认 `C_L<infinity`，若不�
 `Q_m=O_delta(nu^(1/6))`，随后 `exp(-z/6)` 以 `z>=delta*nu` 压掉它。请只需
 逐项确认 DLMF (18.15.19)、(18.15.20)、(18.15.22) 的统一余项与端点拼接；
 确认后即可把 `C_L` 从 OPEN 升级为引用型 `PROVED`，否则指出具体失败式。
+
+### 2026-09-10 全局方向更新
+
+网页端当前把 `d_K<=C/sqrt(log(1/Delta))` 当作默认目标；本机审计提醒：若
+上述 Laguerre 包络引理成立，则该目标被同一固定 EI、局部 dominance 类中的
+family 否定，因为 `Delta_m~lambda_m`、`log(1/Delta_m)=2m log m+O(m)`，而
+`d_K>=c/sqrt(m)`。因此下一轮请先做以下最小裁决：
+
+1. 严格检查 DLMF 两区式是否真的足以推出 `C_L<infinity`，特别是 Bessel 区的
+   uniform remainder、`x=0` hard edge 与 Airy 区 `x=1` turning point 的拼接；
+2. 若通过，明确撤回单对数上界候选，并把目标改为审查
+   `sqrt(loglog(1/Delta)/log(1/Delta))` 是否可能是 sharp upper scale；
+3. 若不通过，指出具体失败项，再回到 reflection-specific upper bound。
+
+不要再把“证明单对数上界”作为无条件任务，也不要把 numerical sanity check
+当作 `C_L` 的证明。
