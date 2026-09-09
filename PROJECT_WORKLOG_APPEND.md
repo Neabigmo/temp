@@ -7022,3 +7022,19 @@ three-iid same-factor genuine counterexample，但证明径向边缘本身确实
 任意高 mixed Laguerre 阶；下一步必须从 product density 结构证明 total-degree
 预算，或构造满足 all-degree exactness 的 genuine migration。整体发表性判断仍为
 “无”，审计已通过。
+
+### R190：Gaussian 点上的 full mixed Laguerre 一阶盲区（2026-09-09）
+
+本机新增 `r190_linearized_radial_blind_ladder`。在 Gaussian product law 处，
+对 formal odd tangent `h_(2n+1)=H_(2n+1)`（`n>=1`），任意径向测试
+`F(Q)` 的一阶变化都因全局反射而为零；但 `C_(1,n)=E[U L_n(T)]` 的一阶
+变化精确为
+`sqrt(3)(2n+1)!(-1)^n/(3^n n!)`，对每个 `n` 非零。闭式来自
+`E[L_n(T)exp(sR_1-s^2/2)]=(-s^2/2)^n/n!`。
+
+这把 R188 的缺口进一步收紧：径向 exact identity 的线性化不仅看不见某个
+低阶 odd charge，而是看不见整个 `ell=1` mixed Laguerre ladder；要证明
+`(MT_r)` 必须使用 genuinely nonlinear 的 same-factor coupling 与 positivity。
+该结论是 `PROVED` 的 Gaussian generating-function calculation 加
+`FORMAL LINEARIZED OBSTRUCTION`，不是 genuine exact-law counterexample；整体
+原始问题的独立发表性判断仍为“无”，审计已通过。

@@ -12832,3 +12832,20 @@ realization；后两者仍 `OPEN`。
 故不是 genuine counterexample；它只把下一步严格压缩为：从 same-factor product
 density 证明 `(MT_r)`，或在 genuine all-degree exact 类中构造 mixed-sector
 migration。证据等级为 `PROVED` + `EXACT-AUDITED`，原始问题整体发表性仍为“无”。
+
+## 83.56 R190：Gaussian 点上的 full mixed Laguerre 一阶盲区（2026-09-09）
+
+R188 将总次数尾部写成了 `m_ell(t)=E[psi_ell(U)|T=t]` 的 `(MT_r)`；R190
+进一步计算其最基本的线性化障碍。对 Gaussian product law 和 formal odd
+tangent `H_(2n+1)`，全局反射给出对任意径向 `F(Q)` 的精确一阶零变分，
+但生成函数给出
+
+`D C_(1,n)=sum_i E_gamma[U L_n(T)H_(2n+1)(X_i)]`
+`=sqrt(3)(2n+1)!(-1)^n/(3^n n!) !=0`.
+
+推导使用 `X_i=U/sqrt(3)+v_i dot R`、`|v_i|^2=2/3` 以及
+`E[L_n(T)exp(sR_1-s^2/2)]=(-s^2/2)^n/n!`。因此 radial exact identity 的
+一阶变分对整个 `ell=1` mixed Laguerre ladder 都没有信息；R188/R186 所需的
+`(MT_r)` 必须来自 nonlinear same-factor coupling 与 positivity 的二阶以上
+关系。该结论为 `PROVED` calculation + `FORMAL LINEARIZED OBSTRUCTION`，
+不构成 genuine counterexample；原始问题整体发表性仍为“无”。

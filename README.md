@@ -214,3 +214,9 @@ R188 新增 `r188_mixed_sector_projection`：把缺口写成
 保持 `U`、`T` 两个边缘不变而把首个 mixed Laguerre 信号推到任意高阶，说明
 `T~Exp(1)` 本身不是 `U|T` 控制；该构造不满足 three-iid same-factor，因此不是
 原始问题反例。网页端本轮仍未产生理论正文，整体发表性判断仍为“无”，审计已通过。
+
+R190 新增 `r190_linearized_radial_blind_ladder`：在 Gaussian 点上，所有 odd
+Hermite tangent 对任意径向 `F(Q)` 的一阶变化为零，但对每个 `n>=1`，
+`D C_(1,n)=sqrt(3)(2n+1)!(-1)^n/(3^n n!)!=0`。这说明径向 exactness 的
+一阶信息对整个 common/residual mixed ladder 都盲；它是形式线性化 obstruction，
+不是 genuine counterexample。审计已通过，原始问题整体发表性仍为“无”。
