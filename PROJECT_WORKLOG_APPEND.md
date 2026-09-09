@@ -7755,10 +7755,10 @@ dominance 的逐点双侧估计；(iv) 补偿对 CDF 下界的影响。若这四
 Krasikov 的全局 Hermite 峰值估计
 `max_y exp(-y^2/2)|H_n(y)| <= C 2^(n/2)sqrt(n!)n^(-1/12)`
 再加 `exp(-2y^2/3)<=exp(-y^2/2)` 与 Stirling 比值
-`2^(-(2m+1)/2)sqrt((2m+1)!)/m!=O(m^(-1/4))`，给出所需固定
-`C_L`。因此包络子引理现在是 `CITED-LEMMA / LOCAL-DERIVED`，不是数值猜测；
-但这不关闭 Skellam dominance 双侧界与补偿后的 CDF 下界，Laguerre 反例整体
-仍保持 `CANDIDATE / LOCAL-DERIVATION`。引用记录：Krasikov,
+`2^(-(2m+1)/2)sqrt((2m+1)!)/m!=O(m^(1/4))`，连同 `n^(-1/12)` 仍留下
+`O(m^(1/6))`，所以不能给出 `C_L`。必须保留额外 `exp(-y^2/6)` 做 turning-zone
+加权估计；包络子引理仍为 `OPEN / CITATION NOT SUFFICIENT`，数值稳定不构成证明。
+引用记录：Krasikov,
 *New bounds on the Hermite polynomials*, [arXiv:math/0401310](https://arxiv.org/abs/math/0401310)。
 
 进一步把“预期”改成了可逐式检查的局部结论：对
@@ -7774,4 +7774,4 @@ CDF 端使用 `|F_(X_m)(0)-1/2|=Theta(m^(-1/2))` 和
 归一化不改变零阈值，故 `d_K(W_m,N)>=c/sqrt(m)`。再由
 `log(1/lambda_m)=2m log(m)+O(m)` 得到修正的
 `sqrt(loglog/log)` 下障碍。这样四个原审查点中，dominance 与 CDF 项已为
-`LOCAL-PROOF-AUDIT`；整个构造仍只差 `C_L` 的引用核验，不能升级为最终定理。
+`LOCAL-PROOF-AUDIT`；整个构造仍只差正确加权 `C_L` 估计，不能升级为最终定理。

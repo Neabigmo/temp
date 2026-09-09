@@ -454,18 +454,20 @@ CDF 下界不被 `lambda_m` 吞掉的审计。若四项闭合，当前单对数�
 （固定的有限个低阶 `n` 可并入 `C`）。由于
 `exp(-2*y^2/3) <= exp(-y^2/2)`，且
 
-`2^(-n/2)*sqrt(n!)/m! = O(m^(-1/4))` 对 `n=2m+1`，
+`2^(-n/2)*sqrt(n!)/m! = O(m^(1/4))` 对 `n=2m+1`，
 
-这个引用定理确实推出所需的固定 `C_L`。所以原候选的包络缺口可降为
-`CITED-LEMMA / LOCAL-DERIVED`，但不能再写成错误的 `exp(-z/2)` 一致界。
+所以连同 `n^(-1/12)` 也只得到 `O(m^(1/6))`，不能推出所需的固定 `C_L`。
+必须保留额外的 `exp(-y^2/6)`，对 turning 区做真正的加权估计。故 `C_L`
+仍是 `OPEN / CITATION NOT SUFFICIENT`，而不是已闭合的引用型子引理；数值上
+`sup_x|p_m(x)|` 近似稳定也只能作辅助证据。
 来源：Krasikov, *New bounds on the Hermite polynomials*,
 [arXiv:math/0401310](https://arxiv.org/abs/math/0401310)；DLMF 的 Laguerre
 渐近式也明确显示 turning 区必须单独处理，见
 [DLMF §18.15](https://dlmf.nist.gov/18.15)。
 
-这一步只关闭 `C_L<infinity` 的引用型子引理；`Delta_m=Theta(lambda_m)` 的
-逐点双侧常数和补偿后的 CDF 下界仍然是 `OPEN`，因此整个反例仍不能升级为
-`PROVED`。
+这一步排除了一个错误的包络证明，但没有关闭 `C_L<infinity`；
+`Delta_m=Theta(lambda_m)` 的逐点双侧常数和补偿后的 CDF 下界虽已逐式核对，
+整个反例仍因正确的加权 `C_L` 估计而保持 `CANDIDATE / LOCAL-DERIVATION`。
 
 ### I.b 补偿与 CDF 下界的本机闭合
 

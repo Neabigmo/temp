@@ -369,6 +369,7 @@ stability 部分。
 
 不要再审查错误的 `exp(-z/2)` 统一界。该量在 turning 区并不统一有界；真正
 需要的是 `sqrt(z) exp(-2z/3)|L_m^(1/2)(z)|`。借助 Hermite 恒等式和 Krasikov
-的全局 Hermite 峰值估计，这个正确包络已有 `CITED-LEMMA / LOCAL-DERIVED`
-级别的闭合；剩下只需审查补偿的双侧 `Delta` 估计与 CDF 下界。参考：
+的全局峰值估计单独只留下 `O(m^(1/6))`，不能关闭该加权包络；必须保留
+额外 `exp(-y^2/6)` 做 turning-zone 估计。补偿的双侧 `Delta` 估计与 CDF 下界
+已由本机逐式审计，但 `C_L` 仍是 OPEN。参考：
 [Krasikov, arXiv:math/0401310](https://arxiv.org/abs/math/0401310)。
