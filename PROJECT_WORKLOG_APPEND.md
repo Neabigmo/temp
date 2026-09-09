@@ -7806,3 +7806,16 @@ Bessel 的 `min(w^(1/2),w^(-1/2))` 包络在 `nu xi<=1`/`>=1` 两段都给常数
 因此当前最准确的状态仍是：Laguerre 反例的 MGF、补偿、CDF 部分为
 `LOCAL-PROOF-AUDIT`，正性包络为 `CITED-THEOREM / LOCAL-DERIVED`，整体反例待网页端
 复核后才能升为 `PROVED`。
+
+### 2026-09-10 大局纠偏：网页端的“单对数上界”不能再作为默认目标
+
+网页端上一轮把
+`d_K(X,N)<=C/sqrt(log(1/Delta))`
+列为唯一最小任务；这在 Laguerre 两区包络通过后并不可能成立。因为本机候选同时给出
+`Delta_m asymp lambda_m`、`log(1/Delta_m)=2m log(m)+O(m)` 和
+`d_K(W_m,N)>=c/sqrt(m)`，从而
+`d_K(W_m,N) / sqrt(1/log(1/Delta_m))` 至少按 `sqrt(log(m))` 增长。
+所以当前路线顺序必须改为：先让网页端独立审查 `C_L<infinity` 的两区余项/拼接；若审查
+通过，则撤回单对数上界候选，转而研究可能的
+`sqrt(loglog(1/Delta)/log(1/Delta))` sharp upper bound；若审查失败，才回到反射特异
+上界问题。这个分叉比继续局部优化 Sapogov 常数更接近主命题的真实结局。

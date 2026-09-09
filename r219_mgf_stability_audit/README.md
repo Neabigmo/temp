@@ -522,6 +522,18 @@ check：`sqrt(z)exp(-2z/3)|L_m^(1/2)(z)|` 的网格最大值约为 `0.54--0.564`
 仍保持为“MGF/Skellam/CDF：`LOCAL-PROOF-AUDIT`；正性包络：`CITED-THEOREM /
 LOCAL-DERIVED`；整体反例：待网页端复核”。
 
+### I.e 全局路线纠偏
+
+网页端上一轮提出的单对数上界
+`d_K(X,N)<=C/sqrt(log(1/Delta))`
+不能继续作为默认目标：只要上述 `C_L<infinity` 两区引理成立，Laguerre family
+就满足 `Delta_m asymp lambda_m`、`log(1/Delta_m)=2m log(m)+O(m)`、
+`d_K(W_m,N)>=c/sqrt(m)`，因此会多出不可忽略的 `sqrt(loglog(1/Delta))` 因子，
+直接否定该上界。下一轮应先由网页端独立审查正性包络的 uniform remainder 与拼接；
+审查通过后，研究目标改为可能的
+`sqrt(loglog(1/Delta)/log(1/Delta))` sharp upper bound；只有审查失败，才回到
+反射特异上界路线。这是对整体方向的纠偏，不是新增局部展开。
+
 ### I.b 补偿与 CDF 下界的本机闭合
 
 对固定 `rho`，当 `m` 足够大时 `a_m*rho^(2m+1)<=1/2`。令
