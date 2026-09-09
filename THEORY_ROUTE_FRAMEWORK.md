@@ -13179,3 +13179,31 @@ R147/R148 则把 normal derivative 与 Bessel–Laguerre regression 精确等价
 下一条唯一任务：联立 R145、R146、R147、R149 的现有公式，审查能否推出
 `ell_1(a)ell_1(-a)>=0` 或 `K''(a/sqrt(3))=1`；若不能，构造最小合法
 wrong-sign/relaxed witness，并明确其不属于 genuine iid full-SF 类。
+## 83.73 R207：反射首 Laguerre 符号的 Gaussian rigidity 判据（2026-09-09）
+
+本轮把 R206 的反向符号接口压缩成可引用的条件性判据。对 analytic full-SF
+类，令 `ell_1(a)=1-E_a[Q]/2`。iid tilt 恒等式给出
+
+`ell_1(a)=1-K''(a/sqrt(3))`。
+
+若第一个非 Gaussian cumulant `kappa_d` 的阶 `d>=3` 为 odd，则
+
+`ell_1(a)=-kappa_d a^(d-2)
+ /(3^((d-2)/2)(d-2)!)+O(a^(d-1))`，
+
+所以 `ell_1(a)ell_1(-a)<0` 对充分小非零 `a` 成立。由此，若 full-SF 类能
+证明局部 `ell_1(a)ell_1(-a)>=0`，或更强的单边式 `K''<=1`/`K''>=1`，便可
+推出 Gaussian。该判据是 `PROVED UNDER ANALYTIC FULL-SF + ODD-FIRST-CUMULANT`，
+不是 bare `RK=1` 结论。
+
+另一方面，反射交叉谱
+`J(a)=sum_(m>=1)ell_m(a)ell_m(-a)` 满足
+`J(a)=-a^2 E[E(C|Q)^2]+O(a^4)`；普通 Cauchy 下界的二阶项也是负的，
+故现有 shifted Schur、complete monotonicity、positive heat source 和 reflection
+quadratic source 都不能自动提供所需的反射正性。R207 的本机审计
+`r207_reflection_sign_rigidity/audit_r207.js` 已通过。整体 rigidity 与发表性仍
+为 `OPEN`/“无”。记录见 `r207_reflection_sign_rigidity/README.md`。
+
+下一主任务：直接审查 genuine iid full-SF factorization 是否能推出这个局部
+reflection sign；若不能，证明一个更强但仍允许 wrong sign 的统一正性上界，从而
+精确封存该路线的边界。

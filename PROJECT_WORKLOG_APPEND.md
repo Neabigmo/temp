@@ -7367,3 +7367,18 @@ package，最强负向补充是 R197–R203 的 finite-row blindness package。�
 现有公式，检查能否推出 `ell_1(a)ell_1(-a)>=0` 或 `K''=1`；若不能，给出
 不属于 genuine iid full-SF 类的最小 wrong-sign/relaxed witness。完整纠偏记录在
 `r206_global_reanchor/README.md`。
+### R207：反射首 Laguerre 符号的 Gaussian rigidity 判据（2026-09-09）
+
+本机将 R206 的符号接口写成精确判据。analytic full-SF + odd-first-cumulant 下，
+`ell_1(a)=1-K''(a/sqrt(3))`，若首个非 Gaussian cumulant 阶 `d` 为奇数，则
+
+`ell_1(a)=-kappa_d a^(d-2)/(3^((d-2)/2)(d-2)!)+O(a^(d-1))`，
+
+从而 `ell_1(a)ell_1(-a)<0`。因此证明局部
+`ell_1(a)ell_1(-a)>=0`、或单边 `K''<=1`/`K''>=1`，本身就足以推出 Gaussian。
+但现有反射交叉谱只有
+`J(a)=-a^2 E[E(C|Q)^2]+O(a^4)`，普通 Cauchy 下界二阶项也为负，故已有正性
+工具不能给出所需反射正性。`audit_r207.js` 已通过；该结果属于条件性 rigidity
+certificate，不是 bare `RK=1` 或 genuine full-SF characterization。整体发表性仍为
+“无”。下一条唯一任务是检查 genuine iid full-SF factorization 是否能产生该局部
+reflection sign；否则记录更强但仍允许 wrong sign 的正性上界。
