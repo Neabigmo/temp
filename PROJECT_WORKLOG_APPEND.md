@@ -7071,3 +7071,28 @@ R190 的任意指定 `D C_(1,n)` 仍非零。
 angular radial identity 单独不能在形式层面排除 odd mixed direction。它未证明
 positive-definiteness、收敛或 genuine all-degree law；原始问题整体发表性仍为
 “无”，审计已通过。
+
+### R193：finite-PSD witness escape 与全局成果审计接口（2026-09-09）
+
+本机在 R192 之后只推进正定性，不再增加 radial Taylor 阶数。令
+`G_0(T)=(exp(-(t_a-t_b)^2/2))`。对任意互异有限点集，Fourier 表示
+`c^*G_0c=(2pi)^(-1/2) integral exp(-xi^2/2)|sum c_a exp(i xi t_a)|^2 dxi`
+给出严格正定。因而在固定 `m`、固定频率范围 `[-U,U]`、且最小点间距
+`delta>0` 的紧配置族上，Gaussian Gram 最小特征值有统一正下界；R192 的任何
+局部一致小扰动在足够小 `epsilon` 下都保持 PSD。这严格排除了固定非退化有限
+Gram 主子式以统一负裕量击破 formal jet。
+
+另一方面，有限阶截断的对数若含次数大于二的非零多项式，则在经典
+Marcinkiewicz 定理下不是特征函数；由 Bochner 判据它必有某个有限 Gram 负性
+见证。两者合并为 escape dichotomy：见证随 `epsilon->0` 必须向频率无穷、Gram
+阶数无穷、点碰撞/导数型退化或负裕量趋零中的至少一个方向逃逸。该结论是
+`PROVED` 的 finite Gaussian PSD stability 加 `CONDITIONAL/CLASSICAL INPUT`
+的 finite-truncation non-characteristic 结论，不是 genuine counterexample，
+也不证明 R192 infinite formal series 收敛。
+
+R193 与 R186 同属正性检测阶逃逸，但前者是 Bochner 频率/Gram 层，后者是
+inverse-Hankel moment 层；不循环。它把 R192 后真正剩余的接口压缩为
+confluent-Bochner/导数核检验，继而才可能与 R186 rank closure、R188 `(MT_r)`
+拼接。全局成果审计结论仍为：原始 rigidity OPEN，bare `RK=1` 桥、原始
+`P_3K` 身份桥、`(MT_r)` 与 primitive closure 未闭合；截至此轮独立完整发表性
+仍为“无”。`audit_r193.js` 已通过。

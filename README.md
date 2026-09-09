@@ -232,3 +232,13 @@ R192 新增 `r192_all_order_formal_radial_lift`：对任意 odd `d>=3`，构造�
 意义下 all-order 保持，而 R190 的 mixed ladder 一阶信号仍非零。这是严格的
 formal all-order no-go，不是 positive-definite characteristic family 或 genuine
 原始问题反例；审计已通过，整体发表性仍为“无”。
+
+R193 新增 `r193_finite_psd_witness_escape`：Gaussian finite Gram 在互异点集上
+严格正定，并在固定频率紧区间、固定有限阶数且排除点碰撞的配置族上有统一
+谱隙。因此 R192 的小形式扰动不可能被固定非退化有限 Gram 见证以统一负裕量
+击破。有限截断若含次数大于二的对数多项式，则由经典 Marcinkiewicz + Bochner
+必有某个有限负性见证；该见证只能向频率、Gram 阶数、点碰撞/导数退化或零裕量
+逃逸。R193 是 genuine positive-definiteness stability/escape lemma，不是
+genuine counterexample；其下一接口是 confluent-Bochner 导数核，并与 R186
+inverse-Hankel rank escape 非循环拼接。原始 rigidity、bare `RK=1` 桥和原始
+`P_3K` identity 仍 OPEN，整体独立发表性仍为“无”。

@@ -12889,3 +12889,26 @@ R191 的二阶可抵消 jet 可递归推广。固定 odd `d>=3`，取
 mixed direction。它仍未证明 positive-definite characteristic family、收敛或
 genuine all-degree law，所以不构成原始问题反例；R188 的 `(MT_r)`、R186 的
 inverse-Hankel closure 和原始 rigidity 仍 `OPEN`，整体发表性仍为“无”。
+
+## 83.59 R193：finite-PSD witness escape（2026-09-09）
+
+R192 之后的正定性接口得到一个可独立核验的局部闭合。Gaussian kernel
+`K_0(s,t)=exp(-(s-t)^2/2)` 在任意互异有限点集上严格正定，因为
+`c^*G_0c=(2pi)^(-1/2) integral exp(-xi^2/2)|sum_a c_a exp(i xi t_a)|^2 dxi>0`。
+因此固定 Gram 阶数、固定频率紧区间并排除点碰撞后，Gaussian Gram 的最小特征值
+有统一正下界；R192 formal jet 的局部一致小扰动不能被同一非退化 finite Gram
+主子式以统一负裕量击破。第一阶 jet 还有显式估计
+`|Phi_epsilon(s)-Phi_0(s)|<=|epsilon||s|^d exp(-s^2/2)`，故
+`||G_epsilon-G_0||_2<=m|epsilon|(2U)^d`。
+
+若 finite truncation 的 log 含次数大于二的非零多项式，则经典 Marcinkiewicz
+定理给出其不是 characteristic function；Bochner 判据随即给出某个有限 Gram
+负性见证。两者合并为严格逃逸分叉：当 `epsilon->0` 时，任何负性见证必须向
+`U->infinity`、`m->infinity`、点配置退化/`delta->0` 或负裕量趋零逃逸。
+这不是 genuine counterexample，也不触及 R192 infinite formal series 的收敛。
+
+R193 与 R186 同属 positivity-detection rank escape，但层次不同：R193 是 Bochner
+频率 Gram，R186 是 inverse-Hankel moment 阶。R193 的下一最小接口是 confluent-
+Bochner 导数核：把 `delta->0` 的点碰撞归一化为导数核矩阵，检查 formal jet 是否
+能在固定导数阶形成负主子式。R188 `(MT_r)`、R186 rank closure、bare `RK=1`
+桥和原始 `P_3K` identity 仍未闭合；整体独立发表性仍为“无”。
