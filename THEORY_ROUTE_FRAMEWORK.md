@@ -12849,3 +12849,25 @@ tangent `H_(2n+1)`，全局反射给出对任意径向 `F(Q)` 的精确一阶零
 `(MT_r)` 必须来自 nonlinear same-factor coupling 与 positivity 的二阶以上
 关系。该结论为 `PROVED` calculation + `FORMAL LINEARIZED OBSTRUCTION`，
 不构成 genuine counterexample；原始问题整体发表性仍为“无”。
+
+## 83.57 R191：二阶 radial product identity 的可抵消 jet（2026-09-09）
+
+R190 的线性盲区不能简单靠二阶 radial Taylor response 修复。对 odd `d>=3`，
+取 formal characteristic jet
+`phi_epsilon(u)=phi_0(u)exp(epsilon(iu)^d+epsilon^2 kappa_d u^(2d)+...)`。
+令 `S_d(theta)=sum_j a_j(theta)^d`、
+`A_d=<sum_j a_j^(2d)>`、`B_d=<S_d^2>`，则 product expansion 的 angular
+二阶项为 `kappa_d A_d-B_d/2`；取 `kappa_d=B_d/(2A_d)` 即逐点抵消。
+三次单位根筛选给出
+
+`A_d=3 binom(2d,d)/6^d`,
+`B_d=9 S0_d/6^d`,
+`S0_d=sum_{d-2k=0 mod 3}binom(d,k)^2`,
+
+故 `kappa_d=(3/2)S0_d/binom(2d,d)>0`。但 R190 的
+`D C_(1,n)=sqrt(3)(2n+1)!(-1)^n/(3^n n!)` 仍非零。
+
+这给出 `PROVED` 的二阶 product algebra 与 `FORMAL SECOND-ORDER NO-GO`：
+二阶径向 identity 可被 even correction 抵消，不能单独提供 `(MT_r)` 或
+inverse-Hankel closure。formal jet 未证明 positive definite，也未构成 genuine
+all-degree exact law；原始问题整体发表性仍为“无”。

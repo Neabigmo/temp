@@ -7038,3 +7038,20 @@ three-iid same-factor genuine counterexample，但证明径向边缘本身确实
 该结论是 `PROVED` 的 Gaussian generating-function calculation 加
 `FORMAL LINEARIZED OBSTRUCTION`，不是 genuine exact-law counterexample；整体
 原始问题的独立发表性判断仍为“无”，审计已通过。
+
+### R191：二阶 radial product identity 的可抵消 jet（2026-09-09）
+
+本机新增 `r191_second_order_radial_cancellation`。对任意 odd `d>=3`，在
+Gaussian characteristic factor 上取 formal jet
+`phi_epsilon=phi_0 exp(epsilon(iu)^d+epsilon^2 kappa_d u^(2d)+...)`。
+令 `S_d=sum_j a_j^d`、`A_d=<sum_j a_j^(2d)>`、`B_d=<S_d^2>`，则
+`kappa_d=B_d/(2A_d)>0` 使
+`<prod_j phi_epsilon(a_j u)>=exp(-u^2/2)+O(epsilon^3)` 逐点成立；
+而 R190 的 `D C_(1,n)`（`d=2n+1`）仍非零。二项式闭式为
+`A_d=3 binom(2d,d)/6^d`、`B_d=9S0_d/6^d`，
+`S0_d=sum_{d-2k=0 mod 3}binom(d,k)^2`。
+
+因此二阶 radial response 仍可被 even one-body correction 抵消，不能自动形成
+mixed-sector 正 coercivity。该结论是 `PROVED` 的二阶代数 calculation 加
+`FORMAL SECOND-ORDER NO-GO`，不是 genuine positive-definite characteristic
+branch；整体发表性判断仍为“无”，审计已通过。

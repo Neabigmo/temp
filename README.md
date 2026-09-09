@@ -220,3 +220,9 @@ Hermite tangent 对任意径向 `F(Q)` 的一阶变化为零，但对每个 `n>=
 `D C_(1,n)=sqrt(3)(2n+1)!(-1)^n/(3^n n!)!=0`。这说明径向 exactness 的
 一阶信息对整个 common/residual mixed ladder 都盲；它是形式线性化 obstruction，
 不是 genuine counterexample。审计已通过，原始问题整体发表性仍为“无”。
+
+R191 新增 `r191_second_order_radial_cancellation`：对任意 odd Hermite 阶的
+formal characteristic jet，存在显式 `kappa_d=B_d/(2A_d)>0` 抵消二阶 angular
+radial response，而 R190 的 mixed coefficient 一阶信号仍非零。该结果排除
+“二阶径向变分自动给出 rigidity”的路径；它不是 genuine positive-definite
+all-degree exact branch。审计已通过，原始问题整体发表性仍为“无”。
