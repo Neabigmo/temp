@@ -12930,6 +12930,27 @@ minor 具有严格谱隙，R192 小参数 formal/genuine 局部扰动不能统�
 满足 envelope 的 abstract rank-escape 族。原始 rigidity 与整体独立发表性仍为
 OPEN/“无”。
 
+## 83.65 R199：cubic compensation branch 的最低阶 Hankel obstruction（2026-09-09）
+
+R198 的 genuine finite-row 补偿分支为
+`kappa_3=c, kappa_4=kappa_5=0, kappa_6=-3c^2`。其 cumulant--moment
+转换给出
+`(m_0,...,m_6)=(1,0,1,c,3,10c,15+7c^2)`，所以 genuine law 的四阶
+moment block `H_3` 必须满足
+
+`det H_2=2-c^2`,
+`det H_3=12-30c^2-6c^4=6(2-5c^2-c^4)`。
+
+由此得到明确阈值
+`|c|<=c_*:=sqrt((sqrt(33)-5)/2)=0.610...`。若
+`c_*<|c|<sqrt(2)`，则 `H_2` 正定而相对于它的最后 Schur defect
+`det(H_3)/det(H_2)` 为负；若 `|c|>=sqrt(2)`，`H_2` 已先违反 PSD。
+这是 genuine finite-row 的 `PROVED/ANALYTICALLY PROVED` obstruction，
+但 `det H_3>0` 在 `c=0` 附近成立，故它不能排除小非零分支，也不能代替
+R186 inverse-Hankel rank closure、R188 `(MT_r)` 或最终 tower rigidity。
+该结果把 R198 的下一接口收缩为“允许参数趋零时正性检测阶是否逃逸”，而非
+继续无目的地展开 radial Taylor 行；原始 rigidity 与整体独立发表性仍 OPEN/“无”。
+
 ## 83.64 R198：finite-row cubic compensation 的精确二阶正规形（2026-09-09）
 
 R197 只说明固定有限行可以通过偶 cumulant 补偿实现非零三阶 cumulant；R198

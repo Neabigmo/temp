@@ -7197,3 +7197,27 @@ counterexample；它直接说明原始 rigidity 若成立，必须是 moving-`M`
 仍是补偿分支的 all-order positive-definiteness。证据等级为 `PROVED` 的有限
 moment identity 加 `FORMAL CONSISTENCY`，不是 all-row counterexample；
 `audit_r198.js` 已通过，整体独立发表性仍为“无”。
+
+### R199：cubic compensation 分支的最低阶 Hankel 正定性 obstruction（2026-09-09）
+
+本机继续检查 R198 分支
+`kappa_3=c, kappa_4=kappa_5=0, kappa_6=-3c^2` 的 genuine moment 正性。
+此时
+
+`(m_0,...,m_6)=(1,0,1,c,3,10c,15+7c^2)`，
+
+故四阶 moment block
+
+`H_3=[[1,0,1,c],[0,1,c,3],[1,c,3,10c],[c,3,10c,15+7c^2]]`
+
+必须半正定。精确计算给出
+
+`det H_2=2-c^2`，
+`det H_3=12-30c^2-6c^4=6(2-5c^2-c^4)`。
+
+因此 genuine law 必须满足
+`|c|<=c_*:=sqrt((sqrt(33)-5)/2)=0.610...`；在
+`c_*<|c|<sqrt(2)` 时，前块 `H_2` 仍正定但 Schur defect
+`6(2-5c^2-c^4)/(2-c^2)` 已为负。这是 `PROVED` 的 finite-row
+PSD obstruction，但对 `c` 足够小行列式仍为正，不能排除小非零补偿分支，
+所以仍不是 all-row rigidity。`audit_r199.js` 已通过，整体独立发表性仍为“无”。

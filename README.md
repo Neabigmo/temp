@@ -277,3 +277,11 @@ R198 新增 `r198_cubic_compensation_normal_form`：在 `c=kappa_3` 且
 `b_2=-3/20` 一致。该结果是可复核的 genuine finite-row 正规形，不能升级为
 positive all-row theorem 或原始反例；下一步改查这条补偿分支的最低阶
 moment-Hankel 主子式。审计已通过，原始 rigidity 与整体独立发表性仍为“无”。
+
+R199 新增 `r199_hankel_compensation_obstruction`：沿 R198 分支
+`kappa_3=c, kappa_4=kappa_5=0, kappa_6=-3c^2`，精确得到
+`(m_0,...,m_6)=(1,0,1,c,3,10c,15+7c^2)`，并计算
+`det H_2=2-c^2`、`det H_3=6(2-5c^2-c^4)`。因此 genuine law 必须满足
+`|c|<=sqrt((sqrt(33)-5)/2)=0.610...`；这是固定有限阶的真实 PSD
+obstruction，但小 `c` 仍未被排除，不能升级为 all-row theorem 或原始反例。
+审计已通过，原始 rigidity 与整体独立发表性仍为“无”。
