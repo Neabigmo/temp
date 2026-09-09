@@ -13157,3 +13157,25 @@ exact identity 的信息投影 no-go。记录见 `r205_mean_frequency_blindness/
 下一主任务改为：从 same-factor positivity 或四点 bispectrum Gram 中抽取一个
 真正的 `s`-dependent bound；若不能，则把公共均值频率方向的缺失作为正式 OPEN
 bridge，不再继续增加 radial rows。
+## 83.72 R206：从 R205 回接 R145–R149 的真正缺口（2026-09-09）
+
+本轮对 R205 作全局纠偏：R205 的信息投影结论正确，但仓库早期 R145–R149
+已经给出了 `A(s,t)=E[e^(isC)J_0(tR)]`、shifted Bessel–Schur 上界、tilted
+Laguerre/OU scaling、dual regression 以及 reflection compensation。因此当前
+缺口不是“没有任何 `s`-dependent bound”，而是这些已有不等式能否产生反向符号，
+从而推出
+
+`Q~chi^2_2 + iid => partial_s A(0,t)=0 (all t)`
+`<=> E[C|Q]=0 => Gaussian`。
+
+R145 的 Cauchy–Schwarz 上界、R146 的 complete monotonicity/positive heat source
+和 R149 的 reflection quadratic source 都没有给出所需的 `K''-1` 单边符号；
+R147/R148 则把 normal derivative 与 Bessel–Laguerre regression 精确等价起来。
+因此当前最强正向路线是 R145–R149 的 continuum regression package，R197–R203
+是互补的 finite-row blindness package；二者不循环。整体发表性仍为
+`无（目前没有足够独立、完整、可审稿的发表性结果）`。完整纠偏记录见
+`r206_global_reanchor/README.md`。
+
+下一条唯一任务：联立 R145、R146、R147、R149 的现有公式，审查能否推出
+`ell_1(a)ell_1(-a)>=0` 或 `K''(a/sqrt(3))=1`；若不能，构造最小合法
+wrong-sign/relaxed witness，并明确其不属于 genuine iid full-SF 类。

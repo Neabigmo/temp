@@ -7353,3 +7353,17 @@ R205 的证据等级为 `PROVED` 坐标/Bessel 投影加 `ABSTRACT OBSTRUCTION`�
 R190 的线性化 blind ladder、R186 的正性检测阶逃逸分属不同层。下一条唯一任务
 是从 same-factor positivity 或四点 bispectrum Gram 得到真正的 `s`-dependent
 bound；否则正式记录该 OPEN bridge，不再增加 radial rows。
+### R206：从 R205 回接 R145–R149 的真正缺口（2026-09-09）
+
+本轮发现并修正了一个全局表述风险：R205 说“缺少 `s`-dependent 信息”容易与
+R145–R149 已有的 shifted Bessel–Schur、tilted Laguerre、Appell regression、
+continuum boundary 和 reflection compensation 冲突。准确说法是：径向 exact
+identity 只有 `s=0` 切片，但 R145–R149 已给出若干 `s`-dependent 不等式；它们
+目前都没有产生 `partial_s A(0,t)=0` 或 `E[C|Q]=0` 所需的反向符号。
+
+因此当前最强正向路线是 R145–R149 的 continuum common–residual regression
+package，最强负向补充是 R197–R203 的 finite-row blindness package。原始主命题
+仍 OPEN，整体完整发表性仍为“无”。下一条唯一任务是联立 R145/R146/R147/R149
+现有公式，检查能否推出 `ell_1(a)ell_1(-a)>=0` 或 `K''=1`；若不能，给出
+不属于 genuine iid full-SF 类的最小 wrong-sign/relaxed witness。完整纠偏记录在
+`r206_global_reanchor/README.md`。
