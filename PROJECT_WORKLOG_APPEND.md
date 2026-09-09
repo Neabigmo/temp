@@ -7742,3 +7742,36 @@ function 只有 `|phi_X|^2`。当前下一最小任务是审查高频 odd-densit
 (i) `exp(-z/2)|L_m^(1/2)(z)|` 的一致界；(ii) Taylor 余项常数；(iii) Skellam
 dominance 的逐点双侧估计；(iv) 补偿对 CDF 下界的影响。若这四点闭合，
 应把稳定性主命题的“最后缺口”改写为修正后的对数模量，而不是继续重复单对数上界。
+
+### 2026-09-10 第六回合补充：Laguerre 包络的错误版本已排除，正确版本可引用闭合
+
+本机数值与 turning-zone 结构检查发现，不能使用
+`sup_m,z sqrt(z) exp(-z/2)|L_m^(1/2)(z)|<infinity`；这个量随阶数增长。
+候选真正需要的是 `sqrt(z) exp(-2z/3)|L_m^(1/2)(z)|` 的统一界。令
+`z=y^2`，Hermite–Laguerre 恒等式
+`H_(2m+1)(y)=(-1)^m 2^(2m+1)m! y L_m^(1/2)(y^2)`
+把它化为 `exp(-2y^2/3)|H_(2m+1)(y)|/(2^(2m+1)m!)`。
+
+Krasikov 的全局 Hermite 峰值估计
+`max_y exp(-y^2/2)|H_n(y)| <= C 2^(n/2)sqrt(n!)n^(-1/12)`
+再加 `exp(-2y^2/3)<=exp(-y^2/2)` 与 Stirling 比值
+`2^(-(2m+1)/2)sqrt((2m+1)!)/m!=O(m^(-1/4))`，给出所需固定
+`C_L`。因此包络子引理现在是 `CITED-LEMMA / LOCAL-DERIVED`，不是数值猜测；
+但这不关闭 Skellam dominance 双侧界与补偿后的 CDF 下界，Laguerre 反例整体
+仍保持 `CANDIDATE / LOCAL-DERIVATION`。引用记录：Krasikov,
+*New bounds on the Hermite polynomials*, [arXiv:math/0401310](https://arxiv.org/abs/math/0401310)。
+
+进一步把“预期”改成了可逐式检查的局部结论：对
+`R_m(s)=log(1-u_m(q)^2)+2lambda_m(cosh(q)-1-q^2/2)`，其中
+`q=s/sqrt(1+lambda_m)`，在 `|s|<=rho` 且 `m` 足够大时，
+`-log(1-u^2)<=2u^2` 与 `q^4/24<=cosh(q)-1-q^2/2` 配合
+`lambda_m=96a_m^2rho^(4m-2)` 给出 `R_m>=lambda_m q^4/16>=0`；上界由
+`cosh(q)-1-q^2/2<=cosh(rho)q^4/24` 给出。取 `s=rho` 且
+`lambda_m->0`，得到 `Delta_m=Theta_{rho}(lambda_m)`。
+
+CDF 端使用 `|F_(X_m)(0)-1/2|=Theta(m^(-1/2))` 和
+`|F_(X_m+J_m)(0)-F_(X_m)(0)|<=P(J_m!=0)<=lambda_m=o(m^(-1/2))`，
+归一化不改变零阈值，故 `d_K(W_m,N)>=c/sqrt(m)`。再由
+`log(1/lambda_m)=2m log(m)+O(m)` 得到修正的
+`sqrt(loglog/log)` 下障碍。这样四个原审查点中，dominance 与 CDF 项已为
+`LOCAL-PROOF-AUDIT`；整个构造仍只差 `C_L` 的引用核验，不能升级为最终定理。

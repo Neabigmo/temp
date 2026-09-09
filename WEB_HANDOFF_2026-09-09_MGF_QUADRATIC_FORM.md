@@ -357,3 +357,18 @@ stability 部分。
 指数包络；Skellam dominance 的逐点上下界；补偿对 CDF 下界的影响。若该族成立，
 请明确宣布单对数平方根上界不可能，并把下一目标改为修正后的最优模量；若失败，
 指出精确失败行并回到 reflection-specific 上界。只给一个最小可执行结论，勿重复综述。
+
+本机随后已完成 dominance/CDF 的初步逐式闭合：`q=s/sqrt(1+lambda_m)`，
+`-log(1-u^2)<=2u^2` 与 `q^4/24<=cosh(q)-1-q^2/2` 配合系数 `96`，给出
+`Delta_m=Theta(lambda_m)`；零点 CDF 偏差为 `Theta(m^(-1/2))`，Skellam 改变量
+至多 `lambda_m`。因此请把审查重点收缩到：引用型正确包络
+`sqrt(z) exp(-2z/3)|L_m^(1/2)(z)|<=C_L` 是否可接受，以及均值/方差与
+固定指数包络的假设边界。不要再审查错误的 `exp(-z/2)` 统一界。
+
+### 本机在发送前新增的包络纠错
+
+不要再审查错误的 `exp(-z/2)` 统一界。该量在 turning 区并不统一有界；真正
+需要的是 `sqrt(z) exp(-2z/3)|L_m^(1/2)(z)|`。借助 Hermite 恒等式和 Krasikov
+的全局 Hermite 峰值估计，这个正确包络已有 `CITED-LEMMA / LOCAL-DERIVED`
+级别的闭合；剩下只需审查补偿的双侧 `Delta` 估计与 CDF 下界。参考：
+[Krasikov, arXiv:math/0401310](https://arxiv.org/abs/math/0401310)。

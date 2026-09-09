@@ -426,3 +426,71 @@ defect 压到阶乘级，同时保持半轴 CDF 偏差为 `m^(-1/2)`。
 Laguerre 一致函数界、Taylor 常数、Skellam dominance 双侧估计，以及补偿后
 CDF 下界不被 `lambda_m` 吞掉的审计。若四项闭合，当前单对数平方根上界是
 错误目标，应改攻含 `sqrt(log log)` 修正的最优模量或寻找更慢族。
+
+### I.a 统一包络的修正审计（2026-09-10）
+
+这里必须区分两个不同的命题。朴素命题
+
+`sup_m sup_z sqrt(z)*exp(-z/2)*abs(L_m^(1/2)(z)) < infinity`
+
+是假的：turning 区的峰值随 `m` 增长。因此不能用 DLMF §18.14 的基本不等式
+把这个量误写成统一常数。候选真正需要的是带额外衰减的量
+
+`sup_m sup_z sqrt(z)*exp(-2*z/3)*abs(L_m^(1/2)(z)) < infinity`。
+
+令 `y=sqrt(z)`，使用
+
+`H_(2m+1)(y)=(-1)^m 2^(2m+1) m! y L_m^(1/2)(y^2)`，
+
+则上述量至多为常数倍的
+
+`sup_m sup_y exp(-2*y^2/3)*abs(H_(2m+1)(y))/(2^(2m+1)m!).`
+
+对物理学家 Hermite 多项式，Krasikov 的全局峰值估计给出
+
+`max_y exp(-y^2/2)*abs(H_n(y))
+ <= C*2^(n/2)*sqrt(n!)*n^(-1/12)`
+
+（固定的有限个低阶 `n` 可并入 `C`）。由于
+`exp(-2*y^2/3) <= exp(-y^2/2)`，且
+
+`2^(-n/2)*sqrt(n!)/m! = O(m^(-1/4))` 对 `n=2m+1`，
+
+这个引用定理确实推出所需的固定 `C_L`。所以原候选的包络缺口可降为
+`CITED-LEMMA / LOCAL-DERIVED`，但不能再写成错误的 `exp(-z/2)` 一致界。
+来源：Krasikov, *New bounds on the Hermite polynomials*,
+[arXiv:math/0401310](https://arxiv.org/abs/math/0401310)；DLMF 的 Laguerre
+渐近式也明确显示 turning 区必须单独处理，见
+[DLMF §18.15](https://dlmf.nist.gov/18.15)。
+
+这一步只关闭 `C_L<infinity` 的引用型子引理；`Delta_m=Theta(lambda_m)` 的
+逐点双侧常数和补偿后的 CDF 下界仍然是 `OPEN`，因此整个反例仍不能升级为
+`PROVED`。
+
+### I.b 补偿与 CDF 下界的本机闭合
+
+对固定 `rho`，当 `m` 足够大时 `a_m*rho^(2m+1)<=1/2`。令
+`q=s/sqrt(1+lambda_m)`，则 `|q|<=rho`，并且
+
+`R_m(s)=log(1-u_m(q)^2)+2*lambda_m*(cosh(q)-1-q^2/2)`。
+
+在这个区间内
+`-log(1-u^2)<=2u^2`、`log(1-u^2)>=-2u^2`，以及
+`q^4/24 <= cosh(q)-1-q^2/2 <= cosh(rho)q^4/24`。由于
+`lambda_m=96*a_m^2*rho^(4m-2)`，逐点有
+
+`R_m(s) >= (lambda_m/16)q^4 >= 0`,
+
+而上界为 `R_m(s)<=C(rho)lambda_m`。在 `s=rho` 处，因
+`lambda_m->0` 而 `q>=rho/sqrt(2)`，故
+`Delta_m=sup_(|s|<=rho)R_m(s)` 满足
+`c(rho)lambda_m<=Delta_m<=C(rho)lambda_m`。这关闭了 dominance 的双侧
+估计（`LOCAL-PROOF-AUDIT`）。
+
+另一方面，`F_(X_m)(0)-1/2` 的绝对值等于
+`epsilon/(3*C_L*sqrt(2*pi))*(1/2)_m/m! ~ c/sqrt(m)`，而加入 Skellam 后
+阈值零点的 CDF 改变量至多为 `P(J_m!=0)<=lambda_m=o(m^(-1/2))`。
+归一化不改变零点，因此 `d_K(W_m,N)>=c/sqrt(m)`。结合
+`log(1/Delta_m)=2m log(m)+O(m)`，候选下界确实为
+`d_K>=c*sqrt(log log(1/Delta_m)/log(1/Delta_m))`，前提仅剩正确的
+`C_L` 引用子引理。
