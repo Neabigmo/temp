@@ -7578,3 +7578,18 @@ same-factor 结构的 `M(D,r)` 仍可能存在。cross-witness、asymmetric exac
 full-exact/RK=1 反例。它把下一步压缩为：能否用 genuine same-factor 结构证明
 类似的 `O(D)` 阶负证书；否则必须构造 genuine-compatible 的高阶逃逸。原始
 rigidity 与独立完整可审稿发表性仍分别为 OPEN 与“无”。
+
+### R218：首个 odd packet 的 genuine degree-matched cross-witness（2026-09-09）
+
+本轮将 R133 的 full-SF 首 odd packet 与 R217 的一行 Hankel 计算联立。若
+`D=2s+1` 是 genuine analytic full-exact law 的首个非零 odd 阶，则 R133 强制
+`kappa_4,...,kappa_(2D-2)=0`，所以 inverse-OU formal moments 到 `D+1` 阶
+只有第 `D` 阶 odd moment偏离 Gaussian。于是 `H_(s+1)` 在 normalized Hermite
+基底的唯一新项位于 `(s,s+1)`，行列式为 `1-rho/rho_H`，其中
+`rho=t^(-D)|beta_(D,1)|^2`、`rho_H=Lambda_D^2*s!(s+1)!/D!<1`。
+
+故在 genuine full-SF 首 odd 子类中严格有
+`t^(-D)|beta_(D,1)|^2>1 => H_((D+1)/2) not PSD`。`audit_r218.js` 对
+`D=3,5,9,17` 通过。这不是 relaxed 反例，而是 genuine degree-matched
+cross-witness 的首个实质子定理；多 odd degree 合计预算、负特征值 uniform
+裕量及原始 `RK=1` 桥仍 OPEN，整体完整可审稿发表性仍为“无”。

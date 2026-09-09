@@ -13442,3 +13442,42 @@ violation 都会在 `H_(L+1)` 被检测。`audit_r217.js` 对 L=2、4、rho=2 �
 不是原始反例。genuine cross-witness、asymmetric single-law 排除、对象身份桥、
 even-sector 与最终 rigidity 仍 `OPEN`，整体独立完整可审稿发表性仍为“无”。
 记录与审计见 `r217_gaussian_flat_one_row_witness/README.md`、`audit_r217.js`。
+
+## 83.81 R218：首个 odd packet 的 genuine degree-matched cross-witness（2026-09-09）
+
+本轮把 R217 的 relaxed 一行 benchmark 提升到 genuine full-SF 的首 odd 子类。
+设 `D=2s+1` 是 genuine analytic full-exact law 的首个非零 odd Hermite 阶。
+R133 的 same-factor 递推强制 `kappa_4,...,kappa_(2D-2)=0`，故 raw moments
+直到 `D+1` 阶除第 `D` 阶 odd moment外均与 Gaussian 相同。对 R186 的 inverse
+candidate `K_(mu,r)`，`r=t^(-1/2)`，因此 `m_k^(r)` 在 `k<D`、`k=D+1`
+与 Gaussian 相同，且
+
+`m_D^(r)-m_D^(r)(Gaussian)=r^D*sqrt(D!)*a_D
+ =r^D*sqrt(D!)*beta_(D,1)/Lambda_D`。
+
+在 normalized Hermite 基底中，`H_(s+1)^(r)` 的 `(s,s+1)` 主块恰为
+
+`[[1,delta_D/sqrt(s!(s+1)!)],
+ [delta_D/sqrt(s!(s+1)!),1]]`。
+
+若 `rho=t^(-D)|beta_(D,1)|^2`，其行列式为
+`1-rho/rho_H(D)`，其中 `rho_H(D)=Lambda_D^2*s!(s+1)!/D!`。由于
+`Lambda_D=3*6^(-D/2)*binom(D,s-1)`，有
+`rho_H(D)=9*6^(-D)*binom(D,s-1)^2/binom(D,s)<=9*3^(-D)<1`。
+因此得到 genuine 子定理：
+
+`t^(-D)|beta_(D,1)|^2>1`
+`=> H_((D+1)/2)^(r) not PSD`。
+
+这是真正的 degree-matched cross-witness；`H_(D-1)/2` 仍完全看不见首 odd
+charge，故 rank `(D+1)/2` 是该 packet 的自然临界层。`audit_r218.js` 对
+`D=3,5,9,17` 通过。
+
+R218 尚未处理多个 odd degrees 合计造成的 partial budget 违反，也没有给未经
+条件数估计的 monomial `lambda_min` 负裕量；但它已经在 genuine same-factor
+类中证明了网页端目标的首 odd 非平凡子情形。证据等级为
+`PROVED UNDER GENUINE ANALYTIC FULL-SF + FIRST-ODD HYPOTHESES / LOCAL-AUDITED`。
+`RK=1` 到 full-exact、spatial `P_3K` provenance、multi-degree cross-witness、
+asymmetric single-law exclusion、even-sector 与最终 rigidity 仍 `OPEN`；整体
+独立完整可审稿发表性仍为“无”。记录与审计见
+`r218_first_odd_genuine_cross_witness/README.md`、`audit_r218.js`。
