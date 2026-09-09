@@ -210,3 +210,71 @@ classical-distance stability，也不要把 novelty 写成已认证。
 Kolmogorov 的 Gaussian 距离率；下一接口仍是 quantitative Cramer/deconvolution。
 证据标记：`PROVED UNDER STATED HYPOTHESES / LOCAL-PROOF-AUDIT`，不等于
 novelty 已认证。
+
+## G. MGF-QS-03：解析延拓审计与 Kolmogorov 阶段（2026-09-10）
+
+网页端随后按本机指出的六处问题重做了 quantitative Cramer 接口。当前可保留
+的修正版如下；这里明确区分自包含部分与依赖外部定理的部分。
+
+### Y 阶段：可自包含核验的显式界
+
+若 `0<=D(s)<=delta`（`|s|<=rho`），令 `Delta=2*delta`，`Y=X-X'`，则
+
+`0<=log M_Y(s)-s^2<=Delta`。
+
+在 `0<rho<2*tau` 下取
+
+`A=exp(rho^2)*(exp(Delta)-1)`、`B=K^2+exp(rho^2)`、
+`L=log(B/A)`，并在 `L` 足够大时取
+
+`T=(2*rho/pi)*log(L/log L)`、`H=B/L`、
+
+`C4=K/(8*tau^4)+3/4`、`r=min(T/2,(H/C4)^(1/4))`。
+
+则条带最大值原理给出
+
+`|M_Y(it)-exp(-t^2)|<=B*exp(-L*exp(-pi*|t|/(2*rho)))`，
+
+从而在 `|t|<=T` 上有 `|M_Y(it)-exp(-t^2)|<=H`。Esseen 反演给出
+
+`d_K(L(Y),N(0,2)) <= eta_Delta`,
+
+其中可取
+
+`eta_Delta=C4*r^4/(2*pi)+(2*H/pi)*log(T/r)+12/(pi^(3/2)*T)`。
+
+这里 `M_Y(it)` 即 `phi_Y(t)`。四阶常数来自
+`EX^4<=3K/(2*tau^4)`、`EY^4<=3K/tau^4+6`，再结合
+`|cos u-1+u^2/2|<=u^4/24`。因此
+`eta_Delta=O_{tau,rho,K}(1/log log(1/Delta))`。
+
+本机审计确认上一版的符号/倒数问题已经被网页端修正：正确的条带参数是
+`alpha=pi/(2*rho)`，正确的次调和函数是 `u=log(|F|/B)`；不能使用
+`alpha=2*rho/pi` 或 `u=log(B/|F|)`。`T,H,r` 的对应关系也必须如上，
+不能把 `H=B*exp(-L)` 与该 `T` 混用。
+
+### X 阶段：依赖 Sapogov 的 Kolmogorov 界
+
+将 `Y` 写成独立和 `X+(-X')`，两个 summand 都是均值零、方差一。引用
+Sapogov 型定量 Cramer 定理（允许两个 summand 不同）可得
+
+`d_K(L(X),N(0,1)) <= C_S/sqrt(log(1/eta_Delta))`，
+
+其中 `C_S` 是该经典定理的绝对常数。因此固定 `tau,rho,K` 时确实有
+`d_K(L(X),N(0,1))->0`，合并上一节给出从 radial discrepancy 到
+Kolmogorov stability 的三重对数级粗模量。但当前公开核验只支持“显式到
+Sapogov 绝对常数”，不支持“所有数值常数完全显式”；若不补齐该定理的
+精确出处/适用条件与常数追踪，论文中应把 X 阶段标成引用定理后的结果。
+
+### 边界反例与真正的下一关
+
+标准化 Poisson `X_lambda=(N_lambda-lambda)/sqrt(lambda)` 满足
+`D_lambda(s)=s^4/(24*lambda)+O_rho(lambda^(-2))`、固定指数包络（例如
+`E exp(2*tau|X_lambda|)<=2*exp(2*tau^2*exp(2*tau))`），但它是离散分布，
+所以 `d_TV(L(X_lambda),N)=1`；同时 Poisson CLT 说明它不否定 Kolmogorov
+稳定性。其 odd cumulant 规模为 `kappa_3=lambda^(-1/2)`，而 even defect
+为 `O(lambda^(-1))`，再次确认中心化/方差不能直接控制 odd part。
+
+证据分层：Y 阶段为 `PROVED / LOCAL-PROOF-AUDIT`；X 阶段为
+`PROVED AFTER NAMED QUANTITATIVE CRAMER THEOREM`；Sapogov 常数追踪、
+利用 `phi_{X-X'}=|phi_X|^2` 改善三重对数、以及 TV 等强距离仍为 `OPEN`。

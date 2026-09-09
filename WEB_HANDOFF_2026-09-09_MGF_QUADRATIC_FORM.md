@@ -279,3 +279,23 @@ Y=Z+c(N-\lambda),
 能够推出的最强、可证明的分布距离；不得把 qualitative Levy--Cramer 当作
 定量结论，也不得声称 TV/Wasserstein 率已完成。整体论文仍为候选研究包，
 novelty 未认证，旧 OU 主线继续独立 `OPEN`。
+
+## 2026-09-10 第三稳定性回合：Kolmogorov 阶段的严格分层
+
+网页端按本机审计修正了上一轮的解析延拓公式。应统一
+`Delta=2*delta`，并取
+`A=exp(rho^2)(exp(Delta)-1)`、`B=K^2+exp(rho^2)`、
+`L=log(B/A)`、`T=(2*rho/pi)log(L/log L)`、`H=B/L`、
+`C4=K/(8*tau^4)+3/4`、`r=min(T/2,(H/C4)^(1/4))`。条带最大值原理的
+参数为 `alpha=pi/(2*rho)`，由此得到
+
+`eta_Delta=C4*r^4/(2*pi)+(2H/pi)log(T/r)+12/(pi^(3/2)T)`
+
+作为 `d_K(L(X-X'),N(0,2))` 的显式界，阶为
+`O(1/log log(1/Delta))`。这一阶段已本机核验。
+
+从 `X+(-X')` 到 `X` 的 Kolmogorov 界仍依赖 Sapogov 定量 Cramer 定理；
+其绝对常数尚未数值追踪。因此当前正确表述是：Kolmogorov stability 在
+引用该经典定理后成立，Y 阶段完全显式，整条链不是完全自包含。标准化
+Poisson 格点族已严格排除 TV 模量。下一轮转攻反射结构的 phase recovery
+与 rate improvement；若不能改善，则整理现有弱距离结果，不提前写论文。

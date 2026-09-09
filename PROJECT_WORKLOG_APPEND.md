@@ -7652,3 +7652,26 @@ defect bound，sample-variance 情形的剩余关卡是球面加权 L1 defect �
 stability，但仍不等于 classical distribution-distance stability；下一轮转向
 `X-X'` 的 local symmetrized-MGF 控制如何给出可证明的 quantitative Cramer
 结论，并继续保持 novelty 未认证。
+
+### MGF-QS-03：解析延拓审计与 Kolmogorov 阶段（2026-09-10）
+
+网页端按审计要求修正了 quantitative Cramer 回合的关键公式。若
+`D=1/2 log(M(s)M(-s)/exp(s^2))<=delta`，则 `Y=X-X'` 的 defect 应记为
+`Delta=2*delta`。在 `0<rho<2*tau` 下，令
+`A=exp(rho^2)(exp(Delta)-1)`、`B=K^2+exp(rho^2)`、`L=log(B/A)`，并取
+`T=(2*rho/pi)log(L/log L)`、`H=B/L`、
+`C4=K/(8*tau^4)+3/4`、`r=min(T/2,(H/C4)^(1/4))`。正确的条带参数为
+`alpha=pi/(2*rho)`，次调和函数为 `log(|F|/B)`，故 Esseen 给出
+
+`d_K(L(Y),N(0,2)) <= C4*r^4/(2*pi)+(2H/pi)log(T/r)+12/(pi^(3/2)T)`。
+
+该 Y 阶段已通过本机逐式审计，且为 `O(1/log log(1/Delta))`。再引用允许
+两个 summand 不同的 Sapogov 定量 Cramer 定理，可得
+`d_K(L(X),N(0,1))<=C_S/sqrt(log(1/eta_Delta))`；但 `C_S` 尚未追踪，
+因此只能标为 `PROVED AFTER NAMED THEOREM`，不可写成完全数值显式。
+标准化 Poisson 给出固定 EI 下的 `D_lambda=O(lambda^(-1))`、odd part
+`O(lambda^(-1/2))` 与 `d_TV=1`，只否定 TV，不否定 Kolmogorov。
+
+当前下一任务是：直接利用反射结构 `phi_{X-X'}=|phi_X|^2`，尝试把一般
+Sapogov 的三重对数损失降到单对数或多项式；若做不到，就追踪 Sapogov
+常数并把现有结果整理为可审稿的弱距离稳定性定理。
