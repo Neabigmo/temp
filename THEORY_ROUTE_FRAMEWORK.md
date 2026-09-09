@@ -12945,3 +12945,17 @@ full-exact/same-factor law，因此是 `ENVELOPE-ONLY OBSTRUCTION`，不是原�
 counterexample；但它严格排除只用 R112 尾界闭合 R186 rank closure 的路线。
 R195 的剩余接口是 product identity 对这种有限矩 camouflage 的首个跨副本
 检测阶，而非继续研究单变量 tail。
+
+## 83.62 R196：same-factor product identity has no uniform finite-row detector（2026-09-09）
+
+R195 的正密度 moment camouflage 可直接取三份 iid。若单变量 moments 与 Gaussian
+匹配到 `2N` 阶，则 `Q^r`（总次数 `2r`）的 product expansion 给出
+`E Q^r=2^r r!` 对所有 `r<=N`。在 residual angular coordinates 中，同一事实表现为
+`phi_N(u)=phi_0(u)+O(u^(2N+1))` 与 `sum_j a_j(theta)^2=1`，故
+`<prod_j phi_N(a_j(theta)u)>=exp(-u^2/2)+O(u^(2N+1))`。
+
+这是一条 genuine positive same-factor finite-row obstruction：product identity
+确实读取跨副本信息，但没有与 `N` 无关的有限阶检测器。它不构成 full-exact
+counterexample，因为高阶 rows 未控制；其全局含义是 R125 的 all-row/compactness
+路线不可由固定 row certificate 替代。下一步应研究 `N+1` 行的首个检测项，或证明
+可把 camouflage 递归推到任意有限 rows；原始 rigidity 和独立完整发表性仍 OPEN/“无”。

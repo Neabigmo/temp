@@ -7133,3 +7133,23 @@ Gaussian 严格正定块。该结果是 `PROVED` 的 envelope-only obstruction�
 identity，因而不是原始问题反例。R195 与 R186 不循环：前者否定“包络单独
 给 uniform failure order”，后者保留 genuine primitive 子类上的 rank-closure
 问题。`audit_r195.js` 已通过，整体发表性仍为“无”。
+
+### R196：same-factor product identity 也没有 uniform finite-row detector（2026-09-09）
+
+本机把 R195 的 moment camouflage 直接放回 genuine three-iid product law。对任意
+`N`，取正的非 Gaussian 密度 `p_N`，保持单变量 Gaussian moments 到 `2N` 阶，
+并满足统一 `E exp(X^2/8)<2`。令 `X_1,X_2,X_3` iid `p_N`、
+`Q=sum_j(X_j-X_bar)^2`。因为 `Q^r` 是总次数 `2r` 的多项式，独立性给出：
+
+`E_(p_N^3)Q^r=2^r r!`，`1<=r<=N`。
+
+同样，`phi_N(u)=exp(-u^2/2)+O(u^(2N+1))`；在
+`a_j(theta)=sqrt(2/3)cos(theta+2pi j/3)`、`sum_j a_j^2=1` 下，
+
+`<prod_j phi_N(a_j(theta)u)>_theta=exp(-u^2/2)+O(u^(2N+1))`。
+
+因此 same-factor product identity 的局部 Taylor 信息也不能给出与 `N` 无关的
+finite-row detector。R196 是 `PROVED` 的 genuine positive finite-row
+obstruction，但不是 full-exact counterexample；它说明若原始 rigidity 成立，
+矛盾必须出现在 all-row limit、uniform asymptotic coercivity 或 compactness，而
+不能来自固定有限 rows。`audit_r196.js` 已通过。

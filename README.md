@@ -257,3 +257,9 @@ positive density，保持前 `2N` 阶 Gaussian moments，同时统一满足
 Gaussian 完全相同。该结果严格说明 R112 envelope 不能单独阻止 rank escape，
 但构造不满足 full-exact/same-factor product identity，不是原始反例；下一步
 应研究 product identity 对这类 camouflage 的首个跨副本检测阶。
+
+R196 新增 `r196_same_factor_finite_row_camouflage`：将 R195 的正密度有限矩
+伪装取三份 iid 后，严格证明前 N 个 `Q` exact rows 以及 angular product
+identity 的 `2N` 阶 Taylor jet 都与 Gaussian 相同。故 same-factor 结构也没有
+统一 finite-row detector；该结果不是 full-exact 反例，反而把主线进一步压缩到
+all-row compactness/渐近 coercivity。审计已通过，整体独立发表性仍为“无”。
