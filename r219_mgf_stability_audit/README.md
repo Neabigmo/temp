@@ -561,3 +561,20 @@ LOCAL-DERIVED`；整体反例：待网页端复核”。
 `log(1/Delta_m)=2m log(m)+O(m)`，候选下界确实为
 `d_K>=c*sqrt(log log(1/Delta_m)/log(1/Delta_m))`，其中 `C_L` 由上述
 `CITED-THEOREM / LOCAL-DERIVED` 两区引理提供。
+
+### I.f 直接引用型 Laguerre 包络（优先于 DLMF 拼接）
+
+Imekraz--Robert--Thomann 的 *On random Hermite series* Proposition 3.2
+（[arXiv:1403.4913](https://arxiv.org/abs/1403.4913)；*Trans. Amer. Math. Soc.*
+368 (2016), 2763--2792）给出归一化 Laguerre 函数的四区一致界。对
+`alpha=1/2`、`nu=4m+3`，令
+`mathcal L_m=sqrt(m!/Gamma(m+3/2))e^(-r/2)r^(1/4)L_m^(1/2)(r)`，则
+`Q_m=sqrt(r)e^(-r/2)|L_m^(1/2)(r)|`
+等于 `sqrt(Gamma(m+3/2)/m!) r^(1/4)|mathcal L_m|`，前面的 Gamma 比值为
+`Theta(nu^(1/4))`。四区估计逐一给出：`Q_m<=C`（`r<=nu/2`），
+`Q_m<=C nu^(1/6)`（`nu/2<=r<=3nu/2`），以及外侧指数尾界。
+由于实际包络是 `Q_m e^(-r/6)`，中间/外侧区域再由 `e^(-nu/12)` 压制，故
+`sup_{m,r}sqrt(r)e^(-2r/3)|L_m^(1/2)(r)|<infinity`。
+
+这使 `C_L` 达到 `CITED-THEOREM / LOCAL-DERIVED`，网页端下一轮只需核对
+Proposition 3.2 的归一化和端点；不必再把未显式常数的 DLMF 拼接当作主缺口。

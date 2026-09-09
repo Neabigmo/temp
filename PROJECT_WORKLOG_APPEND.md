@@ -7819,3 +7819,25 @@ Bessel 的 `min(w^(1/2),w^(-1/2))` 包络在 `nu xi<=1`/`>=1` 两段都给常数
 通过，则撤回单对数上界候选，转而研究可能的
 `sqrt(loglog(1/Delta)/log(1/Delta))` sharp upper bound；若审查失败，才回到反射特异
 上界问题。这个分叉比继续局部优化 Sapogov 常数更接近主命题的真实结局。
+
+### 2026-09-10 正性包络的直接引用型闭合
+
+找到比 DLMF 两区拼接更直接的可引用估计：Imekraz--Robert--Thomann，
+*On random Hermite series*，Proposition 3.2（arXiv:1403.4913；发表于
+*Trans. Amer. Math. Soc.* 368 (2016), 2763--2792）对
+`mathcal L_m^(alpha)(r)=sqrt(m!/Gamma(m+alpha+1)) e^(-r/2) r^(alpha/2) L_m^(alpha)(r)`
+给出四区一致界。取 `alpha=1/2`、`nu=4m+3`，并令
+`Q_m(r)=sqrt(r)e^(-r/2)|L_m^(1/2)(r)|`，则
+`Q_m(r)=sqrt(Gamma(m+3/2)/m!) r^(1/4)|mathcal L_m^(1/2)(r)|`，且
+`sqrt(Gamma(m+3/2)/m!)=Theta(nu^(1/4))`。
+
+逐区换算：`0<=r<=1/nu` 时得到 `Q_m<=C nu^(1/2)r^(1/2)<=C`；
+`1/nu<=r<=nu/2` 时得到 `Q_m<=C`；`nu/2<=r<=3nu/2` 时，
+`Q_m<=C nu^(1/4)(nu^(1/3)+|nu-r|)^(-1/4)<=C nu^(1/6)`；
+`r>=3nu/2` 时指数尾界给 `Q_m<=C nu^(1/4)r^(1/4)e^(-gamma r)`，统一有界。
+候选实际需要的量是 `Q_m(r)e^(-r/6)`：前两区直接有界，后两区由
+`nu^(1/6)e^(-nu/12)` 压住。因此
+`C_L=sup_{m,r}sqrt(r)e^(-2r/3)|L_m^(1/2)(r)|<infinity`
+现在可记为 `CITED-THEOREM / LOCAL-DERIVED`，不再依赖未写出常数的 DLMF 拼接。
+网页端下一轮只需核对该 Proposition 的归一化、四区端点和 `alpha=1/2` 代入；若无误，
+Laguerre 反例即可从“条件候选”升级为引用型定理。

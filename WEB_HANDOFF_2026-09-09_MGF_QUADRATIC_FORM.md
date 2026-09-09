@@ -402,3 +402,20 @@ family 否定，因为 `Delta_m~lambda_m`、`log(1/Delta_m)=2m log m+O(m)`，而
 
 不要再把“证明单对数上界”作为无条件任务，也不要把 numerical sanity check
 当作 `C_L` 的证明。
+
+### 2026-09-10 新的优先审查依据
+
+本机找到更直接的引用：Imekraz--Robert--Thomann, *On random Hermite series*,
+Proposition 3.2（[arXiv:1403.4913](https://arxiv.org/abs/1403.4913)，发表于
+*Trans. Amer. Math. Soc.* 368 (2016), 2763--2792）。其四区估计对
+`mathcal L_m^(alpha)(r)=sqrt(m!/Gamma(m+alpha+1))e^(-r/2)r^(alpha/2)L_m^(alpha)(r)`
+成立。代入 `alpha=1/2`、`nu=4m+3`，直接得到
+`Q_m=sqrt(r)e^(-r/2)|L_m^(1/2)(r)|<=C`（`r<=nu/2`），
+`Q_m<=C nu^(1/6)`（`r>=nu/2`，外侧更强）；故乘候选额外的 `e^(-r/6)` 后
+`C_L=sup_{m,r}sqrt(r)e^(-2r/3)|L_m^(1/2)(r)|<infinity`。
+
+请优先核对这个 Proposition 的归一化、`r=1/nu`、`r=nu/2`、`r=3nu/2`
+拼接和 Gamma 比值，而不是继续默认寻找单对数上界。若核对无误，请明确将
+Laguerre family 升为引用型反例，并撤回单对数上界目标；下一目标改为判断
+`sqrt(loglog(1/Delta)/log(1/Delta))` 是否可作为统一上界。若核对失败，指出
+具体不匹配的区间或幂次。
