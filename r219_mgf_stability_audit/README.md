@@ -394,23 +394,24 @@ reflection stability modulus，也排除 `o(1/sqrt(log(1/Delta)))`。但它尚�
 defect 压到阶乘级，同时保持半轴 CDF 偏差为 `m^(-1/2)`。
 
 令 `phi` 为标准高斯密度，
-`p_m(x)=x*exp(-x^2)*L_m^(1/2)(3*x^2/2)`，`S_m=sup_x|p_m(x)|`，
-`h_m=p_m/S_m`，`f_m=phi*(1+epsilon*h_m)`，其中 `0<epsilon<1/4`。
-待核验的标准 Laguerre 界为 `sup_m S_m<infinity`；若采用
-`exp(-z/2)|L_m^(1/2)(z)|<=C`，则 `|h_m|<=1`、正性和归一化成立。Laguerre
+`p_m(x)=x*exp(-x^2)*L_m^(1/2)(3*x^2/2)`。待核验的标准 Laguerre 界为
+`sup_m sup_x|p_m(x)|<=C_L<infinity`；取 `h_m=p_m/C_L`、
+`f_m=phi*(1+epsilon*h_m)`，其中 `0<epsilon<1/4`。由此 `|h_m|<=1`、正性
+和归一化成立。Laguerre
 正交性给出 `int x^(2k+1)h_m(x)phi(x)dx=0`（`0<=k<m`），故均值为零、
 方差仍为一。半轴偏差还有精确公式
 
 `int_0^infinity h_m(x)phi(x)dx
- =[1/(3*sqrt(2*pi)*S_m)]*(1/2)_m/m! ~ c/(S_m*sqrt(m))`。
+ =[1/(3*C_L*sqrt(2*pi))]*(1/2)_m/m! ~ c/(C_L*sqrt(m))`。
 
-写 `M_X(s)=exp(s^2/2)*(1+u_m(s))`。奇性和消失矩使 `u_m` 从 `2m+1` 阶
-开始；Taylor 余项给出
+写 `M_X(s)=exp(s^2/2)*(1+u_m(s))`。直接由生成函数可得精确式
 
-`|u_m(s)|<=epsilon*B_m*|s|^(2m+1)`,
-`B_m=exp(rho^2)*2^(2m+3/2)*m!/[sqrt(pi)*(2m+1)!]`。
+`u_m(s)=(epsilon/C_L)*[s/(3*sqrt(3))]*exp(-s^2/3)*(-s^2/6)^m/m!`，
 
-取独立对称 Skellam 补偿，`lambda_m=96*(epsilon*B_m)^2*rho^(4m-2)`，
+故对实数 `s` 有 `|u_m(s)|<=a_m*|s|^(2m+1)`，其中
+`a_m=epsilon/[3*sqrt(3)*C_L*6^m*m!]`。
+
+取独立对称 Skellam 补偿，`lambda_m=96*a_m^2*rho^(4m-2)`，
 `W_m=(X_m+J_m)/sqrt(1+lambda_m)`。当 `m` 足够大时，四阶双曲余项逐点
 补偿 `log(1-u_m^2)`，预期得到 `Delta_m=Theta(lambda_m)`，并且
 `log(1/Delta_m)=2*m*log(m)+O(m)`。若半轴下界在补偿后保留，则

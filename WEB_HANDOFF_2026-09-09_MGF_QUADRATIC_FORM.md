@@ -343,9 +343,13 @@ stability 部分。
 ## 下一轮网页端任务：优先审查消失矩 Laguerre 候选
 
 不要先重复高频正弦族，也不要默认单对数平方根上界正确。请优先核验本机提出的
-`p_m=x exp(-x^2)L_m^(1/2)(3x^2/2)`、`h_m=p_m/sup|p_m|` 奇扰动：前 `m`
-个奇矩消失，但半轴积分等于常数乘 `(1/2)_m/m!`，预期为 `Theta(m^(-1/2))`。
+`p_m=x exp(-x^2)L_m^(1/2)(3x^2/2)` 奇扰动：若标准 Laguerre 界给出
+`sup_m sup_x|p_m(x)|<=C_L<infinity`，取 `h_m=p_m/C_L`，则前 `m` 个奇矩消失，
+但半轴积分等于 `[1/(3 C_L sqrt(2pi))]*(1/2)_m/m!`，预期为 `Theta(m^(-1/2))`。
+生成函数还给出精确 MGF 比值
+`u_m(s)=(epsilon/C_L)[s/(3sqrt(3))]exp(-s^2/3)(-s^2/6)^m/m!`，不必依赖粗 Taylor 常数。
 用 Taylor 余项和独立 Skellam 补偿，检查能否得到
+`lambda_m=96 a_m^2 rho^(4m-2)`、`a_m=epsilon/[3sqrt(3)C_L 6^m m!]`，并检查
 `log(1/Delta_m)=2m log m+O(m)` 与 `d_K>=c/sqrt(m)`，即
 `d_K>=c sqrt(loglog(1/Delta)/log(1/Delta))`。
 
