@@ -13304,3 +13304,32 @@ sample-size/full-SF identity 或 `(iv)` 任一非平凡 mixed identity。若均�
 就把 `full-SF-to-Gaussian` 明确固定为经典 open-core，不再用 radial rows 或一般
 PSD Gram 充当替代证明。记录见 `r212_classical_chisquare_boundary/README.md`，
 本机核验为 `audit_r212.js`。
+
+## 83.76 R213：正性与有限 OU backward divisibility 的分离构造（2026-09-09）
+
+本轮给出一个严格的有限深度边界构造。令 `gamma=N(0,1)`，取
+`c=(5/3)^(3/2)` 与有界奇函数
+
+`u(x)=x exp(-x^2)-c x exp(-2x^2)`。
+
+它满足
+`E_gamma[u]=0`、`E_gamma[Xu]=0`、`E_gamma[X^2u]=0`，但
+`E_gamma[X^3u]=2/(15 sqrt(3))`。因此对足够小的非零 `epsilon`，
+`f_epsilon=1+epsilon u` 是严格正的标准化密度，均值零、方差一且
+`kappa_3!=0`。对任意有限 `N`，令
+`g^(j)=P_(q^(N-j)) f_epsilon`；半群律给出 exact `P_q` backward chain，
+自伴性和 `P_r x`, `P_r x^2` 给出每一层仍中心化、方差一，且
+`kappa_3(g^(j))=q^(3(N-j))kappa_3(f_epsilon)!=0`。
+
+故“正性 + 有限 OU backward divisibility + standardization”不能推出对称性。
+结合 R210 的 exact mixed formula，近零有
+`Cov(Q,exp(isC))=(2i/sqrt(3))kappa_3 s+O(s^2)`，所以同一构造也不满足
+mixed covariance zero。R213 不是原始 full-SF/RK=1 反例；它是
+`PROVED/LOCAL-AUDITED` 的 finite-depth separation 与 fixed-tangent
+`FINITE-ONLY/OBSTRUCTION`：底部 cubic 若要随深度保持，固定 tangent 的
+幅度必须按 `q^(-3N)` 增长而违反正性，但 moving-degree escape 仍 OPEN。
+
+本轮因此排除了 R212 四条路线中的“由 positivity+OU 自动推出 symmetry/mixed
+zero”这条过弱推断；scalar infinite divisibility、第二样本量 identity、
+以及 full-SF 加 tower 是否能排除 moving-degree escape 仍开放。记录见
+`r213_finite_backward_separation/README.md`，核验见 `audit_r213.js`。

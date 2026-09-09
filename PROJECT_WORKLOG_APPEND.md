@@ -7494,3 +7494,19 @@ R203、R210、R211 加 R212 文献边界可以组成一个有潜在发表价值�
 非平凡 mixed identity；若均不能，把 `full-SF-to-Gaussian` 明确封存为经典
 open-core，并停止继续堆叠 radial rows。记录与核验脚本见
 `r212_classical_chisquare_boundary/README.md`、`audit_r212.js`。
+
+### R213：正性与有限 OU backward divisibility 的分离构造（2026-09-09）
+
+本轮构造 `u(x)=x exp(-x^2)-c x exp(-2x^2)`、`c=(5/3)^(3/2)`。精确 Gaussian
+积分给出 `E[u]=E[Xu]=E[X^2u]=0`，但 `E[X^3u]=2/(15 sqrt(3))`。故小非零
+`epsilon` 下 `1+epsilon u` 是正的、中心化、方差一且非对称的 density。
+对任意有限深度 `N` 取 `g^(j)=P_(q^(N-j))f_epsilon`，得到每层正的 exact
+OU backward chain，并保留 `kappa_3(g^(j))=q^(3(N-j))kappa_3(f_epsilon)!=0`。
+
+因此 positivity+finite OU divisibility+standardization 不能推出 symmetry；由
+R210 的 mixed formula，`Cov(Q,exp(isC))=(2i/sqrt(3))kappa_3 s+O(s^2)`，也不能
+推出 mixed zero。该构造不满足 `RK=1/full-SF`，不是原始反例；它是
+`PROVED/LOCAL-AUDITED` 的 finite-depth separation，以及固定 bounded tangent
+下的 `FINITE-ONLY/OBSTRUCTION`。moving-degree escape、scalar infinite
+divisibility、第二样本量 identity 和 full-SF+tower rigidity 仍 OPEN。审计见
+`r213_finite_backward_separation/audit_r213.js`。
