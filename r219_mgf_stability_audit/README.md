@@ -386,3 +386,42 @@ reflection stability modulus，也排除 `o(1/sqrt(log(1/Delta)))`。但它尚�
 证据标记：Poisson 障碍为 `PROVED / LOCAL-AUDITED`；一般 Sapogov 链仍是
 `CITED-THEOREM`；是否存在任意幂率、以及能否构造更慢的高频奇扰动障碍，仍
 `OPEN`。论文门槛尚未达到。
+
+## I. MGF-QS-06：消失矩 Laguerre 奇扰动候选（2026-09-10，待网页端核验）
+
+本机提出一个可能严格否定“单对数平方根上界”的候选族。它不再只提高正弦
+频率，而是让 odd perturbation 的前 `m` 个奇矩全部消失，从而把局部 MGF
+defect 压到阶乘级，同时保持半轴 CDF 偏差为 `m^(-1/2)`。
+
+令 `phi` 为标准高斯密度，
+`p_m(x)=x*exp(-x^2)*L_m^(1/2)(3*x^2/2)`，`S_m=sup_x|p_m(x)|`，
+`h_m=p_m/S_m`，`f_m=phi*(1+epsilon*h_m)`，其中 `0<epsilon<1/4`。
+待核验的标准 Laguerre 界为 `sup_m S_m<infinity`；若采用
+`exp(-z/2)|L_m^(1/2)(z)|<=C`，则 `|h_m|<=1`、正性和归一化成立。Laguerre
+正交性给出 `int x^(2k+1)h_m(x)phi(x)dx=0`（`0<=k<m`），故均值为零、
+方差仍为一。半轴偏差还有精确公式
+
+`int_0^infinity h_m(x)phi(x)dx
+ =[1/(3*sqrt(2*pi)*S_m)]*(1/2)_m/m! ~ c/(S_m*sqrt(m))`。
+
+写 `M_X(s)=exp(s^2/2)*(1+u_m(s))`。奇性和消失矩使 `u_m` 从 `2m+1` 阶
+开始；Taylor 余项给出
+
+`|u_m(s)|<=epsilon*B_m*|s|^(2m+1)`,
+`B_m=exp(rho^2)*2^(2m+3/2)*m!/[sqrt(pi)*(2m+1)!]`。
+
+取独立对称 Skellam 补偿，`lambda_m=96*(epsilon*B_m)^2*rho^(4m-2)`，
+`W_m=(X_m+J_m)/sqrt(1+lambda_m)`。当 `m` 足够大时，四阶双曲余项逐点
+补偿 `log(1-u_m^2)`，预期得到 `Delta_m=Theta(lambda_m)`，并且
+`log(1/Delta_m)=2*m*log(m)+O(m)`。若半轴下界在补偿后保留，则
+
+`d_K(W_m,N)>=c/sqrt(m)`，即
+`d_K>=c*sqrt(log log(1/Delta_m)/log(1/Delta_m))`，
+
+严格慢于正在追踪的 `1/sqrt(log(1/Delta))`。固定指数包络仍由 `|h_m|<=1`
+和 `sup_m lambda_m<infinity` 给出。
+
+证据状态只能标为 `CANDIDATE / LOCAL-DERIVATION`：网页端或本机还必须完成
+Laguerre 一致函数界、Taylor 常数、Skellam dominance 双侧估计，以及补偿后
+CDF 下界不被 `lambda_m` 吞掉的审计。若四项闭合，当前单对数平方根上界是
+错误目标，应改攻含 `sqrt(log log)` 修正的最优模量或寻找更慢族。

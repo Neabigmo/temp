@@ -7717,3 +7717,27 @@ function 只有 `|phi_X|^2`。当前下一最小任务是审查高频 odd-densit
 `o(1/sqrt(log(1/Delta)))` 模量。该结果是 `PROVED / LOCAL-PROOF-AUDIT`，
 但没有给出匹配的单对数平方根上界；三重对数上界是否可改善仍 `OPEN`，
 论文暂不启动。
+
+## 2026-09-10 第六稳定性回合：消失矩 Laguerre 奇扰动候选
+
+为避免在“高频正弦族”上局部优化，本机提出了一个更强的候选反例：
+`p_m(x)=x exp(-x^2)L_m^(1/2)(3x^2/2)`，`h_m=p_m/S_m`，其中
+`S_m=sup|p_m|`，并取 `f_m=phi(1+epsilon h_m)`。Laguerre 正交性直接给出
+前 `m` 个奇矩为零，因此 `u_m(s)=M_{f_m}(s)/exp(s^2/2)-1` 在 `s=0`
+处从 `2m+1` 阶开始。Taylor 余项给出
+`|u_m(s)|<=epsilon B_m |s|^(2m+1)`，其中
+`B_m=exp(rho^2)2^(2m+3/2)m!/[sqrt(pi)(2m+1)!]`。
+
+该族的半轴偏差有精确表达式：
+`int_0^infinity h_m phi=[1/(3sqrt(2pi)S_m)](1/2)_m/m!`，故若标准界
+`sup_m S_m<infinity` 成立，则偏差为 `Theta(m^(-1/2))`。配合参数
+`lambda_m=96(epsilon B_m)^2 rho^(4m-2)` 的独立 Skellam 对称补偿，预期得到
+`Delta_m=Theta(lambda_m)`、`log(1/Delta_m)=2m log m+O(m)`，而
+`d_K(W_m,N)>=c/sqrt(m)`。这会产生
+`d_K >= c sqrt(log log(1/Delta)/log(1/Delta))`，严格否定当前正在追踪的
+`C/sqrt(log(1/Delta))` 上界。
+
+这轮只记录为 `CANDIDATE / LOCAL-DERIVATION`。待网页端核验的四个具体点是：
+(i) `exp(-z/2)|L_m^(1/2)(z)|` 的一致界；(ii) Taylor 余项常数；(iii) Skellam
+dominance 的逐点双侧估计；(iv) 补偿对 CDF 下界的影响。若这四点闭合，
+应把稳定性主命题的“最后缺口”改写为修正后的对数模量，而不是继续重复单对数上界。
