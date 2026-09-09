@@ -12930,6 +12930,27 @@ minor 具有严格谱隙，R192 小参数 formal/genuine 局部扰动不能统�
 满足 envelope 的 abstract rank-escape 族。原始 rigidity 与整体独立发表性仍为
 OPEN/“无”。
 
+## 83.64 R198：finite-row cubic compensation 的精确二阶正规形（2026-09-09）
+
+R197 只说明固定有限行可以通过偶 cumulant 补偿实现非零三阶 cumulant；R198
+把这一补偿在最初两行上写成了完全显式的正规形。记 `c=kappa_3`，并令
+`F_s=E Q^s-2^s s!`。直接展开 `Q` 的多项式并按 cumulant--moment 公式化简，得
+
+`F_2=(4/3)kappa_4`，
+
+而在 `kappa_4=kappa_5=0` 的切片上，
+
+`F_3=(8/9)kappa_6+(8/3)c^2`。
+
+因此前两行同时为零的局部补偿条件恰为 `kappa_4=kappa_5=0` 与
+`kappa_6=-3c^2`。这与 R191/R192 的三阶 formal 径向补偿常数完全一致：若
+`c=6epsilon`，则 `b_2=-3/20` 给出
+`kappa_6=6!b_2 epsilon^2=-3c^2`。R198 是 genuine finite-row moment
+identity 和 formal consistency check，不是 positivity、all-row closure 或
+原始 counterexample；它把下一步问题精确定位为补偿分支上的最低阶 moment-Hankel
+主子式，而不是继续无目的地展开更多 radial Taylor 行。原始 rigidity 与整体
+独立发表性仍 OPEN/“无”。
+
 ## 83.61 R195：square-exponential envelope does not bound inverse-Hankel order（2026-09-09）
 
 R112 的 envelope 本身不足以给 inverse-Hankel failure order 一个统一上界。

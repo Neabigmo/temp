@@ -269,3 +269,11 @@ R197 新增 `r197_finite_row_cubic_radius_ift`：利用 exact row 对偶 cumulan
 类内保持 `kappa_3!=0` 并满足前 M 个 exact rows。该 finite-row cubic-radius
 lemma 不是 full-exact 反例，却把主问题进一步明确为 moving-M 的全阶闭合问题。
 审计已通过，整体独立发表性仍为“无”。
+
+R198 新增 `r198_cubic_compensation_normal_form`：在 `c=kappa_3` 且
+`F_s=E Q^s-2^s s!` 的记号下，严格得到 `F_2=(4/3)kappa_4`；在
+`kappa_4=kappa_5=0` 上，`F_3=(8/9)kappa_6+(8/3)c^2`。所以前两行的
+精确补偿要求为 `kappa_6=-3c^2`，并与 R191/R192 的 formal 常数
+`b_2=-3/20` 一致。该结果是可复核的 genuine finite-row 正规形，不能升级为
+positive all-row theorem 或原始反例；下一步改查这条补偿分支的最低阶
+moment-Hankel 主子式。审计已通过，原始 rigidity 与整体独立发表性仍为“无”。

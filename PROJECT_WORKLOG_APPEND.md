@@ -7175,3 +7175,25 @@ obstruction，但不是 full-exact counterexample；它说明若原始 rigidity 
 `PROVED/ANALYTICALLY PROVED` 的 finite-row cubic-radius lemma，不是 all-row
 counterexample；它直接说明原始 rigidity 若成立，必须是 moving-`M` 的全阶现象。
 `audit_r197.js` 已通过，整体独立发表性仍为“无”。
+
+### R198：finite-row cubic compensation 的精确二阶正规形（2026-09-09）
+
+本机在 R197 的 IFT 接口上继续核验低阶正规形。中心化方差一并令
+`c=kappa_3`，直接展开得到
+
+`F_2:=E Q^2-8=(4/3)kappa_4`，
+
+所以第二行精确强制 `kappa_4=0`。在 `kappa_4=kappa_5=0` 切片上，第三行
+的真实 iid product expansion 为
+
+`F_3:=E Q^3-48=(8/9)kappa_6+(8/3)c^2`。
+
+故 `F_3=0` 当且仅当 `kappa_6=-3c^2`。将 `c=6epsilon` 代入 R191/R192 的
+`A_3=5/18`、`B_3=1/12`，得到 `b_2=-3/20` 及
+`kappa_6=6!b_2epsilon^2=-3c^2`，与 genuine finite-row 计算完全吻合。
+
+这确认 R190–R192 的 formal compensation 在最初真实 rows 上没有代数漏洞，
+也说明继续增加低阶 radial 展开不会自动产生 positivity obstruction；真正缺口
+仍是补偿分支的 all-order positive-definiteness。证据等级为 `PROVED` 的有限
+moment identity 加 `FORMAL CONSISTENCY`，不是 all-row counterexample；
+`audit_r198.js` 已通过，整体独立发表性仍为“无”。
