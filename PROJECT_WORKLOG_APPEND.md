@@ -7689,3 +7689,31 @@ Sapogov 的三重对数损失降到单对数或多项式；若做不到，就追
 `F*F^<-`：前者的 polynomial Cramer 文献不能直接使用，后者的 characteristic
 function 只有 `|phi_X|^2`。当前下一最小任务是审查高频 odd-density 扰动加微小
 对称补偿，是否能构造固定 EI、局部 dominance 下的非幂率 sharpness family。
+
+### MGF-QS-05：高频 odd 扰动形成非幂率 sharpness 障碍（2026-09-10）
+
+网页端本轮给出的候选通过了本机逐项审计。取
+`h_n(x)=sin(n*x)-c_n*sin(x)`、`c_n=n*exp(-(n^2-1)/2)`，
+`f_n=phi*(1+epsilon*h_n)`，再加独立 Skellam 补偿
+`W_n=(X_n+J_n)/sqrt(1+lambda_n)`，其中
+`lambda_n=(2*epsilon^2/3)*exp(-n^2)*(n^3+n)^2*rho^2`。
+高斯积分直接给出 `EX_n=0`、`EX_n^2=1` 和
+`M_X=exp(s^2/2)(1+u_n)`，`u_n=epsilon*exp(-n^2/2)
+*(sin(ns)-n*sin(s))`；Skellam 的正四阶余项逐点补偿
+`log(1-u_n^2)` 的负项，确实得到 `R_n(s)>=0`。
+
+更精确地，在 `|s|<=rho` 上
+`R_n(s)>=(epsilon^2/18)*exp(-n^2)*(n^3+n)^2*v^4*(rho^2-v^2)`，
+`v=s/sqrt(1+lambda_n)`；上界为
+`R_n(s)<= (epsilon^2/18)*exp(-n^2)*(n^3+n)^2*rho^6*cosh(rho)`。
+在 `s=rho/2` 处对充分大 `n` 有相应正下界，故
+`Delta_n=Theta_{rho,epsilon}(n^6*exp(-n^2))`。统一指数包络来自
+`f_n<=C_epsilon*phi`、`sup_n lambda_n<infinity` 与 Skellam MGF。
+
+在零点，`I(n)=int_0^infinity phi(x)sin(nx)dx=phi(0)/n+O(n^-2)`，
+故 `|F_X(0)-1/2|>=c(epsilon)/n`；Skellam 事件 `J_n!=0` 的影响至多
+`lambda_n=o(1/n)`，从而 `d_K(W_n,N)>=c(epsilon)/n`。因此
+`d_K>=c/sqrt(log(1/Delta_n))`，排除了任意统一正幂率和更快的
+`o(1/sqrt(log(1/Delta)))` 模量。该结果是 `PROVED / LOCAL-PROOF-AUDIT`，
+但没有给出匹配的单对数平方根上界；三重对数上界是否可改善仍 `OPEN`，
+论文暂不启动。

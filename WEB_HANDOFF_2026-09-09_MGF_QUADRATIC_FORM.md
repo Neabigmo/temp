@@ -313,3 +313,29 @@ reflection-specific 模量都不能是 `o(sqrt(Delta))`，但三重对数是否�
 速率未知。下一轮交给网页端的唯一任务是验证高频 odd-density 扰动加微小
 对称补偿能否形成非幂率 sharpness family；若成功，才足以显著抬高论文的
 stability 部分。
+
+## 2026-09-10 第五稳定性回合：高频 odd 扰动的非幂率障碍已通过审计
+
+候选族
+`f_n=phi*(1+epsilon*(sin(n*x)-c_n*sin(x)))`、
+`c_n=n*exp(-(n^2-1)/2)`，配合独立 Skellam 变量并按
+`lambda_n=(2*epsilon^2/3)*exp(-n^2)*(n^3+n)^2*rho^2` 标准化，已完成
+逐式检查。它满足均值零、方差一、固定指数包络和
+`R_n(s)=log M_{W_n}(s)+log M_{W_n}(-s)-s^2>=0`。
+
+本机核验使用的关键式为
+`R_n(s)>=(epsilon^2/18)*exp(-n^2)*(n^3+n)^2*v^4*(rho^2-v^2)`，
+`v=s/sqrt(1+lambda_n)`；上界为
+`R_n(s)<= (epsilon^2/18)*exp(-n^2)*(n^3+n)^2*rho^6*cosh(rho)`。
+在 `s=rho/2` 处对充分大 `n` 有相应正下界，故
+`Delta_n=Theta_{rho,epsilon}(n^6*exp(-n^2))`。高斯半轴振荡积分给出
+`|F_{X_n}(0)-1/2|>=c(epsilon)/n`，而 `P(J_n!=0)<=lambda_n=o(1/n)`，
+所以 `d_K(W_n,N)>=c(epsilon)/n`。该族从而排除统一正幂率和
+`o(1/sqrt(log(1/Delta)))` 模量。
+
+证据状态：本构造为 `PROVED / LOCAL-PROOF-AUDIT`，数值仅辅助；但这不等于
+三重对数上界最优，也未提供匹配的单对数平方根上界。继续工作前网页端必须
+尝试：在同一固定 `tau,rho,K` 假设下证明
+`d_K(X,N)<=C/sqrt(log(1/Delta))`，或者构造严格慢于该尺度的合法族；若两者
+都做不到，再判断现有“无正幂率 + 明确下障碍 + 三重对数上界”是否已经形成
+可独立发表的结果，但不得省略 Sapogov 常数、反射相位损失和假设边界审计。

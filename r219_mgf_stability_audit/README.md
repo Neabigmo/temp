@@ -279,6 +279,84 @@ Sapogov 绝对常数”，不支持“所有数值常数完全显式”；若不
 `PROVED AFTER NAMED QUANTITATIVE CRAMER THEOREM`；Sapogov 常数追踪、
 利用 `phi_{X-X'}=|phi_X|^2` 改善三重对数、以及 TV 等强距离仍为 `OPEN`。
 
+## I. MGF-QS-05：高频 odd 扰动与 Skellam 补偿（2026-09-10）
+
+网页端本轮审查了一个试图把 Poisson 的 `sqrt(Delta)` 障碍加强为非幂率
+障碍的显式族。本机按定义重新核对后，以下结论成立；这里的 `Delta` 是
+reflected defect 的全量版本，不含 `1/2`：
+
+`Delta_n=sup_{|s|<=rho} R_n(s)`，
+`R_n(s)=log M_{W_n}(s)+log M_{W_n}(-s)-s^2`。
+
+固定 `0<epsilon<1/4`，令 `phi` 为标准正态密度，
+`c_n=n*exp(-(n^2-1)/2)`，
+`h_n(x)=sin(n*x)-c_n*sin(x)`，并取
+`f_n(x)=phi(x)*(1+epsilon*h_n(x))`。由于 `h_n` 有界且
+`sup_{n>=2}c_n=2*exp(-3/2)<1/2`，`f_n` 为正密度（`n=1` 时 `h_1=0`）。
+高斯积分公式
+`E[exp(sG)sin(aG)]=exp(s^2/2-a^2/2)sin(a*s)` 给出
+
+`E X_n=0`, `E X_n^2=1`,
+`M_{X_n}(s)=exp(s^2/2)*(1+u_n(s))`,
+`u_n(s)=epsilon*exp(-n^2/2)*(sin(n*s)-n*sin(s))`。
+
+归一化和独立性还给出 `E J_n=0`、`Var(J_n)=lambda_n`、
+`Var(W_n)=1`，其中
+`J_n=N_{+,n}-N_{-,n}`、`N_{+,n},N_{-,n}~Poisson(lambda_n/2)`，
+`W_n=(X_n+J_n)/sqrt(1+lambda_n)`，以及
+`M_{J_n}(v)=exp(lambda_n*(cosh(v)-1))`。
+
+取 `A_n=n^3+n` 和
+`lambda_n=(2*epsilon^2/3)*exp(-n^2)*A_n^2*rho^2`。写
+`v=s/sqrt(1+lambda_n)`，则
+
+`R_n(s)=log(1-u_n(v)^2)+2*lambda_n*(cosh(v)-1-v^2/2)`.
+
+这里 `|u_n(v)|<1/2` 可由全局界
+`|sin(nv)-n*sin(v)|<=1+n` 直接得到（对 `n>=2` 足够小，`n=1` 为零）。
+因而 `-log(1-u^2)<=2u^2`；另一方面
+`cosh(v)-1-v^2/2>=v^4/24`。再用
+`|sin(nv)-n*sin(v)|<=A_n*|v|^3/6`，得到逐点界
+
+`R_n(s)>=(epsilon^2/18)*exp(-n^2)*A_n^2*v^4*(rho^2-v^2)>=0`
+
+在 `|s|<=rho` 上成立。因此该族确实满足局部 reflected dominance。
+同时 Taylor 余项给出
+
+`R_n(s)<=lambda_n*v^4*cosh(rho)/12`，
+从而
+`Delta_n<= (epsilon^2/18)*exp(-n^2)*A_n^2*rho^6*cosh(rho)`。
+
+在 `s=rho/2` 处，上述下界为
+`(epsilon^2/18)*exp(-n^2)*A_n^2*v^4*(rho^2-v^2)`；当
+`n>=n_0(rho,epsilon)` 使 `lambda_n<=1` 时，它至少为
+`epsilon^2*rho^6*A_n^2*exp(-n^2)/1536`。故
+
+`Delta_n=Theta_{rho,epsilon}(n^6*exp(-n^2))`.
+
+固定 `tau` 时该族有统一指数包络：`f_n<=C_epsilon*phi`，且
+`E exp(a|J_n|)<=2*exp(lambda_n*(cosh(a)-1))`；数列 `lambda_n` 有界，故
+`sup_n E exp(2*tau|W_n|)<infinity`。这一步只使用普通上界，不把
+`epsilon` 或 `tau` 随 `n` 调整。
+
+最后，令 `I(a)=int_0^infinity phi(x)sin(a*x)dx`。两次分部积分给出
+`I(n)=phi(0)/n+O(n^-2)`，而 `c_n I(1)` 指数小。因此
+`|F_{X_n}(0)-1/2|>=epsilon*phi(0)/(4n)` 对充分大 `n` 成立。
+由于 `|F_{W_n}(0)-F_{X_n}(0)|<=P(J_n!=0)<=lambda_n=o(1/n)`，有
+
+`d_K(L(W_n),N(0,1))>=c(epsilon)/n`。
+
+对扰动 CDF 做一次分部积分即可得到相应的 `O(1/n)` 上界，但对于排除
+统一幂率，以上下界中的下界已经足够。结合 `Delta_n` 的双侧阶估计，
+`1/n=Theta(1/sqrt(log(1/Delta_n)))`。
+
+证据分层：`f_n` 的归一化、均值/方差、MGF、Skellam 缩放、dominance、
+指数包络和 `d_K` 下界均为 `PROVED / LOCAL-PROOF-AUDIT`；网页端的数值网格
+仅作辅助。该族严格排除任何统一 `C*Delta^alpha`（任意 `alpha>0`）的
+reflection stability modulus，也排除 `o(1/sqrt(log(1/Delta)))`。但它尚未
+证明当前三重对数上界最优，也没有闭合单对数平方根的统一上界；因此论文
+门槛仍为 `OPEN`，下一关是匹配上界或构造更慢族，而不是直接起草论文。
+
 ## H. MGF-QS-04：反射结构的 Poisson 速率障碍（2026-09-10）
 
 网页端进一步严格核验了标准化 Poisson 障碍。令
