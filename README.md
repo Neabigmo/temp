@@ -4,6 +4,7 @@
 
 ## 网页端首选读取顺序
 
+0. `C2C_WEB_INTERACTION.md`：读取网页端、发送交接消息、验证回显和失败恢复规范。
 1. `THEORY_ROUTE_FRAMEWORK.md`：整体路线、已关闭方向、当前 OPEN 命题和各轮结论。
 2. `PROJECT_WORKLOG_APPEND.md`：按轮次记录研究进度、纠错和审计状态。
 3. `truncated_hamburger_cubic_radius_r125/README.md`：R125 的有限行半径接口。
