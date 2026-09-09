@@ -7382,3 +7382,16 @@ package，最强负向补充是 R197–R203 的 finite-row blindness package。�
 certificate，不是 bare `RK=1` 或 genuine full-SF characterization。整体发表性仍为
 “无”。下一条唯一任务是检查 genuine iid full-SF factorization 是否能产生该局部
 reflection sign；否则记录更强但仍允许 wrong sign 的正性上界。
+### R208：有限 Bochner/Gram 条件的反射奇偶 no-go（2026-09-09）
+
+本机证明任意有限 Bochner Gram 在 law reflection 下仅变为 entrywise conjugate，
+所以 principal minors、特征值和 PSD 完全不变。Gaussian 附近的 odd-cumulant
+扰动 `epsilon` 因而只能通过 `epsilon^2` 等偶次进入有限实值 Gram 证书；这与
+R108 的 `m_3^2` wall 一致，却不能给 R207 所需的 tilted `a->-a` reflection sign。
+
+结合 R193 的有限 Gram 正谱隙和 R196/R197 的 finite-row escape，当前准确边界是：
+固定有限 Gram 可以给 reflection-even 的大小约束，但不能单独闭合
+`ell_1(a)ell_1(-a)>=0`；任何负证书都必须走频率/阶数/配置退化或负裕量逃逸。
+`audit_r208.js` 已通过，整体 rigidity 与发表性仍为 OPEN/“无”。下一条唯一任务
+是审查无限频率/连续 tilt 的 Gram 或 bispectrum 是否能产生真正反射符号，不能则
+记录 all-scale sign 的 compactness 缺口。

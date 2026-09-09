@@ -13207,3 +13207,25 @@ quadratic source 都不能自动提供所需的反射正性。R207 的本机审�
 下一主任务：直接审查 genuine iid full-SF factorization 是否能推出这个局部
 reflection sign；若不能，证明一个更强但仍允许 wrong sign 的统一正性上界，从而
 精确封存该路线的边界。
+## 83.74 R208：有限 Bochner/Gram 条件的反射奇偶 no-go（2026-09-09）
+
+本机继续检查 R207 的反射符号是否可能由有限 Gram 直接产生。对任意有限
+Bochner Gram `G_mu=(phi(t_a-t_b))`，反射 law 满足
+`G_check(mu)=conj(G_mu)`；由于 Gram Hermitian，principal minors 和特征值完全
+不变。因此有限 Gram 证书不能区分 odd charge 的反射方向。
+
+在 Gaussian 附近以首个 odd cumulant `epsilon` 参数化时，反射对应
+`epsilon->-epsilon`，任一实值 Gram 主子式满足 `D(epsilon)=D(-epsilon)`，其首个
+odd-sensitive 项至多是 `epsilon^2`。这解释了 R108 的四点 `m_3^2` wall：它是
+幅度约束而非 R207 所需的 tilted `a->-a` 反射符号。
+
+结合 R193 的固定有限 Gram 正谱隙和 R196/R197 的 same-factor finite-row escape，
+得到严格方法学边界：固定有限 Gram 可以给 reflection-even 大小墙，却不能单独
+推出 `ell_1(a)ell_1(-a)>=0`；若负证书存在，必须通过频率、阶数、配置退化或
+负裕量逃逸。R208 是 `PROVED` 的共轭不变性与局部奇偶结论，不是 genuine
+full-SF counterexample；审计 `r208_gram_reflection_parity_no_go/audit_r208.js`
+已通过。整体仍 `OPEN`/“无”。
+
+下一主任务：研究无限频率/连续 tilt 的 Gram 或 bispectrum 能否产生真正的
+`a->-a` 反射符号；若不能，精确记录 all-scale sign 信息无法由有限 PSD 逼近
+得到的 compactness 缺口。
