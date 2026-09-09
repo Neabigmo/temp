@@ -13276,3 +13276,31 @@ full-SF counterexample；审计 `r208_gram_reflection_parity_no_go/audit_r208.js
 下一主任务：研究无限频率/连续 tilt 的 Gram 或 bispectrum 能否产生真正的
 `a->-a` 反射符号；若不能，精确记录 all-scale sign 信息无法由有限 PSD 逼近
 得到的 compactness 缺口。
+
+## 83.75 R212：经典 sample-variance χ² 边界与全项目发表性定位（2026-09-09）
+
+本轮新增的不是一个未经证明的反向定理，而是一次文献边界与项目结构审计。
+对 `C=(X_1+X_2+X_3)/sqrt(3)`、`Q=sum_i(X_i-Xbar)^2`，Gaussian 给出
+`Q~chi^2_2`；反向的“仅凭 iid 加 sample variance 的 χ² 边缘律推出 Gaussian”
+正是经典 `chi^2` conjecture 在 `n=3` 的核心。公开综述仍将不加对称性等
+附加条件的经典问题列为 open，同时区分了 Ruben 的 `n=2`/对称性结果、两个
+不同样本量结果，以及 Golikova--Kruglov 的 infinitely divisible 部分结果。
+
+这与本项目的 exact radial/full-SF 接口严格对应：该接口只有 `s=0` 的 residual
+边缘资料 `E exp(-zQ)=1/(1+2z)`，不自动给出 `Cov(Q,exp(isC))=0`、`C ⟂ Q`
+或 tilted zero。R210 的 mixed covariance 公式和 R211 的 accumulating-Esscher
+closure 都是明确的 conditional modules，不是原始输入已经产生的桥。
+
+因此本轮再次固定全局判断：原始 Positive Backward-Tower Exact Zero-Set
+Rigidity 仍为 `OPEN`；当前独立、完整、可审稿的发表性结果仍为
+`无（目前没有足够独立、完整、可审稿的发表性结果）`。可抽取的组合包是
+R203 fixed-finite-row non-annihilation、R210 marginal/mixed interface、R211
+accumulating-tilt conditional rigidity 与本轮文献边界定位，但它们还不是一篇
+独立完成的论文主结果。
+
+R212 把后续最小任务收缩为：检查 positivity 加 backward-OU divisibility 能否
+推出 `(i)` law symmetry、`(ii)` scalar infinite divisibility、`(iii)` 第二个
+sample-size/full-SF identity 或 `(iv)` 任一非平凡 mixed identity。若均不能，
+就把 `full-SF-to-Gaussian` 明确固定为经典 open-core，不再用 radial rows 或一般
+PSD Gram 充当替代证明。记录见 `r212_classical_chisquare_boundary/README.md`，
+本机核验为 `audit_r212.js`。

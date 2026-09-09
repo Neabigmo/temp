@@ -7473,3 +7473,24 @@ OU backward 参数也不自动产生 Esscher tilt stability。因此该结果是
 发表性仍为“无”；`audit_r211.js` 已通过。下一轮唯一任务是研究 genuine
 same-factor product identity 是否能产生任何非平凡 tilted zero 序列，或把
 它与 mixed covariance zero 连接起来；五个既有缺口继续分离。
+
+### R212：经典 sample-variance χ² 边界与全项目发表性定位（2026-09-09）
+
+本轮没有把文献中的 restricted converse 偷换成项目定理。对三 iid 标量变量
+`C=(X_1+X_2+X_3)/sqrt(3)`、`Q=sum_i(X_i-Xbar)^2`，`Q~chi^2_2` 的反向
+Gaussian 刻画正是经典 `chi^2` conjecture 的 `n=3` 核心；公开综述仍将无
+对称性等额外限制的 classical problem 标为 open。Ruben 的 `n=2`/对称性、
+两个样本量结果，以及 Golikova--Kruglov 的 infinitely divisible 结果，均需要
+项目没有自动给出的额外输入；均值—方差独立也比 residual marginal law 强得多。
+
+这与 R210/R211 的结构严格一致：full-SF 只给 `s=0` 的 residual 边缘律，
+R210 的 mixed covariance zero 与 R211 的 accumulating Esscher zeros 是条件性
+闭合模块，不能反向当作已知。因而整体独立、完整、可审稿发表性仍为“无”。
+R203、R210、R211 加 R212 文献边界可以组成一个有潜在发表价值的研究包，但在
+缺少 genuinely new bridge 前，不能称为已完成论文结果。
+
+下一最小任务固定为：检查 positivity 加 backward-OU divisibility 是否能推出
+对称性、标量 infinite divisibility、第二个样本量的 exact identity，或任一
+非平凡 mixed identity；若均不能，把 `full-SF-to-Gaussian` 明确封存为经典
+open-core，并停止继续堆叠 radial rows。记录与核验脚本见
+`r212_classical_chisquare_boundary/README.md`、`audit_r212.js`。
