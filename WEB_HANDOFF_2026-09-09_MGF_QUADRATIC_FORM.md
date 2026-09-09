@@ -299,3 +299,17 @@ novelty 未认证，旧 OU 主线继续独立 `OPEN`。
 引用该经典定理后成立，Y 阶段完全显式，整条链不是完全自包含。标准化
 Poisson 格点族已严格排除 TV 模量。下一轮转攻反射结构的 phase recovery
 与 rate improvement；若不能改善，则整理现有弱距离结果，不提前写论文。
+
+## 2026-09-10 第四稳定性回合：Poisson 反射障碍
+
+标准化 Poisson `X_m=(N_m-m)/sqrt(m)` 给出严格下界：若
+`Delta_m=sup_{|s|<=rho}(log M_{X_m-X_m'}(s)-s^2)`，则
+`rho^4/(12m)<=Delta_m<=rho^4*cosh(rho)/(12m)`，同时
+`d_K(X_m,N)>=e^(-1/12)/(2sqrt(2*pi*m))`。所以任何固定 EI 类上的
+reflection-specific 模量都不能是 `o(sqrt(Delta))`，但三重对数是否可改善、
+是否存在任意幂率仍未解决。TV 已被同族排除，Kolmogorov 未被排除。
+
+当前不应开始正式论文：X 阶段仍依赖 Sapogov 定量 Cramer，且反射结构的最优
+速率未知。下一轮交给网页端的唯一任务是验证高频 odd-density 扰动加微小
+对称补偿能否形成非幂率 sharpness family；若成功，才足以显著抬高论文的
+stability 部分。

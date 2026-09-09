@@ -7675,3 +7675,17 @@ stability，但仍不等于 classical distribution-distance stability；下一�
 当前下一任务是：直接利用反射结构 `phi_{X-X'}=|phi_X|^2`，尝试把一般
 Sapogov 的三重对数损失降到单对数或多项式；若做不到，就追踪 Sapogov
 常数并把现有结果整理为可审稿的弱距离稳定性定理。
+
+### MGF-QS-04：反射结构的 Poisson 速率障碍（2026-09-10）
+
+网页端核验标准化 Poisson `X_m=(N_m-m)/sqrt(m)`：其 reflected defect
+`Delta_m=sup_{|s|<=rho}(log M_{X_m-X_m'}(s)-s^2)` 满足
+`rho^4/(12m)<=Delta_m<=rho^4*cosh(rho)/(12m)`，而位于零点的原子给出
+`d_K(X_m,N)>=e^(-1/12)/(2sqrt(2*pi*m))`。故固定 EI 类中的统一模量不能
+是 `o(sqrt(Delta))`，幂率指数至多 `1/2`；但这并不排除 `Delta^alpha`
+（`alpha<1/2`）或更慢率。该族不否定 Kolmogorov，只否定 TV 模量。
+
+网页端还明确区分了 iid self-convolution `F*F` 与本题 reflected convolution
+`F*F^<-`：前者的 polynomial Cramer 文献不能直接使用，后者的 characteristic
+function 只有 `|phi_X|^2`。当前下一最小任务是审查高频 odd-density 扰动加微小
+对称补偿，是否能构造固定 EI、局部 dominance 下的非幂率 sharpness family。

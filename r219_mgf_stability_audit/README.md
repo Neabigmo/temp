@@ -278,3 +278,33 @@ Sapogov 绝对常数”，不支持“所有数值常数完全显式”；若不
 证据分层：Y 阶段为 `PROVED / LOCAL-PROOF-AUDIT`；X 阶段为
 `PROVED AFTER NAMED QUANTITATIVE CRAMER THEOREM`；Sapogov 常数追踪、
 利用 `phi_{X-X'}=|phi_X|^2` 改善三重对数、以及 TV 等强距离仍为 `OPEN`。
+
+## H. MGF-QS-04：反射结构的 Poisson 速率障碍（2026-09-10）
+
+网页端进一步严格核验了标准化 Poisson 障碍。令
+`X_m=(N_m-m)/sqrt(m)`、`Y_m=X_m-X_m'`，并令
+`Delta_m=sup_{|s|<=rho}(log M_{Y_m}(s)-s^2)`。则
+
+`R_m(s)=log M_{Y_m}(s)-s^2`
+`=2*m*(cosh(s/sqrt(m))-1-s^2/(2*m))>=0`，
+
+且
+`rho^4/(12*m)<=Delta_m<=rho^4*cosh(rho)/(12*m)`。
+在 `X_m=0` 处的原子质量和分布函数跳跃给出
+
+`d_K(L(X_m),N(0,1))>=e^(-1/12)/(2*sqrt(2*pi*m))`
+
+（采用 `d_K=sup_x|F(x)-G(x)|`）。因此任意固定指数包络类上的统一反射
+恢复模量都不能是 `o(sqrt(Delta))`；若是幂率 `Delta^alpha`，则必有
+`alpha<=1/2`。该族仍满足固定 `E exp(2*tau|X_m|)<=K`（任意
+`K>2*exp(2*tau^2)*Phi(2*tau)` 对充分大 `m` 可用），并且它只否定 TV，
+不否定 Kolmogorov，因为 Poisson CLT 仍给 `d_K->0`。
+
+网页端同时确认：已有 iid self-convolution 的 polynomial Cramer 结果针对
+`F*F`（特征函数平方），不能移植到本题的 reflected convolution
+`F*F^\\leftarrow`（模平方）；相位被完全抹掉。故当前仍没有 reflection-specific
+的正幂率，也没有证明三重对数是最优。
+
+证据标记：Poisson 障碍为 `PROVED / LOCAL-AUDITED`；一般 Sapogov 链仍是
+`CITED-THEOREM`；是否存在任意幂率、以及能否构造更慢的高频奇扰动障碍，仍
+`OPEN`。论文门槛尚未达到。
