@@ -13380,3 +13380,35 @@ MGF charge 直接等同于 spatial `P_3K` 或 bare `RK=1`。证据等级为
 budget、asymmetric single-law exclusion 和最终 rigidity。整体独立完整发表性
 仍为“无”。记录见 `r215_two_scale_escape_dichotomy/README.md`，核验见
 `audit_r215.js`。
+
+## 83.79 R216：Angular-to-Hankel cross-witness 的对象错位审计（2026-09-09）
+
+本轮直接审查 R214 网页端提出的最小接口：有限 angular charge budget 违反，
+能否推出有限阶 ordinary inverse-Hankel 负证书。结论不是接口已成立，而是
+现有两条路线不能直接拼接。R101 的 cone witness 要求 law 及其前像都是真实的
+正 `genuine full-exact` 三份同因子对象；R186 的 Hankel witness 只检查
+inverse-OU formal candidate 的 ordinary Hamburger moments，Hamburger 实现
+并不恢复同因子 full-exact identity、bare `RK=1` 或原始 spatial charge。
+
+本机构造了任意 `L` 的有限矩族
+
+`u_L(x)=sum_(k=1)^(L+1)c_k x exp(-k x^2)`，
+
+其中 `c_k` 是 `y_k=(1+2k)^(-1)` 的 Vandermonde null vector。于是 `1+epsilon*u_L`
+相对 Gaussian 仍为严格正、中心化、方差一的真实密度，所有 raw moments 到 `2L`
+阶与 Gaussian 相同，而 `D=2L+1` 阶 odd moment 非零。首 odd minimality 给
+`beta_(D,1)=Lambda_D a_D !=0`；选择
+`t=(|beta_(D,1)|^2/2)^(1/D)` 后，有限 angular partial budget 恰为 `2`。
+然而 formal inverse candidate 的 `H_L^(r)` 仍与 Gaussian Hankel 完全相同且
+严格正定。审计 L=2、4 均通过。
+
+因此得到的严格边界是：ordinary scalar positivity/Hankel 检查无法给出不依赖
+angular degree 的低阶 cross-witness；任何真正的 `M(D,r)` 若存在，必须额外使用
+genuine same-factor/full-exact 结构。该构造没有满足 full-exact/RK=1 的证明，故是
+`FINITE-ONLY / OBSTRUCTION`，不是原始反例。
+
+本轮证据等级：Vandermonde 族、正性小扰动、`2L` 阶 formal inverse-Hankel
+相等为 `PROVED / LOCAL-AUDITED`；有限对象错位为 `FINITE-ONLY / OBSTRUCTION`；
+genuine cross-witness、asymmetric single-law 排除、`RK=1` 到 full-exact、spatial
+`P_3K` 桥和最终 rigidity 仍 `OPEN`。整体独立完整可审稿的发表性判断仍为“无”。
+记录与审计见 `r216_cross_witness_mismatch_audit/README.md`、`audit_r216.js`。

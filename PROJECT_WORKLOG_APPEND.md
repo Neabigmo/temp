@@ -7542,3 +7542,22 @@ R215 是 genuine full-exact/full-SF 下的 `PROVED/LOCAL-AUDITED` 预算综合�
 双逃逸的统一闭合仍 `SYNTHESIS/CONDITIONAL/OPEN`；它不构成原始反例或主定理，
 整体独立完整发表性仍为“无”。记录与审计见
 `r215_two_scale_escape_dichotomy/README.md`、`audit_r215.js`。
+
+### R216：Angular-to-Hankel cross-witness 的对象错位审计（2026-09-09）
+
+本轮审查网页端提出的 cross-witness 接口，没有把 R101 angular cone 与 R186
+ordinary inverse-Hankel witness 偷换成同一对象。R101 需要 genuine positive
+full-exact、三份 iid 同因子前像；R186 的 Hamburger 实现只保证 ordinary
+moment positivity，不恢复 same-factor exact identity、bare `RK=1` 或 spatial
+`P_3K` provenance。
+
+本机用 Vandermonde null vector 构造 `u_L=sum c_k x exp(-k x^2)`：`1+epsilon*u_L`
+相对 Gaussian 在 `2L` 阶以内矩匹配，但首 odd 阶 `D=2L+1` 非零。调节
+`t=(|beta_(D,1)|^2/2)^(1/D)` 后，有限 angular budget 为 `2`，而 formal
+inverse-Hankel 的 `H_L^(r)` 仍等于严格正的 Gaussian Hankel。L=2、4 的
+`audit_r216.js` 通过。
+
+这是一条 `FINITE-ONLY / OBSTRUCTION`：它排除不依赖 angular degree 的低阶
+ordinary-Hankel 转换，却不是 genuine full-exact 反例，也不否定某个真正使用
+same-factor 结构的 `M(D,r)` 仍可能存在。cross-witness、asymmetric exact 单律
+排除与最终 rigidity 继续 `OPEN`；独立完整可审稿发表性仍为“无”。
