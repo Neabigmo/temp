@@ -7775,3 +7775,14 @@ CDF 端使用 `|F_(X_m)(0)-1/2|=Theta(m^(-1/2))` 和
 `log(1/lambda_m)=2m log(m)+O(m)` 得到修正的
 `sqrt(loglog/log)` 下障碍。这样四个原审查点中，dominance 与 CDF 项已为
 `LOCAL-PROOF-AUDIT`；整个构造仍只差正确加权 `C_L` 估计，不能升级为最终定理。
+
+随后把 `C_L` 缺口收缩为两区的引用型渐近审计：写 `z=nu*x`, `nu=4m+3`，
+`Q_m=sqrt(z)exp(-z/2)|L_m^(1/2)(z)|`。DLMF (18.15.19) 在
+`0<=x<=1-delta` 给 Bessel 展开；固定 `alpha=1/2` 时，显式的
+`J_(1/2),J_(3/2)` 与 `xi~sqrt(x)` 使 `Q_m=O_delta(1)`，包括 hard edge。
+DLMF (18.15.22) 在 `delta<=x<infinity` 给 Airy 展开，粗略得到
+`Q_m=O_delta(nu^(1/6))`，而候选真正的包络是 `Q_m exp(-z/6)`，在此段因
+`z>=delta*nu` 指数压倒多项式。故 `C_L` 有可行的正式证明路线；尚未做的是
+把 uniform remainder 和拼接常数完全写出，状态为
+`CITED-ASYMPTOTIC / PENDING-CONSTANT-EXTRACTION`，不能将整体反例升为定理。
+参考：[DLMF §18.15](https://dlmf.nist.gov/18.15)。

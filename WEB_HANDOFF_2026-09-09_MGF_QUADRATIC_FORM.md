@@ -373,3 +373,10 @@ stability 部分。
 额外 `exp(-y^2/6)` 做 turning-zone 估计。补偿的双侧 `Delta` 估计与 CDF 下界
 已由本机逐式审计，但 `C_L` 仍是 OPEN。参考：
 [Krasikov, arXiv:math/0401310](https://arxiv.org/abs/math/0401310)。
+
+更具体地，本机已把 `C_L` 缺口化为两区审计：DLMF (18.15.19) 的 Bessel
+展开在 `0<=z/nu<=1-delta` 应给 `Q_m=sqrt(z)exp(-z/2)|L_m^(1/2)(z)|=O(1)`；
+(18.15.22) 的 Airy 展开在 `z/nu>=delta` 至多给 `Q_m=O(nu^(1/6))`，随后
+候选自带的 `exp(-z/6)` 使其统一有界。请严格补齐两式的 uniform remainder、
+hard-edge 端点和区间拼接；若闭合即可确认 `C_L<infinity`，若不闭合请指出
+具体余项或参数依赖。不要把单独的全局 Hermite 峰值估计当作证明。

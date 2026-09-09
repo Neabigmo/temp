@@ -469,6 +469,29 @@ CDF 下界不被 `lambda_m` 吞掉的审计。若四项闭合，当前单对数�
 `Delta_m=Theta(lambda_m)` 的逐点双侧常数和补偿后的 CDF 下界虽已逐式核对，
 整个反例仍因正确的加权 `C_L` 估计而保持 `CANDIDATE / LOCAL-DERIVATION`。
 
+### I.c 正确包络的两区闭合路线（尚待常数化）
+
+令 `z=nu*x`，`nu=4m+3`，并记
+`Q_m(z)=sqrt(z)*exp(-z/2)*abs(L_m^(1/2)(z))`。不能只用全局峰值，
+但 DLMF §18.15 提供了互补的两段统一渐近式：
+
+1. `0<=x<=1-delta`：Bessel 式 (18.15.19) 覆盖 hard edge 到 bulk。对
+   `alpha=1/2`，`J_(1/2)` 与 `J_(3/2)` 的显式包络，加上
+   `xi~sqrt(x)`，给出 `Q_m(nu*x)<=C_delta`；`x` 接近零时公式中的
+   `x^(-1/2)` 被 `sqrt(z)` 与 Bessel 小参数行为正好抵消。
+2. `delta<=x<infinity`：Airy 式 (18.15.22) 给出
+   `Q_m(nu*x)<=C_delta*nu^(1/6)`；turning 区只产生这一个多项式损失，
+   外侧由 `Ai` 的衰减更小。
+
+候选所需的量满足
+`sqrt(z)*exp(-2z/3)|L_m^(1/2)(z)|=Q_m(z)*exp(-z/6)`。第一段直接有界；
+第二段因 `z>=delta*nu` 而被 `nu^(1/6)*exp(-delta*nu/6)` 压至有界。
+因此这给出一个可行的 `C_L<infinity` 证明路线，但仍需把两条渐近式的
+uniform remainder 与 `x=1-delta` 的拼接常数写成正式 lemma，当前证据等级为
+`CITED-ASYMPTOTIC / PENDING-CONSTANT-EXTRACTION`，不能升级整体候选。
+参考：[DLMF §18.15](https://dlmf.nist.gov/18.15)，尤其 (18.15.19) 与
+(18.15.22)。
+
 ### I.b 补偿与 CDF 下界的本机闭合
 
 对固定 `rho`，当 `m` 足够大时 `a_m*rho^(2m+1)<=1/2`。令
