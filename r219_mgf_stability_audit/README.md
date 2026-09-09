@@ -456,10 +456,9 @@ CDF 下界不被 `lambda_m` 吞掉的审计。若四项闭合，当前单对数�
 
 `2^(-n/2)*sqrt(n!)/m! = O(m^(1/4))` 对 `n=2m+1`，
 
-所以连同 `n^(-1/12)` 也只得到 `O(m^(1/6))`，不能推出所需的固定 `C_L`。
-必须保留额外的 `exp(-y^2/6)`，对 turning 区做真正的加权估计。故 `C_L`
-仍是 `OPEN / CITATION NOT SUFFICIENT`，而不是已闭合的引用型子引理；数值上
-`sup_x|p_m(x)|` 近似稳定也只能作辅助证据。
+所以连同 `n^(-1/12)` 也只得到 `O(m^(1/6))`，不能单独推出所需的固定 `C_L`。
+必须保留额外的 `exp(-y^2/6)`，对 turning 区做真正的加权估计；这正由下述
+DLMF Bessel/Airy 两区定理完成，而不是由全局 Hermite 峰值单独完成。
 来源：Krasikov, *New bounds on the Hermite polynomials*,
 [arXiv:math/0401310](https://arxiv.org/abs/math/0401310)；DLMF 的 Laguerre
 渐近式也明确显示 turning 区必须单独处理，见
@@ -467,7 +466,8 @@ CDF 下界不被 `lambda_m` 吞掉的审计。若四项闭合，当前单对数�
 
 这一步排除了一个错误的包络证明，但没有关闭 `C_L<infinity`；
 `Delta_m=Theta(lambda_m)` 的逐点双侧常数和补偿后的 CDF 下界虽已逐式核对，
-整个反例仍因正确的加权 `C_L` 估计而保持 `CANDIDATE / LOCAL-DERIVATION`。
+整体反例仍需网页端复核引用适用范围，但 `C_L` 已有
+`CITED-THEOREM / LOCAL-DERIVED` 级别的闭合路线。
 
 ### I.c 正确包络的两区闭合路线（尚待常数化）
 
@@ -486,9 +486,11 @@ CDF 下界不被 `lambda_m` 吞掉的审计。若四项闭合，当前单对数�
 候选所需的量满足
 `sqrt(z)*exp(-2z/3)|L_m^(1/2)(z)|=Q_m(z)*exp(-z/6)`。第一段直接有界；
 第二段因 `z>=delta*nu` 而被 `nu^(1/6)*exp(-delta*nu/6)` 压至有界。
-因此这给出一个可行的 `C_L<infinity` 证明路线，但仍需把两条渐近式的
-uniform remainder 与 `x=1-delta` 的拼接常数写成正式 lemma，当前证据等级为
-`CITED-ASYMPTOTIC / PENDING-CONSTANT-EXTRACTION`，不能升级整体候选。
+因此这给出一个可行的 `C_L<infinity` 证明路线。这里使用的是存在性结论，
+不要求数值化 `C_L`：DLMF 的 `O` 项已经按所示区间统一，有限个低阶 `m`
+再并入常数即可。`C_L` 可记为 `CITED-THEOREM / LOCAL-DERIVED`；网页端
+仍应检查 (18.15.19)、(18.15.20)、(18.15.22) 的端点处理是否与此具体化
+完全匹配，整体候选的最终证据等级仍由独立复核决定。
 参考：[DLMF §18.15](https://dlmf.nist.gov/18.15)，尤其 (18.15.19) 与
 (18.15.22)。
 
@@ -539,5 +541,5 @@ uniform remainder 与 `x=1-delta` 的拼接常数写成正式 lemma，当前证�
 阈值零点的 CDF 改变量至多为 `P(J_m!=0)<=lambda_m=o(m^(-1/2))`。
 归一化不改变零点，因此 `d_K(W_m,N)>=c/sqrt(m)`。结合
 `log(1/Delta_m)=2m log(m)+O(m)`，候选下界确实为
-`d_K>=c*sqrt(log log(1/Delta_m)/log(1/Delta_m))`，前提仅剩正确的
-`C_L` 引用子引理。
+`d_K>=c*sqrt(log log(1/Delta_m)/log(1/Delta_m))`，其中 `C_L` 由上述
+`CITED-THEOREM / LOCAL-DERIVED` 两区引理提供。

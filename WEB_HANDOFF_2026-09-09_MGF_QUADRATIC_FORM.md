@@ -371,7 +371,7 @@ stability 部分。
 需要的是 `sqrt(z) exp(-2z/3)|L_m^(1/2)(z)|`。借助 Hermite 恒等式和 Krasikov
 的全局峰值估计单独只留下 `O(m^(1/6))`，不能关闭该加权包络；必须保留
 额外 `exp(-y^2/6)` 做 turning-zone 估计。补偿的双侧 `Delta` 估计与 CDF 下界
-已由本机逐式审计，但 `C_L` 仍是 OPEN。参考：
+已由本机逐式审计；`C_L` 现在有 DLMF 两区引用路线，但需网页端复核。参考：
 [Krasikov, arXiv:math/0401310](https://arxiv.org/abs/math/0401310)。
 
 更具体地，本机已把 `C_L` 缺口化为两区审计：DLMF (18.15.19) 的 Bessel

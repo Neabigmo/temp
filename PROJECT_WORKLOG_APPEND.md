@@ -7756,8 +7756,9 @@ Krasikov 的全局 Hermite 峰值估计
 `max_y exp(-y^2/2)|H_n(y)| <= C 2^(n/2)sqrt(n!)n^(-1/12)`
 再加 `exp(-2y^2/3)<=exp(-y^2/2)` 与 Stirling 比值
 `2^(-(2m+1)/2)sqrt((2m+1)!)/m!=O(m^(1/4))`，连同 `n^(-1/12)` 仍留下
-`O(m^(1/6))`，所以不能给出 `C_L`。必须保留额外 `exp(-y^2/6)` 做 turning-zone
-加权估计；包络子引理仍为 `OPEN / CITATION NOT SUFFICIENT`，数值稳定不构成证明。
+`O(m^(1/6))`，所以不能单独给出 `C_L`。必须保留额外 `exp(-y^2/6)` 做
+turning-zone 加权估计；该加权估计由下述 DLMF 两区式提供，不能被全局峰值
+不等式替代。
 引用记录：Krasikov,
 *New bounds on the Hermite polynomials*, [arXiv:math/0401310](https://arxiv.org/abs/math/0401310)。
 
@@ -7774,7 +7775,8 @@ CDF 端使用 `|F_(X_m)(0)-1/2|=Theta(m^(-1/2))` 和
 归一化不改变零阈值，故 `d_K(W_m,N)>=c/sqrt(m)`。再由
 `log(1/lambda_m)=2m log(m)+O(m)` 得到修正的
 `sqrt(loglog/log)` 下障碍。这样四个原审查点中，dominance 与 CDF 项已为
-`LOCAL-PROOF-AUDIT`；整个构造仍只差正确加权 `C_L` 估计，不能升级为最终定理。
+`LOCAL-PROOF-AUDIT`；配合下述 DLMF 两区引用，整体构造可进入
+`CITED-THEOREM / LOCAL-DERIVED` 审查层，但仍待网页端独立复核。
 
 随后把 `C_L` 缺口收缩为两区的引用型渐近审计：写 `z=nu*x`, `nu=4m+3`，
 `Q_m=sqrt(z)exp(-z/2)|L_m^(1/2)(z)|`。DLMF (18.15.19) 在
@@ -7794,5 +7796,6 @@ Bessel 的 `min(w^(1/2),w^(-1/2))` 包络在 `nu xi<=1`/`>=1` 两段都给常数
 也可控。对 `x>=delta`，Airy 式 (18.15.22) 给
 `Q_m=sqrt(z)exp(-z/2)|L_m^(1/2)(z)|=O_delta(nu^(1/6))`；候选额外
 `exp(-z/6)` 且 `z>=delta*nu`，压掉该多项式项。结论是 `C_L` 有明确的
-两区证明骨架，但 `O` 项常数尚未逐项提取，状态仍为
-`CITED-ASYMPTOTIC / LOCAL-SKETCH`，待网页端复核后再升级。
+两区证明骨架。DLMF 的 uniform `O` 项只需提供存在性，不需要数值化常数，
+有限个低阶阶数并入 `C_L` 即可；状态可记为
+`CITED-THEOREM / LOCAL-DERIVED`，待网页端复核端点处理。
