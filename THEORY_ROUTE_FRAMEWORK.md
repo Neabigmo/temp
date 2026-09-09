@@ -67,6 +67,16 @@ boundary，不给这个 mixed covariance zero。这个分界与经典“样本�
 
 若该接口不能闭合，主问题仍应保持 `OPEN`，而不是继续增加 radial rows。
 
+## 1C. R211：Esscher tilt 聚点足以放大为 Gaussian
+
+R211 给出一个可直接引用的 conditional closure。若 common Esscher 参数集合
+`A` 在 MGF 区间内有聚点，且仅满足 `E_a Q=2`（等价于
+`ell_1(a)=0`）对所有 `a∈A`，则 real-analyticity 与 identity theorem 给出
+`K''(t)=1`，从而 Gaussian。特别地，在一组有聚点的 tilt 上保持 full-SF
+当然足够；不需要全体 Laguerre rows。原始 full-SF 仍只位于 `a=0`，OU 参数
+也不能自动替代 Esscher 参数，所以 R211 量化了真正缺少的“tilt-stability”
+而非解决它。记录见 `r211_tilt_stability_accumulation/`。
+
 ## 2. 总体证明框架
 
 ### A. Exact defect / Fock reduction

@@ -7454,3 +7454,22 @@ genuine same-factor product identity 是否能推出 mixed covariance zero 的�
 非平凡片段；若不能，记录最小 same-factor obstruction，保持
 `RK=>full-SF`、charge provenance、primitive closure、`MT_r`、tower rigidity
 五个缺口分离。
+
+### R211：Esscher tilt 稳定性的聚点放大引理（2026-09-09）
+
+本轮把正向目标量词化。对 `C=(X_1+X_2+X_3)/sqrt(3)`、
+`Q=sum_j(X_j-Xbar)^2`，共同 Esscher tilt 下精确有
+
+`E_a Q=2 K''(a/sqrt(3))`, `ell_1(a)=1-K''(a/sqrt(3))`。
+
+因此若某个 MGF 区间内的参数集合 `A` 有内部聚点，且仅有
+`ell_1(a)=0` 对所有 `a∈A`，解析恒等定理即给出 `K''=1` 与 Gaussian；
+若一组有聚点的 tilt 保持完整 `Q~chi^2_2`，更当然成立。这个结论只需
+首个 Laguerre mode，不需全部 tilted rows。
+
+R211 明确了原始缺口：未倾斜 full-SF 只有 `a=0` 的 marginal boundary，
+OU backward 参数也不自动产生 Esscher tilt stability。因此该结果是
+`PROVED/LOCAL-AUDITED` 的 conditional closure，不是原始 rigidity。整体
+发表性仍为“无”；`audit_r211.js` 已通过。下一轮唯一任务是研究 genuine
+same-factor product identity 是否能产生任何非平凡 tilted zero 序列，或把
+它与 mixed covariance zero 连接起来；五个既有缺口继续分离。
