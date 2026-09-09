@@ -516,6 +516,12 @@ DLMF Bessel/Airy 两区定理完成，而不是由全局 Hermite 峰值单独完
 确认 (18.15.19)、(18.15.20)、(18.15.22) 的余项在上述端点处理确实保持
 统一，之后才能把 `C_L` 升为 `PROVED`。
 
+本机以三项递推式对 `m=1,2,4,8,16,32,64,128,256`、`0<z<=100` 做了数值 sanity
+check：`sqrt(z)exp(-2z/3)|L_m^(1/2)(z)|` 的网格最大值约为 `0.54--0.564`，且最大点
+随阶数向 hard edge 移动；这不是证明，只用于排除明显的 turning-zone 爆炸。最终证据等级
+仍保持为“MGF/Skellam/CDF：`LOCAL-PROOF-AUDIT`；正性包络：`CITED-THEOREM /
+LOCAL-DERIVED`；整体反例：待网页端复核”。
+
 ### I.b 补偿与 CDF 下界的本机闭合
 
 对固定 `rho`，当 `m` 足够大时 `a_m*rho^(2m+1)<=1/2`。令

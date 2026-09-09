@@ -7799,3 +7799,10 @@ Bessel 的 `min(w^(1/2),w^(-1/2))` 包络在 `nu xi<=1`/`>=1` 两段都给常数
 两区证明骨架。DLMF 的 uniform `O` 项只需提供存在性，不需要数值化常数，
 有限个低阶阶数并入 `C_L` 即可；状态可记为
 `CITED-THEOREM / LOCAL-DERIVED`，待网页端复核端点处理。
+
+本机还用三项递推式对 `L_m^(1/2)` 做了非证明性的数值抽查（`m=1,2,4,8,16,32,64,128,256`，`0<z<=100` 网格）。加权量
+`sqrt(z)exp(-2z/3)|L_m^(1/2)(z)|` 的最大值约稳定在 `0.54--0.564`，位置随 `m` 向
+`z=0` 移动，未见 turning-zone 增长；这只作为 sanity check，不替代上述两区定理。
+因此当前最准确的状态仍是：Laguerre 反例的 MGF、补偿、CDF 部分为
+`LOCAL-PROOF-AUDIT`，正性包络为 `CITED-THEOREM / LOCAL-DERIVED`，整体反例待网页端
+复核后才能升为 `PROVED`。
