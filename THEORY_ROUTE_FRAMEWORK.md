@@ -13124,3 +13124,35 @@ characteristic identity，尝试证明 R188 的 `(MT_r)`；若失败，则构造
 projections/已知 sector budgets 而将 total degree 推向无穷的最小 formal obstruction。
 这条任务正好连接 R186 与最终 tower rigidity，且不重复 R190–R203 的有限层链。完整
 记录见 `r204_global_publication_audit/README.md`。
+## 83.71 R205：径向 same-factor 恒等式的均值频率盲区（2026-09-09）
+
+本机对 R188 的 mixed-sector 缺口作了精确投影审计。令
+`U=(X_1+X_2+X_3)/sqrt(3)`、`R=(I-e_0e_0^T)X`、`T=|R|^2/2`，并取 residual
+plane 单位向量 `a(theta)`。带公共均值频率的 product transform 为
+
+`A(s,y)=(1/(2pi)) int prod_j phi(s/sqrt(3)+a_j(theta)y)dtheta`
+`     =E[exp(i s U) J_0(y sqrt(2T))]`。
+
+已知的 exact same-factor radial identity 只是 `A(0,y)=exp(-y^2/2)`。由于
+`E[T^k]=k!` 时 Bessel 展开恰给 `exp(-y^2/2)`，反向 Hankel 单射又恢复
+`T~Exp(1)`，故该 identity 的信息内容恰是 residual radius 的边缘分布。
+
+而
+`partial_s^ell A(s,y)|_(s=0)=i^ell E[U^ell J_0(y sqrt(2T))]`；在指数矩下，
+对 `s` 的导数再配合 Laguerre 投影才读取 `C_(ell,n)`。因此 `s=0` 切片对
+`ell>=1` 没有方程，不能单独推出 R188 的
+
+`(MT_r) lim_(M->infinity) sup_j sum_(2n+ell>M)
+ r^(4n+2ell)|C_(ell,n)(mu_j)|^2=0`。
+
+R188 的 abstract copula migration 例子在这一信息层面保持 `T~Exp(1)` 而把
+`C_(ell,N)` 推到任意高阶；它不是 three-iid genuine counterexample，却严格
+说明必须引入 `s`-dependent identity 或额外 same-factor positivity coupling。
+证据等级为 `PROVED` 坐标/Bessel 投影加 `ABSTRACT OBSTRUCTION`。这不同于
+R190 的线性化 blind ladder 和 R186 的 inverse-Hankel 检测阶逃逸：R205 是
+exact identity 的信息投影 no-go。记录见 `r205_mean_frequency_blindness/README.md`，
+审计 `audit_r205.js` 已通过。整体 rigidity 与发表性判断不变：`OPEN`/“无”。
+
+下一主任务改为：从 same-factor positivity 或四点 bispectrum Gram 中抽取一个
+真正的 `s`-dependent bound；若不能，则把公共均值频率方向的缺失作为正式 OPEN
+bridge，不再继续增加 radial rows。

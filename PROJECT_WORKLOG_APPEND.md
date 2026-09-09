@@ -7335,3 +7335,21 @@ R197–R203 最接近一个可独立表述的负面小定理：固定有限 radi
 下一条唯一主任务：停止继续增加 radial 行数，直接利用 genuine same-factor
 characteristic identity 检查 R188 的 `(MT_r)`；若无法推出，则构造精确标注为 formal
 的 mixed-sector total-degree escape lemma。
+### R205：径向 same-factor 恒等式的均值频率盲区（2026-09-09）
+
+本机把 R188 的 mixed-sector 缺口写成精确坐标引理。对
+`U=(X_1+X_2+X_3)/sqrt(3)`、`T=|R|^2/2`，带公共频率的 product transform 满足
+
+`A(s,y)=E[exp(i s U)J_0(y sqrt(2T))]`。
+
+已知径向 same-factor identity 只有 `A(0,y)=exp(-y^2/2)`；Bessel/Laplace 单射
+说明它等价于 `T~Exp(1)`。所有 `U|T` mixed coefficients 则来自
+`partial_s^ell A(0,y)`，再经 Laguerre 投影得到 `C_(ell,n)`。因此该 identity
+单独不能推出 R188 的 `(MT_r)`。R188 的 abstract mixed-sector migration 在此
+信息层面保持相同 `T` 边缘并推迟非零 `C_(ell,N)`，但不是 genuine same-factor
+反例。`r205_mean_frequency_blindness/audit_r205.js` 已通过。
+
+R205 的证据等级为 `PROVED` 坐标/Bessel 投影加 `ABSTRACT OBSTRUCTION`，与
+R190 的线性化 blind ladder、R186 的正性检测阶逃逸分属不同层。下一条唯一任务
+是从 same-factor positivity 或四点 bispectrum Gram 得到真正的 `s`-dependent
+bound；否则正式记录该 OPEN bridge，不再增加 radial rows。
