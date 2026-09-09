@@ -12871,3 +12871,21 @@ R190 的线性盲区不能简单靠二阶 radial Taylor response 修复。对 od
 二阶径向 identity 可被 even correction 抵消，不能单独提供 `(MT_r)` 或
 inverse-Hankel closure。formal jet 未证明 positive definite，也未构成 genuine
 all-degree exact law；原始问题整体发表性仍为“无”。
+
+## 83.58 R192：all-order formal radial lift of an odd mixed direction（2026-09-09）
+
+R191 的二阶可抵消 jet 可递归推广。固定 odd `d>=3`，取
+`log(phi_epsilon/phi_0)=sum_(k>=1)epsilon^k b_k(iu)^(kd)`、`b_1=1`，并令
+`S_k(theta)=sum_j a_j(theta)^k`。第 `m` 阶系数中，`m` odd 时所有项在
+`theta->theta+pi` 下变号而平均为零；`m` even 时新变量 `b_m` 的系数为
+`i^(md)A_(md)`，其中
+
+`A_k=<S_k>=3 binom(k,k/2)/6^(k/2)>0`.
+
+因此可递归取
+`b_m=-K_m/(i^(md)A_(md))`，逐阶消掉全部 even radial coefficients；奇数阶
+可取 `b_m=0`（保留 `b_1=1`）。这给出 `PROVED` 的 formal recursion 和
+`FORMAL ALL-ORDER NO-GO`：径向 angular identity 本身不能形式地消灭 odd
+mixed direction。它仍未证明 positive-definite characteristic family、收敛或
+genuine all-degree law，所以不构成原始问题反例；R188 的 `(MT_r)`、R186 的
+inverse-Hankel closure 和原始 rigidity 仍 `OPEN`，整体发表性仍为“无”。

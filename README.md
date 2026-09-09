@@ -226,3 +226,9 @@ formal characteristic jet，存在显式 `kappa_d=B_d/(2A_d)>0` 抵消二阶 ang
 radial response，而 R190 的 mixed coefficient 一阶信号仍非零。该结果排除
 “二阶径向变分自动给出 rigidity”的路径；它不是 genuine positive-definite
 all-degree exact branch。审计已通过，原始问题整体发表性仍为“无”。
+
+R192 新增 `r192_all_order_formal_radial_lift`：对任意 odd `d>=3`，构造逐阶
+可调的 one-body characteristic log jet，使 angular radial identity 在 formal
+意义下 all-order 保持，而 R190 的 mixed ladder 一阶信号仍非零。这是严格的
+formal all-order no-go，不是 positive-definite characteristic family 或 genuine
+原始问题反例；审计已通过，整体发表性仍为“无”。

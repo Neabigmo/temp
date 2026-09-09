@@ -7055,3 +7055,19 @@ Gaussian characteristic factor 上取 formal jet
 mixed-sector 正 coercivity。该结论是 `PROVED` 的二阶代数 calculation 加
 `FORMAL SECOND-ORDER NO-GO`，不是 genuine positive-definite characteristic
 branch；整体发表性判断仍为“无”，审计已通过。
+
+### R192：all-order formal radial lift of an odd mixed direction（2026-09-09）
+
+本机新增 `r192_all_order_formal_radial_lift`。固定 odd `d>=3`，令
+`S_k(theta)=sum_j a_j(theta)^k`，并取 one-body characteristic log jet
+`log(phi_epsilon/phi_0)=sum_(k>=1)epsilon^k b_k(iu)^(kd)`、`b_1=1`。
+第 `m` 阶 angular 系数中，若 `m` odd，所有 monomial 因
+`theta->theta+pi` 自动平均为零；若 `m` even，唯一新项的系数是
+`i^(md)A_(md)`，其中 `A_k=3 binom(k,k/2)/6^(k/2)>0`。故可递归选择
+`b_m` 消掉每个 even 阶，得到 formal all-order radial-preserving jet，且
+R190 的任意指定 `D C_(1,n)` 仍非零。
+
+这是真正比 R191 更强的 `PROVED formal recursion + FORMAL ALL-ORDER NO-GO`：
+angular radial identity 单独不能在形式层面排除 odd mixed direction。它未证明
+positive-definiteness、收敛或 genuine all-degree law；原始问题整体发表性仍为
+“无”，审计已通过。
