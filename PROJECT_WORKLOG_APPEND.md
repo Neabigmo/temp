@@ -7593,3 +7593,36 @@ rigidity 与独立完整可审稿发表性仍分别为 OPEN 与“无”。
 `D=3,5,9,17` 通过。这不是 relaxed 反例，而是 genuine degree-matched
 cross-witness 的首个实质子定理；多 odd degree 合计预算、负特征值 uniform
 裕量及原始 `RK=1` 桥仍 OPEN，整体完整可审稿发表性仍为“无”。
+
+### MGF-QS-01：rank-one transform stability 与 TV 的 phase-change obstruction（2026-09-10）
+
+网页端在当前 MGF quadratic-form 方向完成了一轮实质稳定性分析。对
+`Q=X^2`、`EX=0`、`EX^2=1` 及局部 dominance
+`M_X(t)M_X(-t)>=exp(t^2)`，若输入不是普通 TV/弱距离，而是局部径向
+Laplace 距离
+`sup_{|t|<=tau}|exp(-t^2/2) E cosh(t sqrt(Q))-1|<=epsilon`，
+则代数上严格得到
+`d_MGF<=epsilon+sqrt(2epsilon+epsilon^2)=O(sqrt(epsilon))`，并同时
+控制 `E exp(H)-1`、Jensen gap 与对称化 MGF defect。该部分是
+`PROVED/ALGEBRAICALLY-AUDITED` 的 transform-stability，而非经典距离稳定性。
+
+网页端进一步给出稀有 Poisson 跳跃修复反例：先用 `Y=S|G|` 让 `Y^2=G^2`
+但 `Y` 非 Gaussian，再取 `lambda_n=K/n^4`、跳幅 `n` 并标准化。四阶
+正的 `cosh` 余项可在固定 MGF 邻域内补偿 `Y` 的负 dominance defect，因而
+每个 `X_n` 满足局部 dominance；但 `X_n->Y` in TV，故
+`d_TV(L(X_n^2),chi^2_1)->0` 而 `X_n` 不趋于 Gaussian，且 `E exp(H)` 可发散。
+这是 `PROVED UNDER EXPLICIT CONSTRUCTION / LOCAL-NUMERIC-AUDIT` 的
+`OBSTRUCTION`：说明 approximate radial law 必须配 uniform exponential
+integrability 或 transform tightness，不能把 exact rigidity 直接连续化。
+
+在统一包络 `E exp(2tau|X|)<=K_0` 下，TV 与 `chi^2_1` 的接近可先通过
+TV--Cauchy--Schwarz 转为径向 Laplace 接近，再接上面的 `O(sqrt(epsilon))`
+MGF 控制。这只闭合到局部变换稳定性；从点态 symmetrized MGF 到 TV/Wasserstein
+仍是 quantitative Cramer 问题。一般 PSD 情形目前只得到 integrated spherical
+defect bound，sample-variance 情形的剩余关卡是球面加权 L1 defect 到点态
+`D(s)` 的定量反演。完整记录见 `r219_mgf_stability_audit/README.md`。
+
+本轮本机 Node 积分复核 `c=0.6487212707001282`、`EY≈0`、`EY^2≈1`，
+`tau=0.5` 时 `C_tau≈0.00390474`；对 `n=10,30,100` 的 Poisson 修复网格
+缺陷均非负（零点仅在 `t=0`）。没有发现当前代数构造的数值矛盾，但其解析
+反例、sample-variance 点态反演、直接先例排查和整体发表性仍保持 `OPEN/未认证`。

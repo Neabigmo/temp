@@ -23,6 +23,8 @@
 16. `r169_spatial_ou_zero_accumulation_audit/README.md`：空间 charge 沿 OU 轨道的解析非 flatness 与固定-q 零点归约。
 17. `r170_spatial_odd_sector_nonflat_audit/README.md`：首个非零 odd sector 对空间 `ell_3` 非 flatness 的条件性定理。
 18. `r171_tail_based_spatial_nonflat_audit/README.md`：用 exact-tail 与超收缩削弱空间 log 展开的解析性假设。
+19. `r219_mgf_stability_audit/README.md`：rank-one 的局部变换稳定性、TV/弱距离反例、
+    统一指数可积性修复以及一般 PSD 的 integrated defect 关卡。
 
 ## 分支体系
 
@@ -105,6 +107,21 @@ genuine full-SF/all-row，不能推出 bare `RK=1` 或最终 rigidity。
 R171 的网页审查尚未进入历史；回读仍停留在 R170 且线程为 `systemError`，没有网页端
 理论正文。本机 R171 已把 R170 的完整解析性要求削弱为 exact-tail 下的有限阶 log
 渐近，但它仍是条件性结果，不能写成网页端已确认结论。
+
+### 当前 MGF 二次型线的最新快照（2026-09-10）
+
+网页端已完成一轮 rank-one stability 审计：在局部 symmetrized-MGF dominance 下，
+局部径向 Laplace 变换误差 `epsilon` 可严格推出局部 MGF 误差
+`epsilon+sqrt(2epsilon+epsilon^2)=O(sqrt(epsilon))`，并控制 Jensen gap。
+但 TV/弱距离的近似 `chi^2` 不能推出近似 Gaussian；稀有 Poisson 跳跃可保持固定
+邻域 dominance，同时令平方变量在 TV 中趋于 `chi^2` 而母分布趋于固定非 Gaussian
+律。统一指数可积性可以把 TV 先转为局部 Laplace 控制。
+
+这条结果当前证据等级为 `PROVED/ALGEBRAICALLY-AUDITED` 的 transform-stability，
+以及 `OBSTRUCTION/LOCAL-NUMERIC-AUDIT` 的 classical-distance no-go；一般 PSD
+和 sample-variance 的 pointwise defect inversion、quantitative Cramer 接口、
+直接文献新颖性仍 `OPEN/未认证`。详见 `r219_mgf_stability_audit/README.md`，
+不得将其表述成原始 OU backward-tower 主命题的解决或高分区投稿认证。
 
 R172 新增 `r172_p3k_provenance_audit/`，专门审计原始 `P_3K` 的对象身份：历史记录
 中 R102 已恢复出 analytic log-MGF 工作定义，但早期 R4 原文没有随仓库保存；空间

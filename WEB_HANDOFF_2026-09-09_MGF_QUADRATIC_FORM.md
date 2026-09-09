@@ -230,3 +230,28 @@ Y=Z+c(N-\lambda),
 ## 本机同步状态
 
 本机 Git 工作区目前仍主要记录旧的 OU backward-tower 研究线，最新已知提交为 R218（first-odd genuine cross-witness）。本文件是把网页端新候选正式交接给网页端的第一份记录；后续若新方向通过审计，再单独建立清晰的研究分支和工作记录，避免覆盖旧路线或混淆证据等级。
+
+## 2026-09-10 稳定性回合：当前可信收束
+
+网页端已完成 rank-one 的第一轮 quantitative stability 审计。应把结论严格
+分成两层：
+
+1. **Transform stability：已闭合。** 在 `Q=X^2`、方差归一化和局部
+   `M(t)M(-t)>=exp(t^2)` 下，径向局部 Laplace 距离 `epsilon` 给出局部
+   MGF 距离 `epsilon+sqrt(2epsilon+epsilon^2)`，并控制 Jensen gap 与
+   对称化 MGF defect。
+2. **Classical-distance stability：原命题为假。** 网页端的 `Y=S|G|`
+   加稀有 Poisson 跳跃构造说明，即使 `Q_n` 在 TV 中趋于 `chi^2_1`，
+   每个 `X_n` 仍可满足固定邻域的 dominance，却在 TV 中趋于固定非
+   Gaussian `Y`；同一尾部还使 `E exp(H)` 与 Jensen gap 发散。缺失的是
+   uniform exponential integrability/transform tightness。
+
+因此不能写成“近似 `chi^2` 加 dominance 推出近似 Gaussian”。在统一指数
+包络下，TV 可先被转成径向 Laplace 控制，再获得局部 MGF 稳定性；从此处
+到 TV/Wasserstein 仍须独立接入 quantitative Cramér 理论。
+
+一般 PSD 目前已闭合的仅是 integrated spherical defect bound；sample-variance
+的下一个具体关卡是：在统一指数包络及明确解析/导数控制下，把球面加权
+`L^1` 缺陷反演为 `D(s)` 的 pointwise bound，或给出仍不充分的最小反例。
+本轮本机复核与证据分层见 `r219_mgf_stability_audit/README.md`。这不改变
+原始 OU backward-tower 主问题仍为 `OPEN`，也不构成新颖性或高分区投稿认证。
