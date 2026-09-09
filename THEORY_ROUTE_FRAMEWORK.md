@@ -12795,3 +12795,17 @@ Hankel 最终严格正定，失败阶只能 `M_r->infinity`。
 零点壳扫描。证据等级为 `PROVED UNDER GENUINE FULL-EXACT + SQUARE-EXPONENTIAL
 HYPOTHESES` 加 `EXACT-AUDITED`；bare `RK=1` 桥、原始 `P_3K` identification、
 charge survival 和最终 rigidity 仍 `OPEN`，整体发表性仍为“无”。
+
+## 83.54 R187：sector-wise Parseval 不蕴含 global inverse-tail tightness（2026-09-09）
+
+网页端 R187 已发送；本机新增 `r187_spectral_tail_migration_obstruction`。
+抽象族 `C_(1,N)=r^(-(2N+1))`、其余系数为零，对每个固定 common-chaos
+sector 都满足 R17 的 weighted `ell^2` 预算，且 `ell=0` sector 为零；然而
+总 inverse-weighted tail 在 cutoff `M<N` 时恰为 `1`。这严格否定了
+“逐 sector Parseval 自动给 total-degree tail tightness”的推断。
+
+因此 R186 的 primitive rank escape 还需要 same-factor exact identity 对
+`U|T` mixed conditional moments 的联合控制，或直接的 total-degree budget。
+若该 uniform tail 成立，再结合有限坐标连续性即可推出固定 `r` 下 primitive
+闭性；当前仍是 `OPEN`。证据等级为 `PROVED UNDER R17 SECTOR BOUNDS` 加
+`ABSTRACT OBSTRUCTION`，整体发表性仍为“无”。

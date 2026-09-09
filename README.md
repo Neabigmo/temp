@@ -203,3 +203,7 @@ R186 网页端重发未进入历史，本机新增
 `r186_primitive_rank_escape_dichotomy`，将 primitive inverse-OU 的有限失败阶
 与 Gaussian 极限下的 rank escape 量词明确化；这把主问题重新拉回全局
 `uniform inverse-Hankel rank closure`，整体发表性判断仍为“无”。
+
+R187 已把该全局瓶颈进一步具体化：sector-wise Parseval 允许 weighted mass
+沿 `n=N` 迁移，不能单独推出 total-degree inverse-tail tightness。新增
+`r187_spectral_tail_migration_obstruction`，整体发表性判断仍为“无”。

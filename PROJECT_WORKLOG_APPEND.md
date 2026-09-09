@@ -6989,3 +6989,18 @@ Hamburger + Carleman 会产生正的 `r`-backward preimage，违反 primitivenes
 R13–R15 的 global quantifier consolidation，不是原始 rigidity；`P_3K`、
 bare `RK=1` 到 genuine full-exact/all-row 和 spatial bridge 仍分离。审计已通过，
 整体发表性判断仍为“无”。
+
+### R187：sector-wise Parseval 不蕴含 global inverse-tail tightness（2026-09-09）
+
+网页端 R187 已发送；本机新增 `r187_spectral_tail_migration_obstruction`。
+固定 `r>1`，令每轮唯一非零 mixed coefficient 为
+`C_(1,N)=r^(-(2N+1))`。则每个固定 `ell` 的 inverse-OU 加权 sector 预算均
+有界，`ell=0` 仍完全为零而不触犯 `T~Exp(1)` 的 marginal 正交性；但对任意
+固定 cutoff `M`，取 `N>M` 时总 weighted tail 恰为 `1`。故 sector-wise
+Parseval 不能升级为跨 `(ell,n)` 的 uniform spectral-tail tightness。
+
+该族是抽象 coefficient obstruction，不是 genuine full-exact law；它把
+R186 的 rank escape 缺口具体化为 `U|T` mixed conditional structure 或
+total-degree budget。若 genuine class 能证明 inverse-weighted total tail
+紧性，再结合有限坐标连续性即可闭合 primitive stratum；目前整体发表性仍为
+“无”，审计已通过。
