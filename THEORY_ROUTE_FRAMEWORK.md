@@ -13093,3 +13093,34 @@ counterexample。原始 rigidity 与整体独立发表性仍 OPEN/“无”。
 coercivity。same-factor angular identity 是该 radial IFT 链尚未使用的首个
 全局结构入口；R186 inverse-Hankel rank closure、R188 `(MT_r)` 和最终 tower
 rigidity 仍独立 OPEN，整体独立发表性仍为“无”。
+## 83.70 R204：全局脉络、证据分层与发表性审计（2026-09-09）
+
+本机对截至 R203 的全部路线作一次总审计，结论先行：原始 Positive
+Backward-Tower Exact Zero-Set Rigidity 仍为 `OPEN`；独立、完整、可审稿且足以
+直接作为论文主结果的发表性成果，诚实判断仍为
+`无（目前没有足够独立、完整、可审稿的发表性结果）`。这不是把项目归零，而是
+严格区分以下层次：
+
+1. `PROVED/LOCAL-AUDITED`：R99–R102 的有限变换接口，R132 在 genuine
+   all-row 输入下的 smoothing 模块，以及 R197–R203 的 finite-row exact
+   compensation/正性审计；
+2. `PROVED UNDER STATED HYPOTHESES/CONDITIONAL`：genuine full-exact + full-SF
+   下的 R150、R166、R173–R188 条件墙、tail 和 closure 接口；
+3. `FORMAL/FINITE-ONLY/OBSTRUCTION`：R190–R196 的 formal radial jet、有限
+   Gram/Bochner 检测阶逃逸，以及 R198–R202 的显式 Hankel-feasible branch；
+4. `OPEN`：`RK=1=>full-exact`、原始 `P_3K` 与空间/Bargmann/MGF/angular
+   charges 的 provenance bridge、primitive inverse-Hankel rank closure、mixed
+   total-degree `(MT_r)`，以及从 full-exact backward tower 到最终 spatial
+   rigidity 的组合桥。
+
+R197 与 R203 目前最接近一个可独立陈述的负面小定理：任意固定有限 radial
+   rows 不能单独消灭小非零 `kappa_3`，因为 even-cumulant Jacobian 满秩且有
+   genuine positive local realization；R198–R202 给出前六层的精确补偿和 Hankel
+   escape。它否定固定有限层证明策略，却不是 all-row counterexample，也不足以
+   单独改变整体发表性结论。
+
+因此下一主轴不是继续增加 radial 行数，而是直接利用 genuine same-factor
+characteristic identity，尝试证明 R188 的 `(MT_r)`；若失败，则构造保持有限 exact
+projections/已知 sector budgets 而将 total degree 推向无穷的最小 formal obstruction。
+这条任务正好连接 R186 与最终 tower rigidity，且不重复 R190–R203 的有限层链。完整
+记录见 `r204_global_publication_audit/README.md`。

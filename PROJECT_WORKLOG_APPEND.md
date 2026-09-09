@@ -7315,3 +7315,23 @@ radius `Gamma_M->0`，而不是继续寻找固定阶 determinant。same-factor a
 identity 是尚未进入该 radial IFT 链的首个结构入口；R186 rank closure、R188
 `(MT_r)` 和最终 tower rigidity 仍未闭合。`audit_r203.js` 已通过，整体独立
 发表性仍为“无”。
+### R204：全局脉络、证据分层与发表性审计（2026-09-09）
+
+本轮没有把新的有限层计算包装成主命题突破，而是对截至 R203 的完整路线作总审计。
+原始 Positive Backward-Tower Exact Zero-Set Rigidity 仍为 `OPEN`；当前独立、完整、
+可审稿的发表性总评仍是“无”。已经闭合或本机审计的部分包括 R99–R102 的变换接口、
+R132 的 genuine all-row smoothing 模块，以及 R197–R203 的 finite-row exact
+compensation、genuine positive local realization 和前六行 Hankel escape。R150、
+R166、R173–R188 属于带明确假设的条件性链；R190–R196 属于 formal/finite-only
+检测阶逃逸。
+
+审计特别固定了四个不能偷换的缺口：`RK=1=>full-exact`、原始 `P_3K` 与空间/
+Bargmann/MGF/angular charges 的 provenance bridge、primitive inverse-Hankel rank
+closure、以及 mixed total-degree `(MT_r)` 到最终 backward-tower rigidity 的组合桥。
+R197–R203 最接近一个可独立表述的负面小定理：固定有限 radial rows 不能单独消灭
+小非零 cubic，但它不是 all-row counterexample，因此整体发表性结论不变。完整审计
+与全局图见 `r204_global_publication_audit/README.md`。
+
+下一条唯一主任务：停止继续增加 radial 行数，直接利用 genuine same-factor
+characteristic identity 检查 R188 的 `(MT_r)`；若无法推出，则构造精确标注为 formal
+的 mixed-sector total-degree escape lemma。
