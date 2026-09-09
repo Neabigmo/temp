@@ -30,6 +30,23 @@ variance-one `L²` 密度且 `R K(g)=1`，是否存在 `δ_q>0` 使
 结论的逻辑等级必须始终标明为：无条件 lemma、conditional theorem、严格
 no-go、或 OPEN；形式 jet、有限阶模型和 operator-only 反例不能冒充真实概率律。
 
+## 1A. R209 全局审计锚点：连续 tilt Gram 也不闭合反射符号
+
+R209 将 R208 的有限 Gram no-go 推到连续 tilt 参数。即使给定精确
+`Q~Exp(1)`、全实轴严格正且解析的 normalized tilt family `r_a(Q)`，并且
+其 covariance kernel `K(a,b)=E[(r_a-1)(r_b-1)]` 在整个 `R×R` 上 PSD，仍可有
+`K(a,-a)<0`。显式 relaxed witness 见
+`r209_continuous_tilt_gram_no_go/README.md`：取 `C=±1` 按 `Q` 的两个等概率
+分区确定，则 `r_a=1+C tanh(a)`、`K(a,b)=tanh(a)tanh(b)`，但
+`K(a,-a)=-tanh²(a)`。
+
+这不是 genuine iid full-SF counterexample；它精确封存的是方法学边界：
+连续 PSD/Bochner positivity、conditional Cauchy 与 `Q` 边缘律本身不能制造
+R207 所需的 `ell_1(a)ell_1(-a)>=0`。后续若要正向闭合，必须使用
+`Psi(s;u,v)=∏_j phi(s/√3+a_j(u,v))` 的 same-factor nonlinear identity，
+而不能仅把 Gram 的频率或 tilt 参数加密。由此 `same-factor reflection-sign
+bridge` 成为独立 OPEN 接口。
+
 ## 2. 总体证明框架
 
 ### A. Exact defect / Fock reduction

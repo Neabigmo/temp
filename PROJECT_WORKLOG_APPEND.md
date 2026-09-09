@@ -7395,3 +7395,36 @@ R108 的 `m_3^2` wall 一致，却不能给 R207 所需的 tilted `a->-a` reflec
 `audit_r208.js` 已通过，整体 rigidity 与发表性仍为 OPEN/“无”。下一条唯一任务
 是审查无限频率/连续 tilt 的 Gram 或 bispectrum 是否能产生真正反射符号，不能则
 记录 all-scale sign 的 compactness 缺口。
+
+### R209：连续 tilt Gram 仍不能产生反射符号（2026-09-09）
+
+本轮把 R208 的固定有限 Gram 推广到整个连续 tilt 轴，得到一个严格的
+`RELAXED OBSTRUCTION`。令 `Q~Exp(1)`，令 `C(Q)=+1` 与 `-1` 分别落在两个
+等概率分区，并定义
+
+`r_a(Q)=E[e^(aC)|Q]/E[e^(aC)]=1+C(Q)tanh(a)`。
+
+则 `r_a` 在所有实 `a` 上严格正、解析、归一化，且其全尺度 covariance kernel
+
+`K(a,b)=E[(r_a-1)(r_b-1)]=tanh(a)tanh(b)`
+
+在整个 `R×R` 上 PSD（任意有限抽样均为 rank-one Gram）。可是
+
+`K(a,-a)=-tanh²(a)<0`，并且逐点饱和 conditional-Cauchy 下界：
+`r_a r_{-a}=1/(M_C(a)M_C(-a))`。
+
+因此即使给出 `Q~Exp(1)`、全尺度正 tilt、连续 PSD kernel 和最强的现有
+conditional-Cauchy，也不能推出 R207 需要的 `J(a)>=0` 或
+`ell_1(a)ell_1(-a)>=0`。这不是 genuine iid same-factor 反例：该 `(C,Q)`
+没有来自三个 iid scalar variables 的正交坐标与 one-body factorization。
+它严格说明后续必须寻找超出一般 PSD covariance 的 same-factor nonlinear
+identity；把有限 Gram 加密为连续 Gram 仍不够。`audit_r209.js` 已通过。
+
+全局审计不变：原始 Positive Backward-Tower Exact Zero-Set Rigidity 仍为
+`OPEN`；目前独立、完整、可审稿的发表性判断仍为“无”。最接近的组合仍是
+R197--R203 的 finite-row non-annihilation theorem 与 R145--R149/R207/R209
+的 continuum reflection-sign 边界包，后者是 conditional/relaxed obstruction，
+不能冒充原始 rigidity。下一轮唯一任务是直接研究 genuine same-factor
+factorization 是否产生超出一般 PSD 的反射符号；若不能，正式固定该 bridge
+为 OPEN，并回到 `RK=1=>full-SF`、charge provenance、primitive closure、
+mixed-tail 与 tower rigidity 的独立缺口。
