@@ -7786,3 +7786,13 @@ DLMF (18.15.22) 在 `delta<=x<infinity` 给 Airy 展开，粗略得到
 把 uniform remainder 和拼接常数完全写出，状态为
 `CITED-ASYMPTOTIC / PENDING-CONSTANT-EXTRACTION`，不能将整体反例升为定理。
 参考：[DLMF §18.15](https://dlmf.nist.gov/18.15)。
+
+两区计算骨架已具体化：在 `0<=x<=1-delta`，`xi~sqrt(x)`，主项在乘
+`sqrt(nu*x)exp(-nu*x/2)` 后是 `sqrt(nu)xi^(1/2)J_(1/2)(nu xi)`；半阶
+Bessel 的 `min(w^(1/2),w^(-1/2))` 包络在 `nu xi<=1`/`>=1` 两段都给常数。
+`alpha=1/2` 使 (18.15.20) 的 `B_0=O(x)`，故 `J_(3/2)` 修正与统一余项
+也可控。对 `x>=delta`，Airy 式 (18.15.22) 给
+`Q_m=sqrt(z)exp(-z/2)|L_m^(1/2)(z)|=O_delta(nu^(1/6))`；候选额外
+`exp(-z/6)` 且 `z>=delta*nu`，压掉该多项式项。结论是 `C_L` 有明确的
+两区证明骨架，但 `O` 项常数尚未逐项提取，状态仍为
+`CITED-ASYMPTOTIC / LOCAL-SKETCH`，待网页端复核后再升级。

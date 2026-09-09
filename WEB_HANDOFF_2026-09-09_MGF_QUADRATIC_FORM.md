@@ -380,3 +380,9 @@ stability 部分。
 候选自带的 `exp(-z/6)` 使其统一有界。请严格补齐两式的 uniform remainder、
 hard-edge 端点和区间拼接；若闭合即可确认 `C_L<infinity`，若不闭合请指出
 具体余项或参数依赖。不要把单独的全局 Hermite 峰值估计当作证明。
+
+本机进一步给出核验骨架：Bessel 区的半阶 Bessel 包络在
+`nu*xi<=1`/`>=1` 两段均给 `Q_m=O_delta(1)`，而 Airy 区至多给
+`Q_m=O_delta(nu^(1/6))`，随后 `exp(-z/6)` 以 `z>=delta*nu` 压掉它。请只需
+逐项确认 DLMF (18.15.19)、(18.15.20)、(18.15.22) 的统一余项与端点拼接；
+确认后即可把 `C_L` 从 OPEN 升级为引用型 `PROVED`，否则指出具体失败式。

@@ -492,6 +492,28 @@ uniform remainder 与 `x=1-delta` 的拼接常数写成正式 lemma，当前证�
 参考：[DLMF §18.15](https://dlmf.nist.gov/18.15)，尤其 (18.15.19) 与
 (18.15.22)。
 
+### I.d 两区计算的具体核验骨架
+
+在 Bessel 区，`xi` 与 `sqrt(x)` 在 `0<=x<=1-delta` 上相当。DLMF
+(18.15.19) 的主项在乘以 `sqrt(nu*x)*exp(-nu*x/2)` 后含有
+`sqrt(nu)*xi^(1/2) J_(1/2)(nu*xi)`。利用
+`|J_(1/2)(w)|<=C min(w^(1/2),w^(-1/2))`，在 `nu*xi<=1` 和
+`nu*xi>=1` 两段分别得到 `C*nu*xi<=C` 与 `C`。当 `alpha=1/2` 时，
+(18.15.20) 中的 `B_0` 在 `x=0` 附近为 `O(x)`，所以 `J_(3/2)` 修正项
+也有界；统一余项按同样的 Bessel envelope 更小。这给出
+`Q_m(nu*x)<=C_delta`，而不是把 turning 区错误地纳入这段结论。
+
+在 Airy 区，(18.15.22) 的前因子在 `alpha=1/2`、乘上 `sqrt(nu*x)` 后
+至多留下 `sqrt(nu)`；`Ai` 包络与 `nu^(-1/3)` 给出
+`Q_m(nu*x)<=C_delta*nu^(1/6)`，`x>1` 时还因 Airy 衰减更小。由于本候选
+的实际包络是 `Q_m(nu*x)*exp(-nu*x/6)`，且本段 `x>=delta`，得到
+`C_delta*nu^(1/6)exp(-delta*nu/6)`。两区合并后 `sup_m sup_z` 有界。
+
+这里的逻辑已足以指导正式证明，但 DLMF 的 `O` 项尚未被转写成一组可追踪
+的显式常数，故当前仍标为 `CITED-ASYMPTOTIC / LOCAL-SKETCH`；网页端需要
+确认 (18.15.19)、(18.15.20)、(18.15.22) 的余项在上述端点处理确实保持
+统一，之后才能把 `C_L` 升为 `PROVED`。
+
 ### I.b 补偿与 CDF 下界的本机闭合
 
 对固定 `rho`，当 `m` 足够大时 `a_m*rho^(2m+1)<=1/2`。令
