@@ -255,3 +255,27 @@ Y=Z+c(N-\lambda),
 `L^1` 缺陷反演为 `D(s)` 的 pointwise bound，或给出仍不充分的最小反例。
 本轮本机复核与证据分层见 `r219_mgf_stability_audit/README.md`。这不改变
 原始 OU backward-tower 主问题仍为 `OPEN`，也不构成新颖性或高分区投稿认证。
+
+## 2026-09-10 第二稳定性回合：sample-variance 点态反演已闭合
+
+网页端给出了从
+`n E D(tau*sqrt((n-1)/n)*V_1)<=log(1+epsilon)` 到内部
+`sup_{|s|<=tau'}D(s)` 的显式 tent 界；本机检查确认应使用
+`q=sqrt((n-1)/n)`、`a=tau*q`，而不是重复乘一次 `q`。精确常数和 `n=3`
+密度、Lipschitz、边界限制记录在 `r219_mgf_stability_audit/README.md`
+的 `MGF-QS-02`。
+
+本机审计同时发现网页端 tent 反解中的一个常数方向错误：由
+`eta >= 2*m_h*I` 应取 `y=eta/(2*m_h)`，不能取 `2*m_h*eta`。阶数与结构不变，
+但项目记录以分母版本为准；后续推导不得沿用网页端未校正的常数。
+
+因此当前链条是：
+
+`radial transform discrepancy -> integrated spherical defect -> interior pointwise D -> local symmetrized-MGF stability`.
+
+下一轮必须直接审查 quantitative Cramer/deconvolution 接口：在统一
+`E exp(2*tau*|X|)<=K` 下，明确从
+`sup_{|s|<=tau'}|log M_{X-X'}(s)-s^2|<=delta`
+能够推出的最强、可证明的分布距离；不得把 qualitative Levy--Cramer 当作
+定量结论，也不得声称 TV/Wasserstein 率已完成。整体论文仍为候选研究包，
+novelty 未认证，旧 OU 主线继续独立 `OPEN`。

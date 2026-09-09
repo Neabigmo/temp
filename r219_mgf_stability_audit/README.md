@@ -136,7 +136,77 @@ sample-variance iid 情形进一步变成
 
 ## 下一轮建议
 
-优先让网页端研究 sample-variance 的球面权重反演：在明确的统一指数包络
-与导数/解析控制下，给出 `L1 spherical defect → sup pointwise D` 的定理，
-或构造说明即使加入所给包络仍不够的最小反例。不要重新讨论期刊排名，
-也不要把当前 transform-stability 夸大为 classical-distance stability。
+球面权重反演已经由 `MGF-QS-02` 闭合。下一轮应直接研究
+`X-X'` 的 local symmetrized-MGF 控制在统一指数包络下能推出的 quantitative
+Cramer/deconvolution 结论；先选择能够严格闭合的距离，再讨论是否能升级到
+TV、Wasserstein 或 Kolmogorov。不要把当前 transform-stability 夸大为
+classical-distance stability，也不要把 novelty 写成已认证。
+
+## F. MGF-QS-02：sample-variance 的球面 L1 → 点态稳定性（2026-09-10）
+
+本轮网页端把上一节的剩余关卡闭合为一个明确的内部区间定理；本机逐项核对
+了密度、`n` 因子、Lipschitz 估计和 tent 积分。为消除网页公式排版造成的
+歧义，以下给出经过校正的常数版本。
+
+### 定理（显式内部点态界）
+
+设 `n>=3`，`X_1,...,X_n` iid，`EX=0`、`EX^2=1`，并令
+
+`Q_n=sum_i (X_i-X_bar)^2`、`q=sqrt((n-1)/n)`、`a=tau*q`。
+
+在 `|s|<=tau` 上令
+
+`D(s)=1/2*log(M(s)M(-s)/exp(s^2))>=0`、`M(s)=E exp(sX)`，
+
+并假设 `E exp(2*tau*|X|)<=K`。若球面径向变换距离满足
+
+`d_{n-1,tau}(Q_n,chi^2_{n-1})<=epsilon`，
+
+且其定义使得 `E exp(H_t)<=1+epsilon`，则对任意 `tau'<a` 有
+
+`sup_{|s|<=tau'} D(s) <= inf_{0<h<a-tau'} G(eta/(2*m_h); L_h,h)`，
+
+其中
+
+`eta=log(1+epsilon)/n`、`b_h=tau'+h`、
+
+`c_n=Gamma((n-1)/2)/(sqrt(pi)*Gamma((n-2)/2))`、
+
+`alpha_n=max(n-4,0)/2`、
+
+`m_h=(c_n/a)*(1-(b_h/a)^2)^(alpha_n)`、
+
+`L_h=sqrt(K)+b_h`，以及
+
+`G(y;L,h)=sqrt(L*y)`（当 `y<=L*h^2`），
+
+`G(y;L,h)=y/(2*h)+L*h/2`（当 `y>L*h^2`）。
+
+一个完全闭式的可用选择是 `h=(a-tau')/2`。因此在固定
+`n,tau,tau',K` 下，`epsilon -> 0` 时该界为
+`O(sqrt(log(1+epsilon)/n))`，特别是固定 `n` 时为 `O(sqrt(epsilon))`。
+
+### 审计要点
+
+1. `V_1` 的密度确为
+   `f_n(v)=c_n*(1-v^2)^((n-4)/2)`，`-1<v<1`。当 `n=3` 时为
+   `1/(pi*sqrt(1-v^2))`；当 `n=4` 时为 `1/2`。缩放后
+   `w_n(s)=f_n(s/a)/a`。在 `[-b_h,b_h]` 上的下界正是 `m_h`：
+   对 `n=3,4` 指数取零，给出 `c_n/a`；对 `n>=5` 则反映端点密度退化。
+2. 由 `M(s)>=1` 和 Cauchy--Schwarz，`|M'(s)/M(s)|<=sqrt(K)`；故
+   `|D'(s)|<=sqrt(K)+|s|`，在 `[-b_h,b_h]` 上可取 `L_h`。
+3. 球面平均及偶性给出
+   `n*E D(a V_1)<=log(1+epsilon)`。若内部最大值为 `M_*`，在 `+s_0`
+   与 `-s_0` 放置两个不相交的 Lipschitz tents；`D(0)=0` 保证
+   `s_0>=M_*/L_h`，于是积分下界为
+   `2*m_h*min(M_*^2/L_h, 2*h*M_*-L_h*h^2)`。因此若记
+   `y_h=eta/(2*m_h)`，反解才恰好得到上面的 `G`。网页端本轮把
+   `y_h` 写成了 `2*m_h*eta`；这是方向相反的常数错误，已按积分式校正。
+4. `tau'<a` 是真实的 interior margin：当 `n>=5` 时 `w_n` 在端点趋零，
+   不能仅靠该加权 L1 信息无条件控制 `|s|=a`。`n=3` 的端点奇性不破坏
+   内部下界，但可另行研究端点增强界。
+
+该结果只闭合到局部对称化 MGF/变换稳定性，尚未给出 TV、Wasserstein 或
+Kolmogorov 的 Gaussian 距离率；下一接口仍是 quantitative Cramer/deconvolution。
+证据标记：`PROVED UNDER STATED HYPOTHESES / LOCAL-PROOF-AUDIT`，不等于
+novelty 已认证。

@@ -7626,3 +7626,29 @@ defect bound，sample-variance 情形的剩余关卡是球面加权 L1 defect �
 `tau=0.5` 时 `C_tau≈0.00390474`；对 `n=10,30,100` 的 Poisson 修复网格
 缺陷均非负（零点仅在 `t=0`）。没有发现当前代数构造的数值矛盾，但其解析
 反例、sample-variance 点态反演、直接先例排查和整体发表性仍保持 `OPEN/未认证`。
+
+### MGF-QS-02：sample-variance 球面 L1 到内部点态界（2026-09-10）
+
+网页端本轮给出并本机逐式核对了一个明确的剩余引理。设 `q=sqrt((n-1)/n)`、
+`a=tau*q`、`tau'<a`、`eta=log(1+epsilon)/n`。对
+`V_1~Unif(S^{n-2})`，密度为
+`c_n(1-v^2)^((n-4)/2)`，其中
+`c_n=Gamma((n-1)/2)/(sqrt(pi)Gamma((n-2)/2))`；`n=3` 是 arcsine 密度。
+统一指数包络 `E exp(2*tau|X|)<=K` 给出
+`Lip(D;[-b,b])<=L_h=sqrt(K)+b`。取 `b=tau'+h`、`0<h<a-tau'`，
+`m_h=(c_n/a)(1-(b/a)^2)^(max(n-4,0)/2)`，则
+
+`sup_{|s|<=tau'}D(s)<=G(eta/(2*m_h);L_h,h)`，
+
+其中 `G(y;L,h)=sqrt(L*y)`（`y<=Lh^2`），否则为
+`y/(2h)+Lh/2`。进一步对 `h` 取下确界，或取 `h=(a-tau')/2`，得到显式
+`O(sqrt(log(1+epsilon)/n))` 内部稳定性。tent 证明使用 `D` 的偶性得到
+两个不相交 tents，因而保留因子 `2`。注意网页端原式把 `y` 写成
+`2*m_h*eta`；由 `eta>=2*m_h*I` 正确应为 `y=eta/(2*m_h)`，已在项目记录中
+纠正；没有发现额外的 `q` 或 `n` 错乘。
+
+该关卡现在标为 `PROVED UNDER STATED HYPOTHESES / LOCAL-PROOF-AUDIT`。
+它把 sample-variance approximate radial law 推到 coordinate-level local MGF
+stability，但仍不等于 classical distribution-distance stability；下一轮转向
+`X-X'` 的 local symmetrized-MGF 控制如何给出可证明的 quantitative Cramer
+结论，并继续保持 novelty 未认证。
