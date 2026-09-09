@@ -13357,3 +13357,26 @@ R214 的证据等级为 `PROVED UNDER STATED HYPOTHESES / LOCAL-AUDITED` 的固�
 single-law exclusion、even sector、primitive rank closure、mixed `(MT_r)` 和
 最终 rigidity。整体独立完整发表性仍为“无”。记录见
 `r214_fixed_vs_moving_tower_dichotomy/README.md`，核验见 `audit_r214.js`。
+
+## 83.78 R215：genuine full-exact varying-bottom 塔的两尺度逃逸二分（2026-09-09）
+
+本轮把 R173、R176–R178、R186 与 R214 合并成一个可核验的逃逸框架。若
+`g_N^(0)=P_(q^N)g_N^(N)` 是 genuine positive full-exact varying-bottom 塔，
+且底层首个 odd Hermite 阶为 `d_N`，则 R173 首 odd window 给出
+
+`0<|beta_(d_N,1)(g_N^(0))|^2 <= (q^N)^(d_N)`。
+
+经过子列后，剩余情形只有：`d_N` 有界，此时首 charge 固定阶指数塌缩；或
+`d_N->infinity`，此时 R178 给出
+`a_(d_N)(g_N^(0))^2 <= O(d_N^(3/4)(sqrt(3)q^N)^(d_N))`。后者不是任意
+moving-degree 逃逸，而是受到 `N*d_N` 尺度的显式压缩。R186 另给出 primitive
+laws 趋 Gaussian 时 inverse-Hankel failure order `M_r->infinity`，故当前
+真正剩余的是 charge degree/amplitude escape 与 primitive-rank escape 的兼容性。
+
+R215 仍允许每层非零但趋零，不能推出 uniform charge gap，也不能把 R102
+MGF charge 直接等同于 spatial `P_3K` 或 bare `RK=1`。证据等级为
+`PROVED UNDER GENUINE FULL-EXACT + FULL-SF / LOCAL-AUDITED` 的窗口预算和
+显式代入，`SYNTHESIS / CONDITIONAL` 的双逃逸框架，`OPEN` 的统一 positive
+budget、asymmetric single-law exclusion 和最终 rigidity。整体独立完整发表性
+仍为“无”。记录见 `r215_two_scale_escape_dichotomy/README.md`，核验见
+`audit_r215.js`。

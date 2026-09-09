@@ -7526,3 +7526,19 @@ exclusion/构造，并且还要分开 scalar `RK=1` 桥和 spatial `P_3K` proven
 R214 是 `PROVED UNDER STATED HYPOTHESES / LOCAL-AUDITED` 的固定底层排除与
 单律等价，`CONDITIONAL` 的对象转移，整体独立完整发表性仍为“无”。记录见
 `r214_fixed_vs_moving_tower_dichotomy/README.md`。
+
+### R215：genuine full-exact varying-bottom 塔的两尺度逃逸二分（2026-09-09）
+
+本轮把 R173、R176–R178、R186 与 R214 合并。对 genuine full-exact
+`g_N^(0)=P_(q^N)g_N^(N)`，若底层首 odd 阶为 `d_N`，R173 给出
+`0<|beta_(d_N,1)(g_N^(0))|^2 <= (q^N)^(d_N)`。子列后二分为：`d_N` 有界，
+首 charge 固定阶指数塌缩；或 `d_N->infinity`，R178 给出
+`a_(d_N)(g_N^(0))^2 <= O(d_N^(3/4)(sqrt(3)q^N)^(d_N))`。同时 R186 的
+primitive failure order 在 Gaussian 极限下趋于无穷。故当前最小缺口被准确写成
+charge degree/amplitude escape 与 primitive-rank escape 的兼容性，而不是继续
+增加 radial rows。
+
+R215 是 genuine full-exact/full-SF 下的 `PROVED/LOCAL-AUDITED` 预算综合，
+双逃逸的统一闭合仍 `SYNTHESIS/CONDITIONAL/OPEN`；它不构成原始反例或主定理，
+整体独立完整发表性仍为“无”。记录与审计见
+`r215_two_scale_escape_dichotomy/README.md`、`audit_r215.js`。
