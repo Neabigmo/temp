@@ -12959,3 +12959,19 @@ R195 的正密度 moment camouflage 可直接取三份 iid。若单变量 moment
 counterexample，因为高阶 rows 未控制；其全局含义是 R125 的 all-row/compactness
 路线不可由固定 row certificate 替代。下一步应研究 `N+1` 行的首个检测项，或证明
 可把 camouflage 递归推到任意有限 rows；原始 rigidity 和独立完整发表性仍 OPEN/“无”。
+
+## 83.63 R197：finite-row nonzero-cubic realization（2026-09-09）
+
+固定 `M>=2`，令 `F_s=E Q^s-2^s s!`、`2<=s<=M`。在中心化方差一后，
+`F_1=0` 自动成立。`Q=(2/3)sum_iX_i^2-(2/3)sum_(i<j)X_iX_j` 的纯项结构
+给出精确三角 Jacobian
+`partial F_s/partial kappa_(2s)=3(2/3)^s!=0`，且 `F_s` 不依赖
+`kappa_(2r)`（`r>s`）。因此以 `kappa_3=c` 为指定小参数，隐函数定理可用
+偶 cumulant 补偿使全部 `F_2,...,F_M` 为零。
+
+局部有界平滑指数族加标准化可实现这些 cumulant 坐标，并保持 genuine positive
+和严格 log-concavity。于是每个固定 finite `M` 都存在 `kappa_3!=0` 而前 M
+个 exact radial rows 全成立的 same-factor iid law。这排除了任何固定层 cubic
+annihilation；它不是 all-row counterexample，仍必须通过 `M->infinity` 的
+compactness/coercivity 才能处理原始问题。原始 rigidity 与整体独立发表性仍
+OPEN/“无”。

@@ -7153,3 +7153,25 @@ finite-row detector。R196 是 `PROVED` 的 genuine positive finite-row
 obstruction，但不是 full-exact counterexample；它说明若原始 rigidity 成立，
 矛盾必须出现在 all-row limit、uniform asymptotic coercivity 或 compactness，而
 不能来自固定有限 rows。`audit_r196.js` 已通过。
+
+### R197：finite-row 非零 cubic 的 genuine IFT realization（2026-09-09）
+
+本机把有限层 obstruction 进一步升级为直接保留非零 cubic。对每个固定
+`M>=2`，以 `F_s=E Q^s-2^s s!`（`2<=s<=M`）为约束、以
+`kappa_3=c` 为指定坐标，调节 `kappa_4,kappa_6,...,kappa_(2M)`。由于
+`Q=(2/3)sum_i X_i^2-(2/3)sum_(i<j)X_iX_j`，`F_s` 不依赖高于 `2s`
+的 cumulants，且
+
+`partial F_s/partial kappa_(2s)=3(2/3)^s !=0`。
+
+所以 Jacobian `D_(kappa_4,...,kappa_(2M))(F_2,...,F_M)` 是下三角可逆矩阵。
+隐函数定理给出小的任意 `c!=0` 对应的偶 cumulant 补偿，使 `F_2=...=F_M=0`；
+`F_1=0` 由中心化与方差一自动成立。用有界紧支撑平滑函数的局部指数族实现
+这些 cumulant 坐标，并作 affine standardization，可保持正性、`C^infinity` 和
+严格 log-concavity。
+
+故对每个固定 finite `M`，存在 genuine positive same-factor iid law，满足
+非零 `kappa_3` 且前 `M` 个 exact radial rows 全部精确成立。这是
+`PROVED/ANALYTICALLY PROVED` 的 finite-row cubic-radius lemma，不是 all-row
+counterexample；它直接说明原始 rigidity 若成立，必须是 moving-`M` 的全阶现象。
+`audit_r197.js` 已通过，整体独立发表性仍为“无”。

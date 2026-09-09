@@ -263,3 +263,9 @@ R196 新增 `r196_same_factor_finite_row_camouflage`：将 R195 的正密度有�
 identity 的 `2N` 阶 Taylor jet 都与 Gaussian 相同。故 same-factor 结构也没有
 统一 finite-row detector；该结果不是 full-exact 反例，反而把主线进一步压缩到
 all-row compactness/渐近 coercivity。审计已通过，整体独立发表性仍为“无”。
+
+R197 新增 `r197_finite_row_cubic_radius_ift`：利用 exact row 对偶 cumulant 的
+下三角 Jacobian，严格证明任意固定 M 都能在 genuine positive same-factor iid
+类内保持 `kappa_3!=0` 并满足前 M 个 exact rows。该 finite-row cubic-radius
+lemma 不是 full-exact 反例，却把主问题进一步明确为 moving-M 的全阶闭合问题。
+审计已通过，整体独立发表性仍为“无”。
