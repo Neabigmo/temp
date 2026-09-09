@@ -7561,3 +7561,20 @@ inverse-Hankel 的 `H_L^(r)` 仍等于严格正的 Gaussian Hankel。L=2、4 的
 ordinary-Hankel 转换，却不是 genuine full-exact 反例，也不否定某个真正使用
 same-factor 结构的 `M(D,r)` 仍可能存在。cross-witness、asymmetric exact 单律
 排除与最终 rigidity 继续 `OPEN`；独立完整可审稿发表性仍为“无”。
+
+### R217：Gaussian-flat odd jet 的一行 cross-witness benchmark（2026-09-09）
+
+在 R216 上继续推导：对任意 `L>=1`、`D=2L+1` 的 Gaussian-flat odd jet，令
+`rho=t^(-D)|beta_(D,1)|^2`。前 `2L` 阶的 formal inverse-Hankel 仍等于严格
+正的 Gaussian Hankel；第一个差异只出现在 `m_D`，在 Hermite 基底中使
+`H_(L+1)` 的 `(L,L+1)` 主块出现 off-diagonal
+`delta_D/sqrt(L!(L+1)!)`。
+
+精确阈值为 `rho_H=Lambda_D^2 L!(L+1)!/D!`，并有 `rho_H<1`；所以该 relaxed
+类中任何 angular budget `rho>1` 都会在下一 Hankel 行被检测。L=2、4、rho=2
+的本机审计通过。
+
+这是 `PROVED / LOCAL-AUDITED` 的 relaxed finite-jet benchmark，不是 genuine
+full-exact/RK=1 反例。它把下一步压缩为：能否用 genuine same-factor 结构证明
+类似的 `O(D)` 阶负证书；否则必须构造 genuine-compatible 的高阶逃逸。原始
+rigidity 与独立完整可审稿发表性仍分别为 OPEN 与“无”。

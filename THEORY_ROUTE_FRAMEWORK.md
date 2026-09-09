@@ -13412,3 +13412,33 @@ genuine same-factor/full-exact 结构。该构造没有满足 full-exact/RK=1 �
 genuine cross-witness、asymmetric single-law 排除、`RK=1` 到 full-exact、spatial
 `P_3K` 桥和最终 rigidity 仍 `OPEN`。整体独立完整可审稿的发表性判断仍为“无”。
 记录与审计见 `r216_cross_witness_mismatch_audit/README.md`、`audit_r216.js`。
+
+## 83.80 R217：Gaussian-flat odd jet 的一行 cross-witness benchmark（2026-09-09）
+
+在 R216 的有限矩对象错位审计上再推进一层。对任意 `L>=1`、`D=2L+1` 的
+Vandermonde odd jet，前 `2L` 阶矩与 Gaussian 相同，首 odd angular coefficient
+满足 `beta_(D,1)=Lambda_D a_D`。若记
+
+`rho=t^(-D)|beta_(D,1)|^2`、`r=t^(-1/2)`，
+
+则 `H_L^(r)` 仍是严格正的 Gaussian Hankel；在 Hermite-orthonormal 基底中，
+`H_(L+1)^(r)` 的 `(L,L+1)` 二阶主块为
+
+`[[1, delta_D/sqrt(L!(L+1)!)],
+ [delta_D/sqrt(L!(L+1)!), 1]]`，
+
+其中 `|delta_D|=sqrt(D! rho)/Lambda_D`。故当
+
+`rho>rho_H(L):=Lambda_D^2 L!(L+1)!/D!` 时，下一行已经非 PSD。由于
+`Lambda_D=3*6^(-D/2) binom(D,L-1)` 且
+`rho_H(L)=9*6^(-D)binom(D,L-1)^2/binom(D,L)
+<=9*3^(-D)<1`，在该 relaxed Gaussian-flat 类中任何 `rho>1` 的 angular
+violation 都会在 `H_(L+1)` 被检测。`audit_r217.js` 对 L=2、4、rho=2 通过。
+
+这给 genuine cross-witness 一个更窄的 benchmark：若能把 Gaussian-flat jet 中的
+一行机制提升到 genuine full-exact，同因子结构至少应在 `O(D)` 阶普通 Hankel
+层面留下负证书；但本轮构造仍未满足 full-exact、`RK=1` 或原始 spatial `P_3K`，
+故证据等级仅为 `PROVED / LOCAL-AUDITED` 的 relaxed finite-jet benchmark，
+不是原始反例。genuine cross-witness、asymmetric single-law 排除、对象身份桥、
+even-sector 与最终 rigidity 仍 `OPEN`，整体独立完整可审稿发表性仍为“无”。
+记录与审计见 `r217_gaussian_flat_one_row_witness/README.md`、`audit_r217.js`。
