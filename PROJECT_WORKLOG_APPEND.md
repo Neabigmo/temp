@@ -7096,3 +7096,21 @@ confluent-Bochner/导数核检验，继而才可能与 R186 rank closure、R188 
 拼接。全局成果审计结论仍为：原始 rigidity OPEN，bare `RK=1` 桥、原始
 `P_3K` 身份桥、`(MT_r)` 与 primitive closure 未闭合；截至此轮独立完整发表性
 仍为“无”。`audit_r193.js` 已通过。
+
+### R194：confluent-Bochner 导数阶逃逸（2026-09-09）
+
+本机继续处理 R193 唯一剩余的点碰撞通道。将趋近点集的归一化有限差分 Gram
+极限写成导数核
+`H_ab(t)=partial_x^a partial_y^b Phi(x-y)|_(x=y=t)`，其 PSD 等价于
+特征测度的有限 moment Hankel PSD。Gaussian 基点满足
+`c^*H_n(0)c=E|sum_a c_a X^a|^2>0`，故每个固定导数阶 `n` 都有严格有限谱隙；
+任何在零点附近导数到阶 `2n` 连续趋于 Gaussian 的 R192 truncation/genuine
+候选，在足够小 `epsilon` 下仍保持该导数核块正定。
+
+因此 R193 的点碰撞若真的承载有限截断的非特征性见证，其归一化后的导数阶
+必须 `n->infinity`，或负裕量趋零、归一化退化、中心频率逃逸。R194 是
+`PROVED` 的 confluent PSD 与固定阶稳定性，加经典 Marcinkiewicz–Bochner 的
+有限截断条件见证；不是 genuine counterexample。它与 R186 的 inverse-Hankel
+failure-order escape 结构相似但层次不同，不循环。原始 `RK=1` 桥、`P_3K`
+身份桥、`(MT_r)`、uniform rank closure 和 tower rigidity 仍 OPEN，整体发表性
+仍为“无”。`audit_r194.js` 已通过。

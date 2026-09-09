@@ -242,3 +242,11 @@ R193 新增 `r193_finite_psd_witness_escape`：Gaussian finite Gram 在互异点
 genuine counterexample；其下一接口是 confluent-Bochner 导数核，并与 R186
 inverse-Hankel rank escape 非循环拼接。原始 rigidity、bare `RK=1` 桥和原始
 `P_3K` identity 仍 OPEN，整体独立发表性仍为“无”。
+
+R194 新增 `r194_confluent_bochner_escape`：将 R193 的点碰撞有限差分 Gram
+极限化为导数核/有限 moment Hankel 块。Gaussian 每个固定阶 Hankel 块严格正定，
+故 R192 小参数 formal/genuine 扰动不能被固定导数阶以统一负裕量击破；任何
+碰撞型非 PSD 见证必须让导数阶、频率中心或检测退化量逃逸。该结果是
+confluent PSD stability/escape lemma，不是 genuine counterexample；与 R186
+inverse-Hankel escape 非循环。原始 rigidity、bare `RK=1` 桥、`P_3K` identity
+和整体独立发表性仍 OPEN/“无”。

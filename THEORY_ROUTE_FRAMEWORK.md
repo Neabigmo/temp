@@ -12912,3 +12912,20 @@ R193 与 R186 同属 positivity-detection rank escape，但层次不同：R193 �
 Bochner 导数核：把 `delta->0` 的点碰撞归一化为导数核矩阵，检查 formal jet 是否
 能在固定导数阶形成负主子式。R188 `(MT_r)`、R186 rank closure、bare `RK=1`
 桥和原始 `P_3K` identity 仍未闭合；整体独立发表性仍为“无”。
+
+## 83.60 R194：confluent-Bochner derivative-order escape（2026-09-09）
+
+R193 的点碰撞通道可被归一化为导数核。对特征函数 `Phi`，
+`H_ab(t)=partial_x^a partial_y^b Phi(x-y)|_(x=y=t)` 满足
+`sum conjugate(c_a)c_b H_ab=integral|sum c_a i^a xi^a|^2 dmu(xi)>=0`。
+在 Gaussian 基点，有限块就是 moment Hankel 矩阵，且
+`c^*H_n(0)c=E|sum_a c_a X^a|^2>0`。所以固定导数阶的 confluent principal
+minor 具有严格谱隙，R192 小参数 formal/genuine 局部扰动不能统一地产生负裕量。
+
+结合 R193 的 finite-truncation non-characteristic 见证，得到：若 witness 经
+点碰撞出现，则导数阶必须逃逸、负裕量必须消失、归一化必须退化或频率中心须
+逃逸。R194 与 R186 同为 positivity-detection order escape，但前者是导数核
+层，后者是 inverse-Hankel moment 链；不循环。下一接口是从 R112 envelope 研究
+固定 `r>1` 的 uniform inverse-Hankel/derivative-kernel 阶界；若不能，构造只
+满足 envelope 的 abstract rank-escape 族。原始 rigidity 与整体独立发表性仍为
+OPEN/“无”。
