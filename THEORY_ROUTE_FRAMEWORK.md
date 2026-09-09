@@ -12809,3 +12809,26 @@ sector 都满足 R17 的 weighted `ell^2` 预算，且 `ell=0` sector 为零；�
 若该 uniform tail 成立，再结合有限坐标连续性即可推出固定 `r` 下 primitive
 闭性；当前仍是 `OPEN`。证据等级为 `PROVED UNDER R17 SECTOR BOUNDS` 加
 `ABSTRACT OBSTRUCTION`，整体发表性仍为“无”。
+
+## 83.55 R188：conditional-moment projection 与 mixed-sector tail interface（2026-09-09）
+
+R187 的“跨 sector 缺口”可精确投影到
+`m_ell(t)=E[psi_ell(U)|T=t]`。在 `T~Exp(1)` 下，
+`C_(ell,n)=<m_ell,L_n>`；径向 exactness 只给 `m_0=1`，不提供
+`ell>=1` 的总次数衰减。对固定 `r>1`，所需的最小 analytic interface 是
+
+`(MT_r) lim_(M->infinity)sup_j
+ sum_(2n+ell>M)r^(4n+2ell)|C_(ell,n)(mu_j)|^2=0`.
+
+本机新增 `r188_mixed_sector_projection`，并严格记录：若固定 `(ell,n)` 坐标
+收敛且 `(MT_r)` 成立，则加权系数数组在 `ell^2` 中收敛（有限 block + uniform
+tail）。这只完成谱系数层，不等于 primitive closedness 或 genuine preimage
+realization；后两者仍 `OPEN`。
+
+为证明该接口不能由径向边缘单独推出，构造正联合密度
+`phi(u)e^(-t)[1+epsilon*tanh(u)b_N(t)]`。这里 `b_N` 是紧区间上 `L_N` 去除
+低阶 Laguerre 投影后的有界函数，因此两个边缘仍是 `N(0,1)` 与 `Exp(1)`，但
+`C_(1,n)=0`（`n<N`）而 `C_(1,N)!=0`。该例没有 three-iid product realization，
+故不是 genuine counterexample；它只把下一步严格压缩为：从 same-factor product
+density 证明 `(MT_r)`，或在 genuine all-degree exact 类中构造 mixed-sector
+migration。证据等级为 `PROVED` + `EXACT-AUDITED`，原始问题整体发表性仍为“无”。

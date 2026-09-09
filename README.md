@@ -207,3 +207,10 @@ R186 网页端重发未进入历史，本机新增
 R187 已把该全局瓶颈进一步具体化：sector-wise Parseval 允许 weighted mass
 沿 `n=N` 迁移，不能单独推出 total-degree inverse-tail tightness。新增
 `r187_spectral_tail_migration_obstruction`，整体发表性判断仍为“无”。
+
+R188 新增 `r188_mixed_sector_projection`：把缺口写成
+`m_ell(t)=E[psi_ell(U)|T=t]` 的 total-degree inverse tail 条件，并严格证明该
+条件加固定坐标收敛足以得到 weighted mixed-coefficient 收敛。另用正联合密度
+保持 `U`、`T` 两个边缘不变而把首个 mixed Laguerre 信号推到任意高阶，说明
+`T~Exp(1)` 本身不是 `U|T` 控制；该构造不满足 three-iid same-factor，因此不是
+原始问题反例。网页端本轮仍未产生理论正文，整体发表性判断仍为“无”，审计已通过。

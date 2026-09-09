@@ -7004,3 +7004,21 @@ R186 的 rank escape 缺口具体化为 `U|T` mixed conditional structure 或
 total-degree budget。若 genuine class 能证明 inverse-weighted total tail
 紧性，再结合有限坐标连续性即可闭合 primitive stratum；目前整体发表性仍为
 “无”，审计已通过。
+
+### R188：conditional-moment projection 与 mixed-sector tail interface（2026-09-09）
+
+本机新增 `r188_mixed_sector_projection`，把 R187 的跨 sector 缺口精确定义为
+`m_ell(t)=E[psi_ell(U)|T=t]` 的总次数尾部条件
+`lim_(M->infinity)sup_j sum_(2n+ell>M)r^(4n+2ell)|C_(ell,n)(mu_j)|^2=0`。
+由 Laguerre 投影、OU 对角化和有限块加尾部，严格得到：固定坐标逐项收敛加该
+条件时，inverse-weighted mixed coefficient 向量在 `ell^2` 中收敛。该接口仍不
+自动产生 genuine backward preimage，正性/同因子 realization 另行 OPEN。
+
+同时构造了正联合密度
+`phi(u)e^(-t)[1+epsilon*tanh(u)*b_N(t)]`：保持 `U~N(0,1)` 与 `T~Exp(1)`
+两个边缘不变，却可使 `C_(1,n)=0`（`n<N`）而 `C_(1,N)!=0`。其中 `b_N`
+是 `[0,A]` 上 `L_N` 去除低阶 Laguerre 投影后的有界 remainder。它不是
+three-iid same-factor genuine counterexample，但证明径向边缘本身确实看不见
+任意高 mixed Laguerre 阶；下一步必须从 product density 结构证明 total-degree
+预算，或构造满足 all-degree exactness 的 genuine migration。整体发表性判断仍为
+“无”，审计已通过。
