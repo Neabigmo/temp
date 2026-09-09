@@ -7296,3 +7296,22 @@ kappa_9=d,kappa_10=e`，则
 
 这是 `PROVED` 的第六行补偿公式与 `FINITE-ROW LOCAL FEASIBILITY`，不是
 all-row positive law 或原始 counterexample；整体独立发表性仍为“无”。
+
+### R203：finite-row escape principle 的统一抽象（2026-09-09）
+
+本机把 R197–R202 的逐行现象抽象为一个一般命题。对
+`F_s=E Q^s-2^s s!`，`Q` 的总次数为 `2s`，最高单变量 moment 只来自三个
+纯项，故
+
+`partial F_s/partial kappa_(2s)=3(2/3)^s !=0`，
+
+且 `F_s` 不依赖 `kappa_(2r)`（`r>s`）。因此固定 `M` 时，偶 cumulant 对
+`F_2,...,F_M` 的 Jacobian 下三角且可逆；把奇 cumulants 当参数，隐函数定理
+给出唯一局部 finite-row compensation。结合 R197 的 genuine realization，
+得到任意固定有限行都不能单独推出 `kappa_3=0`。
+
+在 R124/R125 的紧性接口成立时，真正需要证明的是 genuine finite-row cubic
+radius `Gamma_M->0`，而不是继续寻找固定阶 determinant。same-factor angular
+identity 是尚未进入该 radial IFT 链的首个结构入口；R186 rank closure、R188
+`(MT_r)` 和最终 tower rigidity 仍未闭合。`audit_r203.js` 已通过，整体独立
+发表性仍为“无”。

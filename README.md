@@ -306,3 +306,9 @@ R202 新增 `r202_sixth_row_local_escape`：固定 R201 分支后，第六个 ex
 由 `H_6(0)` 的 Gaussian 正定性和开性得到非零小 `c` 的 `H_6` 正定局部支。
 这是有限行局部逃逸，不是 all-row 反例；审计已通过，原始 rigidity 与整体
 独立发表性仍为“无”。
+
+R203 新增 `r203_finite_row_escape_principle`：证明每个固定 radial row 对最高
+偶 cumulant 的系数为 `3(2/3)^s`，有限行 Jacobian 下三角可逆；结合 R197，
+固定有限行不能单独推出 cubic 为零。该记录把 R197–R202 提炼成统一的
+finite-row escape principle，并明确 same-factor angular identity 是尚未进入的
+首个全局入口。审计已通过，原始 rigidity 与整体独立发表性仍为“无”。

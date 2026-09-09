@@ -13074,3 +13074,22 @@ counterexample。原始 rigidity 与整体独立发表性仍 OPEN/“无”。
 某个 `epsilon>0`，使所有 `|c|<epsilon` 的有限数据满足 `H_6\succ0`。
 这是 finite-row local feasibility，不是 genuine all-row law；它把 R197–R202
 的固定阶逃逸链进一步延长，原始 rigidity 与整体独立发表性仍 OPEN/“无”。
+
+## 83.69 R203：finite-row escape principle 的统一抽象（2026-09-09）
+
+对 `F_s=E Q^s-2^s s!`，`Q^s` 的总次数为 `2s`，最高单变量 moment 只由
+三个纯项贡献。因此精确有
+
+`partial F_s/partial kappa_(2s)=3(2/3)^s !=0`，
+
+并且 `F_s` 不含 `kappa_(2r)`（`r>s`）。故任意固定 `M` 时，偶 cumulant
+到 `F_2,...,F_M` 的 Jacobian 下三角可逆；奇 cumulants作为参数时，Gaussian
+点附近存在唯一 analytic finite-row compensation。R197 的 realization 使这
+一结构至少沿小非零 `kappa_3` 方向落入 genuine positive same-factor iid 类，
+而 R198–R202 给出其前六行的显式正性/逃逸审计。
+
+这证明固定有限行不能单独完成 cubic annihilation；在 R124/R125 的紧性假设
+下，主目标应改写为 genuine cubic radius `Gamma_M->0` 或同等的 uniform
+coercivity。same-factor angular identity 是该 radial IFT 链尚未使用的首个
+全局结构入口；R186 inverse-Hankel rank closure、R188 `(MT_r)` 和最终 tower
+rigidity 仍独立 OPEN，整体独立发表性仍为“无”。
