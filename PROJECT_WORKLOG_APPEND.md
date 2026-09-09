@@ -7510,3 +7510,19 @@ R210 的 mixed formula，`Cov(Q,exp(isC))=(2i/sqrt(3))kappa_3 s+O(s^2)`，也不
 下的 `FINITE-ONLY/OBSTRUCTION`。moving-degree escape、scalar infinite
 divisibility、第二样本量 identity 和 full-SF+tower rigidity 仍 OPEN。审计见
 `r213_finite_backward_separation/audit_r213.js`。
+
+### R214：固定底层与 varying-bottom tower 的二分（2026-09-09）
+
+本轮把 R101 与 R166 联立成一个全局 structural reduction。若固定 genuine
+full-exact law `mu` 对每个 `N` 都有正 exact preimage at scale `q^N`，R101 的
+`tau_ang(mu)>0` 与 `q^N->0` 矛盾，故固定底层必须 angular-symmetric。另一方面，
+R166 已给出 `A_3^MGF <=> B_q^MGF`：存在一个 asymmetric genuine exact 单律
+等价于存在底层趋于 Gaussian 且 MGF cubic charge 每层非零的 varying-bottom
+tower。其 `tau_ang(P_s h)=s tau_ang(h)` 说明 varying-bottom 的 threshold
+趋零是结构必然。
+
+故塔深度本身不是额外独立障碍；真正核心是 asymmetric genuine exact single-law
+exclusion/构造，并且还要分开 scalar `RK=1` 桥和 spatial `P_3K` provenance。
+R214 是 `PROVED UNDER STATED HYPOTHESES / LOCAL-AUDITED` 的固定底层排除与
+单律等价，`CONDITIONAL` 的对象转移，整体独立完整发表性仍为“无”。记录见
+`r214_fixed_vs_moving_tower_dichotomy/README.md`。

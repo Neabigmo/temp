@@ -13333,3 +13333,27 @@ mixed covariance zero。R213 不是原始 full-SF/RK=1 反例；它是
 zero”这条过弱推断；scalar infinite divisibility、第二样本量 identity、
 以及 full-SF 加 tower 是否能排除 moving-degree escape 仍开放。记录见
 `r213_finite_backward_separation/README.md`，核验见 `audit_r213.js`。
+
+## 83.77 R214：固定底层与 varying-bottom tower 的二分（2026-09-09）
+
+将 R101 的 all-degree angular cone 与 R166 的 varying-bottom reduction 联立，
+得到一个重要的全局二分。对 genuine positive centered variance-one full-exact
+类：
+
+1. 固定 law `mu` 若对每个 `N` 有正的 exact preimage at scale `q^N`，则
+   R101 的 `tau_ang(mu)>0` 必与 `q^N->0` 矛盾，故 `mu` 必须 angular-symmetric；
+2. 存在 asymmetric genuine exact 单律 `h`，等价于存在底层趋于 Gaussian 且
+   R102 `P_3K_MGF` 每层非零的 varying-bottom towers（R166 的
+   `A_3^MGF <=> B_q^MGF`）。
+
+因此 varying-bottom tower 不是比单律 asymmetric existence 更强的独立问题；
+任意单律的 OU orbit 都会给出该 tower，而 `tau_ang(P_s h)=s tau_ang(h)` 说明
+其 unnormalised angular threshold 必然随底层一起趋零。原始难点被压缩为：
+是否存在 asymmetric genuine full-exact law，以及 scalar `RK=1`、spatial
+`P_3K` 与 R101/R102 charge 的身份桥是否成立。
+
+R214 的证据等级为 `PROVED UNDER STATED HYPOTHESES / LOCAL-AUDITED` 的固定
+底层排除与单律等价，`CONDITIONAL` 的 scalar/spatial 转移，`OPEN` 的 asymmetric
+single-law exclusion、even sector、primitive rank closure、mixed `(MT_r)` 和
+最终 rigidity。整体独立完整发表性仍为“无”。记录见
+`r214_fixed_vs_moving_tower_dichotomy/README.md`，核验见 `audit_r214.js`。
