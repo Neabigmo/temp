@@ -47,6 +47,26 @@ R207 所需的 `ell_1(a)ell_1(-a)>=0`。后续若要正向闭合，必须使用
 而不能仅把 Gram 的频率或 tilt 参数加密。由此 `same-factor reflection-sign
 bridge` 成为独立 OPEN 接口。
 
+## 1B. R210：把当前缺口对齐到经典 mixed-characterization 接口
+
+R210 对 `C=(X_1+X_2+X_3)/√3`、`Q=Σ(X_i-X̄)^2` 做了直接代数核验：在
+`x=s/√3`、`phi=E exp(ixX)`、`k=log phi` 的零点邻域内，
+
+`E[(Q-2)exp(isC)] = -2 phi(x)^3(1+k''(x))`。
+
+所以 `Cov(Q,exp(isC))=0` 的全 `s` 结论，在 neighborhood-MGF 与矩决定性下
+确实立即给 Gaussian；但 full-SF 目前只给 `Q~χ²₂`，即 `s=0` 的 Laplace
+boundary，不给这个 mixed covariance zero。这个分界与经典“样本均值—样本方差
+独立性”的正态刻画一致，但不能把经典刻画的额外 independence 假设偷换成
+本项目已有的 residual marginal。详见 `r210_marginal_vs_mixed_characterization/`。
+
+因此当前最小正向接口可精确写为：
+
+`full-SF + iid same-factor + positivity + backward divisibility`
+`                 =>? Cov(Q,exp(isC))=0`。
+
+若该接口不能闭合，主问题仍应保持 `OPEN`，而不是继续增加 radial rows。
+
 ## 2. 总体证明框架
 
 ### A. Exact defect / Fock reduction

@@ -7428,3 +7428,29 @@ R197--R203 的 finite-row non-annihilation theorem 与 R145--R149/R207/R209
 factorization 是否产生超出一般 PSD 的反射符号；若不能，正式固定该 bridge
 为 OPEN，并回到 `RK=1=>full-SF`、charge provenance、primitive closure、
 mixed-tail 与 tower rigidity 的独立缺口。
+
+### R210：残差边缘律与 mixed covariance 刻画的严格分界（2026-09-09）
+
+本轮结合经典正态刻画文献，重新核对当前正向接口。对
+`C=(X_1+X_2+X_3)/sqrt(3)`、`Q=sum_j(X_j-Xbar)^2`，令 `x=s/sqrt(3)`、
+`phi(x)=E exp(i x X)`、`k=log phi`，直接展开得到
+
+`E[(Q-2) exp(i s C)] = -2 phi(x)^3(1+k''(x))`。
+
+因此在 zero-free neighborhood、neighborhood-MGF 与矩决定性下，
+`Cov(Q,exp(i s C))=0` 对所有 `s` 立即推出 `K''=1` 与 Gaussian。这是
+R145/R146/R207 的 constant-regression / first-Laguerre closure，并由
+Rademacher 直接枚举审计通过。
+
+但 genuine full-SF/all-row 目前只给 `Q~chi^2_2`，等价于 `s=0` 的 residual
+Laplace boundary；它没有给 `Cov(Q,exp(i s C))=0`、`E[Q|C]=2` 或
+`E[C|Q]=0`。经典文献中的 sample-mean/sample-variance independence
+characterization 因而只能作为接口定位，不能被当作本项目主命题的证明。
+
+R210 的证据等级为 `PROVED/LOCAL-AUDITED` 的 mixed formula 与 conditional
+Gaussian closure，`OPEN` 的 full-SF-to-mixed-covariance bridge。整体独立、完整、
+可审稿发表性仍为“无”。`audit_r210.js` 已通过。下一轮唯一任务：只研究
+genuine same-factor product identity 是否能推出 mixed covariance zero 的任一
+非平凡片段；若不能，记录最小 same-factor obstruction，保持
+`RK=>full-SF`、charge provenance、primitive closure、`MT_r`、tower rigidity
+五个缺口分离。
