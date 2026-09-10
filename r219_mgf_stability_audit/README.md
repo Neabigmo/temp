@@ -387,14 +387,15 @@ reflection stability modulus，也排除 `o(1/sqrt(log(1/Delta)))`。但它尚�
 `CITED-THEOREM`；是否存在任意幂率、以及能否构造更慢的高频奇扰动障碍，仍
 `OPEN`。论文门槛尚未达到。
 
-## I. MGF-QS-06：消失矩 Laguerre 奇扰动候选（2026-09-10，待网页端核验）
+## I. MGF-QS-06：消失矩 Laguerre 奇扰动（2026-09-10，本机原文已核验）
 
 本机提出一个可能严格否定“单对数平方根上界”的候选族。它不再只提高正弦
 频率，而是让 odd perturbation 的前 `m` 个奇矩全部消失，从而把局部 MGF
 defect 压到阶乘级，同时保持半轴 CDF 偏差为 `m^(-1/2)`。
 
 令 `phi` 为标准高斯密度，
-`p_m(x)=x*exp(-x^2)*L_m^(1/2)(3*x^2/2)`。待核验的标准 Laguerre 界为
+`p_m(x)=x*exp(-x^2)*L_m^(1/2)(3*x^2/2)`。Imekraz--Robert--Thomann
+Proposition 3.2 的四区标准 Laguerre 界经本机直接核对后给出
 `sup_m sup_x|p_m(x)|<=C_L<infinity`；取 `h_m=p_m/C_L`、
 `f_m=phi*(1+epsilon*h_m)`，其中 `0<epsilon<1/4`。由此 `|h_m|<=1`、正性
 和归一化成立。Laguerre
@@ -413,7 +414,7 @@ defect 压到阶乘级，同时保持半轴 CDF 偏差为 `m^(-1/2)`。
 
 取独立对称 Skellam 补偿，`lambda_m=96*a_m^2*rho^(4m-2)`，
 `W_m=(X_m+J_m)/sqrt(1+lambda_m)`。当 `m` 足够大时，四阶双曲余项逐点
-补偿 `log(1-u_m^2)`，预期得到 `Delta_m=Theta(lambda_m)`，并且
+补偿 `log(1-u_m^2)`，得到 `Delta_m=Theta(lambda_m)`，并且
 `log(1/Delta_m)=2*m*log(m)+O(m)`。若半轴下界在补偿后保留，则
 
 `d_K(W_m,N)>=c/sqrt(m)`，即
@@ -422,10 +423,10 @@ defect 压到阶乘级，同时保持半轴 CDF 偏差为 `m^(-1/2)`。
 严格慢于正在追踪的 `1/sqrt(log(1/Delta))`。固定指数包络仍由 `|h_m|<=1`
 和 `sup_m lambda_m<infinity` 给出。
 
-证据状态只能标为 `CANDIDATE / LOCAL-DERIVATION`：网页端或本机还必须完成
-Laguerre 一致函数界、Taylor 常数、Skellam dominance 双侧估计，以及补偿后
-CDF 下界不被 `lambda_m` 吞掉的审计。若四项闭合，当前单对数平方根上界是
-错误目标，应改攻含 `sqrt(log log)` 修正的最优模量或寻找更慢族。
+证据状态为 `CITED-THEOREM VERIFIED / LOCAL-DERIVED`：Laguerre 一致函数界的
+引用转换、Taylor 常数、Skellam dominance 双侧估计，以及补偿后 CDF 下界均已
+在本机记录中闭合。因而当前单对数平方根上界是错误目标，应改攻含
+`sqrt(log log)` 修正的最优模量或寻找更慢族。
 
 ### I.a 统一包络的修正审计（2026-09-10）
 
@@ -511,16 +512,16 @@ DLMF Bessel/Airy 两区定理完成，而不是由全局 Hermite 峰值单独完
 的实际包络是 `Q_m(nu*x)*exp(-nu*x/6)`，且本段 `x>=delta`，得到
 `C_delta*nu^(1/6)exp(-delta*nu/6)`。两区合并后 `sup_m sup_z` 有界。
 
-这里的逻辑已足以指导正式证明，但 DLMF 的 `O` 项尚未被转写成一组可追踪
-的显式常数，故当前仍标为 `CITED-ASYMPTOTIC / LOCAL-SKETCH`；网页端需要
-确认 (18.15.19)、(18.15.20)、(18.15.22) 的余项在上述端点处理确实保持
-统一，之后才能把 `C_L` 升为 `PROVED`。
+这里的逻辑曾作为 DLMF 审计草稿，但不再是当前缺口；直接引用型四区估计已在
+下一节关闭 `C_L`。DLMF 的 `O` 项未被转写成显式常数，因此该历史路线仍标为
+`CITED-ASYMPTOTIC / LOCAL-SKETCH`，不影响当前引用型证据等级。
 
 本机以三项递推式对 `m=1,2,4,8,16,32,64,128,256`、`0<z<=100` 做了数值 sanity
 check：`sqrt(z)exp(-2z/3)|L_m^(1/2)(z)|` 的网格最大值约为 `0.54--0.564`，且最大点
 随阶数向 hard edge 移动；这不是证明，只用于排除明显的 turning-zone 爆炸。最终证据等级
-仍保持为“MGF/Skellam/CDF：`LOCAL-PROOF-AUDIT`；正性包络：`CITED-THEOREM /
-LOCAL-DERIVED`；整体反例：待网页端复核”。
+更新为“MGF/Skellam/CDF：`LOCAL-PROOF-AUDIT`；正性包络：
+`CITED-THEOREM VERIFIED / LOCAL-DERIVED`；整体反例：本机证明骨架已闭合，
+等待网页端独立复核和 novelty 审计”。
 
 ### I.e 全局路线纠偏
 
@@ -529,8 +530,7 @@ LOCAL-DERIVED`；整体反例：待网页端复核”。
 不能继续作为默认目标：只要上述 `C_L<infinity` 两区引理成立，Laguerre family
 就满足 `Delta_m asymp lambda_m`、`log(1/Delta_m)=2m log(m)+O(m)`、
 `d_K(W_m,N)>=c/sqrt(m)`，因此会多出不可忽略的 `sqrt(loglog(1/Delta))` 因子，
-直接否定该上界。下一轮应先由网页端独立审查正性包络的 uniform remainder 与拼接；
-审查通过后，研究目标改为可能的
+直接否定该上界。引用型包络现已在本机原文核验；网页端独立复核后，研究目标改为可能的
 `sqrt(loglog(1/Delta)/log(1/Delta))` sharp upper bound；只有审查失败，才回到
 反射特异上界路线。这是对整体方向的纠偏，不是新增局部展开。
 
