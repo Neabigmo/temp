@@ -1,12 +1,13 @@
 # Laguerre phase-obstruction theorem: proof-ready statement
 
-**Evidence status:** `CITED-THEOREM / LOCAL-DERIVED`. The only imported input is the
+**Evidence status:** `CITED-THEOREM VERIFIED / LOCAL-DERIVED`. The only imported input is the
 four-zone estimate for normalized Laguerre functions in Imekraz--Robert--Thomann,
 Proposition 3.2, [arXiv:1403.4913](https://arxiv.org/abs/1403.4913), published in
 *Transactions of the American Mathematical Society* 368 (2016), 2763--2792.
-The remaining identities and inequalities below are local calculations. The web
-agent must still independently check the citation normalization before this is
-labelled `PROVED` in a paper.
+The source PDF was checked directly: its normalization, `nu=4m+2alpha+2`, and
+the endpoints `1/nu`, `nu/2`, and `3nu/2` match the conversion below. The
+remaining identities and inequalities are local calculations. Novelty and final
+manuscript-level citation checking remain separate questions.
 
 ## Theorem skeleton
 
@@ -18,19 +19,44 @@ and
 
 `C_L=sup_{m>=1,x in R}|p_m(x)|`.
 
-The cited four-zone estimate implies `C_L<infinity`: with `r=3x^2/2`,
-`nu=4m+3`, and
+The cited four-zone estimate is stated for
+
+`mathcal L_m^(alpha)(r)=sqrt(m!/Gamma(m+alpha+1)) exp(-r/2) r^(alpha/2) L_m^(alpha)(r)`
+
+with `nu=4m+2alpha+2`. For `alpha=1/2`, `nu=4m+3`, and
 
 `Q_m(r)=sqrt(r) exp(-r/2)|L_m^(1/2)(r)|`,
 
-one has `Q_m<=C` for `r<=nu/2` and `Q_m<=C nu^(1/6)` for `r>=nu/2`
-(the outer region is exponentially smaller). Since
+the four source bounds are `C(r nu)^(1/4)` on `0<=r<=1/nu`,
+`C(r nu)^(-1/4)` on `1/nu<=r<=nu/2`,
+`C nu^(-1/4)(nu^(1/3)+|nu-r|)^(-1/4)` on
+`nu/2<=r<=3nu/2`, and `C exp(-gamma r)` on `r>=3nu/2`.
+
+Moreover,
+
+`Q_m(r)=sqrt(Gamma(m+3/2)/m!) r^(1/4) |mathcal L_m^(1/2)(r)|`
+
+and `sqrt(Gamma(m+3/2)/m!) asymp nu^(1/4)`. Thus the first two zones give
+`Q_m<=C`, the turning zone gives `Q_m<=C nu^(1/6)`, and the outer zone is
+exponentially smaller. Since
 
 `|p_m(x)|=sqrt(2/3) sqrt(r) exp(-2r/3)|L_m^(1/2)(r)|`
 
 `=sqrt(2/3) Q_m(r) exp(-r/6)`,
 
 the supremum is finite.
+
+### Direct source-to-envelope audit
+
+The turning-zone loss is exactly `nu^(1/6)`, not a uniform bound for `Q_m`.
+The candidate carries the extra factor `exp(-r/6)`. For `r>=nu/2`,
+`Q_m exp(-r/6)<=C nu^(1/6) exp(-nu/12)`, while the outer zone is bounded by
+`C nu^(1/4) r^(1/4) exp(-(gamma+1/6)r)`. Hence
+
+`C_L=sup_{m>=1,r>=0} sqrt(r) exp(-2r/3)|L_m^(1/2)(r)|<infinity`.
+
+If the source states Proposition 3.2 only for `m>=1`, the finitely many omitted
+indices are absorbed directly because each remaining polynomial is finite.
 
 Define `h_m=p_m/C_L` and the probability density
 

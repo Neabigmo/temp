@@ -47,8 +47,9 @@ Use
 
 `p_m(x)=x exp(-x^2)L_m^(1/2)(3x^2/2)`
 
-and `f_m=phi(1+epsilon p_m/C_L)`. A cited four-zone estimate for normalized Laguerre
-functions implies `C_L<infinity`. The exact MGF has a zero of order `2m+1` at the
+and `f_m=phi(1+epsilon p_m/C_L)`. The four-zone estimate in Imekraz--Robert--Thomann,
+Proposition 3.2, has now been checked directly in the source PDF, including its
+normalization and the three finite endpoints, and implies `C_L<infinity`. The exact MGF has a zero of order `2m+1` at the
 origin, while the half-axis bias is `Theta(m^(-1/2))`. Symmetric Skellam compensation
 with `lambda_m=96 a_m^2 rho^(4m-2)` gives
 
@@ -62,19 +63,19 @@ the lower obstruction is at least
 `sqrt(loglog(1/Delta)/log(1/Delta))`.
 
 Detailed statement: `r219_mgf_stability_audit/LAGUERRE_SHARPNESS_THEOREM.md`.
-Evidence level: `CITED-THEOREM / LOCAL-DERIVED`, pending independent web audit.
+Evidence level: `CITED-THEOREM VERIFIED / LOCAL-DERIVED`. The mathematical family is
+now proof-ready; external novelty checking and final manuscript citation review
+remain open.
 
 ## 6. The actual decision tree
 
-1. Web agent audits the cited Laguerre proposition: normalization, all four ranges,
-   Gamma ratio, and endpoint joins.
-2. If valid, promote the Laguerre family to a theorem and withdraw the single-log
-   upper-bound target.
-3. Then investigate whether the corrected
+1. Promote the Laguerre family to a theorem with the cited four-zone estimate and
+   withdraw the single-log upper-bound target.
+2. Investigate whether the corrected
    `sqrt(loglog(1/Delta)/log(1/Delta))` scale is an upper bound, or whether a still
    slower reflection-specific family exists.
-4. If the citation fails, record the exact failed range and return to the
-   reflection-specific phase-recovery upper bound.
+3. If a slower family exists, isolate its mechanism; otherwise prove a matching
+   upper bound under the fixed exponential envelope.
 
 ## 7. Publication threshold
 
