@@ -77,6 +77,19 @@ remain open.
 3. If a slower family exists, isolate its mechanism; otherwise prove a matching
    upper bound under the fixed exponential envelope.
 
+## 6a. Literature boundary that controls the paper's novelty claim
+
+Bobkov--Chistyakov--Götze prove polynomial quantitative stability for the
+equal-factor convolution `F*F` in Kolmogorov distance, together with near-square-root
+lower obstructions. That theorem is directly relevant only when `X` is symmetric,
+because then `F*F^<- = F*F`. For the present unrestricted law, the observed object is
+`F*F^<-` and its characteristic function is `|phi_X|^2`; the odd phase is erased.
+The Laguerre construction is deliberately asymmetric and therefore lies outside
+the equal-factor theorem's scope. The defensible novelty target is consequently not
+"another self-convolution Cramer bound", but a reflection-specific local-MGF
+stability problem with an explicit phase-obstruction family. This is a novelty
+boundary, not yet a certified novelty result.
+
 ## 7. Publication threshold
 
 The current package is already a potentially publishable negative result against
