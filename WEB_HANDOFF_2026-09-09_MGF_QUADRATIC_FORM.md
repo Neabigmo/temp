@@ -419,3 +419,20 @@ Proposition 3.2（[arXiv:1403.4913](https://arxiv.org/abs/1403.4913)，发表于
 Laguerre family 升为引用型反例，并撤回单对数上界目标；下一目标改为判断
 `sqrt(loglog(1/Delta)/log(1/Delta))` 是否可作为统一上界。若核对失败，指出
 具体不匹配的区间或幂次。
+
+### 2026-09-10 原文核验后的最小裁决
+
+本机已经直接检查 Imekraz--Robert--Thomann 原始 PDF 的 Proposition 3.2。其
+归一化确为
+`mathcal L_m^(alpha)=sqrt(m!/Gamma(m+alpha+1))*exp(-r/2)*r^(alpha/2)*L_m^(alpha)`，
+并且四个区间为 `0--1/nu`、`1/nu--nu/2`、`nu/2--3nu/2`、
+`3nu/2--infinity`，其中 `nu=4m+2alpha+2`。代入 `alpha=1/2` 后，
+`Q_m=sqrt(r)*exp(-r/2)*|L_m^(1/2)(r)|` 在前两区间为 `O(1)`，
+turning 区为 `O(nu^(1/6))`，外区指数衰减；候选额外的 `exp(-r/6)`
+吸收 turning 损失，故所需 `C_L<infinity` 已达到 `CITED-THEOREM VERIFIED /
+LOCAL-DERIVED`。详见 `r219_mgf_stability_audit/LAGUERRE_SHARPNESS_THEOREM.md`。
+
+因此网页端的唯一最小任务是：独立复核上述转换后，正式撤回
+`C/sqrt(log(1/Delta))` 目标，并判断
+`sqrt(loglog(1/Delta)/log(1/Delta))` 是否有统一上界；若没有，给出更慢的
+合法族。不要再重复高频正弦族或包络的旧两区猜想。
