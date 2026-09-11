@@ -1,5 +1,7 @@
 # MGF-QS / PTRF final-polish report
 
+> Historical record for the preceding polish pass. Round 2 supersedes its status and QA conclusions; see `MAJOR_REVISION_R2_REPORT.md` and `SECOND_REFEREE_AUDIT.md`. In particular, the prior official PDF was later found to omit the front matter because `main_ptrf.tex` lacked `\\maketitle`; that defect is repaired in Round 2.
+
 Revision date: 2026-09-11  
 Working branch: `mgf-qs-ptrf-final-polish`  
 Base: the repository's 2026-09-11 `main`-aligned draft, without modifying `main`

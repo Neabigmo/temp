@@ -48,11 +48,17 @@ a_m:=\frac{\epsilon}{3\sqrt3 C_L6^m m!},
 \]
 we have $|u_m(s)|\le a_m|s|^{2m+1}$ on the real axis.
 
-Let $J_m=N_m^+-N_m^-$, where $N_m^+$ and $N_m^-$ are independent Poisson variables with mean $\lambda_m/2$, and set
+Let $J_m=N_m^+-N_m^-$, where $N_m^+$ and $N_m^-$ are independent Poisson variables with mean $\lambda_m/2$, independent also of $U_m$, and set
 \[
 \lambda_m:=96a_m^2\rho^{4m-2},
 \qquad
 W_m:=\frac{U_m+J_m}{\sqrt{1+\lambda_m}}.
+\]
+The independence gives
+\[
+M_{U_m+J_m}(q)=M_{U_m}(q)M_{J_m}(q),
+\qquad
+M_{J_m}(q)=\exp\bigl(\lambda_m(\cosh q-1)\bigr).
 \]
 Then $W_m$ is centered and variance one. If $q=s/\sqrt{1+\lambda_m}$, its reflected defect is exactly
 \begin{equation}\label{eq:laguerre-defect}
@@ -76,6 +82,17 @@ If also $\lambda_m\le1$, evaluation at $s=\rho$ yields
 Thus $\Delta_m\asymp\lambda_m$ and Stirling's formula gives
 \[
 \log\frac1{\Delta_m}=2m\log m+O(m).
+\]
+Consequently,
+\[
+\log\log(1/\Delta_m)=\log m+\log\log m+O(1),
+\qquad
+\frac{\log\log(1/\Delta_m)}{\log(1/\Delta_m)}\asymp\frac1m,
+\]
+and hence
+\[
+m^{-1/2}\asymp
+\sqrt{\frac{\log\log(1/\Delta_m)}{\log(1/\Delta_m)}}.
 \]
 
 The fixed exponential envelope is uniform: $f_m\le(1+\epsilon)\phi$, while
@@ -110,6 +127,8 @@ d_{\mathrm K}(W_m,\Normal(0,1))\ge c m^{-1/2}.
 Together with $\log(1/\Delta_m)=2m\log m+O(m)$, this proves Theorem~\ref{thm:sharpness} and rules out every uniform power-law modulus $C\Delta^\alpha$, $\alpha>0$.
 
 \subsection{Failure of total-variation stability}
+
+Throughout this subsection, $d_{\mathrm{TV}}(\mu,\nu):=\sup_A|\mu(A)-\nu(A)|$.
 
 \begin{proposition}[Strong-distance obstruction]\label{prop:tv}
 There is no uniform total-variation stability theorem under the assumptions of \cref{thm:sharp-upper}: a standardized Poisson lattice family can satisfy a fixed exponential-integrability bound and have reflected defect tending to zero while its total-variation distance from every absolutely continuous Gaussian law equals one.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.5.28)  12 SEP 2026 00:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.5.28)  12 SEP 2026 02:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -642,10 +642,9 @@ Package microtype Info: No adjustment of character kerning.
  (d:/texlive/2025/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
-) (./paper_body.tex (./sections/introduction.tex
-LaTeX Font Info:    Calculating math sizes for size <10.03749> on input line 1.
-
-LaTeX Font Info:    Trying to load font information for U+msa on input line 1.
+)
+LaTeX Font Info:    Calculating math sizes for size <12.045> on input line 38.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 38.
 
 (d:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -653,7 +652,8 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (d:/texlive/2025/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 1.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 38.
+
 
 (d:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -661,10 +661,21 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (d:/texlive/2025/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
+LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 38
+.
+ (./abstract.tex
+LaTeX Font Info:    Calculating math sizes for size <9.03374> on input line 1.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
+)
+LaTeX Font Info:    Calculating math sizes for size <10.03749> on input line 38
+.
+
+(./paper_body.tex (./sections/introduction.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 
 
@@ -677,14 +688,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [2])
-(./sections/exact_rigidity.tex
+ [2]
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3])
-(./sections/sharp_upper.tex
+(./sections/exact_rigidity.tex
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -694,7 +704,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5]
+ [5])
+(./sections/sharp_upper.tex
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -709,8 +720,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [8])
-(./sections/sharpness.tex
+ [8]
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -720,12 +730,23 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10]
+ [10])
+(./sections/sharpness.tex
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11])
+ [11]
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12]
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13])
 (./sections/sample_variance.tex
 LaTeX Font Info:    Trying to load font information for U+euf on input line 13.
 
@@ -741,26 +762,12 @@ File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [12]
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [13])
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [14]
-(./appendices/parameter_selection.tex) (./appendices/laguerre_details.tex
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15
-
-]))
-(./main_ptrf.bbl
+ [15]
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -771,48 +778,81 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [17]
+(./appendices/parameter_selection.tex) (./appendices/laguerre_details.tex
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18
+
+]))
+(./main_ptrf.bbl
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19]
+Underfull \hbox (badness 1092) in paragraph at lines 233--242
+[]\OT1/cmr/m/n/10 (+20) Duren, P.L.: Uni-va-lent Func-tions. Grundlehren der ma
+th-e-ma-tis-chen Wis-
+ []
+
+)
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20]
 (./main_ptrf.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-04-29>
  ***********
 Package rerunfilecheck Info: File `main_ptrf.out' has not changed.
-(rerunfilecheck)             Checksum: B6353BF95EBF0E1A2879E5C6F5093A09;3094.
+(rerunfilecheck)             Checksum: 88681DA555CD7C9296DF1B0D213B35E3;3259.
  ) 
 Here is how much of TeX's memory you used:
- 16517 strings out of 469590
- 270592 string characters out of 5474519
- 718968 words of memory out of 5000000
- 42864 multiletter control sequences out of 15000+600000
- 649544 words of font info for 195 fonts, out of 8000000 for 9000
+ 16801 strings out of 469590
+ 275124 string characters out of 5474519
+ 720968 words of memory out of 5000000
+ 43022 multiletter control sequences out of 15000+600000
+ 669644 words of font info for 313 fonts, out of 8000000 for 9000
  1151 hyphenation exceptions out of 8191
- 90i,12n,93p,1006b,655s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<d:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><d:/tex
-live/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/texlive/2025
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><d:/texlive/2025/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/texlive/2025/texmf-dist/fonts/t
-ype1/public/amsfonts/cmextra/cmex9.pfb><d:/texlive/2025/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmmi10.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmi5.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi7.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb>
-<d:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/texliv
-e/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><d:/texlive/2025/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><d:/texlive/2025/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr9.pfb><d:/texlive/2025/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmss8.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmsy10.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y5.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><d:
-/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><d:/texlive/2
-025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><d:/texlive/2025/texmf
--dist/fonts/type1/public/amsfonts/cm/cmti9.pfb><d:/texlive/2025/texmf-dist/font
-s/type1/public/amsfonts/euler/eufm10.pfb><d:/texlive/2025/texmf-dist/fonts/type
-1/public/amsfonts/symbols/msam10.pfb><d:/texlive/2025/texmf-dist/fonts/type1/pu
-blic/amsfonts/symbols/msbm10.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public
-/amsfonts/symbols/msbm7.pfb>
-Output written on main_ptrf.pdf (17 pages, 366629 bytes).
+ 90i,12n,93p,1006b,643s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<d:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><d:/te
+xlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><d:/texlive/202
+5/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/texlive/2025/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmbx6.pfb><d:/texlive/2025/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmbx8.pfb><d:/texlive/2025/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmbx9.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmex10.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra
+/cmex9.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pf
+b><d:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><d:/texl
+ive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><d:/texlive/2025/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><d:/texlive/2025/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmib10.pfb><d:/texlive/2025/texmf-dist/fonts/ty
+pe1/public/amsfonts/cmextra/cmmib7.pfb><d:/texlive/2025/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr10.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr12.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr17.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><d
+:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><d:/texlive/2
+025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/texlive/2025/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr9.pfb><d:/texlive/2025/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmss8.pfb><d:/texlive/2025/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmssbx10.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmsy10.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+sy5.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><d
+:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><d:/texlive/
+2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><d:/texlive/2025/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb><d:/texlive/2025/texmf-dist/fon
+ts/type1/public/amsfonts/euler/eufm10.pfb><d:/texlive/2025/texmf-dist/fonts/typ
+e1/public/amsfonts/symbols/msam10.pfb><d:/texlive/2025/texmf-dist/fonts/type1/p
+ublic/amsfonts/symbols/msbm10.pfb><d:/texlive/2025/texmf-dist/fonts/type1/publi
+c/amsfonts/symbols/msbm7.pfb>
+Output written on main_ptrf.pdf (20 pages, 475266 bytes).
 PDF statistics:
- 365 PDF objects out of 1000 (max. 8388607)
- 295 compressed objects within 3 object streams
- 71 named destinations out of 1000 (max. 500000)
- 45169 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 450 PDF objects out of 1000 (max. 8388607)
+ 358 compressed objects within 4 object streams
+ 80 named destinations out of 1000 (max. 500000)
+ 84089 words of extra memory for PDF output out of 89155 (max. 10000000)
 

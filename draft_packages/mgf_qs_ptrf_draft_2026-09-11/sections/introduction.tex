@@ -1,5 +1,7 @@
 \section{Introduction and main results}\label{sec:intro}
 
+The Gaussian decomposition principle used in the factor-recovery argument is the classical theorem of Cram\'er~\cite{Cramer1936}.
+
 The exact chi-square law of the sample variance is one of the classical signatures of Gaussian samples. The unrestricted converse for a fixed sample size $n\ge3$ remains a longstanding characterization problem. Existing results impose additional structure, including symmetry or infinite divisibility; see \cite{Ruben1974,Ruben1978,Bondesson1977,GolikovaKruglov2015,Kruglov2013,EjsmontLehner2017}. We do not claim to resolve that unrestricted problem. The sample variance is a chi-square quadratic form, and spherical averaging of its Laplace transform naturally brings in the symmetrized quantity $M_X(s)M_X(-s)$.
 
 For a centered variance-one random variable $X$, let $M_X(s)=\E e^{sX}$ whenever finite and define
@@ -41,6 +43,8 @@ Characterizations based on quadratic forms have a long history. Converse results
 \]
 The converse fails. If $X$ takes the values $3$ and $-1/3$ with probabilities $1/10$ and $9/10$, then it is centered and has variance one. It is not infinitely divisible: if a bounded non-degenerate law of support diameter $d$ were an $n$-fold convolution of an i.i.d. root, that root would have support diameter at most $d/n$, and Popoviciu's inequality would give $\operatorname{Var}(X)/n\le d^2/(4n^2)$, which is impossible for large $n$. Its fourth cumulant is $46/9$, so $R_X(s)=23s^4/54+O(s^6)$ and the local dominance holds. This example is asymmetric. In contrast, a Rademacher variable $\varepsilon$ satisfies $R_\varepsilon(s)=2\log\cosh s-s^2=-s^4/6+O(s^6)$, which is negative for all sufficiently small nonzero $s$.
 
+The L\'evy--Khintchine representation used in this comparison is standard; see Sato~\cite{Sato1999}.
+
 \subsection*{Reflection stability}
 The quantitative result recovers a factor from local reflected-MGF information without assuming the dominance sign.
 \begin{theorem}[Sharp reflection stability]\label{thm:sharp-upper}
@@ -60,7 +64,9 @@ for some $0<\Delta\le\Delta_0$, then
 \]
 \end{theorem}
 
-Classical Cram\'er stability concerns an almost Gaussian convolution $F*G$, while the equal-factor case $F*F$ retains the Fourier phase and is covered by the iid theory of Bobkov, Chistyakov, and G\"otze \cite{Sapogov1951,BobkovChistyakovGotze2013}. The reflected convolution $F*\widetilde F$, which is the probabilistic object behind $M_X(s)M_X(-s)$, instead has characteristic function $|\varphi_F|^2$ and erases that phase. Quantitative Marcinkiewicz results such as \cite{EremenkoFryntov2021,DinhGhoshTranTran2025} generally take a zero-free region as an input. Here the relevant zero-free disk is derived from the reflected-MGF defect through high-order moments, truncation, real-axis product approximation, and complex propagation.
+Classical Cram\'er stability starts from a two-factor convolution $F*G$ that is already close to a Gaussian convolution in a global probability metric such as Kolmogorov or L\'evy distance. The reflected convolution $F*\widetilde F$ is therefore a legitimate special case of that general framework. The equal-factor case $F*F$ retains the Fourier phase and admits stronger iid estimates, as in the theory of Bobkov, Chistyakov, and G\"otze \cite{Sapogov1951,BobkovChistyakovGotze2013}. In the present problem the available input is different: the quantity $M_X(s)M_X(-s)$ is controlled only through $R_X(s)$ on a fixed real interval, and its Fourier counterpart $|\varphi_X|^2$ has lost the phase. The main difficulty is not that reflection lies outside Cram\'er-type theory, but that local transform information must be converted into global factor recovery without phase information.
+
+One could first try to convert the local reflected-MGF control into a global approximation for $X-X'$ and then invoke a general stability theorem for Cram\'er decomposition. Such an argument discards the structure responsible for the sharp modulus. Our proof instead keeps the reflected factorization throughout: high-order moment information constructs a zero-free disk for a truncated factor itself, after which the logarithm of that factor is controlled directly. The logarithmic coefficient step is a finite-disk estimate in the spirit of quantitative Marcinkiewicz theory; the zero-free disk here is derived from the reflected-MGF analysis rather than assumed, as in the quantitative results of Eremenko and Fryntov and of Dinh, Ghosh, Tran, and Tran \cite{EremenkoFryntov2021,DinhGhoshTranTran2025}.
 
 The order in this theorem cannot be improved uniformly in general. The obstruction is supplied by high-order odd perturbations whose first $m$ odd moments vanish.
 \begin{theorem}[Laguerre lower bound]\label{thm:sharpness}
@@ -72,7 +78,7 @@ R_{W_m}(s)\ge0\quad (|s|\le\rho),
 \]
 and, with
 \[
-\Delta_m:=\sup_{|s|\le\rho}R_{W_m}(s)\downarrow0,
+\Delta_m:=\sup_{|s|\le\rho}R_{W_m}(s)\to0,
 \]
 \[
 \log\frac1{\Delta_m}=2m\log m+O(m),

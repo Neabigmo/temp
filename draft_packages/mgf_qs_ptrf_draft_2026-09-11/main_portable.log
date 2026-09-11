@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.5.28)  12 SEP 2026 00:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.5.28)  12 SEP 2026 02:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -565,9 +565,9 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 [2]) (./sections/exact_rigidity.tex
 
-[3]) (./sections/sharp_upper.tex
+[3]
 
-[4]
+[4]) (./sections/sharp_upper.tex
 
 [5]
 
@@ -575,13 +575,15 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 [7]
 
-[8]) (./sections/sharpness.tex
+[8]
 
-[9]
+[9]) (./sections/sharpness.tex
 
 [10]
 
-[11]) (./sections/sample_variance.tex
+[11]
+
+[12]) (./sections/sample_variance.tex
 LaTeX Font Info:    Trying to load font information for U+euf on input line 13.
 
 
@@ -593,33 +595,34 @@ File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
 
 )
 
-[12]
+[13]
 
-[13])
+[14])
 
-[14] (./appendices/parameter_selection.tex) (./appendices/laguerre_details.tex)
-) (./references_manual.tex
+[15] (./appendices/parameter_selection.tex) (./appendices/laguerre_details.tex
 
-[15
+[16
 
-])
+])) (./references_manual.tex
 
-[16] (./main_portable.aux)
+[17])
+
+[18] (./main_portable.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-04-29>
  ***********
 Package rerunfilecheck Info: File `main_portable.out' has not changed.
-(rerunfilecheck)             Checksum: E4F670AE9A2593577CA6A18D58C12211;3108.
+(rerunfilecheck)             Checksum: 6AD10873D4C6E6605F505A0CBDD9BECE;3274.
  ) 
 Here is how much of TeX's memory you used:
- 16245 strings out of 469590
- 263838 string characters out of 5474519
+ 16275 strings out of 469590
+ 264217 string characters out of 5474519
  721276 words of memory out of 5000000
- 42597 multiletter control sequences out of 15000+600000
- 651155 words of font info for 209 fonts, out of 8000000 for 9000
+ 42609 multiletter control sequences out of 15000+600000
+ 651641 words of font info for 215 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,79p,1010b,580s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,12n,79p,1010b,616s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <d:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><d:/tex
 live/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/texlive/2025
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/texlive/2025/texmf-di
@@ -639,10 +642,10 @@ ive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><d:/texlive/2025/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><d:/texlive/2025/texmf-dis
 t/fonts/type1/public/amsfonts/euler/eufm10.pfb><d:/texlive/2025/texmf-dist/font
 s/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main_portable.pdf (16 pages, 330216 bytes).
+Output written on main_portable.pdf (18 pages, 339822 bytes).
 PDF statistics:
- 339 PDF objects out of 1000 (max. 8388607)
- 276 compressed objects within 3 object streams
- 71 named destinations out of 1000 (max. 500000)
- 49777 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 370 PDF objects out of 1000 (max. 8388607)
+ 304 compressed objects within 4 object streams
+ 77 named destinations out of 1000 (max. 500000)
+ 49785 words of extra memory for PDF output out of 51595 (max. 10000000)
 
