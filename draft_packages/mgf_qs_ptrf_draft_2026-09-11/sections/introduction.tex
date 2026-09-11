@@ -14,7 +14,7 @@ We work under the fixed exponential envelope
 \end{equation}
 If $X'$ is an independent copy of $X$, then $M_{X-X'}(s)=M_X(s)M_X(-s)$. The difficulty is that reflection removes the Fourier phase. Our stability theorem shows that the factor can nevertheless be recovered, at the optimal logarithmic scale, under \eqref{eq:EI-intro}.
 
-The proof uses two scales. A fixed complex neighborhood yields high-order moment information for $X-X'$; after truncation, this produces a Gaussian product approximation on a disk of radius of order $\sqrt m$. Zero-freeness on this disk allows one to take a logarithm and recover the factor. The exact argument is separate and uses Jensen equality for the spherical transform.
+The proof uses two scales. A fixed complex neighborhood yields high-order moment information for $X-X'$; after truncation, this produces a Gaussian product approximation on a disk of radius of order $\sqrt m$. Zero-freeness on this disk allows one to take a logarithm and recover the factor. The exact theorem, by contrast, follows from equality in Jensen's inequality after spherical averaging.
 
 \subsection*{Exact rigidity}
 The first result is the positive-semidefinite quadratic-form theorem that motivates the reflection condition.
@@ -56,15 +56,23 @@ for some $0<\Delta\le\Delta_0$, then
 \]
 \end{theorem}
 
+Classical Cram\'er stability concerns an almost Gaussian convolution $F*G$, while the equal-factor case $F*F$ retains the Fourier phase and is covered by the iid theory of Bobkov, Chistyakov, and G\"otze \cite{Sapogov1951,BobkovChistyakovGotze2013}. The reflected convolution $F*\widetilde F$, which is the probabilistic object behind $M_X(s)M_X(-s)$, instead has characteristic function $|\varphi_F|^2$ and erases that phase. Quantitative Marcinkiewicz results such as \cite{EremenkoFryntov2021,DinhGhoshTranTran2025} generally take a zero-free region as an input. Here the relevant zero-free disk is derived from the reflected-MGF defect through high-order moments, truncation, real-axis product approximation, and complex propagation.
+
 The order in this theorem cannot be improved uniformly in general. The obstruction is supplied by high-order odd perturbations whose first $m$ odd moments vanish.
 \begin{theorem}[Laguerre lower bound]\label{thm:sharpness}
-There are constants $\rho,\tau,K,c,C>0$ and centered variance-one random variables $W_m$ such that the same uniform exponential-integrability and local dominance assumptions hold, $\Delta_m:=\Delta_\rho(W_m)\downarrow0$, and
+There are constants $\rho,\tau,K,c>0$ and centered variance-one random variables $W_m$ such that, for all sufficiently large $m$,
+\[
+\E e^{2\tau|W_m|}\le K,
+\qquad
+R_{W_m}(s)\ge0\quad (|s|\le\rho),
+\]
+and, with $\Delta_m:=\Delta_\rho(W_m)\downarrow0$,
 \[
 \log\frac1{\Delta_m}=2m\log m+O(m),
 \qquad
 \dK(W_m,\Normal(0,1))\ge c m^{-1/2}.
 \]
-Consequently
+Consequently, for some $c'>0$,
 \[
 \dK(W_m,\Normal(0,1))
 \ge c'\sqrt{\frac{\log\log(1/\Delta_m)}{\log(1/\Delta_m)}}

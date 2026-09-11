@@ -17,6 +17,8 @@ The manuscript now has a single reflected-defect notation, an exact spherical-tr
 
 The main narrative is Introduction and main results → exact rigidity → sharp reflection stability → optimality/obstructions → sample variance. The high-frequency sine family is not part of the main text.
 
+The final language pass fixes the non-circular parameter order in Appendix A, states the Laguerre lower-bound hypotheses explicitly, restores a compact Cramér/Marcinkiewicz novelty boundary in the Introduction, and uses descriptive rather than branded proof-step headings.
+
 ## Local compile
 
 ```

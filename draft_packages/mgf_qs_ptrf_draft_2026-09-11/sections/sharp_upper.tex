@@ -11,7 +11,7 @@ L:=\log(1/\Delta).
 \]
 We prove \cref{thm:sharp-upper} through five lemmas.
 
-\subsection{High-order reflected moment transfer}
+\subsection{High-order moments of the reflected variable}
 
 \begin{lemma}[Local defect to high-order moments]\label{lem:moment-transfer}
 Fix $\rho,\tau,K$. For every $A>0$ there is $c_0=c_0(A,\rho,\tau,K)>0$ such that, with
@@ -55,7 +55,7 @@ For $k\le2m$ and $m=c_0L/\log L$, Stirling's bound shows that the logarithm of t
 and the negligible moment mismatch gives the stated $2m$-th moment bound.
 \end{proof}
 
-\subsection{Tail lifting and bounded truncation}
+\subsection{Tail bound and truncation}
 
 \begin{lemma}[Square-root tail lifting]\label{lem:tail-lift}
 There are constants $C,c>0$ with the following property. For every sufficiently large fixed $B$, if $N=B\sqrt m$, then
@@ -105,7 +105,7 @@ Since $\E X=0$ and $\E X^2=1$,
 It follows that $|\E X_N|+|\operatorname{Var}(X_N)-1|\le C(1+N^2)e^{-cN}$ after increasing $C$.
 \end{proof}
 
-\subsection{A growing real Gaussian-product window}
+\subsection{Product approximation on a growing interval}
 
 \begin{lemma}[Real-axis product approximation]\label{lem:real-window}
 For $B$ fixed sufficiently large, there is $a_0=a_0(B,\rho,\tau,K)>0$ such that, with
@@ -143,7 +143,7 @@ where $G\sim\Normal(0,2)$. On $|t|\le2R$, the first two terms are bounded by $(C
 \]
 \end{proof}
 
-\subsection{Complex propagation and a zero-free factor disk}
+\subsection{A zero-free disk}
 
 \begin{lemma}[Growing zero-free disk]\label{lem:zero-free}
 The constants $B$ and $a_0$ can be chosen so that, for $R=a_0\sqrt m$,
@@ -186,9 +186,9 @@ Choose first $B$ large and then $a_0$ sufficiently small so that the bracket is 
 relative closeness implies $\varphi_N(z)\varphi_N(-z)\ne0$, hence $\varphi_N(z)\ne0$ on the disk.
 \end{proof}
 
-\subsection{Logarithmic Gaussianization and Esseen smoothing}
+\subsection{The logarithm of the factor and Esseen smoothing}
 
-\begin{lemma}[Factor Gaussianization]\label{lem:factor-gaussian}
+\begin{lemma}[From zero-freeness to Gaussian approximation]\label{lem:factor-gaussian}
 Under the conclusions of Lemma~\ref{lem:zero-free},
 \[
 \dK(X_N,\Normal(\mu_N,\sigma_N^2))\le \frac{C}{R},
