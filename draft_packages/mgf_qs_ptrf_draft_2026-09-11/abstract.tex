@@ -1,10 +1,5 @@
-We prove a Gaussian rigidity principle based on the symmetrized moment generating function $M_X(s)M_X(-s)$. First, let $X=(X_i)$ have independent centered coordinates and let $A\succeq0$. If $X^{\mathsf T}AX$ has a chi-square law and each active coordinate satisfies the local dominance $M_i(s)M_i(-s)\ge e^{\sigma_i^2s^2}$, then every active coordinate is Gaussian. Second, under a fixed exponential-moment bound, the local estimate
+We study Gaussian rigidity through the symmetrized moment generating function $M_X(s)M_X(-s)$. For independent centered coordinates $X=(X_i)$ and a positive-semidefinite matrix $A$, we prove that if $X^{\mathsf T}AX$ has a chi-square distribution and every active coordinate satisfies the local dominance $M_i(s)M_i(-s)\ge \exp(\sigma_i^2s^2)$, then all active coordinates are Gaussian. We then turn to the quantitative factor-recovery problem. Under a fixed exponential-moment bound, if $\log M_X(s)+\log M_X(-s)-s^2$ is uniformly bounded in absolute value by $\Delta$ on a fixed neighborhood of the origin, then the Kolmogorov distance from $X$ to the standard normal law is at most
 \[
-\sup_{|s|\le\rho}|\log M_X(s)+\log M_X(-s)-s^2|\le\Delta
+C\sqrt{\frac{\log\log(1/\Delta)}{\log(1/\Delta)}}.
 \]
-implies
-\[
-d_{\mathrm K}(X,\mathcal N(0,1))
-\le C\sqrt{\frac{\log\log(1/\Delta)}{\log(1/\Delta)}}.
-\]
-The order is optimal in general, as shown by a Laguerre construction. The proof recovers the factor from reflected MGF information through a growing zero-free region. We also derive exact and quantitative consequences for the sample variance and show that total-variation stability fails.
+The order is optimal in general: a Laguerre perturbation yields a matching lower bound. The proof converts local reflected-MGF information into high-order moments, produces a growing zero-free disk for a truncated characteristic function, and then applies logarithmic coefficient bounds and Esseen smoothing. As applications, we obtain exact and quantitative results for the sample variance; a lattice example shows that no analogous total-variation stability can hold.

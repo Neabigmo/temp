@@ -38,6 +38,18 @@ The audit searched combinations of:
 
 No direct theorem was found that assumes the present local one-sided symmetrized-MGF dominance and proves either the exact PSD rigidity theorem or the sharp `sqrt(log log / log)` Kolmogorov stability rate.
 
+## Observable and factorization boundary
+
+The comparison is made at the level of the convolution observable rather than by a blanket claim about the surrounding literature:
+
+| Setting | Observable factorization | Information retained |
+|---|---|---|
+| General Cramér stability | `F*G` close to a Gaussian convolution | The two summands may differ; Sapogov's modulus is logarithmic in the general setting |
+| Equal-factor Cramér stability | `F*F` close to a Gaussian convolution | The common factor retains its Fourier phase; the iid theory gives stronger estimates |
+| Present reflected problem | `F*\widetilde F` from `X-X'` | The characteristic function is `|phi_F|^2`; the phase is lost, and the proof derives rather than assumes a growing zero-free disk |
+
+The Marcinkiewicz references in the Introduction are used only for this boundary: their quantitative Gaussian approximation starts from a zero-free region, whereas the present argument supplies that region from reflected-MGF information, high-order moments, truncation, and complex propagation. The exact quadratic-form theorem is likewise stated with its local dominance hypothesis and is not presented as a resolution of the unrestricted fixed-sample-size converse.
+
 ## Novelty claims currently safe to write
 
 After the present bibliographic additions and local construction rewrite, the Introduction can safely say:
