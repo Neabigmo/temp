@@ -1,0 +1,84 @@
+\section{Main results}\label{sec:main-results}
+
+\begin{definition}[Reflected defect]\label{def:reflected-defect}
+Let $X$ be centered with $\E X^2=1$, and suppose $M_X$ is finite on $[-\rho,\rho]$. Define
+\[
+\Delta_\rho(X)
+=\sup_{|s|\le\rho}
+\left\{\log M_X(s)+\log M_X(-s)-s^2\right\}.
+\]
+Whenever we invoke the stability theorem, we additionally assume the expression in braces is nonnegative on $[-\rho,\rho]$.
+\end{definition}
+
+\begin{theorem}[Exact PSD rigidity]\label{thm:exact-psd}
+Let $X=(X_1,\ldots,X_d)$ have independent coordinates with $\E X_i=0$ and $\operatorname{Var}(X_i)=\sigma_i^2$. Let $A=A^{\mathsf T}\succeq0$ have rank $r\ge1$, and suppose
+\[
+X^{\mathsf T}AX\sim\chi_r^2.
+\]
+For every active coordinate $i$ with $A_{ii}>0$, assume that $M_i(s)=\E e^{sX_i}$ is finite in a neighborhood of the origin and
+\[
+M_i(s)M_i(-s)\ge e^{\sigma_i^2s^2}
+\]
+there. Then every active $X_i$ is Gaussian, $X_i\sim\Normal(0,\sigma_i^2)$.
+\end{theorem}
+
+\begin{theorem}[Sharp reflection stability]\label{thm:sharp-upper}
+Fix $\rho,\tau,K>0$. There exist constants $C<\infty$ and $\Delta_0\in(0,e^{-e})$, depending only on $(\rho,\tau,K)$, such that the following holds. If
+\[
+\E X=0,\qquad \E X^2=1,\qquad \E e^{2\tau|X|}\le K,
+\]
+and
+\[
+0\le \log M_X(s)+\log M_X(-s)-s^2\le\Delta,
+\qquad |s|\le\rho,
+\]
+for some $0<\Delta\le\Delta_0$, then
+\[
+\dK(X,\Normal(0,1))
+\le
+C\sqrt{\frac{\log\log(1/\Delta)}{\log(1/\Delta)}}.
+\]
+\end{theorem}
+
+\begin{corollary}[Sample-variance stability; schematic statement]\label{cor:sample-var}
+Fix $n\ge3$ and the parameters entering the radial-transform discrepancy. Under the normalization $\E X=0$, $\E X^2=1$, the uniform exponential-integrability assumption, and the local symmetrized-MGF dominance, if
+\[
+\mathfrak d_{n-1,\tau}(Q_n,\chi^2_{n-1})\le\varepsilon,
+\]
+then, for all sufficiently small $\varepsilon$,
+\[
+\dK(X,\Normal(0,1))
+\le
+C\sqrt{\frac{\log\log(1/\varepsilon)}{\log(1/\varepsilon)}}.
+\]
+\end{corollary}
+\auditgate{Insert the exact definition of $\mathfrak d_{n-1,\tau}$ from the project source. The handoff document states this transfer but does not reproduce the metric definition, so it must not be reconstructed from memory.}
+
+\begin{theorem}[Sharpness]\label{thm:sharpness}
+There are constants $\rho,\tau,K,c,C>0$ and centered variance-one random variables $X_m$ such that the same uniform exponential-integrability and local dominance assumptions hold, $\Delta_m:=\Delta_\rho(X_m)\downarrow0$, and
+\[
+\log\frac1{\Delta_m}=m\log m+O(m),
+\qquad
+\dK(X_m,\Normal(0,1))\ge c m^{-1/2}.
+\]
+Consequently
+\[
+\dK(X_m,\Normal(0,1))
+\ge
+c'\sqrt{\frac{\log\log(1/\Delta_m)}{\log(1/\Delta_m)}}
+\]
+for all sufficiently large $m$.
+\end{theorem}
+\auditgate{The Imekraz--Robert--Thomann Laguerre estimate needed for the uniform bound has been independently checked. Before submission, re-audit the remaining algebra, normalization, dominance, and CDF-separation steps of the Laguerre construction from the original project records.}
+
+\begin{proposition}[Strong-distance obstruction]\label{prop:tv}
+There is no uniform total-variation stability theorem under the assumptions of \cref{thm:sharp-upper}: a standardized Poisson lattice family can satisfy a fixed exponential-integrability bound and have reflected defect tending to zero while its total-variation distance from every absolutely continuous Gaussian law equals one.
+\end{proposition}
+
+\begin{proposition}[No power-law Kolmogorov modulus]\label{prop:no-power}
+For every $\alpha>0$ there is no constant $C_\alpha$ for which
+\[
+\dK(X,\Normal(0,1))\le C_\alpha\Delta_\rho(X)^\alpha
+\]
+holds uniformly under the hypotheses of \cref{thm:sharp-upper}.
+\end{proposition}

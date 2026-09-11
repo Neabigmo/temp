@@ -1,0 +1,28 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=30mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage[numbers,sort&compress]{natbib}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Pp}{\mathbb P}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Normal}{\mathcal N}
+\newcommand{\dK}{d_{\mathrm K}}
+\newcommand{\DeltaR}{\Delta_\rho}
+\newcommand{\auditgate}[1]{\par\medskip\noindent\fcolorbox{red}{red!5}{\parbox{0.93\linewidth}{\textbf{AUDIT GATE.} #1}}\par\medskip}
+\begin{document}
+\input{paper_body}
+\input{references_manual}
+\end{document}

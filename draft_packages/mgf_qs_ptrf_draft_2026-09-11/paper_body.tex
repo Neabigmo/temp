@@ -1,0 +1,37 @@
+\title{Gaussian Rigidity and Sharp Reflection Stability for Chi-Square Quadratic Forms}
+
+\author{Author Name(s)}
+
+\date{}
+
+\begin{abstract}
+We study a reflection-symmetrized Gaussian characterization arising from chi-square quadratic forms and sample variance. For a centered, variance-one random variable $X$ with a fixed exponential moment, write $M_X$ for its moment generating function and assume the local dominance
+\[
+M_X(s)M_X(-s)\ge e^{s^2}.
+\]
+We first prove an exact rigidity theorem for positive semidefinite quadratic forms of independent coordinates under the analogous coordinatewise dominance. We then establish a sharp quantitative reflection stability theorem. If
+\[
+\Delta_\rho(X):=\sup_{|s|\le \rho}\bigl\{\log M_X(s)+\log M_X(-s)-s^2\bigr\}
+\]
+is sufficiently small, then
+\[
+d_{\mathrm K}(X,N(0,1))
+\le C\sqrt{\frac{\log\log(1/\Delta_\rho(X))}{\log(1/\Delta_\rho(X))}}.
+\]
+The proof converts the reflected MGF defect into high-order moment matching for $X-X'$, lifts this to a sub-Gaussian tail at the square-root moment scale, truncates to a bounded random variable, propagates a real-axis Gaussian product approximation into a growing complex disk, and then uses zero-freeness, a logarithmic coefficient estimate, and Esseen smoothing to recover the factor. A Laguerre-based family gives the matching lower order, showing that the double-logarithmic loss is intrinsic. We also record consequences for sample variance and explain why total-variation stability and every power-law Kolmogorov modulus fail.
+\end{abstract}
+
+\maketitle
+
+\input{sections/introduction}
+\input{sections/main_results}
+\input{sections/exact_rigidity}
+\input{sections/radial_to_defect}
+\input{sections/sharp_upper}
+\input{sections/sample_variance}
+\input{sections/sharpness}
+\input{sections/discussion}
+
+\appendix
+\input{appendices/parameter_selection}
+\input{appendices/laguerre_audit_gate}

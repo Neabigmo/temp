@@ -1,0 +1,49 @@
+\section{Sharpness and obstruction results}\label{sec:sharpness}
+
+\subsection{Laguerre sharpness family}
+The construction uses generalized Laguerre polynomials $L_m^{(1/2)}$. The external uniform estimate required by the construction follows from Proposition~3.2 of Imekraz, Robert and Thomann \cite{ImekrazRobertThomann2016}. With
+\[
+\nu=4m+3,
+\qquad
+Q_m(r)=\sqrt r\,e^{-r/2}|L_m^{(1/2)}(r)|,
+\]
+the four-region estimate implies
+\[
+\sup_{m\ge0,\,r\ge0}
+\sqrt r\,e^{-2r/3}|L_m^{(1/2)}(r)|<\infty.
+\]
+The construction then yields a uniformly exponentially integrable family satisfying local dominance and
+\[
+\log\frac1{\Delta_m}=m\log m+O(m),
+\qquad
+\dK(X_m,\Normal(0,1))\ge c m^{-1/2}.
+\]
+Stirling inversion gives
+\[
+m^{-1/2}
+\asymp
+\sqrt{\frac{\log\log(1/\Delta_m)}{\log(1/\Delta_m)}}.
+\]
+
+\auditgate{This subsection deliberately states only the already-audited external Laguerre bound and the project-recorded asymptotic package. Before submission, reconstruct every definition of $X_m$ and verify normalization, positivity, local dominance, exponential integrability, defect asymptotics, and CDF separation from first principles.}
+
+\subsection{Failure of power rates}
+A high-frequency odd Gaussian perturbation, accompanied by a small symmetric lattice compensation and variance renormalization, gives a family with fixed exponential integrability and local dominance such that
+\[
+\Delta_n\asymp n^6e^{-n^2},
+\qquad
+\dK(X_n,\Normal(0,1))\ge \frac{c}{n}.
+\]
+Thus no bound of the form $C\Delta^\alpha$ can hold uniformly for any $\alpha>0$.
+
+\auditgate{Insert the full construction and proof from the project record if this proposition is retained in the main paper. It may be shortened or moved to supplementary material once the Laguerre sharpness theorem is complete.}
+
+\subsection{Failure of total-variation stability}
+For $N_\lambda\sim\operatorname{Poisson}(\lambda)$, set
+\[
+X_\lambda=\frac{N_\lambda-\lambda}{\sqrt\lambda}.
+\]
+Then the reflected defect tends to zero at fixed local scale, while $X_\lambda$ is lattice-valued and the Gaussian law is absolutely continuous, so
+\[
+d_{\rm TV}(X_\lambda,\Normal(0,1))=1.
+\]

@@ -1,0 +1,14 @@
+\section{Parameter selection for the sharp upper bound}\label{app:parameters}
+
+This appendix records a non-circular order of choices.
+\begin{enumerate}
+\item Fix the model parameters $(\rho,\tau,K)$ and an interior analytic radius $\rho_0$.
+\item Choose a target moment-accuracy exponent $A$ large enough to dominate all later finite-order losses.
+\item Choose $c_0>0$ sufficiently small so that \cref{lem:moment-transfer} yields $e^{-A m\log m}$ accuracy for $k\le2m$.
+\item Choose the truncation constant $B$ large, producing a tail exponent $\beta_B$ as large as required.
+\item Choose $a_0>0$ small enough that: (i) the characteristic-function Taylor remainder on $|t|\le2a_0\sqrt m$ is $e^{-\gamma m}$ with $\gamma$ larger than the desired threshold; (ii) the complex-growth constant $C(Ba_0+a_0^2)$ in the half-disk is sufficiently small relative to the real-axis exponent after multiplication by the harmonic-measure constant; and (iii) the propagated exponent $\gamma_2$ exceeds $a_0^2$.
+\item Finally choose the fixed Esseen fraction $\theta>0$ small enough that the cubic logarithmic remainder is dominated by a fixed fraction of the quadratic Gaussian damping.
+\end{enumerate}
+All choices depend only on the fixed model parameters, not on $\Delta$ or $m$.
+
+\auditgate{In the submission version, give one explicit system of inequalities among $(A,c_0,B,a_0,\gamma,\gamma_1,\gamma_2,\theta)$ and verify them in this order.}

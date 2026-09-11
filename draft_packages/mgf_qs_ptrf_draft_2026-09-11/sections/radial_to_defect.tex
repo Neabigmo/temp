@@ -1,0 +1,33 @@
+\section{From radial discrepancy to a pointwise reflected defect}\label{sec:radial}
+
+For the sample-variance application define
+\[
+D(s):=\frac12\log\frac{M_X(s)M_X(-s)}{e^{s^2}}\ge0.
+\]
+The radial-transform comparison yields an integrated spherical bound of the form
+\begin{equation}\label{eq:integrated-D}
+n\,\E D\!\left(\tau\sqrt{\frac{n-1}{n}}V_1\right)
+\le \log(1+\varepsilon),
+\end{equation}
+where $V_1$ is the first coordinate of a uniform point on $S^{n-2}$. Its density is
+\[
+f_{V_1}(v)=
+\frac{\Gamma((n-1)/2)}{\sqrt\pi\,\Gamma((n-2)/2)}
+(1-v^2)^{(n-4)/2},\qquad -1<v<1.
+\]
+For $n=3$ this is the arcsine density.
+
+The exponential-integrability assumption gives the uniform derivative bound
+\[
+|D'(s)|\le \sqrt K+|s|.
+\]
+On every strict interior interval $|s|\le\rho'<\tau\sqrt{(n-1)/n}$, the density of the spherical coordinate is bounded below. A nonnegative Lipschitz tent argument applied to \eqref{eq:integrated-D} therefore yields
+\begin{equation}\label{eq:pointwise-D}
+\sup_{|s|\le\rho'}D(s)
+\le C\sqrt{\varepsilon}
+\end{equation}
+for small $\varepsilon$, with $C$ depending only on the fixed parameters.
+
+\begin{remark}
+In the tent inversion one must solve in the direction $\eta\ge2m_h I$ (equivalently $y=\eta/(2m_h)$ in the project notation); reversing this inequality gives the wrong pointwise bound.
+\end{remark}

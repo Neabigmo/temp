@@ -1,0 +1,212 @@
+\section{Sharp reflection stability}\label{sec:upper}
+
+Throughout this section let $X'$ be an independent copy of $X$, set
+\[
+Y=X-X',\qquad G\sim\Normal(0,2),
+\]
+and define
+\[
+F(z):=M_Y(z)-e^{z^2},\qquad
+L:=\log(1/\Delta).
+\]
+We prove \cref{thm:sharp-upper} through five lemmas.
+
+\subsection{High-order reflected moment transfer}
+
+\begin{lemma}[Local defect to high-order moments]\label{lem:moment-transfer}
+Fix $\rho,\tau,K$. For every $A>0$ there is $c_0=c_0(A,\rho,\tau,K)>0$ such that, with
+\[
+m=\left\lfloor c_0\frac{L}{\log L}\right\rfloor,
+\]
+all sufficiently small $\Delta$ satisfy
+\[
+\left|\E Y^k-\E G^k\right|
+\le e^{-A m\log m},
+\qquad 0\le k\le2m.
+\]
+In particular,
+\[
+\E|Y|^{2m}\le (C m)^m.
+\]
+\end{lemma}
+
+\begin{proof}[Proof skeleton]
+Choose a fixed $0<\rho_0<\min\{\rho,\tau\}$ and a Bernstein ellipse $\mathcal E$ around $[-\rho_0,\rho_0]$ contained in the exponential-moment strip. The defect assumption gives
+\[
+\sup_{|s|\le\rho_0}|F(s)|\le C\Delta,
+\]
+while exponential integrability gives $\sup_{z\in\mathcal E}|F(z)|\le C$.
+After scaling to $[-1,1]$, the Chebyshev coefficients $a_j$ therefore satisfy both
+\[
+|a_j|\le C\Delta,
+\qquad
+|a_j|\le C\lambda^{-j}
+\]
+for a fixed $\lambda>1$. Splitting the differentiated Chebyshev series at $J\asymp L$ and using
+\[
+\|T_j^{(k)}\|_{[-1,1]}\le j^{2k}
+\]
+gives
+\[
+|F^{(k)}(0)|
+\le C\rho_0^{-k}\Delta L^{2k+1},
+\qquad k=o(L).
+\]
+For $k\le2m$ and $m=c_0L/\log L$, the logarithm of the right-hand side is
+\[
+-L+4c_0L+o(L).
+\]
+Taking $c_0$ sufficiently small in terms of the prescribed $A$ yields the stated $e^{-A m\log m}$ bound. Since $F^{(k)}(0)=\E Y^k-\E G^k$, the moment conclusion follows. The $2m$-th moment bound uses
+\[
+\E G^{2m}=\frac{(2m)!}{m!}\le(Cm)^m.
+\]
+\end{proof}
+
+\subsection{Tail lifting and bounded truncation}
+
+\begin{lemma}[Square-root tail lifting]\label{lem:tail-lift}
+There are constants $C,c>0$ with the following property. For every sufficiently large fixed $B$, if $N=B\sqrt m$, then
+\[
+\Pp(|X|>N)\le C e^{-\beta_Bm},
+\]
+where $\beta_B\to\infty$ as $B\to\infty$.
+If $X_N$ denotes the conditional law $X\mid\{|X|\le N\}$, then
+\[
+d_{\rm TV}(X,X_N)\le C e^{-\beta_Bm}.
+\]
+Moreover
+\[
+|\E X_N|+|\operatorname{Var}(X_N)-1|
+\le C(1+N^2)e^{-cN}.
+\]
+\end{lemma}
+
+\begin{proof}[Proof skeleton]
+Let $a$ be a median of $X$. Since $\E X^2=1$, $|a|\le\sqrt2$. The safe symmetrization estimate is
+\[
+\Pp(|X-a|>x)\le4\Pp(|X-X'|>x).
+\]
+Combine this with Markov's inequality and \cref{lem:moment-transfer}. The conditional-law total-variation estimate is immediate. The mean and variance shifts are controlled separately from the original exponential moment, which gives exponentially small first and second tail moments at radius $N$.
+\end{proof}
+
+\subsection{A growing real Gaussian-product window}
+
+\begin{lemma}[Real-axis product approximation]\label{lem:real-window}
+For $B$ fixed sufficiently large, there is $a_0=a_0(B,\rho,\tau,K)>0$ such that, with
+\[
+R=a_0\sqrt m
+\]
+and $f_N$ the characteristic function of $X_N$,
+\[
+\sup_{|t|\le2R}
+\left|f_N(t)f_N(-t)-e^{-t^2}\right|
+\le e^{-\gamma_1m}
+\]
+for some $\gamma_1>0$.
+\end{lemma}
+
+\begin{proof}[Proof skeleton]
+Use the $2m-1$ Taylor polynomial of $\phi_Y(t)$ and the real-variable remainder
+\[
+\left|e^{iu}-\sum_{k=0}^{2m-1}\frac{(iu)^k}{k!}\right|
+\le\frac{|u|^{2m}}{(2m)!}.
+\]
+The high-order moment mismatch from \cref{lem:moment-transfer} is negligible on $|t|\le2R$, while
+\[
+\frac{|t|^{2m}\E|Y|^{2m}}{(2m)!}
+\le (C a_0^2)^m.
+\]
+Choose $a_0$ small. Finally transfer from $X$ to $X_N$ using \cref{lem:tail-lift}.
+\end{proof}
+
+\subsection{Complex propagation and a zero-free factor disk}
+
+\begin{lemma}[Growing zero-free disk]\label{lem:zero-free}
+The constants $B$ and $a_0$ can be chosen so that, for $R=a_0\sqrt m$,
+\[
+f_N(z)\ne0,\qquad |z|\le R.
+\]
+More precisely, for some $\gamma_2>a_0^2$,
+\[
+\sup_{|z|\le R}
+\left|f_N(z)f_N(-z)-e^{-z^2}\right|
+\le e^{-\gamma_2m}.
+\]
+\end{lemma}
+
+\begin{proof}[Proof skeleton]
+Since $|X_N|\le N$, $f_N$ is entire and
+\[
+|f_N(z)|\le e^{N|\Im z|}.
+\]
+Hence, for
+\[
+\mathcal F_N(z):=f_N(z)f_N(-z)-e^{-z^2},
+\]
+one has
+\[
+\log|\mathcal F_N(z)|\le C(NR+R^2)\le C(Ba_0+a_0^2)m,
+\qquad |z|\le2R.
+\]
+On the real diameter, \cref{lem:real-window} gives $\log|\mathcal F_N|\le-\gamma_1m$. Apply the two-constants theorem separately in the upper and lower half-disks of radius $2R$. The harmonic measure of the diameter is uniformly bounded below on the concentric half-disk of radius $R$. Choose first $B$ large and then $a_0$ sufficiently small so that the propagated exponent $\gamma_2$ is positive and satisfies $\gamma_2>a_0^2$. Since
+\[
+\inf_{|z|\le R}|e^{-z^2}|\ge e^{-R^2}=e^{-a_0^2m},
+\]
+relative closeness implies $f_N(z)f_N(-z)\ne0$, hence $f_N(z)\ne0$ on the disk.
+\end{proof}
+
+\subsection{Logarithmic Gaussianization and Esseen smoothing}
+
+\begin{lemma}[Zero-free factor to Kolmogorov distance]\label{lem:factor-gaussian}
+Under the conclusions of \cref{lem:zero-free},
+\[
+\dK(X_N,\Normal(\mu_N,\sigma_N^2))\le \frac{C}{R},
+\]
+where $\mu_N=\E X_N$ and $\sigma_N^2=\operatorname{Var}(X_N)$.
+Consequently
+\[
+\dK(X,\Normal(0,1))\le \frac{C}{\sqrt m}.
+\]
+\end{lemma}
+
+\begin{proof}[Proof skeleton]
+On $|z|<R$ choose the analytic logarithm
+\[
+\psi_N(z)=\log f_N(z),\qquad \psi_N(0)=0.
+\]
+The bounded support gives
+\[
+\Re\psi_N(z)=\log|f_N(z)|\le NR.
+\]
+Carath\'eodory's coefficient inequality therefore yields, writing $\psi_N(z)=\sum_{k\ge1}a_kz^k$,
+\[
+|a_k|\le2NR^{1-k}.
+\]
+Since $a_1=i\mu_N$ and $a_2=-\sigma_N^2/2$, for every fixed $0<\theta<1$,
+\[
+\psi_N(t)
+=i\mu_Nt-\frac{\sigma_N^2t^2}{2}
++O\left(\frac{|t|^3}{R}\right),
+\qquad |t|\le\theta R,
+\]
+because $N/R=B/a_0$ is fixed. By \cref{lem:tail-lift}, $\mu_N=o(R^{-1})$ and $\sigma_N^2=1+o(R^{-1})$. Taking $\theta$ sufficiently small gives Gaussian damping, and hence
+\[
+\left|f_N(t)-e^{i\mu_Nt-\sigma_N^2t^2/2}\right|
+\le C\frac{|t|^3}{R}e^{-ct^2}.
+\]
+Esseen smoothing with cutoff $T=\theta R$ gives $C/R$. Add the truncation and parameter-shift errors.
+\end{proof}
+
+\begin{proof}[Proof of \cref{thm:sharp-upper}]
+Apply \cref{lem:moment-transfer,lem:tail-lift,lem:real-window,lem:zero-free,lem:factor-gaussian}. Since
+\[
+m\asymp\frac{L}{\log L},\qquad L=\log(1/\Delta),
+\]
+we have
+\[
+\frac1{\sqrt m}
+\asymp
+\sqrt{\frac{\log L}{L}},
+\]
+which is the claimed rate.
+\end{proof}

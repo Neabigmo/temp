@@ -1,0 +1,26 @@
+\section{Exact rigidity for PSD quadratic forms}\label{sec:exact}
+
+This section proves \cref{thm:exact-psd}. We record the proof in a form that separates the geometric identity from the one-dimensional Cram\'er step.
+
+Let $A=B^{\mathsf T}B$, with $B\in\R^{r\times d}$ of rank $r$, and write $b_i$ for the $i$th column of $B$. The chi-square identity implies the exact spherical transform identity obtained by averaging the Laplace transform of $BX$ over $S^{r-1}$. For a sufficiently small scalar parameter $t$, introduce the Gaussian-normalized log-MGF defect
+\[
+H_t(v)
+:=\sum_{i=1}^d
+\left[\log M_i(t\langle b_i,v\rangle)
+-\frac{\sigma_i^2t^2\langle b_i,v\rangle^2}{2}\right].
+\]
+The spherical identity and Jensen yield
+\[
+\E_{V\sim\mathrm{Unif}(S^{r-1})} H_t(V)\le0.
+\]
+Coordinatewise symmetrized-MGF dominance, combined with the trace/variance normalization forced by $X^{\mathsf T}AX\sim\chi_r^2$, yields the reverse inequality. Hence the spherical mean vanishes. Equality in the nonnegative symmetrized defect then implies, for every active $i$ and all small $s$,
+\[
+M_i(s)M_i(-s)=e^{\sigma_i^2s^2}.
+\]
+Thus $X_i-X_i'$ is Gaussian. L\'evy--Cram\'er gives $X_i$ Gaussian.
+
+\begin{remark}
+When $r=1$, the sphere consists only of two points. No continuous support argument is needed: varying the scalar parameter $t$ in a neighborhood of zero still produces a full interval of arguments for each active coordinate.
+\end{remark}
+
+\auditgate{For the submission version, insert the exact spherical transform identity and the trace normalization as displayed equations. These were established in the project handoff but should be copied from the original proof record rather than reconstructed imprecisely.}
