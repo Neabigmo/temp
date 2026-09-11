@@ -1,15 +1,53 @@
 \section{Parameter selection for the sharp upper bound}\label{app:parameters}
 
-This appendix records a non-circular order of choices for the five-step proof. Fix $(\rho,\tau,K)$ and an interior analytic radius. Let $\omega_0>0$ be the lower bound for the harmonic measure of the real diameter in the smaller half-disk used in the propagation step, and let $C_G$ be the corresponding complex-growth constant. Choose $A>8$ and then choose $c_0>0$ so small that
+This appendix records a non-circular order of choices for the five-step proof. Fix $(\rho,\tau,K)$ and an interior analytic radius. Let $\omega_0>0$ denote the lower bound for the harmonic measure of the real diameter in the smaller half-disk used in the propagation step, and let $C_G$ be the corresponding complex-growth constant.
+
+Choose first $A>8$, and then choose $c_0>0$ so small that
 \[
 (A+3)c_0<\omega_0.
 \]
-With $m=\lfloor c_0L/\log L\rfloor$, this makes the fixed-disk Cauchy estimate dominate all factorial losses in the moment-transfer lemma.
-
-Next choose the truncation factor $B$ sufficiently large that the square-root tail estimate has exponent $\beta_B>4$. After $B$ is fixed, choose $a_0>0$ so small that the real Taylor remainder obeys $C_Ta_0^2<e^{-4}$ and, with $\gamma_1=-\log(C_Ta_0^2)$,
+With
 \[
-C_G(Ba_0+a_0^2)<\frac{\omega_0\gamma_1}{2},
-\qquad
-\gamma_2:=\omega_0\gamma_1-C_G(Ba_0+a_0^2)>a_0^2.
+m=\left\lfloor c_0\frac{L}{\log L}\right\rfloor,
+\qquad L=\log(1/\Delta),
 \]
-Such an $a_0$ exists because the left-hand growth term tends to zero while $\gamma_1$ tends to infinity as $a_0\downarrow0$. Finally choose the fixed Esseen fraction $0<\theta<1/4$ so that the cubic remainder in the logarithmic expansion is at most one quarter of the Gaussian quadratic damping on $|t|\le\theta R$. All constants then depend only on the fixed model parameters and not on $\Delta$ or $m$.
+this makes the fixed-disk Cauchy estimate dominate all factorial losses in the moment-transfer lemma.
+
+Next fix a finite target exponent $\Gamma>4$. Choose the truncation factor $B$ sufficiently large that the tail estimate in Lemma~\ref{lem:tail-lift} has exponent
+\[
+\beta_B>4\Gamma.
+\]
+After $B$ is fixed, choose $a_0>0$ so small that the Taylor remainder in Lemma~\ref{lem:real-window} satisfies
+\[
+-\log(C_Ta_0^2)>4\Gamma,
+\]
+and, simultaneously,
+\[
+4(1-\omega_0)(Ba_0+a_0^2)<\frac{\omega_0\Gamma}{2},
+\qquad
+a_0^2<\frac{\omega_0\Gamma}{4}.
+\]
+The moment mismatch is already smaller than $e^{-\Gamma m}$ for all sufficiently small $\Delta$ by the choice of $A$ and $c_0$. Hence the Taylor, moment, and truncation errors in Lemma~\ref{lem:real-window} may all be absorbed into a bound of the form
+\[
+\sup_{|t|\le2R}
+\left|\varphi_N(t)\varphi_N(-t)-e^{-t^2}\right|
+\le e^{-\Gamma m},
+\qquad R=a_0\sqrt m.
+\]
+Applying the two-constants estimate in Lemma~\ref{lem:zero-free} then gives, after increasing the lower threshold on $m$ if necessary,
+\[
+\sup_{|z|\le R}
+\left|\varphi_N(z)\varphi_N(-z)-e^{-z^2}\right|
+\le e^{-\gamma_2m}
+\]
+with
+\[
+\gamma_2\ge\frac{\omega_0\Gamma}{2}>a_0^2.
+\]
+Finally choose the fixed Esseen fraction $0<\theta<1/4$ so that the cubic remainder in the logarithmic expansion is at most one quarter of the Gaussian quadratic damping on $|t|\le\theta R$.
+
+Thus the choices are made in the order
+\[
+A\longrightarrow c_0\longrightarrow\Gamma\longrightarrow B\longrightarrow a_0\longrightarrow\theta,
+\]
+and no later choice affects an earlier inequality. All constants depend only on the fixed model parameters and not on $\Delta$ or $m$.
