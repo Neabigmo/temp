@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.5.28)  11 SEP 2026 17:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.5.28)  11 SEP 2026 18:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -377,6 +377,16 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip63
 )
+(d:/texlive/2025/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip64
+\bibsep=\skip65
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count315
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 9.
+\c@theorem=\count316
+
 (d:/texlive/2025/texmf-dist/tex/latex/cleveref/cleveref.sty
 Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
 Package cleveref Info: `hyperref' support loaded on input line 2370.
@@ -392,42 +402,31 @@ LaTeX Info: Redefining \labelcref on input line 2370.
 LaTeX Info: Redefining \labelcpageref on input line 2370.
 Package cleveref Info: `amsthm' support loaded on input line 3026.
 )
-(d:/texlive/2025/texmf-dist/tex/latex/natbib/natbib.sty
-Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip64
-\bibsep=\skip65
-LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count315
-)
-Package hyperref Info: Option `colorlinks' set `true' on input line 10.
-\c@theorem=\count316
-
 (d:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-04-14 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count317
 )
-(G:\2026\8.22统计\.tmp_mgf_qs_revision_qa2_35f17c02b5524741901289682bf68c7a/m
-ain_portable.aux)
+(./main_portable.aux)
 \openout1 = `main_portable.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -480,20 +479,20 @@ Package graphics Info: Driver file: pdftex.def on input line 106.
 \Gin@req@height=\dimen180
 \Gin@req@width=\dimen181
 )
-LaTeX Info: Redefining \microtypecontext on input line 24.
-Package microtype Info: Applying patch `item' on input line 24.
-Package microtype Info: Applying patch `toc' on input line 24.
-Package microtype Info: Applying patch `eqnum' on input line 24.
-Package microtype Info: Applying patch `footnote' on input line 24.
-Package microtype Info: Applying patch `verbatim' on input line 24.
-LaTeX Info: Redefining \microtypesetup on input line 24.
+LaTeX Info: Redefining \microtypecontext on input line 34.
+Package microtype Info: Applying patch `item' on input line 34.
+Package microtype Info: Applying patch `toc' on input line 34.
+Package microtype Info: Applying patch `eqnum' on input line 34.
+Package microtype Info: Applying patch `footnote' on input line 34.
+Package microtype Info: Applying patch `verbatim' on input line 34.
+LaTeX Info: Redefining \microtypesetup on input line 34.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 24.
+LaTeX Info: Redefining \showhyphens on input line 34.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -524,17 +523,14 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 24.
+Package hyperref Info: Link coloring ON on input line 34.
 
-(G:\2026\8.22统计\.tmp_mgf_qs_revision_qa2_35f17c02b5524741901289682bf68c7a/m
-ain_portable.out)
-(G:\2026\8.22统计\.tmp_mgf_qs_revision_qa2_35f17c02b5524741901289682bf68c7a/m
-ain_portable.out)
+(./main_portable.out) (./main_portable.out)
 \@outlinefile=\write3
 \openout3 = `main_portable.out'.
 
- (./paper_body.tex
-LaTeX Font Info:    Trying to load font information for U+msa on input line 8.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 36.
+
 
 (d:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -542,7 +538,8 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (d:/texlive/2025/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 8.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
+
 
 (d:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -550,32 +547,37 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (d:/texlive/2025/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmtt' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ (./abstract.tex)
+(./paper_body.tex (./sections/introduction.tex
 
 [1
 
-{d:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./sections/introduction.tex
+{d:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
+(./sections/main_results.tex
 
-[2]) (./sections/main_results.tex
+[2]
 LaTeX Font Info:    Trying to load font information for U+euf on input line 20.
 
-
-(d:/texlive/2025/texmf-dist/tex/latex/amsfonts/ueuf.fd
+ (d:/texlive/2025/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
 (d:/texlive/2025/texmf-dist/tex/latex/microtype/mt-euf.cfg
 File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
 
 )
-
-[3]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
 
-[4]) (./sections/exact_rigidity.tex
+[3]) (./sections/exact_rigidity.tex
+
+[4]
 
 [5]) (./sections/sharp_upper.tex
 
@@ -591,15 +593,16 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 [11]) (./sections/sample_variance.tex
 
-[12]) (./sections/discussion.tex) (./appendices/parameter_selection.tex
+[12]) (./sections/discussion.tex)
 
-[13]) (./appendices/laguerre_details.tex)) (./references_manual.tex
+[13] (./appendices/parameter_selection.tex) (./appendices/laguerre_details.tex)
+) (./references_manual.tex
 
-[14])
+[14
 
-[15]
-(G:\2026\8.22统计\.tmp_mgf_qs_revision_qa2_35f17c02b5524741901289682bf68c7a/m
-ain_portable.aux)
+])
+
+[15] (./main_portable.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-04-29>
@@ -608,13 +611,13 @@ Package rerunfilecheck Info: File `main_portable.out' has not changed.
 (rerunfilecheck)             Checksum: CFDBD5AAADEF19940AB9464BF942A41E;4196.
  ) 
 Here is how much of TeX's memory you used:
- 16252 strings out of 469590
- 265125 string characters out of 5474519
- 714210 words of memory out of 5000000
- 42605 multiletter control sequences out of 15000+600000
- 649935 words of font info for 201 fonts, out of 8000000 for 9000
+ 16287 strings out of 469590
+ 264889 string characters out of 5474519
+ 721276 words of memory out of 5000000
+ 42629 multiletter control sequences out of 15000+600000
+ 650867 words of font info for 207 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,79p,1010b,583s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,15n,79p,1010b,601s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <d:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><d:/tex
 live/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/texlive/2025
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/texlive/2025/texmf-di
@@ -633,13 +636,13 @@ b><d:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><d:/texl
 ive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><d:/texlive/2025/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/texlive/2025/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmti10.pfb><d:/texlive/2025/texmf-dist/fonts/typ
-e1/public/amsfonts/euler/eufm10.pfb><d:/texlive/2025/texmf-dist/fonts/type1/pub
-lic/amsfonts/symbols/msbm10.pfb>
-Output written on G:\2026\8.22统计\.tmp_mgf_qs_revision_qa2_35f17c02b55247419
-01289682bf68c7a/main_portable.pdf (15 pages, 328793 bytes).
+e1/public/amsfonts/cm/cmtt10.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public
+/amsfonts/euler/eufm10.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/amsfo
+nts/symbols/msbm10.pfb>
+Output written on main_portable.pdf (15 pages, 344718 bytes).
 PDF statistics:
- 353 PDF objects out of 1000 (max. 8388607)
- 289 compressed objects within 3 object streams
- 71 named destinations out of 1000 (max. 500000)
- 43145 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 366 PDF objects out of 1000 (max. 8388607)
+ 300 compressed objects within 3 object streams
+ 73 named destinations out of 1000 (max. 500000)
+ 45705 words of extra memory for PDF output out of 51595 (max. 10000000)
 

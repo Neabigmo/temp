@@ -29,7 +29,7 @@ Let $X$ be centered with variance $\sigma^2$ and with an MGF in a neighborhood o
 \[
 M_X(s)M_X(-s)\ge e^{\sigma^2s^2}
 \]
-throughout its MGF domain. The converse is false, and symmetry alone does not imply this inequality.
+for every $s$ such that both $M_X(s)$ and $M_X(-s)$ are finite. The converse is false, and symmetry alone does not imply this inequality.
 \end{proposition}
 
 \begin{proof}
@@ -38,7 +38,7 @@ For an infinitely divisible law with finite variance, the L\'evy--Khintchine rep
 \log M_X(s)+\log M_X(-s)-\sigma^2s^2
  =2\int\left(\cosh(sx)-1-\frac{s^2x^2}{2}\right)\nu(dx)\ge0,
 \]
-because $\cosh u-1\ge u^2/2$. For the converse, let $X$ take the values $3$ and $-1/3$ with probabilities $1/10$ and $9/10$, respectively. It is centered and has variance one, but it is not infinitely divisible because a non-degenerate infinitely divisible law cannot have bounded support. Its fourth cumulant is $46/9$, so analyticity at the origin gives
+because $\cosh u-1\ge u^2/2$. For the converse, let $X$ take the values $3$ and $-1/3$ with probabilities $1/10$ and $9/10$, respectively. It is centered and has variance one. It is not infinitely divisible: if a bounded non-degenerate law of support diameter $d$ were an $n$-fold convolution of an i.i.d. root, that root would have support diameter at most $d/n$, and Popoviciu's inequality would give $\operatorname{Var}(X)/n\le d^2/(4n^2)$, which is impossible for large $n$. Its fourth cumulant is $46/9$, so analyticity at the origin gives
 \[
 R_X(s)=\frac{23}{54}s^4+O(s^6).
 \]

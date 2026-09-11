@@ -5,7 +5,6 @@
 \usepackage{enumitem}
 \usepackage{xcolor}
 \usepackage{hyperref}
-\usepackage{cleveref}
 \usepackage[numbers,sort&compress]{natbib}
 \hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
 \newtheorem{theorem}{Theorem}[section]
@@ -14,6 +13,12 @@
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{definition}[theorem]{Definition}
+\usepackage{cleveref}
+\crefname{theorem}{Theorem}{Theorems}
+\crefname{lemma}{Lemma}{Lemmas}
+\crefname{proposition}{Proposition}{Propositions}
+\crefname{corollary}{Corollary}{Corollaries}
+\crefname{definition}{Definition}{Definitions}
 \newcommand{\E}{\mathbb E}
 \newcommand{\Pp}{\mathbb P}
 \newcommand{\R}{\mathbb R}
@@ -21,7 +26,16 @@
 \newcommand{\Normal}{\mathcal N}
 \newcommand{\dK}{d_{\mathrm K}}
 \newcommand{\DeltaR}{\Delta_\rho}
+\title{Symmetrized-MGF Gaussian Rigidity: Chi-Square Quadratic Forms and Sharp Reflection Stability}
+\author{Author Name(s)\\[2pt]
+  \small Institution Name\\[-1pt]
+  \small \texttt{author@example.com}}
+\date{}
 \begin{document}
+\maketitle
+\begin{abstract}
+\input{abstract}
+\end{abstract}
 \input{paper_body}
 \input{references_manual}
 \end{document}

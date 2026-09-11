@@ -4,15 +4,16 @@ This package is the reviewer-aligned 2026-09-11 revision of the MGF-QS/PTRF draf
 
 ## Entry points
 
-- `main_ptrf.tex` — intended PTRF/Springer Nature entry point. Copy the folder contents into the official Springer Nature LaTeX template package containing `sn-jnl.cls`.
+- `main_ptrf.tex` — PTRF/Springer Nature entry point. Copy the folder contents into the official Springer Nature LaTeX template package containing `sn-jnl.cls`; the local smoke compile used the December 2024 template package.
 - `main_portable.tex` — locally compilable article-class version used for QA.
-- `paper_body.tex` — shared title, abstract, and section inputs.
+- `abstract.tex` — shared abstract text used by both entry points.
+- `paper_body.tex` — shared section and appendix inputs; front matter is kept in each entry point.
 - `NOVELTY_AUDIT.md` — literature boundary and claims discipline.
 - `SUBMISSION_STRATEGY.md` — PTRF-first journal strategy.
 
 ## Revision status
 
-The manuscript now has a single reflected-defect notation, an exact spherical-transform identity, a full exact PSD proof, a precise spherical Laplace discrepancy, a complete Laguerre construction section, and an explicit non-circular parameter appendix. Inline `\\auditgate` and “schematic statement” markers have been removed from the LaTeX manuscript. The research status remains conservative: final external bibliographic checking and independent referee-level verification are still separate from this local revision.
+The manuscript now has a single reflected-defect notation, an exact spherical-transform identity, a full exact PSD proof, a precise spherical Laplace discrepancy, a complete Laguerre construction section, and an explicit non-circular parameter appendix. The portable front matter now places the title before the abstract, and the PTRF entry point keeps Springer front matter separate from the shared body. The actual December 2024 `sn-jnl.cls` template smoke compile is clean. Author name, affiliation, and email remain explicit placeholders and must be replaced before submission; independent referee-level verification remains separate from this local revision.
 
 The main narrative is Introduction → symmetrized-MGF class and results → exact rigidity → sharp reflection stability → optimality/obstructions → sample-variance application → discussion. The high-frequency sine family is not part of the main text.
 

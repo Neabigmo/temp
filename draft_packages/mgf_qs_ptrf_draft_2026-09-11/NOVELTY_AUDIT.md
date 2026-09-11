@@ -45,7 +45,7 @@ After the present bibliographic additions and local construction rewrite, the In
 1. *We prove an exact Gaussian rigidity theorem under a local symmetrized-MGF dominance condition.*
 2. *We establish a quantitative reflection-stability bound with order `sqrt(log log(1/Delta) / log(1/Delta))`.*
 3. *The proof derives a growing zero-free disk for a truncated factor from real-axis reflected MGF information, rather than assuming a zero-free region.*
-4. *A Laguerre construction supplies the matching lower-order mechanism within the stated fixed-parameter class.*
+4. *A Laguerre construction supplies a sequence-wise lower-order obstruction, showing that the rate cannot be improved uniformly in general.*
 
 Avoid “first”, “new optimal theorem”, or “resolves the classical sample-variance problem” until a final MathSciNet/zbMATH/Google Scholar forward-and-backward citation audit is complete.
 

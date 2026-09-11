@@ -40,8 +40,16 @@ L_h:=\frac{K}{e\tau}+\rho'+h,
 \]
 because $M_X(s)\ge1$ and $|x|e^{\tau|x|}\le(e\tau)^{-1}e^{2\tau|x|}$. If $M_*:=\sup_{|s|\le\rho'}D_X(s)$, two disjoint Lipschitz tents centered at the points where the maximum is attained give
 \[
-2m_h\min\left(\frac{M_*^2}{L_h},\,2hM_*-L_hh^2\right)
-\le \frac1n\log\bigl(1+\mathfrak D_{n-1,\tau}(Q_n)\bigr).
+2m_h I_{L_h,h}(M_*)
+ \le \frac1n\log\bigl(1+\mathfrak D_{n-1,\tau}(Q_n)\bigr).
+ \]
+Here the tent area is the nonnegative piecewise function
+\[
+I_{L,h}(M):=
+\begin{cases}
+M^2/L,& M\le Lh,\\
+2hM-Lh^2,& M>Lh.
+\end{cases}
 \]
 Writing $G(y;L,h)=\sqrt{Ly}$ when $y\le Lh^2$ and $G(y;L,h)=y/(2h)+Lh/2$ otherwise, we obtain
 \begin{equation}\label{eq:pointwise-D}

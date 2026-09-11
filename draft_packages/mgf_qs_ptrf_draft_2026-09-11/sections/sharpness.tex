@@ -2,28 +2,15 @@
 
 \subsection{A Laguerre lower-bound family}
 
-We give the lower-bound construction in full because it identifies the scale in Theorem~\ref{thm:sharp-upper}. The only external input is the four-region Laguerre estimate in Proposition~3.2 of Imekraz, Robert and Thomann \cite{ImekrazRobertThomann2016}. In their normalization,
-\[
-\mathcal L_m^{(\alpha)}(r)
- =\sqrt{\frac{m!}{\Gamma(m+\alpha+1)}}e^{-r/2}r^{\alpha/2}L_m^{(\alpha)}(r),
-\qquad \nu=4m+2\alpha+2.
-\]
-For $\alpha=1/2$, the four bounds on $[0,1/\nu]$, $[1/\nu,\nu/2]$, $[\nu/2,3\nu/2]$, and $[3\nu/2,\infty)$ imply, after multiplication by the gamma ratio, that
-\[
-Q_m(r):=\sqrt r\,e^{-r/2}|L_m^{(1/2)}(r)|
-\le C\quad (r\le\nu/2),
-\qquad
-Q_m(r)\le C\nu^{1/6}\quad (r\ge\nu/2).
-\]
-The second bound is only polynomially growing in the turning region, but the extra exponential factor below removes it. Since $r=3x^2/2$,
-\[
-\left|x e^{-x^2}L_m^{(1/2)}(3x^2/2)\right|
- =\sqrt{\frac23}\,Q_m(r)e^{-r/6}.
-\]
-The first region is uniformly bounded, and the second region is bounded by $C\nu^{1/6}e^{-\nu/12}$; the outer exponential estimate is smaller still. The finitely many low values of $m$ are absorbed into the constant. Hence
+We give the lower-bound construction in full because it identifies the scale in Theorem~\ref{thm:sharp-upper}. The only analytic input needed for the probability construction is the following uniform Laguerre envelope; its normalization and four-region proof are recorded in Appendix~\ref{app:laguerre}.
+\begin{lemma}[Uniform Laguerre envelope]\label{lem:laguerre-envelope}
 \begin{equation}\label{eq:CL}
 C_L:=\sup_{m\ge1,\,x\in\R}\left|x e^{-x^2}L_m^{(1/2)}(3x^2/2)\right|<\infty.
 \end{equation}
+\end{lemma}
+\begin{proof}
+The four-region estimate and the conversion from the normalized Laguerre function are given in Appendix~\ref{app:laguerre}.
+\end{proof}
 
 Fix $0<\epsilon<1/4$, let $\phi$ be the standard Gaussian density, and define
 \[

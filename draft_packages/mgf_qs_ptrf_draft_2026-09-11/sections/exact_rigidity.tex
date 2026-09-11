@@ -48,7 +48,7 @@ For an active coordinate, $A_{ii}=\|b_i\|^2>0$. If $r\ge2$, the random variable 
 \[
 M_i(s)M_i(-s)=e^{\sigma_i^2s^2}
 \]
-near the origin. If $X_i'$ is an independent copy, then $X_i-X_i'$ has the MGF of $\Normal(0,2\sigma_i^2)$ near zero and hence has that Gaussian law. The L\'evy--Cr\'amer decomposition theorem applied to the independent sum $X_i+(-X_i')$ implies that $X_i$ is Gaussian, including the degenerate case $\sigma_i^2=0$.
+near the origin. If $\sigma_i^2=0$, then $X_i=0$ almost surely. If $\sigma_i^2>0$, an independent copy $X_i'$ gives that $X_i-X_i'$ has the MGF of $\Normal(0,2\sigma_i^2)$ near zero and hence has that Gaussian law. The L\'evy--Cr\'amer decomposition theorem applied to the independent sum $X_i+(-X_i')$ then implies that $X_i$ is Gaussian.
 
 This proves Theorem~\ref{thm:exact-psd}. For Corollary~\ref{cor:exact-sample-var}, take
 \[

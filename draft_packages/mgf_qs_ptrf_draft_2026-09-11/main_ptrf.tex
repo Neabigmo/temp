@@ -2,8 +2,9 @@
 % Place this file inside the official Springer Nature LaTeX template package.
 % Official package: https://www.springernature.com/gp/authors/campaigns/latex-author-support/see-where-our-services-will-take-you/18782940
 \documentclass[pdflatex,sn-mathphys-num]{sn-jnl}
-\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
 \usepackage{microtype}
+\usepackage{hyperref}
 \newcommand{\E}{\mathbb E}
 \newcommand{\Pp}{\mathbb P}
 \newcommand{\R}{\mathbb R}
@@ -11,7 +12,31 @@
 \newcommand{\Normal}{\mathcal N}
 \newcommand{\dK}{d_{\mathrm K}}
 \newcommand{\DeltaR}{\Delta_\rho}
+\theoremstyle{thmstyleone}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\usepackage{cleveref}
+\crefname{theorem}{Theorem}{Theorems}
+\crefname{lemma}{Lemma}{Lemmas}
+\crefname{proposition}{Proposition}{Propositions}
+\crefname{corollary}{Corollary}{Corollaries}
+\crefname{definition}{Definition}{Definitions}
+\raggedbottom
 \begin{document}
+\raggedbottom
+\vbadness=10000
+\title[Symmetrized-MGF Gaussian Rigidity]{Symmetrized-MGF Gaussian Rigidity: Chi-Square Quadratic Forms and Sharp Reflection Stability}
+\author*[1]{\fnm{Author} \sur{Name}}\email{author@example.com}
+\affil*[1]{\orgdiv{Department of Mathematics}, \orgname{Institution Name}, \orgaddress{\city{City}, \country{Country}}}
+\abstract{\input{abstract}}
+\keywords{Gaussian characterization; symmetrized moment generating function; chi-square quadratic forms; sample variance; Cram\'er stability}
+\pacs[MSC Classification]{60E05, 60E10, 62E10}
 \input{paper_body}
 \bibliography{references}
 \end{document}

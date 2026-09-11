@@ -1,15 +1,15 @@
 \section{Parameter selection for the sharp upper bound}\label{app:parameters}
 
-This appendix records a non-circular order of choices for the five-step proof. Fix $(\rho,\tau,K)$ and an interior analytic radius. Let $\omega_*>0$ be the lower bound for the harmonic measure of the real diameter in the smaller half-disk used in the propagation step, and let $C_G$ be the corresponding complex-growth constant. Choose $A>8$ and then choose $c_0>0$ so small that
+This appendix records a non-circular order of choices for the five-step proof. Fix $(\rho,\tau,K)$ and an interior analytic radius. Let $\omega_0>0$ be the lower bound for the harmonic measure of the real diameter in the smaller half-disk used in the propagation step, and let $C_G$ be the corresponding complex-growth constant. Choose $A>8$ and then choose $c_0>0$ so small that
 \[
-(A+4)c_0<\frac{\omega_*}{4}.
+(A+3)c_0<\omega_0.
 \]
 With $m=\lfloor c_0L/\log L\rfloor$, this makes the fixed-disk Cauchy estimate dominate all factorial losses in the moment-transfer lemma.
 
 Next choose the truncation factor $B$ sufficiently large that the square-root tail estimate has exponent $\beta_B>4$. After $B$ is fixed, choose $a_0>0$ so small that the real Taylor remainder obeys $C_Ta_0^2<e^{-4}$ and, with $\gamma_1=-\log(C_Ta_0^2)$,
 \[
-C_G(Ba_0+a_0^2)<\frac{\omega_*\gamma_1}{2},
+C_G(Ba_0+a_0^2)<\frac{\omega_0\gamma_1}{2},
 \qquad
-\gamma_2:=\omega_*\gamma_1-C_G(Ba_0+a_0^2)>a_0^2.
+\gamma_2:=\omega_0\gamma_1-C_G(Ba_0+a_0^2)>a_0^2.
 \]
 Such an $a_0$ exists because the left-hand growth term tends to zero while $\gamma_1$ tends to infinity as $a_0\downarrow0$. Finally choose the fixed Esseen fraction $0<\theta<1/4$ so that the cubic remainder in the logarithmic expansion is at most one quarter of the Gaussian quadratic damping on $|t|\le\theta R$. All constants then depend only on the fixed model parameters and not on $\Delta$ or $m$.
