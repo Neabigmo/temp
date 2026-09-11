@@ -1,6 +1,6 @@
 \section{Introduction and main results}\label{sec:intro}
 
-The exact chi-square law of the sample variance is one of the classical signatures of Gaussian samples. The unrestricted converse for a fixed sample size $n\ge3$ remains a longstanding characterization problem. Existing results impose additional structure, including symmetry or infinite divisibility; see \cite{Ruben1974,Ruben1978,Bondesson1977,GolikovaKruglov2015,Kruglov2013,EjsmontLehner2017}. We do not claim to resolve that unrestricted problem. The sample variance is a chi-square quadratic form, and spherical averaging of its Laplace transform naturally brings in the symmetrized quantity $M_X(s)M_X(-s)$.
+The exact chi-square law of the sample variance is one of the classical signatures of Gaussian samples. The unrestricted converse for a fixed sample size $n\ge3$ remains a longstanding characterization problem. Existing results impose additional structure, including symmetry or infinite divisibility; see \cite{Ruben1974,Ruben1978,Bondesson1977,ChristophProhorovUlyanov2001,Kruglov2013,GolikovaKruglov2015}. We do not address that unrestricted problem. Instead, we isolate a one-dimensional quantity that arises naturally from spherical averaging of chi-square quadratic forms and develop its exact and quantitative rigidity theory.
 
 For a centered variance-one random variable $X$, let $M_X(s)=\E e^{sX}$ whenever finite and define
 \begin{equation}\label{eq:defect-intro}
@@ -8,15 +8,20 @@ R_X(s):=\log M_X(s)+\log M_X(-s)-s^2,
 \qquad
 \Delta_\rho(X):=\sup_{|s|\le\rho}|R_X(s)|.
 \end{equation}
-We work under the fixed exponential envelope
+For random variables $U,V$, we write
+\[
+d_{\mathrm K}(U,V):=\sup_{x\in\R}\bigl|\Pp(U\le x)-\Pp(V\le x)\bigr|.
+\]
+The quantitative results are proved under the fixed exponential envelope
 \begin{equation}\label{eq:EI-intro}
 \E e^{2\tau|X|}\le K.
 \end{equation}
-If $X'$ is an independent copy of $X$, then $M_{X-X'}(s)=M_X(s)M_X(-s)$. The difficulty is that reflection removes the Fourier phase. Our stability theorem shows that the factor can nevertheless be recovered, at the optimal logarithmic scale, under \eqref{eq:EI-intro}.
+If $X'$ is an independent copy of $X$, then $M_{X-X'}(s)=M_X(s)M_X(-s)$. Thus $R_X$ measures the local deviation of the reflected convolution from the Gaussian MGF. On the Fourier side the same reflection replaces $\varphi_X^2$ by $|\varphi_X|^2$ and therefore removes the phase. The stability problem is to recover the factor from this phase-blind local information.
 
-The proof uses two scales. A fixed complex neighborhood yields high-order moment information for $X-X'$; after truncation, this produces a Gaussian product approximation on a disk of radius of order $\sqrt m$. Zero-freeness on this disk allows one to take a logarithm and recover the factor. The exact argument is separate and uses Jensen equality for the spherical transform.
+The proof of the quantitative theorem uses two scales. Control on a fixed complex neighborhood yields high-order moment information for $X-X'$. After truncation, these moments produce a Gaussian product approximation on a disk of radius of order $\sqrt m$; zero-freeness on that disk then permits one to take a logarithm and recover the factor. The exact theorem, by contrast, follows from equality in Jensen's inequality after spherical averaging.
 
 \subsection*{Exact rigidity}
+
 The first result is the positive-semidefinite quadratic-form theorem that motivates the reflection condition.
 \begin{theorem}[Exact PSD rigidity]\label{thm:exact-psd}
 Let $X=(X_1,\ldots,X_d)$ have independent coordinates with $\E X_i=0$ and $\operatorname{Var}(X_i)=\sigma_i^2$. Let $A=A^{\mathsf T}\succeq0$ have rank $r\ge1$, and suppose
@@ -27,17 +32,21 @@ For every active coordinate $i$ with $A_{ii}>0$, assume that $M_i(s)=\E e^{sX_i}
 \[
 M_i(s)M_i(-s)\ge e^{\sigma_i^2s^2}
 \]
-there. Then every active $X_i$ is Gaussian, $X_i\sim\Normal(0,\sigma_i^2)$.
+there. Then every active coordinate is Gaussian, $X_i\sim\Normal(0,\sigma_i^2)$, with $\Normal(0,0)$ understood as the degenerate law at zero.
 \end{theorem}
 
-The dominance condition is neither a reformulation of symmetry nor of infinite divisibility. For an infinitely divisible centered law with finite variance, the L\'evy--Khintchine representation gives, for every $s$ such that both $M_X(s)$ and $M_X(-s)$ are finite,
+Characterizations based on quadratic forms have a long history. Ruben and Bondesson studied converse statements for the sample variance, while Christoph, Prohorov and Ulyanov obtained characterization and stability results for finite quadratic forms under symmetry; Kruglov and Golikova--Kruglov developed related Gaussian characterizations under infinite divisibility \cite{Ruben1974,Ruben1978,Bondesson1977,ChristophProhorovUlyanov2001,Kruglov2013,GolikovaKruglov2015}. The condition in Theorem~\ref{thm:exact-psd} is of a different nature. If $X$ is centered, infinitely divisible, and has variance $\sigma^2$, then the L\'evy--Khintchine formula gives, whenever both MGFs are finite,
 \[
 \log M_X(s)+\log M_X(-s)-\sigma^2s^2
  =2\int\left(\cosh(sx)-1-\frac{s^2x^2}{2}\right)\nu(dx)\ge0.
 \]
-The converse fails. If $X$ takes the values $3$ and $-1/3$ with probabilities $1/10$ and $9/10$, then it is centered and has variance one. It is not infinitely divisible: if a bounded non-degenerate law of support diameter $d$ were an $n$-fold convolution of an i.i.d. root, that root would have support diameter at most $d/n$, and Popoviciu's inequality would give $\operatorname{Var}(X)/n\le d^2/(4n^2)$, which is impossible for large $n$. Its fourth cumulant is $46/9$, so $R_X(s)=23s^4/54+O(s^6)$ and the local dominance holds. This example is asymmetric. In contrast, a Rademacher variable $\varepsilon$ satisfies $R_\varepsilon(s)=2\log\cosh s-s^2=-s^4/6+O(s^6)$, which is negative for all sufficiently small nonzero $s$.
+The converse fails. If $X$ takes the values $3$ and $-1/3$ with probabilities $1/10$ and $9/10$, then it is centered, has variance one, is not infinitely divisible, and satisfies $R_X(s)=23s^4/54+O(s^6)$ near the origin. The condition also does not follow from symmetry: for a Rademacher variable $\varepsilon$,
+\[
+R_\varepsilon(s)=2\log\cosh s-s^2=-s^4/6+O(s^6).
+\]
 
 \subsection*{Sharp reflection stability}
+
 The second result recovers a factor from local reflected-MGF information without assuming the dominance sign.
 \begin{theorem}[Sharp reflection stability]\label{thm:sharp-upper}
 Fix $\rho,\tau,K>0$. There exist constants $C<\infty$ and $\Delta_0\in(0,e^{-e})$, depending only on $(\rho,\tau,K)$, such that the following holds. If
@@ -56,9 +65,21 @@ for some $0<\Delta\le\Delta_0$, then
 \]
 \end{theorem}
 
-The order in this theorem cannot be improved uniformly in general. The obstruction is supplied by high-order odd perturbations whose first $m$ odd moments vanish.
+Classical stability in Cram\'er's theorem starts from an approximately Gaussian convolution. In the general two-summand setting, Sapogov's theorem allows the summands to have different distributions and yields a logarithmic modulus in Kolmogorov distance. For the equal-factor convolution $F*F$, Bobkov, Chistyakov and G\"otze obtain a substantially stronger estimate \cite{Sapogov1951,BobkovChistyakovGotze2013}. The reflected problem here is different at the level of the available input: the law of $X-X'$ is $F*\widetilde F$, its characteristic function is $|\varphi_X|^2$, and we assume only local control of its MGF rather than global closeness in a probability metric. Quantitative Marcinkiewicz results recover Gaussian approximation from zero-free regions of characteristic functions \cite{EremenkoFryntov2021,DinhGhoshTranTran2025}. In the present argument zero-freeness is not assumed; a disk whose radius grows as the defect decreases is produced from the local reflected-MGF information.
+
+The order in Theorem~\ref{thm:sharp-upper} cannot be improved uniformly in general. The obstruction is supplied by high-order odd perturbations whose first $m$ odd moments vanish.
 \begin{theorem}[Laguerre lower bound]\label{thm:sharpness}
-There are constants $\rho,\tau,K,c,C>0$ and centered variance-one random variables $W_m$ such that the same uniform exponential-integrability and local dominance assumptions hold, $\Delta_m:=\Delta_\rho(W_m)\downarrow0$, and
+There exist constants $\rho,\tau,K,c>0$ and centered variance-one random variables $W_m$ such that
+\[
+\E e^{2\tau|W_m|}\le K,
+\qquad
+R_{W_m}(s)\ge0\quad (|s|\le\rho).
+\]
+Writing
+\[
+\Delta_m:=\sup_{|s|\le\rho}R_{W_m}(s),
+\]
+one has $\Delta_m\to0$ and
 \[
 \log\frac1{\Delta_m}=2m\log m+O(m),
 \qquad
