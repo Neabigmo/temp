@@ -1,4 +1,4 @@
-\section{Sharp reflection stability}\label{sec:upper}
+\section{Reflection stability}\label{sec:upper}
 
 Throughout this section let $X'$ be an independent copy of $X$, set
 \[
@@ -9,7 +9,26 @@ and define
 F(z):=M_Y(z)-e^{z^2},\qquad
 L:=\log(1/\Delta).
 \]
+For probability measures $\mu$ and $\nu$, write
+\[
+d_{\mathrm{TV}}(\mu,\nu):=\sup_A|\mu(A)-\nu(A)|.
+\]
 We prove \cref{thm:sharp-upper} through five lemmas.
+
+\subsection*{Half-disk two-constants estimate}
+
+Let $D_R^+=\{z\in\C:|z|<R,\ \Im z>0\}$. If $F$ is holomorphic in $D_R^+$ and continuous on its closure, with
+\[
+|F(x)|\le a\quad (|x|\le R),
+\qquad
+|F(z)|\le b\quad (|z|=R,\ \Im z\ge0),
+\]
+where $0<a\le b$, then for every fixed $0<\eta<1$ there is $\omega_\eta>0$, depending only on $\eta$, such that
+\[
+\log|F(z)|\le \omega_\eta\log a+(1-\omega_\eta)\log b,
+\qquad |z|\le\eta R,\quad \Im z\ge0.
+\]
+Indeed, apply the two-constants theorem to the subharmonic function $\log(|F|+\delta)$ and let $\delta\downarrow0$; the harmonic measure of the diameter is bounded below by $\omega_\eta$ on the inner half-disk. The same estimate applies to the lower half-disk.
 
 \subsection{High-order moments of the reflected variable}
 
@@ -31,16 +50,12 @@ In particular,
 \end{lemma}
 
 \begin{proof}
-Choose a fixed $0<\rho_0<\min\{\rho,\tau\}$ and a symmetric ellipse whose upper and lower half-ellipses lie in the strip $|\Re z|<2\tau$. Exponential integrability gives a bound $|F(z)|\le B_0$ on this ellipse, with $B_0$ depending only on $(\rho,\tau,K)$. On the real diameter, the defect hypothesis gives
+Choose $0<\rho_0<\min\{\rho,2\tau\}$ and put $D_{\rho_0}^{\pm}:=\{z:|z|<\rho_0,\ \pm\Im z>0\}$. Exponential integrability gives a bound $|F(z)|\le B_0$ on the two semicircular arcs, with $B_0$ depending only on $(\rho,\tau,K)$. On the real diameter, the defect hypothesis gives
 \[
 |F(s)|=e^{s^2}|e^{R_X(s)}-1|\le C_0\Delta,
 \qquad |s|\le\rho_0,
 \]
-where $F(s)=M_Y(s)-e^{s^2}$ and $Y=X-X'$. Apply the subharmonic two-constants theorem to $u(z)=\log|F(z)|$ on each half-ellipse. If $\omega(z)$ denotes the harmonic measure of the real diameter, then
-\[
-u(z)\le \omega(z)\log(C_0\Delta)+(1-\omega(z))\log B_0.
-\]
-The harmonic-measure lower bound on a fixed inner disk gives $\omega(z)\ge\omega_0>0$ whenever $|z|\le r_0$, after possibly shrinking $r_0$. Thus there are constants $r_0>0$, $\omega_0>0$, and $C_1<\infty$ such that
+where $F(s)=M_Y(s)-e^{s^2}$ and $Y=X-X'$. Apply the half-disk estimate with a fixed $\eta<1$ to $D_{\rho_0}^{+}$ and $D_{\rho_0}^{-}$. For $r_0:=\eta\rho_0$, write $\omega_0:=\omega_\eta$. Thus there are constants $r_0>0$, $\omega_0>0$, and $C_1<\infty$ such that
 \[
 \sup_{|z|\le r_0}|F(z)|\le C_1\Delta^{\omega_0}.
 \]
@@ -48,7 +63,13 @@ The Cauchy estimate consequently gives
 \[
 |F^{(k)}(0)|\le C_1 k! r_0^{-k}\Delta^{\omega_0}.
 \]
-For $k\le2m$ and $m=c_0L/\log L$, Stirling's bound shows that the logarithm of the right-hand side is at most $-\omega_0L+O(c_0L)$. Choosing $c_0$ so that $(A+3)c_0<\omega_0$ gives $|F^{(k)}(0)|\le e^{-Am\log m}$. Since $F^{(k)}(0)=\E Y^k-\E G^k$, the moment conclusion follows. Finally,
+For $k\le2m$, Stirling's bound gives
+\[
+\log\bigl(C_1k!r_0^{-k}\Delta^{\omega_0}\bigr)
+\le-\omega_0L+k\log k+O(k)
+\le-\omega_0L+O(c_0L)
+\]
+when $m=c_0L/\log L$. Choosing $c_0$ so that $(A+3)c_0<\omega_0$ gives $|F^{(k)}(0)|\le e^{-Am\log m}$. Since $F^{(k)}(0)=\E Y^k-\E G^k$, the moment conclusion follows. Finally,
 \[
 \E G^{2m}=\frac{(2m)!}{m!}\le(Cm)^m,
 \]
@@ -65,7 +86,7 @@ There are constants $C,c>0$ with the following property. For every sufficiently 
 where $\beta_B\to\infty$ as $B\to\infty$.
 If $X_N$ denotes the conditional law $X\mid\{|X|\le N\}$, then
 \[
-d_{\rm TV}(X,X_N)\le C e^{-\beta_Bm}.
+d_{\mathrm{TV}}(\mathcal L(X),\mathcal L(X_N))\le C e^{-\beta_Bm}.
 \]
 Moreover
 \[
@@ -75,20 +96,20 @@ Moreover
 \end{lemma}
 
 \begin{proof}
-Let $a$ be a median of $X$. Since $\E X^2=1$, $|a|\le\sqrt2$. The safe symmetrization estimate is
+Let $a$ be a median of $X$. Since $\E X^2=1$, $|a|\le\sqrt2$.
+For every $p\ge1$, conditioning on $X$ and using the median event on the opposite side gives
 \[
-\Pp(|X-a|>x)\le4\Pp(|X-X'|>x).
+\E|X-a|^p\le2\E|X-X'|^p.
 \]
-For $N=B\sqrt m>\sqrt2$, Lemma~\ref{lem:moment-transfer} and Markov's inequality give
+Indeed, if $x\ge a$, then $\Pp(X'\le a)\ge1/2$ and $|x-X'|\ge x-a$ on that event; the case $x\le a$ is symmetric. Taking $p=2m$ and using Lemma~\ref{lem:moment-transfer} gives $\|X-a\|_{2m}\le C\sqrt m$, and the triangle inequality gives $\|X\|_{2m}\le C\sqrt m$. Hence, for $N=B\sqrt m>\sqrt2$,
 \[
 \Pp(|X|>N)
-\le \Pp(|X-a|>N-\sqrt2)
-\le4\frac{\E|Y|^{2m}}{(N-\sqrt2)^{2m}}
+\le \left(\frac{\|X\|_{2m}}{N}\right)^{2m}
 \le C\left(\frac{C_0}{B^2}\right)^m.
 \]
 Thus one may take $\beta_B=\frac12\log(B^2/C_0)$ for sufficiently large $B$. If $p_N=\Pp(|X|>N)$, conditioning gives
 \[
-d_{\rm TV}(X,X_N)\le p_N.
+d_{\mathrm{TV}}(\mathcal L(X),\mathcal L(X_N))\le p_N.
 \]
 The exponential envelope also gives
 \[
@@ -127,7 +148,7 @@ Use the $2m-1$ Taylor polynomial of the characteristic function of $Y=X-X'$ and 
 \left|e^{iu}-\sum_{k=0}^{2m-1}\frac{(iu)^k}{k!}\right|
 \le\frac{|u|^{2m}}{(2m)!}.
 \]
-The comparison has three contributions:
+Taylor's inequality and the moment comparison give
 \[
 \begin{aligned}
 |\varphi_Y(t)-e^{-t^2}|
@@ -137,7 +158,7 @@ The comparison has three contributions:
  |\E(iY)^k-\E(iG)^k|,
 \end{aligned}
 \]
-where $G\sim\Normal(0,2)$. On $|t|\le2R$, the first two terms are bounded by $(Ca_0^2)^m$ after Stirling, while the third is super-exponentially smaller by Lemma~\ref{lem:moment-transfer}. Choose $a_0$ small. Since $\varphi_Y(t)=\varphi_X(t)\varphi_X(-t)$ and the truncation error is bounded by Lemma~\ref{lem:tail-lift}, transfer to $X_N$ gives
+where $G\sim\Normal(0,2)$. On $|t|\le2R$, the two Taylor-remainder terms are bounded by $(Ca_0^2)^m$ after Stirling, while the moment-mismatch term is super-exponentially smaller by Lemma~\ref{lem:moment-transfer}. Choose $a_0$ small. Since $\varphi_Y(t)=\varphi_X(t)\varphi_X(-t)$ and the truncation error is bounded by Lemma~\ref{lem:tail-lift}, transfer to $X_N$ gives
 \[
 \varphi_N(t)\varphi_N(-t)=\varphi_{X_N-X_N'}(t)=e^{-t^2}+O(e^{-\gamma_1m}).
 \]
@@ -174,19 +195,29 @@ the explicit growth bound
 \le\log2+4(Ba_0+a_0^2)m,
 \qquad |z|\le2R,
 \]
-holds. On the real diameter, Lemma~\ref{lem:real-window} gives $\log|\mathcal F_N|\le-\gamma_1m$. Apply the subharmonic two-constants theorem separately in the upper and lower half-disks of radius $2R$. The harmonic measure of the diameter is uniformly bounded below by a fixed $\omega_0>0$ on the concentric half-disks of radius $R$, so
+holds. On the real diameter, Lemma~\ref{lem:real-window} gives $\log|\mathcal F_N|\le-\gamma_1m$. Apply the half-disk two-constants estimate with radius $2R$ and $\eta=1/2$ in the upper and lower half-disks. With $\omega_0:=\omega_{1/2}$, this gives
 \[
 \log|\mathcal F_N(z)|
 \le-\left[\omega_0\gamma_1-4(1-\omega_0)(Ba_0+a_0^2)\right]m+O(1).
 \]
-Choose first $B$ large and then $a_0$ sufficiently small so that the bracket is a number $\gamma_2>a_0^2$. Since
+Choose $B$ large and then $a_0$ sufficiently small so that the bracket is a number $\gamma_2>a_0^2$. Since
 \[
 \inf_{|z|\le R}|e^{-z^2}|\ge e^{-R^2}=e^{-a_0^2m},
 \]
-relative closeness implies $\varphi_N(z)\varphi_N(-z)\ne0$, hence $\varphi_N(z)\ne0$ on the disk.
+we have the relative estimate
+\[
+\frac{|\mathcal F_N(z)|}{|e^{-z^2}|}
+\le e^{-(\gamma_2-a_0^2)m}.
+\]
+Since $\gamma_2>a_0^2$, this is less than $1/2$ for all sufficiently large $m$. Hence
+\[
+|\varphi_N(z)\varphi_N(-z)|
+\ge\frac12|e^{-z^2}|>0,
+\]
+and therefore $\varphi_N(z)\ne0$ on the disk.
 \end{proof}
 
-\subsection{The logarithm of the factor and Esseen smoothing}
+\subsection{From zero-freeness to Gaussian approximation}
 
 \begin{lemma}[From zero-freeness to Gaussian approximation]\label{lem:factor-gaussian}
 Under the conclusions of Lemma~\ref{lem:zero-free},
@@ -220,7 +251,28 @@ Since $a_1=i\mu_N$ and $a_2=-\sigma_N^2/2$, for every fixed $0<\theta<1$,
 \le C\frac{|t|^3}{R},
 \qquad |t|\le\theta R,
 \]
-because $N/R=B/a_0$ is fixed. By Lemma~\ref{lem:tail-lift}, $\mu_N=o(R^{-1})$ and $\sigma_N^2=1+o(R^{-1})$. Taking $\theta$ sufficiently small gives Gaussian damping, and hence
+because $N/R=B/a_0$ is fixed. Define the cubic remainder
+\[
+E_N(t):=\psi_N(t)-i\mu_Nt+\frac{\sigma_N^2t^2}{2}.
+\]
+By Lemma~\ref{lem:tail-lift}, for all sufficiently large $m$,
+\[
+|\mu_N|=o(R^{-1}),
+\qquad
+\frac12\le\sigma_N^2\le\frac32,
+\qquad
+|E_N(t)|\le C\frac{|t|^3}{R}.
+\]
+Choose $\theta$ so small that $C\theta\le1/8$. Then, on $|t|\le\theta R$,
+\[
+\Re\psi_N(t)=-\frac{\sigma_N^2t^2}{2}+\Re E_N(t)
+\le-\frac{t^2}{4}+\frac{t^2}{8}=-\frac{t^2}{8}.
+\]
+Writing
+\[
+\varphi_N(t)=e^{i\mu_Nt-\sigma_N^2t^2/2}e^{E_N(t)},
+\]
+and using $|e^z-1|\le|z|e^{|z|}$ gives Gaussian damping in the difference:
 \[
 \left|\varphi_N(t)-e^{i\mu_Nt-\sigma_N^2t^2/2}\right|
 \le C\frac{|t|^3}{R}e^{-ct^2}.
@@ -232,7 +284,13 @@ The Esseen inequality in the present normalization is
 \left|\frac{\varphi_N(t)-e^{i\mu_Nt-\sigma_N^2t^2/2}}{t}\right|\,dt
  +\frac{C}{T}.
 \]
-With $T=\theta R$, the integral is $O(R^{-1})$ because its integrand is bounded by $C t^2e^{-ct^2}/R$, and the cutoff term is also $O(R^{-1})$. Add the truncation and parameter-shift errors.
+With $T=\theta R$, the integral is bounded by
+\[
+\frac{C}{R}\int_{-T}^{T}t^2e^{-ct^2}\,dt
+\le\frac{C}{R}\int_\R t^2e^{-ct^2}\,dt
+ =O(R^{-1}),
+\]
+and the cutoff term is also $O(R^{-1})$. The tail lemma gives $d_{\mathrm K}(X,X_N)\le d_{\mathrm{TV}}(\mathcal L(X),\mathcal L(X_N))$ and exponentially small mean and variance shifts. Since the Gaussian distribution function has a bounded density, these shifts contribute $o(R^{-1})$. Thus the displayed bound holds, and the triangle inequality gives the consequence for $X$.
 \end{proof}
 
 \begin{proof}[Proof of \cref{thm:sharp-upper}]
