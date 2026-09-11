@@ -1,11 +1,10 @@
-We study Gaussian rigidity through the reflection-symmetrized moment generating function (MGF). For a centered, variance-one random variable $X$ with a fixed exponential moment, write $M_X$ for its MGF and set
+We prove a Gaussian rigidity principle based on the symmetrized moment generating function $M_X(s)M_X(-s)$. First, let $X=(X_i)$ have independent centered coordinates and let $A\succeq0$. If $X^{\mathsf T}AX$ has a chi-square law and each active coordinate satisfies the local dominance $M_i(s)M_i(-s)\ge e^{\sigma_i^2s^2}$, then every active coordinate is Gaussian. Second, under a fixed exponential-moment bound, the local estimate
 \[
-R_X(s)=\log M_X(s)+\log M_X(-s)-s^2,
-\qquad \Delta_\rho(X)=\sup_{|s|\le\rho}|R_X(s)|.
+\sup_{|s|\le\rho}|\log M_X(s)+\log M_X(-s)-s^2|\le\Delta
 \]
-We prove an exact rigidity theorem for positive-semidefinite quadratic forms of independent coordinates under the one-sided condition $R_{X_i}(s)\ge0$, and establish a quantitative reflection-stability theorem under the absolute bound $|R_X(s)|\le\Delta$ on a fixed interval. Specifically, sufficiently small $\Delta_\rho(X)$ implies
+implies
 \[
-d_{\mathrm K}(X,\Normal(0,1))
-\le C\sqrt{\frac{\log\log(1/\Delta_\rho(X))}{\log(1/\Delta_\rho(X))}}.
+d_{\mathrm K}(X,\mathcal N(0,1))
+\le C\sqrt{\frac{\log\log(1/\Delta)}{\log(1/\Delta)}}.
 \]
-The proof derives a growing zero-free region for a truncated factor from local reflected-MGF control. A Laguerre construction gives the matching lower order, while a lattice example rules out total-variation stability. Exact quadratic-form and sample-variance results explain how this one-dimensional reflection problem arises from spherical averaging.
+The order is optimal in general, as shown by a Laguerre construction. The proof recovers the factor from reflected MGF information through a growing zero-free region. We also derive exact and quantitative consequences for the sample variance and show that total-variation stability fails.

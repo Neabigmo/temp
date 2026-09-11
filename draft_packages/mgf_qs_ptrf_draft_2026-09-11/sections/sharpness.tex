@@ -82,9 +82,13 @@ The normalization in $W_m$ leaves the threshold zero unchanged. Consequently
 \[
 d_{\mathrm K}(W_m,\Normal(0,1))\ge c m^{-1/2}.
 \]
-Together with $\log(1/\Delta_m)=2m\log m+O(m)$, this proves Theorem~\ref{thm:sharpness}. It also rules out every uniform power-law modulus $C\Delta^\alpha$, $\alpha>0$, and rules out the previously proposed $C/\sqrt{\log(1/\Delta)}$ bound.
+Together with $\log(1/\Delta_m)=2m\log m+O(m)$, this proves Theorem~\ref{thm:sharpness} and rules out every uniform power-law modulus $C\Delta^\alpha$, $\alpha>0$.
 
 \subsection{Failure of total-variation stability}
+
+\begin{proposition}[Strong-distance obstruction]\label{prop:tv}
+There is no uniform total-variation stability theorem under the assumptions of \cref{thm:sharp-upper}: a standardized Poisson lattice family can satisfy a fixed exponential-integrability bound and have reflected defect tending to zero while its total-variation distance from every absolutely continuous Gaussian law equals one.
+\end{proposition}
 
 Let $N_\lambda\sim\operatorname{Poisson}(\lambda)$ and $X_\lambda=(N_\lambda-\lambda)/\sqrt\lambda$. The reflected defect satisfies, on every fixed compact $s$-interval,
 \[

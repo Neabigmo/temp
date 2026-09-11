@@ -36,7 +36,7 @@ Choose a fixed $0<\rho_0<\min\{\rho,\tau\}$ and a symmetric ellipse whose upper 
 |F(s)|=e^{s^2}|e^{R_X(s)}-1|\le C_0\Delta,
 \qquad |s|\le\rho_0,
 \]
-where $F(s)=M_Y(s)-e^{s^2}$ and $Y=X-X'$. To make the propagation step explicit, apply the subharmonic two-constants theorem to $u(z)=\log|F(z)|$ on each half-ellipse. If $\omega(z)$ denotes the harmonic measure of the real diameter, then
+where $F(s)=M_Y(s)-e^{s^2}$ and $Y=X-X'$. Apply the subharmonic two-constants theorem to $u(z)=\log|F(z)|$ on each half-ellipse. If $\omega(z)$ denotes the harmonic measure of the real diameter, then
 \[
 u(z)\le \omega(z)\log(C_0\Delta)+(1-\omega(z))\log B_0.
 \]
@@ -79,7 +79,30 @@ Let $a$ be a median of $X$. Since $\E X^2=1$, $|a|\le\sqrt2$. The safe symmetriz
 \[
 \Pp(|X-a|>x)\le4\Pp(|X-X'|>x).
 \]
-Combine this with Markov's inequality and Lemma~\ref{lem:moment-transfer}. The conditional-law total-variation estimate is immediate. The mean and variance shifts are controlled separately from the original exponential moment, which gives exponentially small first and second tail moments at radius $N$.
+For $N=B\sqrt m>\sqrt2$, Lemma~\ref{lem:moment-transfer} and Markov's inequality give
+\[
+\Pp(|X|>N)
+\le \Pp(|X-a|>N-\sqrt2)
+\le4\frac{\E|Y|^{2m}}{(N-\sqrt2)^{2m}}
+\le C\left(\frac{C_0}{B^2}\right)^m.
+\]
+Thus one may take $\beta_B=\frac12\log(B^2/C_0)$ for sufficiently large $B$. If $p_N=\Pp(|X|>N)$, conditioning gives
+\[
+d_{\rm TV}(X,X_N)\le p_N.
+\]
+The exponential envelope also gives
+\[
+\E\bigl(|X|\mathbf1_{\{|X|>N\}}\bigr)\le Ce^{-cN},
+\qquad
+\E\bigl(X^2\mathbf1_{\{|X|>N\}}\bigr)\le C(1+N^2)e^{-cN}.
+\]
+Since $\E X=0$ and $\E X^2=1$,
+\[
+|\E X_N|\le\frac{Ce^{-cN}}{1-p_N},
+\qquad
+|\E X_N^2-1|\le\frac{p_N+C(1+N^2)e^{-cN}}{1-p_N}.
+\]
+It follows that $|\E X_N|+|\operatorname{Var}(X_N)-1|\le C(1+N^2)e^{-cN}$ after increasing $C$.
 \end{proof}
 
 \subsection{A growing real Gaussian-product window}
@@ -104,14 +127,14 @@ Use the $2m-1$ Taylor polynomial of the characteristic function of $Y=X-X'$ and 
 \left|e^{iu}-\sum_{k=0}^{2m-1}\frac{(iu)^k}{k!}\right|
 \le\frac{|u|^{2m}}{(2m)!}.
 \]
-For clarity, the comparison has three contributions:
+The comparison has three contributions:
 \[
 \begin{aligned}
 |\varphi_Y(t)-e^{-t^2}|
-&\le \underbrace{\frac{|t|^{2m}\E|Y|^{2m}}{(2m)!}}_{\text{$Y$ remainder}}
- +\underbrace{\frac{|t|^{2m}\E|G|^{2m}}{(2m)!}}_{\text{Gaussian remainder}}\\
-&\quad+\underbrace{\sum_{k=0}^{2m-1}\frac{|t|^k}{k!}
- |\E(iY)^k-\E(iG)^k|}_{\text{moment mismatch}},
+&\le \frac{|t|^{2m}\E|Y|^{2m}}{(2m)!}
+ +\frac{|t|^{2m}\E|G|^{2m}}{(2m)!}\\
+&\quad+\sum_{k=0}^{2m-1}\frac{|t|^k}{k!}
+ |\E(iY)^k-\E(iG)^k|,
 \end{aligned}
 \]
 where $G\sim\Normal(0,2)$. On $|t|\le2R$, the first two terms are bounded by $(Ca_0^2)^m$ after Stirling, while the third is super-exponentially smaller by Lemma~\ref{lem:moment-transfer}. Choose $a_0$ small. Since $\varphi_Y(t)=\varphi_X(t)\varphi_X(-t)$ and the truncation error is bounded by Lemma~\ref{lem:tail-lift}, transfer to $X_N$ gives

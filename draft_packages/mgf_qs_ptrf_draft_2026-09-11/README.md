@@ -1,4 +1,4 @@
-# Symmetrized-MGF Gaussian Rigidity — PTRF paper draft
+# Gaussian Rigidity from Symmetrized Moment Generating Functions — PTRF paper draft
 
 This package is the reviewer-aligned 2026-09-11 revision of the MGF-QS/PTRF draft. Its central object is the one-dimensional reflected MGF defect; chi-square quadratic forms and sample variance are treated as exact and quantitative applications of that theory.
 
@@ -13,9 +13,9 @@ This package is the reviewer-aligned 2026-09-11 revision of the MGF-QS/PTRF draf
 
 ## Revision status
 
-The manuscript now has a single reflected-defect notation, an exact spherical-transform identity, a full exact PSD proof, a precise spherical Laplace discrepancy, a complete Laguerre construction section, and an explicit non-circular parameter appendix. The portable front matter now places the title before the abstract, and the PTRF entry point keeps Springer front matter separate from the shared body. The actual December 2024 `sn-jnl.cls` template smoke compile is clean. Author name, affiliation, and email remain explicit placeholders and must be replaced before submission; independent referee-level verification remains separate from this local revision.
+The manuscript now has a single reflected-defect notation, an exact spherical-transform identity, a full exact PSD proof, a precise spherical Laplace discrepancy, a complete Laguerre construction section, and an explicit non-circular parameter appendix. The main text is organized as five sections, with the exact and sharp results stated in the Introduction and the sample-variance interface consolidated in Section 5. The portable front matter places the title before the abstract, and the PTRF entry point keeps Springer front matter separate from the shared body. The portable entry point compiles cleanly; the official December 2024 `sn-jnl.cls` smoke compile also completes, with the template's nonfatal vertical-spacing diagnostics visible because warning suppression was removed. Author name, affiliation, and email remain explicit placeholders and must be replaced before submission; independent referee-level verification remains separate from this local revision.
 
-The main narrative is Introduction → symmetrized-MGF class and results → exact rigidity → sharp reflection stability → optimality/obstructions → sample-variance application → discussion. The high-frequency sine family is not part of the main text.
+The main narrative is Introduction and main results → exact rigidity → sharp reflection stability → optimality/obstructions → sample variance. The high-frequency sine family is not part of the main text.
 
 ## Local compile
 

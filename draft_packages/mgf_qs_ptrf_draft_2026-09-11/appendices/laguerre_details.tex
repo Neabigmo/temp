@@ -1,6 +1,6 @@
-\section{Laguerre estimates and construction details}\label{app:laguerre}
+\section{A uniform Laguerre estimate}\label{app:laguerre}
 
-For reference, Imekraz--Robert--Thomann normalize the Laguerre function by
+For $\alpha=1/2$, use the normalization
 \[
 \mathcal L_m^{(\alpha)}(r)
  =a_{m,\alpha}L_m^{(\alpha)}(r)e^{-r/2}r^{\alpha/2},
@@ -9,7 +9,7 @@ a_{m,\alpha}=\sqrt{\frac{m!}{\Gamma(m+\alpha+1)}},
 \qquad
 \nu=4m+2\alpha+2.
 \]
-For $\alpha=1/2$, Proposition~3.2 of \cite{ImekrazRobertThomann2016} gives the four estimates
+Proposition~3.2 of \cite{ImekrazRobertThomann2016} gives
 \[
 |\mathcal L_m^{(1/2)}(r)|\le C(r\nu)^{1/4}\quad (0\le r\le\nu^{-1}),
 \]
@@ -24,11 +24,9 @@ For $\alpha=1/2$, Proposition~3.2 of \cite{ImekrazRobertThomann2016} gives the f
 and an exponential estimate for $r\ge3\nu/2$. Since
 \[
 \sqrt r\,e^{-r/2}|L_m^{(1/2)}(r)|
- =\sqrt{\frac{\Gamma(m+3/2)}{m!}}\,r^{1/4}|\mathcal L_m^{(1/2)}(r)|
+ =\sqrt{\frac{\Gamma(m+3/2)}{m!}}\,r^{1/4}|\mathcal L_m^{(1/2)}(r)|,
 \]
-and the gamma ratio is comparable to $\nu^{1/4}$, the first two regions give a uniform bound, the turning region gives $O(\nu^{1/6})$, and the outer region is exponentially decaying. Multiplication by $e^{-r/6}$ therefore yields
+the first two regions are uniformly bounded after multiplication by $e^{-r/6}$. In the turning region the same multiplication contributes $e^{-r/6}\le e^{-\nu/12}$, which dominates the polynomial factor from the displayed estimate, and the outer estimate is exponentially decaying. Consequently,
 \[
 \sup_{m\ge1,\,r\ge0}\sqrt r\,e^{-2r/3}|L_m^{(1/2)}(r)|<\infty.
 \]
-
-The remaining identities used in Section~\ref{sec:sharpness} are elementary consequences of the Laguerre generating function and orthogonality. In particular, the perturbation is odd, the first $m$ odd moments vanish, and the exact MGF is the expression in \eqref{eq:laguerre-mgf}. The Skellam compensation is chosen after the MGF calculation so that the positive fourth-order hyperbolic remainder dominates the negative term $\log(1-u_m(q)^2)$ pointwise. This order of construction is what makes the one-sided dominance check independent of an asymptotic sign guess.
