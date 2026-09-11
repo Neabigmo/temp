@@ -1,49 +1,110 @@
-\section{Sharpness and obstruction results}\label{sec:sharpness}
+\section{Optimality and obstruction results}\label{sec:sharpness}
 
-\subsection{Laguerre sharpness family}
-The construction uses generalized Laguerre polynomials $L_m^{(1/2)}$. The external uniform estimate required by the construction follows from Proposition~3.2 of Imekraz, Robert and Thomann \cite{ImekrazRobertThomann2016}. With
+\subsection{A Laguerre lower-bound family}
+
+We give the lower-bound construction in full because it identifies the scale in Theorem~\ref{thm:sharp-upper}. The only external input is the four-region Laguerre estimate in Proposition~3.2 of Imekraz, Robert and Thomann \cite{ImekrazRobertThomann2016}. In their normalization,
 \[
-\nu=4m+3,
+\mathcal L_m^{(\alpha)}(r)
+ =\sqrt{\frac{m!}{\Gamma(m+\alpha+1)}}e^{-r/2}r^{\alpha/2}L_m^{(\alpha)}(r),
+\qquad \nu=4m+2\alpha+2.
+\]
+For $\alpha=1/2$, the four bounds on $[0,1/\nu]$, $[1/\nu,\nu/2]$, $[\nu/2,3\nu/2]$, and $[3\nu/2,\infty)$ imply, after multiplication by the gamma ratio, that
+\[
+Q_m(r):=\sqrt r\,e^{-r/2}|L_m^{(1/2)}(r)|
+\le C\quad (r\le\nu/2),
 \qquad
-Q_m(r)=\sqrt r\,e^{-r/2}|L_m^{(1/2)}(r)|,
+Q_m(r)\le C\nu^{1/6}\quad (r\ge\nu/2).
 \]
-the four-region estimate implies
+The second bound is only polynomially growing in the turning region, but the extra exponential factor below removes it. Since $r=3x^2/2$,
 \[
-\sup_{m\ge0,\,r\ge0}
-\sqrt r\,e^{-2r/3}|L_m^{(1/2)}(r)|<\infty.
+\left|x e^{-x^2}L_m^{(1/2)}(3x^2/2)\right|
+ =\sqrt{\frac23}\,Q_m(r)e^{-r/6}.
 \]
-The construction then yields a uniformly exponentially integrable family satisfying local dominance and
+The first region is uniformly bounded, and the second region is bounded by $C\nu^{1/6}e^{-\nu/12}$; the outer exponential estimate is smaller still. The finitely many low values of $m$ are absorbed into the constant. Hence
+\begin{equation}\label{eq:CL}
+C_L:=\sup_{m\ge1,\,x\in\R}\left|x e^{-x^2}L_m^{(1/2)}(3x^2/2)\right|<\infty.
+\end{equation}
+
+Fix $0<\epsilon<1/4$, let $\phi$ be the standard Gaussian density, and define
 \[
-\log\frac1{\Delta_m}=m\log m+O(m),
+p_m(x):=x e^{-x^2}L_m^{(1/2)}(3x^2/2),
+\qquad h_m(x):=\frac{p_m(x)}{C_L},
+\qquad f_m(x):=\phi(x)(1+\epsilon h_m(x)).
+\]
+By \eqref{eq:CL}, $f_m$ is a nonnegative probability density. It is normalized because $h_m$ is odd. The change of variables $r=3x^2/2$ and Laguerre orthogonality show that
+\[
+\int_\R x^{2k+1}h_m(x)\phi(x)\,dx=0,
+\qquad 0\le k<m.
+\]
+In particular, the corresponding variable $U_m$ is centered. Its variance is one because $x^2h_m(x)\phi(x)$ is odd. The Laguerre generating identity gives the exact MGF
+\begin{equation}\label{eq:laguerre-mgf}
+M_{U_m}(s)=e^{s^2/2}(1+u_m(s)),
 \qquad
-\dK(X_m,\Normal(0,1))\ge c m^{-1/2}.
-\]
-Stirling inversion gives
+u_m(s)=\frac{\epsilon}{C_L}\frac{s}{3\sqrt3}e^{-s^2/3}\frac{(-s^2/6)^m}{m!}.
+\end{equation}
+Therefore, with
 \[
-m^{-1/2}
-\asymp
-\sqrt{\frac{\log\log(1/\Delta_m)}{\log(1/\Delta_m)}}.
+a_m:=\frac{\epsilon}{3\sqrt3 C_L6^m m!},
 \]
+we have $|u_m(s)|\le a_m|s|^{2m+1}$ on the real axis.
 
-\auditgate{This subsection deliberately states only the already-audited external Laguerre bound and the project-recorded asymptotic package. Before submission, reconstruct every definition of $X_m$ and verify normalization, positivity, local dominance, exponential integrability, defect asymptotics, and CDF separation from first principles.}
-
-\subsection{Failure of power rates}
-A high-frequency odd Gaussian perturbation, accompanied by a small symmetric lattice compensation and variance renormalization, gives a family with fixed exponential integrability and local dominance such that
+Let $J_m=N_m^+-N_m^-$, where $N_m^+$ and $N_m^-$ are independent Poisson variables with mean $\lambda_m/2$, and set
 \[
-\Delta_n\asymp n^6e^{-n^2},
+\lambda_m:=96a_m^2\rho^{4m-2},
 \qquad
-\dK(X_n,\Normal(0,1))\ge \frac{c}{n}.
+W_m:=\frac{U_m+J_m}{\sqrt{1+\lambda_m}}.
 \]
-Thus no bound of the form $C\Delta^\alpha$ can hold uniformly for any $\alpha>0$.
+Then $W_m$ is centered and variance one. If $q=s/\sqrt{1+\lambda_m}$, its reflected defect is exactly
+\begin{equation}\label{eq:laguerre-defect}
+R_{W_m}(s)
+ =\log(1-u_m(q)^2)
+ +2\lambda_m\left(\cosh q-1-\frac{q^2}{2}\right).
+\end{equation}
+For all sufficiently large $m$, $|u_m(q)|\le1/2$ on $|s|\le\rho$. Using $-\log(1-v)\le2v$ for $0\le v\le1/4$ and $\cosh q-1-q^2/2\ge q^4/24$, the choice of $\lambda_m$ gives
+\[
+R_{W_m}(s)\ge\frac{\lambda_m q^4}{16}\ge0.
+\]
+The logarithmic term in \eqref{eq:laguerre-defect} is nonpositive, so the upper Taylor bound gives
+\[
+R_{W_m}(s)\le\frac{\lambda_m\cosh(\rho)q^4}{12}.
+\]
+If also $\lambda_m\le1$, evaluation at $s=\rho$ yields
+\[
+\frac{\lambda_m\rho^4}{64}\le\Delta_m:=\Delta_\rho(W_m)
+\le\frac{\lambda_m\rho^4\cosh(\rho)}{12}.
+\]
+Thus $\Delta_m\asymp\lambda_m$ and Stirling's formula gives
+\[
+\log\frac1{\Delta_m}=2m\log m+O(m).
+\]
 
-\auditgate{Insert the full construction and proof from the project record if this proposition is retained in the main paper. It may be shortened or moved to supplementary material once the Laguerre sharpness theorem is complete.}
+The fixed exponential envelope is uniform: $f_m\le(1+\epsilon)\phi$, while
+\[
+\E e^{b|J_m|}\le2e^{\lambda_m(\cosh b-1)}
+\]
+and $\sup_m\lambda_m<\infty$. Finally, the half-axis discrepancy is explicit. Since
+\[
+\int_0^\infty h_m(x)\phi(x)\,dx
+ =\frac{1}{3C_L\sqrt{2\pi}}\frac{(1/2)_m}{m!},
+\]
+we have $|F_{U_m}(0)-1/2|\asymp m^{-1/2}$. Moreover,
+\[
+|F_{U_m+J_m}(0)-F_{U_m}(0)|\le\Pp(J_m\ne0)\le\lambda_m=o(m^{-1/2}).
+\]
+The normalization in $W_m$ leaves the threshold zero unchanged. Consequently
+\[
+d_{\mathrm K}(W_m,\Normal(0,1))\ge c m^{-1/2}.
+\]
+Together with $\log(1/\Delta_m)=2m\log m+O(m)$, this proves Theorem~\ref{thm:sharpness}. It also rules out every uniform power-law modulus $C\Delta^\alpha$, $\alpha>0$, and rules out the previously proposed $C/\sqrt{\log(1/\Delta)}$ bound.
 
 \subsection{Failure of total-variation stability}
-For $N_\lambda\sim\operatorname{Poisson}(\lambda)$, set
+
+Let $N_\lambda\sim\operatorname{Poisson}(\lambda)$ and $X_\lambda=(N_\lambda-\lambda)/\sqrt\lambda$. The reflected defect satisfies, on every fixed compact $s$-interval,
 \[
-X_\lambda=\frac{N_\lambda-\lambda}{\sqrt\lambda}.
+R_{X_\lambda}(s)=\frac{s^4}{12\lambda}+O_\rho(\lambda^{-2}),
 \]
-Then the reflected defect tends to zero at fixed local scale, while $X_\lambda$ is lattice-valued and the Gaussian law is absolutely continuous, so
+and the family has a fixed exponential-integrability bound for each fixed $\tau$. Nevertheless $X_\lambda$ is lattice-valued, whereas $\Normal(0,1)$ is absolutely continuous, so
 \[
 d_{\rm TV}(X_\lambda,\Normal(0,1))=1.
 \]
+This is a qualitative boundary phenomenon and is independent of the Kolmogorov lower bound above.

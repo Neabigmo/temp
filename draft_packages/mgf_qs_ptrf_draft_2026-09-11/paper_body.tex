@@ -1,24 +1,21 @@
-\title{Gaussian Rigidity and Sharp Reflection Stability for Chi-Square Quadratic Forms}
+\title{Symmetrized-MGF Gaussian Rigidity: Chi-Square Quadratic Forms and Sharp Reflection Stability}
 
 \author{Author Name(s)}
 
 \date{}
 
 \begin{abstract}
-We study a reflection-symmetrized Gaussian characterization arising from chi-square quadratic forms and sample variance. For a centered, variance-one random variable $X$ with a fixed exponential moment, write $M_X$ for its moment generating function and assume the local dominance
+We study Gaussian rigidity through the reflection-symmetrized moment generating function (MGF). For a centered, variance-one random variable $X$ with a fixed exponential moment, write $M_X$ for its MGF and set
 \[
-M_X(s)M_X(-s)\ge e^{s^2}.
+R_X(s)=\log M_X(s)+\log M_X(-s)-s^2,
+\qquad \Delta_\rho(X)=\sup_{|s|\le\rho}|R_X(s)|.
 \]
-We first prove an exact rigidity theorem for positive semidefinite quadratic forms of independent coordinates under the analogous coordinatewise dominance. We then establish a sharp quantitative reflection stability theorem. If
-\[
-\Delta_\rho(X):=\sup_{|s|\le \rho}\bigl\{\log M_X(s)+\log M_X(-s)-s^2\bigr\}
-\]
-is sufficiently small, then
+We prove an exact rigidity theorem for positive-semidefinite quadratic forms of independent coordinates under the one-sided condition $R_{X_i}(s)\ge0$, and we establish a quantitative reflection-stability theorem that only assumes $|R_X(s)|\le\Delta$ on a fixed interval. Specifically, sufficiently small $\Delta_\rho(X)$ implies
 \[
 d_{\mathrm K}(X,N(0,1))
 \le C\sqrt{\frac{\log\log(1/\Delta_\rho(X))}{\log(1/\Delta_\rho(X))}}.
 \]
-The proof converts the reflected MGF defect into high-order moment matching for $X-X'$, lifts this to a sub-Gaussian tail at the square-root moment scale, truncates to a bounded random variable, propagates a real-axis Gaussian product approximation into a growing complex disk, and then uses zero-freeness, a logarithmic coefficient estimate, and Esseen smoothing to recover the factor. A Laguerre-based family gives the matching lower order, showing that the double-logarithmic loss is intrinsic. We also record consequences for sample variance and explain why total-variation stability and every power-law Kolmogorov modulus fail.
+The exact quadratic-form result and a sample-variance corollary explain how this one-dimensional reflection problem arises from spherical averaging. The upper-bound mechanism converts local reflected-MGF control into high-order moment information and then recovers the factor through a growing zero-free region. The Laguerre construction supplies the matching lower-order mechanism, while a lattice family rules out total-variation stability.
 \end{abstract}
 
 \maketitle
@@ -26,12 +23,12 @@ The proof converts the reflected MGF defect into high-order moment matching for 
 \input{sections/introduction}
 \input{sections/main_results}
 \input{sections/exact_rigidity}
-\input{sections/radial_to_defect}
 \input{sections/sharp_upper}
-\input{sections/sample_variance}
 \input{sections/sharpness}
+\input{sections/radial_to_defect}
+\input{sections/sample_variance}
 \input{sections/discussion}
 
 \appendix
 \input{appendices/parameter_selection}
-\input{appendices/laguerre_audit_gate}
+\input{appendices/laguerre_details}

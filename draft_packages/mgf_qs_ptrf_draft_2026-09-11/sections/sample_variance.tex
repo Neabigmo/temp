@@ -1,19 +1,20 @@
-\section{Sample-variance stability}\label{sec:sample-var}
+\section{Sample variance as an application}\label{sec:sample-var}
 
-Let $X_1,\ldots,X_n$ be i.i.d. copies of $X$ and
+Let $X_1,\ldots,X_n$ be i.i.d. copies of a centered variance-one random variable $X$, and let
 \[
 Q_n=\sum_{i=1}^n(X_i-\bar X)^2.
 \]
-Under the radial-transform discrepancy used in the project, \cref{eq:pointwise-D} gives
+The spherical Laplace discrepancy $\mathfrak D_{n-1,\tau}(Q_n)$ is the natural input because $Q_n$ is the squared radius of the projection of $(X_1,\ldots,X_n)$ onto the hyperplane orthogonal to $(1,\ldots,1)$. If $\mathfrak D_{n-1,\tau}(Q_n)\le\varepsilon$, the pointwise inversion in \eqref{eq:pointwise-D} gives, for every fixed $0<\rho'<\tau\sqrt{(n-1)/n}$,
 \[
-\Delta_{\rho'}(X)\le C\sqrt\varepsilon.
+\sup_{|s|\le\rho'}|R_X(s)|
+ =2\sup_{|s|\le\rho'}D_X(s)
+ \le C\sqrt\varepsilon.
 \]
-Applying \cref{thm:sharp-upper} therefore gives
+Theorem~\ref{thm:sharp-upper} then yields
 \[
-\dK(X,\Normal(0,1))
-\le
-C\sqrt{\frac{\log\log(1/\varepsilon)}{\log(1/\varepsilon)}}
+d_{\mathrm K}(X,\Normal(0,1))
+\le C\sqrt{\frac{\log\log(1/\varepsilon)}{\log(1/\varepsilon)}}
 \]
-for sufficiently small $\varepsilon$; the factors $1/2$ and fixed multiplicative constants inside the logarithms only change the implicit constant.
+for sufficiently small $\varepsilon$, where fixed multiplicative constants inside the logarithms are absorbed into $C$. This proves Theorem~\ref{thm:sample-var}.
 
-\auditgate{Replace the schematic radial metric with the exact definition and hypotheses from the source theorem before circulating the manuscript.}
+The exact case is even shorter. If $Q_n\sim\chi^2_{n-1}$ and the local dominance holds, Corollary~\ref{cor:exact-sample-var} gives $X_i\sim\Normal(0,1)$. Thus the discrepancy-to-defect argument is a quantitative extension of the exact spherical-Jensen mechanism, rather than a separate sample-variance characterization.

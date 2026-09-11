@@ -1,6 +1,6 @@
-# MGF-QS PTRF paper draft
+# Symmetrized-MGF Gaussian Rigidity — PTRF paper draft
 
-This package turns the 2026-09-10/11 research handoff into a paper-oriented draft.
+This package is the reviewer-aligned 2026-09-11 revision of the MGF-QS/PTRF draft. Its central object is the one-dimensional reflected MGF defect; chi-square quadratic forms and sample variance are treated as exact and quantitative applications of that theory.
 
 ## Entry points
 
@@ -10,9 +10,11 @@ This package turns the 2026-09-10/11 research handoff into a paper-oriented draf
 - `NOVELTY_AUDIT.md` — literature boundary and claims discipline.
 - `SUBMISSION_STRATEGY.md` — PTRF-first journal strategy.
 
-## Evidence gates
+## Revision status
 
-The sharp upper theorem has a complete audited proof architecture in `sections/sharp_upper.tex`. The exact PSD theorem is included, but the final manuscript should import the precise spherical-transform identity from the original proof record. The Laguerre lower theorem remains behind an explicit audit gate: the Imekraz–Robert–Thomann uniform Laguerre estimate has been checked, but the remaining construction chain must be reconstructed independently before submission.
+The manuscript now has a single reflected-defect notation, an exact spherical-transform identity, a full exact PSD proof, a precise spherical Laplace discrepancy, a complete Laguerre construction section, and an explicit non-circular parameter appendix. Inline `\\auditgate` and “schematic statement” markers have been removed from the LaTeX manuscript. The research status remains conservative: final external bibliographic checking and independent referee-level verification are still separate from this local revision.
+
+The main narrative is Introduction → symmetrized-MGF class and results → exact rigidity → sharp reflection stability → optimality/obstructions → sample-variance application → discussion. The high-frequency sine family is not part of the main text.
 
 ## Local compile
 

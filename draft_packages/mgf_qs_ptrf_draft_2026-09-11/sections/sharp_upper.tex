@@ -30,36 +30,25 @@ In particular,
 \]
 \end{lemma}
 
-\begin{proof}[Proof skeleton]
-Choose a fixed $0<\rho_0<\min\{\rho,\tau\}$ and a Bernstein ellipse $\mathcal E$ around $[-\rho_0,\rho_0]$ contained in the exponential-moment strip. The defect assumption gives
+\begin{proof}
+Choose a fixed $0<\rho_0<\min\{\rho,\tau\}$ and a symmetric ellipse whose upper and lower half-ellipses lie in the strip $|\Re z|<2\tau$. Exponential integrability gives a bound $|F(z)|\le B_0$ on this ellipse, with $B_0$ depending only on $(\rho,\tau,K)$. On the real diameter, the defect hypothesis gives
 \[
-\sup_{|s|\le\rho_0}|F(s)|\le C\Delta,
+|F(s)|=e^{s^2}|e^{R_X(s)}-1|\le C_0\Delta,
+\qquad |s|\le\rho_0,
 \]
-while exponential integrability gives $\sup_{z\in\mathcal E}|F(z)|\le C$.
-After scaling to $[-1,1]$, the Chebyshev coefficients $a_j$ therefore satisfy both
+where $F(s)=M_Y(s)-e^{s^2}$ and $Y=X-X'$. The two-constants theorem on the upper and lower half-ellipses yields constants $r_0>0$, $\omega_0>0$, and $C_1<\infty$ such that
 \[
-|a_j|\le C\Delta,
-\qquad
-|a_j|\le C\lambda^{-j}
+\sup_{|z|\le r_0}|F(z)|\le C_1\Delta^{\omega_0}.
 \]
-for a fixed $\lambda>1$. Splitting the differentiated Chebyshev series at $J\asymp L$ and using
+The Cauchy estimate consequently gives
 \[
-\|T_j^{(k)}\|_{[-1,1]}\le j^{2k}
+|F^{(k)}(0)|\le C_1 k! r_0^{-k}\Delta^{\omega_0}.
 \]
-gives
+For $k\le2m$ and $m=c_0L/\log L$, Stirling's bound shows that the logarithm of the right-hand side is at most $-\omega_0L+2c_0L+o(L)$. Choosing $c_0$ sufficiently small in terms of the prescribed $A$ gives $|F^{(k)}(0)|\le e^{-Am\log m}$. Since $F^{(k)}(0)=\E Y^k-\E G^k$, the moment conclusion follows. Finally,
 \[
-|F^{(k)}(0)|
-\le C\rho_0^{-k}\Delta L^{2k+1},
-\qquad k=o(L).
+\E G^{2m}=\frac{(2m)!}{m!}\le(Cm)^m,
 \]
-For $k\le2m$ and $m=c_0L/\log L$, the logarithm of the right-hand side is
-\[
--L+4c_0L+o(L).
-\]
-Taking $c_0$ sufficiently small in terms of the prescribed $A$ yields the stated $e^{-A m\log m}$ bound. Since $F^{(k)}(0)=\E Y^k-\E G^k$, the moment conclusion follows. The $2m$-th moment bound uses
-\[
-\E G^{2m}=\frac{(2m)!}{m!}\le(Cm)^m.
-\]
+and the negligible moment mismatch gives the stated $2m$-th moment bound.
 \end{proof}
 
 \subsection{Tail lifting and bounded truncation}
@@ -81,7 +70,7 @@ Moreover
 \]
 \end{lemma}
 
-\begin{proof}[Proof skeleton]
+\begin{proof}
 Let $a$ be a median of $X$. Since $\E X^2=1$, $|a|\le\sqrt2$. The safe symmetrization estimate is
 \[
 \Pp(|X-a|>x)\le4\Pp(|X-X'|>x).
@@ -105,7 +94,7 @@ and $f_N$ the characteristic function of $X_N$,
 for some $\gamma_1>0$.
 \end{lemma}
 
-\begin{proof}[Proof skeleton]
+\begin{proof}
 Use the $2m-1$ Taylor polynomial of $\phi_Y(t)$ and the real-variable remainder
 \[
 \left|e^{iu}-\sum_{k=0}^{2m-1}\frac{(iu)^k}{k!}\right|
@@ -134,7 +123,7 @@ More precisely, for some $\gamma_2>a_0^2$,
 \]
 \end{lemma}
 
-\begin{proof}[Proof skeleton]
+\begin{proof}
 Since $|X_N|\le N$, $f_N$ is entire and
 \[
 |f_N(z)|\le e^{N|\Im z|}.
@@ -169,7 +158,7 @@ Consequently
 \]
 \end{lemma}
 
-\begin{proof}[Proof skeleton]
+\begin{proof}
 On $|z|<R$ choose the analytic logarithm
 \[
 \psi_N(z)=\log f_N(z),\qquad \psi_N(0)=0.

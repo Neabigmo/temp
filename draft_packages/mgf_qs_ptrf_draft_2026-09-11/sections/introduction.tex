@@ -1,59 +1,43 @@
 \section{Introduction}\label{sec:intro}
 
-The exact chi-square law of the sample variance is one of the classical signatures of Gaussian samples. The unrestricted converse for a fixed sample size $n\ge3$ is, however, a long-standing characterization problem. Existing converse results impose additional structure, for example symmetry or infinite divisibility; see \cite{Ruben1974,GolikovaKruglov2015,EjsmontLehner2017}. Our purpose is not to resolve that unrestricted problem. Instead, we identify a natural local symmetrized-MGF condition under which the converse becomes rigid and, more importantly, admits a sharp quantitative theory.
+The exact chi-square law of the sample variance is one of the classical signatures of Gaussian samples. The unrestricted converse for a fixed sample size $n\ge3$ remains a longstanding characterization problem. Existing results impose additional structure, including symmetry or infinite divisibility; see \cite{Ruben1974,Ruben1978,Bondesson1977,GolikovaKruglov2015,EjsmontLehner2017}. We do not claim to resolve that unrestricted problem. Instead, we isolate the analytic condition that is naturally exposed by spherical averaging and develop its one-dimensional rigidity theory.
 
-For a centered variance-one random variable $X$, let
+The route from the classical question to the present problem is
 \[
-M_X(s)=\E e^{sX}
+\begin{gathered}
+\text{sample variance}
+\ \Longrightarrow\ \text{chi-square quadratic form}\\
+\Longrightarrow\ \text{spherical Laplace averaging}\\
+\Longrightarrow\ \text{symmetrized MGF reflection}.
+\end{gathered}
 \]
-whenever finite, and introduce the reflected MGF defect
+For a centered variance-one random variable $X$, let $M_X(s)=\E e^{sX}$ whenever finite and define
 \begin{equation}\label{eq:defect-intro}
-\DeltaR(X)
-:=\sup_{|s|\le\rho}
-\bigl(\log M_X(s)+\log M_X(-s)-s^2\bigr).
+R_X(s):=\log M_X(s)+\log M_X(-s)-s^2,
+\qquad
+\Delta_\rho(X):=\sup_{|s|\le\rho}|R_X(s)|.
 \end{equation}
-We work under the one-sided local dominance
-\begin{equation}\label{eq:dominance-intro}
-M_X(s)M_X(-s)\ge e^{s^2},\qquad |s|\le\rho,
-\end{equation}
-and a uniform exponential-integrability assumption
+The exact quadratic-form theorem uses the one-sided dominance $R_X(s)\ge0$, whereas the quantitative reflection theorem only uses the absolute bound $|R_X(s)|\le\Delta$. We also assume the fixed exponential envelope
 \begin{equation}\label{eq:EI-intro}
-\E e^{2\tau |X|}\le K.
+\E e^{2\tau|X|}\le K.
 \end{equation}
-The dominance is invisible to odd cumulants at first order: if $X'$ is an independent copy of $X$, then
+
+The reflection has a precise probabilistic meaning. If $X'$ is an independent copy of $X$, then
 \[
 M_{X-X'}(s)=M_X(s)M_X(-s),
 \]
-so the reflection removes the Fourier phase. The central issue is therefore a quantitative form of phase recovery compatible with probability positivity.
+so $R_X$ measures the deviation of the reflected convolution from the Gaussian MGF. On the Fourier side the same operation produces $|\varphi_X|^2$ and erases the phase. The central question is therefore whether positivity, exponential integrability, and local control of this phase-blind observable still permit quantitative recovery of the original factor.
 
-Our main result shows that this phase loss costs exactly a double logarithm. For sufficiently small $\DeltaR(X)$,
+Our main quantitative conclusion is the stability estimate
 \begin{equation}\label{eq:headline}
-\dK(X,\Normal(0,1))
+d_{\mathrm K}(X,\Normal(0,1))
 \le C_{\rho,\tau,K}
-\sqrt{\frac{\log\log(1/\DeltaR(X))}{\log(1/\DeltaR(X))}}.
+\sqrt{\frac{\log\log(1/\Delta)}{\log(1/\Delta)}}
 \end{equation}
-A Laguerre family gives the reverse order, so the scale in \eqref{eq:headline} is optimal up to multiplicative constants.
+for sufficiently small $\Delta$. A Laguerre family in Section~\ref{sec:sharpness} realizes the same order at the level of the stated fixed-parameter class. Thus the logarithmic scale in \eqref{eq:headline} is not an artifact of a single low-order expansion; it is forced by high-order odd perturbations whose first $m$ odd moments vanish.
 
-\subsection{Why the rate differs from classical Cram\'er stability}
-Cram\'er's theorem and its stability theory concern decompositions of a nearly Gaussian convolution; see \cite{Cramer1936,Sapogov1951,BobkovChistyakovGotze2013}. In the equal-factor convolution $F*F$, the Fourier transform is $\phi_F^2$, and the phase is retained. In the reflected convolution $F*\widetilde F$, by contrast, the Fourier transform is $|\phi_F|^2$, and all phase information disappears. Our assumptions recover rigidity through a different mechanism: high-order reflected moment matching yields a square-root scale tail, truncation makes the factor entire, and a two-constants argument converts a real-axis product estimate into a growing zero-free disk for the truncated factor. The factor can then be Gaussianized through the logarithm of its characteristic function.
+The paper has two complementary exact and quantitative outputs. First, an exact Jensen argument proves Gaussian rigidity for positive-semidefinite chi-square quadratic forms of independent coordinates under coordinatewise dominance; the classical sample-variance characterization with this additional hypothesis is an immediate corollary. Second, the reflection theorem gives a factor-recovery modulus, and the spherical Laplace discrepancy introduced later transfers sample-variance information into its hypotheses. The proof architecture is deliberately modular: local reflected-MGF control gives high-order moments of $X-X'$, those moments lift to a square-root-scale tail for $X$, truncation produces a bounded factor, and a growing zero-free disk permits quadraticization of its logarithmic characteristic function before Esseen smoothing.
 
-This mechanism is adjacent to quantitative Marcinkiewicz theorems based on zero-free regions, such as \cite{DinhGhoshTranTran2025,EremenkoFryntov2021}, but the logical direction is different: a growing zero-free disk is not assumed here; it is derived from the reflection defect after truncation.
+The condition is related to, but distinct from, the standard assumptions in the characterization literature. Infinite divisibility implies the one-sided symmetrized-MGF dominance through the Lévy--Khintchine formula, while symmetry neither implies nor is implied by the dominance. A normalized symmetric non-infinitely-divisible example and a Rademacher example are given in Section~\ref{sec:main-results}. This separation is important because the reflected convolution $F*\widetilde F$ loses precisely the phase information retained by the equal-factor convolution $F*F$ studied in classical Cram\'er stability; see \cite{Sapogov1951,BobkovChistyakovGotze2013}. Related quadratic-form work under symmetry, including Christoph, Prohorov and Ulyanov \cite{ChristophProhorovUlyanov2001}, provides an essential literature boundary but does not assume the present nonsymmetric local reflected-MGF condition.
 
-\subsection{Contributions}
-The paper contains four main contributions.
-\begin{enumerate}[label=(\roman*)]
-\item An exact rigidity theorem for positive-semidefinite chi-square quadratic forms of independent coordinates under coordinatewise local symmetrized-MGF dominance.
-\item The sharp reflection-stability estimate \eqref{eq:headline} under the fixed exponential-integrability condition \eqref{eq:EI-intro}.
-\item A transfer from radial/sample-variance transform discrepancy to the reflected defect, giving a quantitative sample-variance corollary.
-\item Sharpness and obstruction results: a Laguerre family matching \eqref{eq:headline}, failure of every power-law Kolmogorov modulus, and failure of total-variation stability.
-\end{enumerate}
-
-\subsection{Proof architecture}
-Set $Y=X-X'$ and $L=\log(1/\DeltaR(X))$. The proof chooses
-\[
-m\asymp \frac{L}{\log L}.
-\]
-Five lemmas drive the argument. First, a Chebyshev--Bernstein interpolation argument converts the small real-axis reflected MGF defect into $2m$-th order moment matching for $Y$ at accuracy $e^{-A m\log m}$. Second, the $2m$-th moment bound for $Y$ lifts by median symmetrization to an exponentially small tail for $X$ at radius $N\asymp\sqrt m$. Third, after conditioning on $|X|\le N$, the reflected characteristic function remains exponentially close to the Gaussian product on a real interval of radius $R\asymp\sqrt m$. Fourth, a two-constants theorem propagates this approximation from the real diameter to a complex disk; relative closeness to $e^{-z^2}$ gives a zero-free disk for the truncated factor. Fifth, Carath\'eodory's coefficient inequality applied to the analytic logarithm of the factor yields a quadratic expansion with remainder $O(t^3/R)$, and Esseen smoothing gives $O(1/R)=O(m^{-1/2})$.
-
-\subsection{Literature boundary}
-The classical fixed-$n$ sample-variance converse without additional structural hypotheses is not claimed here. The 2017 work of Ejsmont and Lehner explicitly records that classical problem as open \cite{EjsmontLehner2017}; Ruben's earlier result assumes symmetry \cite{Ruben1974}, while Golikova and Kruglov treat infinitely divisible variables \cite{GolikovaKruglov2015}. Our theorem instead isolates local symmetrized-MGF dominance as a sufficient rigidity condition and determines the optimal stability modulus within that class.
+The remainder of the paper is organized around this single reflection problem. Section~\ref{sec:main-results} defines the symmetrized-MGF class and states the main results. Section~\ref{sec:exact} gives the complete exact quadratic-form proof. Section~\ref{sec:upper} contains the five-step stability argument. Section~\ref{sec:sharpness} proves the Laguerre lower mechanism and records the total-variation obstruction. Section~\ref{sec:radial} and Section~\ref{sec:sample-var} then return to the sample-variance application and identify the exact spherical observable that feeds the reflection theory. The discussion closes with the remaining open problems rather than with exploratory proof attempts.

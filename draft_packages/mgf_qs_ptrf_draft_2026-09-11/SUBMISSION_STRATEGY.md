@@ -29,12 +29,12 @@ Excellent topical fit if the sample-variance/statistical characterization motiva
 
 ## Manuscript engineering for a fast editorial read
 
-- Put the sharp stability theorem and matching lower order on page 2.
+- Put the reflected-MGF problem, sharp stability theorem, and matching lower-order mechanism on the first two pages.
 - State explicitly that the unrestricted fixed-n sample-variance converse remains open and is **not** claimed.
-- In the Introduction, contrast the reflected convolution `F*\tilde F` with equal-factor `F*F` in one short paragraph.
+- In the Introduction, explain the chain sample variance → quadratic form → spherical averaging → reflected MGF, and contrast `F*\tilde F` with equal-factor `F*F`.
 - Keep the upper-bound proof architecture to five named lemmas.
-- Move high-frequency power-rate obstruction and lengthy Laguerre algebra to an appendix or supplement if they interrupt the main narrative.
-- Include a one-page “parameter selection” appendix to make the complex-propagation proof referee-friendly.
+- Keep the Laguerre lower construction in the main optimality section and reserve only the source normalization for Appendix B.
+- Include the non-circular parameter-selection appendix to make the complex-propagation proof referee-friendly.
 
 ## Template
 
