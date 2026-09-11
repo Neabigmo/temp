@@ -23,7 +23,20 @@ By \eqref{eq:CL}, $f_m$ is a nonnegative probability density. It is normalized b
 \int_\R x^{2k+1}h_m(x)\phi(x)\,dx=0,
 \qquad 0\le k<m.
 \]
-In particular, the corresponding variable $U_m$ is centered. Its variance is one because $x^2h_m(x)\phi(x)$ is odd. The Laguerre generating identity gives the exact MGF
+In particular, the corresponding variable $U_m$ is centered. Its variance is one because $x^2h_m(x)\phi(x)$ is odd. To record the generating-function calculation behind the exact MGF, set
+\[
+I_m(s):=\frac1{\sqrt{2\pi}}\int_\R x e^{sx-3x^2/2}L_m^{(1/2)}(3x^2/2)\,dx.
+\]
+The Laguerre generating function gives, for $|t|<1$,
+\begin{align*}
+\sum_{m\ge0}I_m(s)t^m
+&=\frac{(1-t)^{-3/2}}{\sqrt{2\pi}}\int_\R x
+\exp\left(sx-\frac{3x^2}{2(1-t)}\right)dx\\
+&=\frac{s}{3\sqrt3}\exp\left(\frac{s^2(1-t)}6\right)\\
+&=\frac{s}{3\sqrt3}e^{s^2/6}
+\sum_{m\ge0}\frac{(-s^2/6)^m}{m!}t^m.
+\end{align*}
+Thus $I_m(s)=\frac{s}{3\sqrt3}e^{s^2/6}(-s^2/6)^m/m!$. Dividing the perturbation integral by $e^{s^2/2}$ yields the exact MGF
 \begin{equation}\label{eq:laguerre-mgf}
 M_{U_m}(s)=e^{s^2/2}(1+u_m(s)),
 \qquad
@@ -57,7 +70,7 @@ R_{W_m}(s)\le\frac{\lambda_m\cosh(\rho)q^4}{12}.
 \]
 If also $\lambda_m\le1$, evaluation at $s=\rho$ yields
 \[
-\frac{\lambda_m\rho^4}{64}\le\Delta_m:=\Delta_\rho(W_m)
+\frac{\lambda_m\rho^4}{64}\le\Delta_m:=\sup_{|s|\le\rho}R_{W_m}(s)
 \le\frac{\lambda_m\rho^4\cosh(\rho)}{12}.
 \]
 Thus $\Delta_m\asymp\lambda_m$ and Stirling's formula gives
@@ -69,12 +82,24 @@ The fixed exponential envelope is uniform: $f_m\le(1+\epsilon)\phi$, while
 \[
 \E e^{b|J_m|}\le2e^{\lambda_m(\cosh b-1)}
 \]
-and $\sup_m\lambda_m<\infty$. Finally, the half-axis discrepancy is explicit. Since
+and $\sup_m\lambda_m<\infty$. Finally, the half-axis discrepancy is explicit. With $r=3x^2/2$, one has $x\,dx=dr/3$ on $(0,\infty)$, and hence
+\[
+\int_0^\infty h_m(x)\phi(x)\,dx
+ =\frac{1}{3C_L\sqrt{2\pi}}
+ \int_0^\infty e^{-r}L_m^{(1/2)}(r)\,dr.
+\]
+The Laguerre generating function gives
+\[
+\sum_{m\ge0}t^m\int_0^\infty e^{-r}L_m^{(1/2)}(r)\,dr
+ =(1-t)^{-3/2}\int_0^\infty e^{-r/(1-t)}\,dr
+ =(1-t)^{-1/2}.
+\]
+Comparing coefficients yields $\int_0^\infty e^{-r}L_m^{(1/2)}(r)\,dr=(1/2)_m/m!$. Therefore
 \[
 \int_0^\infty h_m(x)\phi(x)\,dx
  =\frac{1}{3C_L\sqrt{2\pi}}\frac{(1/2)_m}{m!},
 \]
-we have $|F_{U_m}(0)-1/2|\asymp m^{-1/2}$. Moreover,
+and $(1/2)_m/m!\asymp m^{-1/2}$ gives $|F_{U_m}(0)-1/2|\asymp m^{-1/2}$. Moreover,
 \[
 |F_{U_m+J_m}(0)-F_{U_m}(0)|\le\Pp(J_m\ne0)\le\lambda_m=o(m^{-1/2}).
 \]
@@ -90,12 +115,25 @@ Together with $\log(1/\Delta_m)=2m\log m+O(m)$, this proves Theorem~\ref{thm:sha
 There is no uniform total-variation stability theorem under the assumptions of \cref{thm:sharp-upper}: a standardized Poisson lattice family can satisfy a fixed exponential-integrability bound and have reflected defect tending to zero while its total-variation distance from every absolutely continuous Gaussian law equals one.
 \end{proposition}
 
-Let $N_\lambda\sim\operatorname{Poisson}(\lambda)$ and $X_\lambda=(N_\lambda-\lambda)/\sqrt\lambda$. The reflected defect satisfies, on every fixed compact $s$-interval,
+Let $N_\lambda\sim\operatorname{Poisson}(\lambda)$ and $X_\lambda=(N_\lambda-\lambda)/\sqrt\lambda$. Its centered cumulant generating function is
 \[
-R_{X_\lambda}(s)=\frac{s^4}{12\lambda}+O_\rho(\lambda^{-2}),
+K_\lambda(s)=\lambda\left(e^{s/\sqrt\lambda}-1-\frac{s}{\sqrt\lambda}\right).
 \]
-and the family has a fixed exponential-integrability bound for each fixed $\tau$. Nevertheless $X_\lambda$ is lattice-valued, whereas $\Normal(0,1)$ is absolutely continuous, so
+Consequently, uniformly on every fixed compact $s$-interval,
+\begin{align*}
+R_{X_\lambda}(s)
+&=K_\lambda(s)+K_\lambda(-s)-s^2\\
+&=2\lambda\left(\cosh(s/\sqrt\lambda)-1-\frac{s^2}{2\lambda}\right)
+ =\frac{s^4}{12\lambda}+O_\rho(\lambda^{-2}).
+\end{align*}
+For fixed $b>0$, the inequality $e^u-1-u\le u^2e^{|u|}/2$ gives
 \[
-d_{\rm TV}(X_\lambda,\Normal(0,1))=1.
+\E e^{b|X_\lambda|}
+\le \E e^{bX_\lambda}+\E e^{-bX_\lambda}
+\le 2\exp\left(\frac{b^2}{2}e^{b/\sqrt\lambda}\right),
+\]
+so the family has a fixed exponential-integrability bound for each fixed $b$. Nevertheless $X_\lambda$ is lattice-valued, whereas $\Normal(0,1)$ is absolutely continuous, so
+\[
+d_{\mathrm{TV}}(\mathcal L(X_\lambda),\mathcal N(0,1))=1.
 \]
 This is a qualitative boundary phenomenon and is independent of the Kolmogorov lower bound above.

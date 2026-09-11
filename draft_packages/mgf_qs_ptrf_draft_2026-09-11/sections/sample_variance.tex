@@ -4,15 +4,17 @@ Let $X_1,\ldots,X_n$ be i.i.d. copies of a centered variance-one random variable
 \[
 Q_n=\sum_{i=1}^n(X_i-\bar X)^2.
 \]
-For $r\ge1$, let $V$ be uniform on $S^{r-1}$ and define
+For $r\ge1$, let $V$ be uniform on $S^{r-1}$. Recall the spherical transform
 \[
-\Psi_r(z):=\E_V e^{zV_1},
-\qquad
+\Psi_r(z):=\E_V e^{zV_1}.
+\]
+Define
+\[
 \mathfrak D_{r,\tau}(Q):=
 \sup_{|t|\le\tau}
 \left|e^{-t^2/2}\E\Psi_r(t\sqrt Q)-1\right|.
 \]
-This spherical Laplace discrepancy is the natural observable for a squared radial projection; it is not a generic probability distance.
+This is the spherical Laplace observable associated with a squared radial projection; it is not a probability metric on the law of $Q$.
 
 The exact sample-variance consequence of the quadratic-form theorem is the following.
 \begin{corollary}[Exact sample-variance characterization under dominance]\label{cor:exact-sample-var}
@@ -28,7 +30,7 @@ then $X_i\sim\Normal(0,1)$.
 \end{corollary}
 
 The quantitative statement is the next theorem.
-\begin{theorem}[Sample-variance stability]\label{thm:sample-var}
+\begin{theorem}[Sample-variance stability under spherical Laplace discrepancy]\label{thm:sample-var}
 Fix $n\ge3$, $\tau,K>0$, and $0<\rho'<\tau\sqrt{(n-1)/n}$. There are constants $C<\infty$ and $\varepsilon_0>0$, depending only on $(n,\tau,K,\rho')$, such that the following holds. Let $X_1,\ldots,X_n$ be i.i.d. copies of a centered variance-one $X$ with $\E e^{2\tau|X|}\le K$, and assume $R_X(s)\ge0$ for $|s|\le\tau$. If
 \[
 Q_n=\sum_{i=1}^n(X_i-\bar X)^2,
@@ -42,7 +44,7 @@ then
 \]
 \end{theorem}
 
-We now make the discrepancy-to-defect transfer explicit. Let $r=n-1$, let $P=I_n-n^{-1}\mathbf1\mathbf1^{\mathsf T}$, and choose $B\in\R^{r\times n}$ with $B^{\mathsf T}B=P$ and $BB^{\mathsf T}=I_r$. If $V$ is uniform on $S^{r-1}$, then every column $b_i$ of $B$ has norm
+The discrepancy-to-defect transfer is as follows. Let $r=n-1$, let $P=I_n-n^{-1}\mathbf1\mathbf1^{\mathsf T}$, and choose $B\in\R^{r\times n}$ with $B^{\mathsf T}B=P$ and $BB^{\mathsf T}=I_r$. If $V$ is uniform on $S^{r-1}$, then every column $b_i$ of $B$ has norm
 \[
 q:=\|b_i\|=\sqrt{\frac{n-1}{n}},
 \]
@@ -62,7 +64,7 @@ Jensen's inequality, exchangeability, and the symmetry of $V_1$ therefore imply
 \begin{equation}\label{eq:integrated-D}
 n\E D_X(aV_1)\le\log\bigl(1+\mathfrak D_{n-1,\tau}(Q_n)\bigr).
 \end{equation}
-This is the point at which the spherical observable enters the one-dimensional reflection theory.
+Equation~\eqref{eq:integrated-D} connects the spherical observable to one-dimensional reflection control.
 
 For the pointwise transfer, the density of $V_1$ is
 \[
@@ -80,7 +82,11 @@ The exponential envelope implies that $D_X$ is Lipschitz there. One may take
 \[
 L_h:=\frac{K}{e\tau}+\rho'+h,
 \]
-because $M_X(s)\ge1$ and $|x|e^{\tau|x|}\le(e\tau)^{-1}e^{2\tau|x|}$. If $M_*:=\sup_{|s|\le\rho'}D_X(s)$, two disjoint Lipschitz tents centered at points where the maximum is attained give
+because $M_X(s)\ge1$ and $|x|e^{\tau|x|}\le(e\tau)^{-1}e^{2\tau|x|}$. If $M_*:=\sup_{|s|\le\rho'}D_X(s)$, choose $s_0\in[-\rho',\rho']$ with $D_X(s_0)=M_*$. The function $D_X$ is even, nonnegative, and satisfies $D_X(0)=0$. Since it is $L_h$-Lipschitz on the enlarged interval,
+\[
+D_X(s)\ge\bigl(M_*-L_h|s-s_0|\bigr)_+.
+\]
+Moreover, $|s_0|\ge M_*/L_h$, so the analogous tent centered at $-s_0$ has disjoint interior from the other one. Integrating the two tents against the density lower bound gives
 \[
 2m_h I_{L_h,h}(M_*)
  \le \frac1n\log\bigl(1+\mathfrak D_{n-1,\tau}(Q_n)\bigr),
@@ -93,7 +99,7 @@ M^2/L,& M\le Lh,\\
 2hM-Lh^2,& M>Lh.
 \end{cases}
 \]
-Writing $G(y;L,h)=\sqrt{Ly}$ when $y\le Lh^2$ and $G(y;L,h)=y/(2h)+Lh/2$ otherwise, we obtain
+When $M\le Lh$, the integral is the area of a triangle of base $2M/L$; when $M>Lh$, it is the trapezoid obtained after the tent reaches the edge of the available interval. Writing $G(y;L,h)=\sqrt{Ly}$ when $y\le Lh^2$ and $G(y;L,h)=y/(2h)+Lh/2$ otherwise, we obtain
 \begin{equation}\label{eq:pointwise-D}
 \sup_{|s|\le\rho'}D_X(s)
 \le\inf_{0<h<a-\rho'}G\left(\frac{\log(1+\mathfrak D_{n-1,\tau}(Q_n))}{2nm_h};L_h,h\right).
@@ -102,4 +108,4 @@ In particular, for fixed $n,\tau,K,\rho'$, the right-hand side is $O(\sqrt{\math
 
 Applying \eqref{eq:pointwise-D} to the sample-variance hypothesis and then Theorem~\ref{thm:sharp-upper} proves Theorem~\ref{thm:sample-var}. In the exact case, Corollary~\ref{cor:exact-sample-var} gives Gaussianity under the same dominance condition. Thus the discrepancy-to-defect argument is a quantitative extension of the exact spherical-Jensen mechanism.
 
-Two questions remain open. Can fixed exponential integrability be replaced by a sharp tail or moment hypothesis without changing the reflection modulus? Under which additional uniform-integrability hypothesis can a standard distributional distance replace $\mathfrak D_{r,\tau}$ while retaining the same interior pointwise transfer? A further direction is to extend the factor-recovery and optimality theory from the i.i.d. sample-variance projection to general positive-semidefinite quadratic forms with non-identically distributed coordinates.
+Two questions seem particularly natural. First, can the exponential-moment assumption in the reflection theorem be weakened without changing the optimal modulus? Second, under what additional uniform-integrability hypothesis can the spherical Laplace discrepancy in the sample-variance application be replaced by a standard probability metric? It would also be interesting to develop a corresponding quantitative theory for general positive-semidefinite quadratic forms with non-identically distributed coordinates.

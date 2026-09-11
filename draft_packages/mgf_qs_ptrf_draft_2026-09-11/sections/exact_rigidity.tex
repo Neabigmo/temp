@@ -1,6 +1,10 @@
 \section{Exact rigidity for chi-square quadratic forms}\label{sec:exact}
 
-We prove Theorem~\ref{thm:exact-psd} and then apply it to the ordinary sample variance. Write $A=B^{\mathsf T}B$, where $B\in\R^{r\times d}$ has full row rank, and let $b_i$ be the $i$th column of $B$. If $V$ is uniform on $S^{r-1}$, then spherical averaging gives
+We prove Theorem~\ref{thm:exact-psd} and then apply it to the ordinary sample variance. Write $A=B^{\mathsf T}B$, where $B\in\R^{r\times d}$ has full row rank, and let $b_i$ be the $i$th column of $B$. If $V$ is uniform on $S^{r-1}$, write
+\[
+\Psi_r(z):=\E_V e^{zV_1}.
+\]
+The transform is well defined for all $z\in\C$ because $V_1$ is bounded. Spherical averaging gives
 \begin{equation}\label{eq:spherical-transform}
 \E_V\prod_{i=1}^d M_i\bigl(t\langle b_i,V\rangle\bigr)
  =\E_{X,V}e^{t\langle BX,V\rangle}
