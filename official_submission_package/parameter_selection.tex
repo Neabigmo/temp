@@ -1,6 +1,6 @@
 \section{Parameter selection for the sharp upper bound}\label{app:parameters}
 
-This appendix records a non-circular order of choices for the proof of \cref{thm:sharp-upper}. Fix $\rho>0$ and the interior analytic radius $\rho/2$ used in \cref{lem:moment-transfer}. Let $\omega_0>0$ be the lower bound for the harmonic measure of the real diameter in the smaller half-disk used in the propagation step. Choose $A>8$ and then choose $c_0=c_0(A,\rho)>0$ sufficiently small that the Cauchy estimate in \cref{lem:moment-transfer} dominates all factorial losses; equivalently, after absorbing the fixed $\rho$-dependent constants, one may require
+This appendix records the order of choices for the proof of \cref{thm:sharp-upper}. Fix $\rho>0$ and the interior analytic radius $\rho/2$ used in \cref{lem:moment-transfer}. Let $\omega_0=\omega_{1/2}>0$ be the harmonic-measure bound from \cref{lem:two-constants}; the same value is used in both propagation steps. Choose $A>8$ and then choose $c_0=c_0(A,\rho)>0$ sufficiently small that the Cauchy estimate in \cref{lem:moment-transfer} dominates all factorial losses; equivalently, after absorbing the fixed $\rho$-dependent constants, one may require
 \[
 (A+3)c_0<\omega_0.
 \]
@@ -8,15 +8,11 @@ With $m=\lfloor c_0L/\log L\rfloor$, this gives the required super-exponential m
 
 Fix a finite target exponent $\Gamma>4$. Choose the truncation factor $B$ sufficiently large that the tail-lifting estimate has exponent $\beta_B>4\Gamma$. After $B$ is fixed, let $C_T$ denote the constant in the real-axis Taylor remainder and choose $a_0>0$ so small that
 \[
-C_Ta_0^2<e^{-2\Gamma},
-\qquad
-4(1-\omega_0)(Ba_0+a_0^2)<\frac{\omega_0\Gamma}{2},
-\qquad
-a_0^2<\frac{\omega_0\Gamma}{4},
-\qquad
--\log(C_Ta_0^2)>4\Gamma.
+C_Ta_0^2<e^{-4\Gamma},\qquad
+4(1-\omega_0)(Ba_0+a_0^2)<\frac{\omega_0\Gamma}{2},\qquad
+a_0^2<\frac{\omega_0\Gamma}{4}.
 \]
-The two Taylor-remainder contributions are then bounded by $e^{-\Gamma m}$ after absorbing fixed multiplicative constants, while the truncation contribution is also bounded by $e^{-\Gamma m}$ because $\beta_B>4\Gamma$. Thus \cref{lem:real-window} uses the target exponent $\Gamma$, while the complex propagation estimate has raw exponent
+Each Taylor remainder is at most $e^{-4\Gamma m}$, and the truncation contribution is at most $4Ce^{-\beta_Bm}$. Together with the super-exponential moment mismatch, their sum is at most $e^{-\Gamma m}$ for large $m$. Thus \cref{lem:real-window} uses the target exponent $\Gamma$, while the complex propagation estimate has raw exponent
 \[
 \gamma_{\mathrm{raw}}
 :=\omega_0\Gamma-4(1-\omega_0)(Ba_0+a_0^2)

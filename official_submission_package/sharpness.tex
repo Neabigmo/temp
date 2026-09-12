@@ -2,9 +2,9 @@
 
 \subsection{A symmetric Laguerre lower-bound family}
 
-The sharp modulus does not require an asymmetric perturbation. We construct a symmetric family whose densities are uniformly comparable with the Gaussian density and for which the reflected defect is nonnegative. The only analytic input is the following uniform Laguerre envelope; its normalization and four-region proof are recorded in Appendix~\ref{app:laguerre}.
+We prove sharpness within a symmetric class of densities uniformly comparable with the Gaussian density. The perturbation cancels the first $2m-1$ moments, giving a reflected-MGF defect of factorial size on each fixed interval, while its distribution function differs from the Gaussian one by order $m^{-1/2}$. We use the following Laguerre bound, proved in Appendix~\ref{app:laguerre} from the estimates of Imekraz, Robert and Thomann~\cite[Proposition~3.2]{ImekrazRobertThomann2016}.
 
-\begin{lemma}[Uniform even Laguerre envelope]\label{lem:laguerre-envelope}
+\begin{lemma}[Uniform even Laguerre envelope]\label[lemma]{lem:laguerre-envelope}
 \begin{equation}\label{eq:CE}
 C_E:=\sup_{m\ge2,\,x\in\R}
 \sqrt m\,e^{-x^2}\left|L_m^{(-1/2)}(3x^2/2)\right|<\infty.
@@ -27,7 +27,7 @@ By \eqref{eq:CE}, $|h_m|\le1$, so
 \end{equation}
 In particular $f_m$ is nonnegative and has exponential moments of every fixed order uniformly in $m$.
 
-The perturbation is even. With $r=3x^2/2$, Laguerre orthogonality for parameter $-1/2$ gives, for $0\le k<m$,
+The perturbation is even. With $r=3x^2/2$, Laguerre orthogonality for parameter $-1/2$ (Szeg\H{o}~\cite[Chapter~V]{Szego1975}) gives, for $0\le k<m$,
 \[
 \int_{\R}x^{2k}h_m(x)\phi(x)\,dx
 =C_{m,k}\int_0^\infty r^{k-1/2}e^{-r}L_m^{(-1/2)}(r)\,dr=0,
@@ -39,7 +39,7 @@ To compute the MGF exactly, set
 J_m(s):=\frac1{\sqrt{2\pi}}
 \int_{\R}e^{sx-3x^2/2}L_m^{(-1/2)}(3x^2/2)\,dx.
 \]
-The Laguerre generating function gives, for $|t|<1$,
+The Laguerre generating function, first integrated for $|t|$ sufficiently small and then continued analytically to $|t|<1$, gives
 \begin{align*}
 \sum_{m\ge0}J_m(s)t^m
 &=\frac{(1-t)^{-1/2}}{\sqrt{2\pi}}
@@ -66,14 +66,19 @@ In particular $v_m(s)\ge0$ on the real axis. Since $W_m$ is symmetric,
 R_{W_m}(s)=2\log(1+v_m(s))\ge0.
 \end{equation}
 
-Fix $\rho=1$. For $m\ge1$, $s\mapsto e^{-s^2/3}s^{2m}$ is increasing on $[0,1]$, so
+Fix any $\rho>0$. For $m>\rho^2/3$, the function $s\mapsto e^{-s^2/3}s^{2m}$ is increasing on $[0,\rho]$, since its logarithmic derivative is $2m/s-2s/3>0$ for $0<s\le\rho$. Therefore
 \[
-\Delta_m:=\sup_{|s|\le1}R_{W_m}(s)
-=2\log(1+v_m(1)).
+\Delta_m:=\Delta_\rho(W_m)
+=2\log(1+v_m(\rho)).
 \]
-Since $v_m(1)\to0$, we have $\Delta_m\asymp v_m(1)$, and Stirling's formula gives
+Here
+\[
+v_m(\rho)=\frac{\epsilon\sqrt m}{\sqrt3\,C_E}
+ e^{-\rho^2/3}\frac{(\rho^2/6)^m}{m!}\longrightarrow0.
+\]
+Thus $\Delta_m\asymp v_m(\rho)$, and Stirling's formula yields
 \begin{equation}\label{eq:even-laguerre-delta}
-\log\frac1{\Delta_m}=m\log m+O(m).
+\log\frac1{\Delta_m}=m\log m+O_\rho(m).
 \end{equation}
 Hence
 \[
@@ -84,7 +89,7 @@ Hence
 It remains to prove a Kolmogorov discrepancy of this order. The value at the origin is
 \[
 L_m^{(-1/2)}(0)=\frac{(1/2)_m}{m!}
-=\frac1{4^m}{2m\choose m}\asymp m^{-1/2}.
+=\frac1{4^m}\binom{2m}{m}\asymp m^{-1/2}.
 \]
 Moreover,
 \begin{equation}\label{eq:laguerre-origin-series}
@@ -120,17 +125,18 @@ with $c_1>0$ independent of $m$. Since $f_m-\phi=\epsilon h_m\phi$ is even and h
 \]
 Together with \eqref{eq:even-laguerre-delta}, this proves \cref{thm:sharpness}. In particular no uniform power-law modulus $C\Delta^\alpha$, $\alpha>0$, can replace the logarithmic modulus in \cref{thm:sharp-upper}.
 
-The construction is symmetric, so on the real axis $M_{W_m}(-s)=M_{W_m}(s)$ and there is no phase ambiguity in recovering the MGF factor from its reflected product. Thus the matching lower bound isolates a more basic source of instability: recovering a global distribution from extremely accurate transform information on only a fixed real interval.
+Since $M_{W_m}(-s)=M_{W_m}(s)>0$ for real $s$, the lower bound persists even when the MGF factor is the positive square root of its reflected product. It is therefore an obstruction to recovery from local transform data, not only an effect of lost Fourier phase.
 
 \subsection{Failure of total-variation stability}
 
 Throughout this subsection, $d_{\mathrm{TV}}(\mu,\nu):=\sup_A|\mu(A)-\nu(A)|$.
 
-\begin{proposition}[Strong-distance obstruction]\label{prop:tv}
+\begin{proposition}[Strong-distance obstruction]\label[proposition]{prop:tv}
 There is no uniform total-variation stability theorem under the assumptions of \cref{thm:sharp-upper}: a standardized Poisson lattice family has reflected defect tending to zero on every fixed interval while its total-variation distance from every absolutely continuous Gaussian law equals one.
 \end{proposition}
 
-Let $N_\lambda\sim\operatorname{Poisson}(\lambda)$ and $X_\lambda=(N_\lambda-\lambda)/\sqrt\lambda$. Its centered cumulant generating function is
+\begin{proof}
+Let $N_\lambda\sim\operatorname{Poisson}(\lambda)$, with $\lambda\ge1$, and $X_\lambda=(N_\lambda-\lambda)/\sqrt\lambda$. Its centered cumulant generating function is
 \[
 K_\lambda(s)=\lambda\left(e^{s/\sqrt\lambda}-1-\frac{s}{\sqrt\lambda}\right).
 \]
@@ -151,4 +157,6 @@ so the family even has a fixed exponential-integrability bound for each fixed $b
 \[
 d_{\mathrm{TV}}(\mathcal L(X_\lambda),\mathcal N(0,1))=1.
 \]
-This is a qualitative boundary phenomenon and is independent of the Kolmogorov lower bound above.
+\end{proof}
+
+This lattice example separates the metric issue from the sharp Kolmogorov modulus. Related failures of strong-distance stability for Gaussian convolutions, including absolutely continuous symmetric examples, were established by Bobkov, Chistyakov and G\"otze~\cite{BobkovChistyakovGotze2013}. Their regularization results~\cite{BobkovChistyakovGotze2016} show how additional Gaussian smoothing restores total-variation and entropic stability in the convolution setting.

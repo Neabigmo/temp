@@ -15,9 +15,11 @@ d_{\mathrm{TV}}(\mu,\nu):=\sup_A|\mu(A)-\nu(A)|.
 \]
 All constants in this section may depend on the fixed radius $\rho$, but not on $\Delta$.
 
+The proof has four stages. Local control of $M_Y$ first gives Gaussian moment comparison through order $2m$, where $m\asymp L/\log L$. These moments control the tail of $X$ beyond $N=B\sqrt m$ and approximate the reflected characteristic function on an interval of length comparable to $\sqrt m$. After truncation, a second propagation argument produces a zero-free disk of radius $R=a_0\sqrt m$ for one factor. Coefficient bounds for its analytic logarithm then give a Kolmogorov error of order $R^{-1}$. The balance $m\log m\asymp L$ is the source of the modulus in \cref{thm:sharp-upper}. The constants $B$ and $a_0$ are fixed independently of $\Delta$ in Appendix~\ref{app:parameters}.
+
 \subsection{Automatic exponential integrability}
 
-\begin{lemma}[Local reflected control supplies an exponential envelope]\label{lem:auto-envelope}
+\begin{lemma}[Local reflected control supplies an exponential envelope]\label[lemma]{lem:auto-envelope}
 Under the hypotheses of \cref{thm:sharp-upper}, if $\Delta\le1$, then
 \[
 M_X(s)\le e^{s^2+\Delta}\qquad(|s|\le\rho)
@@ -45,7 +47,7 @@ so each of the two nonnegative logarithms is at most $s^2+\Delta$. This proves t
 
 \subsection{Half-disk propagation}
 
-\begin{lemma}[Two-constants estimate on a half-disk]\label{lem:two-constants}
+\begin{lemma}[Two-constants estimate on a half-disk]\label[lemma]{lem:two-constants}
 Let $D_R^+=\{z\in\C:|z|<R,\ \Im z>0\}$. Suppose that $H$ is holomorphic on a neighborhood of $\overline{D_R^+}$ and satisfies
 \[
 |H(x)|\le a\quad (|x|\le R),
@@ -61,12 +63,12 @@ The same estimate holds in the lower half-disk.
 \end{lemma}
 
 \begin{proof}
-For $\delta>0$, the function $u_\delta(z):=\log(|H(z)|+\delta)$ is subharmonic. Its boundary values are at most $\log(a+\delta)$ on the diameter and at most $\log(b+\delta)$ on the semicircle. The two-constants theorem for subharmonic functions therefore bounds $u_\delta$ by the corresponding harmonic-measure combination. Under the scaling $z=Rw$, the half-disk $D_R^+$ becomes the unit half-disk, and the inner region $|z|\le\eta R$ becomes $|w|\le\eta$. The harmonic measure of the diameter is positive on this compact inner region, so its minimum is a constant $\omega_\eta>0$ depending only on $\eta$, not on $R$, $m$, or $\Delta$. Letting $\delta\downarrow0$ gives the assertion.
+For $\delta>0$, the function $u_\delta(z):=\log(|H(z)|+\delta)$ is subharmonic. Its boundary values are at most $\log(a+\delta)$ on the diameter and at most $\log(b+\delta)$ on the semicircle. The two-constants theorem for subharmonic functions bounds $u_\delta$ by the corresponding harmonic-measure combination; see Ransford~\cite{Ransford1995}. Under the scaling $z=Rw$, the half-disk $D_R^+$ becomes the unit half-disk, and the inner region $|z|\le\eta R$ becomes $|w|\le\eta$. The harmonic measure of the diameter is positive on this compact inner region, so its minimum is a constant $\omega_\eta>0$ depending only on $\eta$, not on $R$, $m$, or $\Delta$. Letting $\delta\downarrow0$ gives the assertion.
 \end{proof}
 
 \subsection{High-order moments of the reflected variable}
 
-\begin{lemma}[Local defect to high-order moments]\label{lem:moment-transfer}
+\begin{lemma}[Local defect to high-order moments]\label[lemma]{lem:moment-transfer}
 For every $A>0$ there is $c_0=c_0(A,\rho)>0$ such that, with
 \[
 m=\left\lfloor c_0\frac{L}{\log L}\right\rfloor,
@@ -93,7 +95,7 @@ Thus $|F(z)|\le B_0(\rho)$ there. On the real diameter, the defect hypothesis gi
 |F(s)|=e^{s^2}|e^{R_X(s)}-1|\le C_0(\rho)\Delta,
 \qquad |s|\le\rho_0.
 \]
-For sufficiently small $\Delta$, the diameter bound is no larger than the arc bound. Apply \cref{lem:two-constants} with a fixed $\eta<1$ to $D_{\rho_0}^{+}$ and $D_{\rho_0}^{-}$. For $r_0:=\eta\rho_0$, write $\omega_0:=\omega_\eta$. Thus there are constants $r_0>0$, $\omega_0>0$, and $C_1<\infty$, depending only on $\rho$, such that
+For sufficiently small $\Delta$, the diameter bound is no larger than the arc bound. Apply \cref{lem:two-constants} with $\eta=1/2$ to $D_{\rho_0}^{+}$ and $D_{\rho_0}^{-}$. Set $r_0:=\rho/4$ and $\omega_0:=\omega_{1/2}$. Thus there are constants $r_0>0$, $\omega_0>0$, and $C_1<\infty$, depending only on $\rho$, such that
 \[
 \sup_{|z|\le r_0}|F(z)|\le C_1\Delta^{\omega_0}.
 \]
@@ -118,7 +120,7 @@ and the negligible moment mismatch gives the stated $2m$-th moment bound.
 
 \subsection{Tail bound and truncation}
 
-\begin{lemma}[Square-root tail lifting]\label{lem:tail-lift}
+\begin{lemma}[Square-root tail lifting]\label[lemma]{lem:tail-lift}
 There are constants $C,c>0$ with the following property. For every sufficiently large fixed $B$, if $N=B\sqrt m$, then
 \[
 \Pp(|X|>N)\le C e^{-\beta_Bm},
@@ -166,7 +168,7 @@ It follows that $|\E X_N|+|\operatorname{Var}(X_N)-1|\le C(1+N^2)e^{-cN}$ after 
 
 \subsection{Product approximation on a growing interval}
 
-\begin{lemma}[Real-axis product approximation]\label{lem:real-window}
+\begin{lemma}[Real-axis product approximation]\label[lemma]{lem:real-window}
 For $B$ fixed sufficiently large, there is $a_0=a_0(B,\rho)>0$ such that, with
 \[
 R=a_0\sqrt m
@@ -196,16 +198,36 @@ Taylor's inequality and the moment comparison give
  |\E(iY)^k-\E(iG)^k|,
 \end{aligned}
 \]
-where $G\sim\Normal(0,2)$. On $|t|\le2R$, the two Taylor-remainder terms are bounded by $(Ca_0^2)^m$ after Stirling, while the moment-mismatch term is super-exponentially smaller by \cref{lem:moment-transfer}. Choose $a_0$ small. Since $\varphi_Y(t)=\varphi_X(t)\varphi_X(-t)$ and the truncation error is bounded by \cref{lem:tail-lift}, transfer to $X_N$ gives
+where $G\sim\Normal(0,2)$. On $|t|\le2R$, each Taylor remainder is at most $(C_Ta_0^2)^m$ by Stirling's formula. The moment-mismatch term is at most
 \[
-\varphi_N(t)\varphi_N(-t)=\varphi_{X_N-X_N'}(t)=e^{-t^2}+O(e^{-\Gamma m}).
+e^{-Am\log m}\sum_{k=0}^{2m-1}\frac{|t|^k}{k!}
+\le \exp\{-Am\log m+2a_0\sqrt m\}.
 \]
-The constants in the $O(\cdot)$ term are absorbed by the parameter choices in Appendix~\ref{app:parameters}.
+Choose $B$ so that $\beta_B>4\Gamma$ and then choose $a_0$ so that $C_Ta_0^2<e^{-4\Gamma}$. These choices are compatible with the complex propagation step, as recorded in Appendix~\ref{app:parameters}.
+
+For completeness, write $p_N=\Pp(|X|>N)$. Under our convention for total variation, integration of a complex-valued function bounded by one gives
+\[
+|\varphi_X(t)-\varphi_N(t)|\le 2p_N.
+\]
+Since characteristic functions have modulus at most one on the real axis,
+\[
+|\varphi_X(t)\varphi_X(-t)-\varphi_N(t)\varphi_N(-t)|
+\le4p_N\le4Ce^{-\beta_Bm}.
+\]
+Combining this with $\varphi_Y(t)=\varphi_X(t)\varphi_X(-t)$ proves, uniformly on $|t|\le2R$,
+\[
+|\varphi_N(t)\varphi_N(-t)-e^{-t^2}|
+\le 2e^{-4\Gamma m}
++e^{-Am\log m+2a_0\sqrt m}
++4Ce^{-\beta_Bm}
+\le e^{-\Gamma m}
+\]
+for all sufficiently large $m$.
 \end{proof}
 
 \subsection{A zero-free disk}
 
-\begin{lemma}[Growing zero-free disk]\label{lem:zero-free}
+\begin{lemma}[Growing zero-free disk]\label[lemma]{lem:zero-free}
 The constants $B$ and $a_0$ can be chosen so that, for $R=a_0\sqrt m$,
 \[
 \varphi_N(z)\ne0,
@@ -241,7 +263,7 @@ holds. On the real diameter, \cref{lem:real-window} gives $\log|\mathcal F_N|\le
 \qquad
 \gamma_{\mathrm{raw}}:=\omega_0\Gamma-4(1-\omega_0)(Ba_0+a_0^2).
 \]
-Appendix~\ref{app:parameters} chooses $B$ and then $a_0$ so that $\gamma_{\mathrm{raw}}>a_0^2$. Choose once and for all
+Here $B$ has already been fixed to control the truncation error. We now decrease $a_0$, keeping $B$ fixed, so that $\gamma_{\mathrm{raw}}>a_0^2$. Decreasing $a_0$ also improves the Taylor estimate in \cref{lem:real-window}. Appendix~\ref{app:parameters} records these choices explicitly. Choose once and for all
 \[
 a_0^2<\gamma_*<\gamma_{\mathrm{raw}}.
 \]
@@ -269,7 +291,7 @@ and therefore $\varphi_N(z)\ne0$ on the disk.
 
 \subsection{From zero-freeness to Gaussian approximation}
 
-\begin{lemma}[From zero-freeness to Gaussian approximation]\label{lem:factor-gaussian}
+\begin{lemma}[From zero-freeness to Gaussian approximation]\label[lemma]{lem:factor-gaussian}
 Under the conclusions of \cref{lem:zero-free},
 \[
 \dK(X_N,\Normal(\mu_N,\sigma_N^2))\le \frac{C}{R},
@@ -289,10 +311,17 @@ The bounded support gives $\Re\psi_N(z)=\log|\varphi_N(z)|\le NR$. Set
 \[
 H(z):=NR-\psi_N(z),\qquad \Re H(z)\ge0.
 \]
-After scaling $z=Rw$, the Carath\'eodory coefficient theorem for functions with nonnegative real part (see, for example, Duren~\cite{Duren1983}) applied to $H(Rw)/(NR)$ gives, for $\psi_N(z)=\sum_{k\ge1}a_kz^k$,
+For $\psi_N(z)=\sum_{k\ge1}a_kz^k$, define
 \[
-|a_k|\le2NR^{1-k}.
+P(w):=\frac{H(Rw)}{NR}
+=1-\sum_{k\ge1}\frac{a_kR^{k-1}}{N}w^k,
+\qquad |w|<1.
 \]
+Then $P(0)=1$ and $\Re P\ge0$. The Carath\'eodory coefficient theorem bounds every nonconstant coefficient of $P$ by $2$ in modulus; see Duren~\cite{Duren1983}. Hence
+\[
+|a_k|\le2NR^{1-k},\qquad k\ge1.
+\]
+This estimate retains the support scale $N$, which is comparable to $R$ in the present argument.
 Since $a_1=i\mu_N$ and $a_2=-\sigma_N^2/2$, for every fixed $0<\theta<1$,
 \[
 \left|\psi_N(t)-i\mu_Nt+\frac{\sigma_N^2t^2}{2}\right|
@@ -365,7 +394,7 @@ so the triangle inequality yields the consequence for $X$.
 \end{proof}
 
 \begin{proof}[Proof of \cref{thm:sharp-upper}]
-First apply \cref{lem:auto-envelope}; this is exactly where the exponential envelope formerly imposed as a separate hypothesis is obtained from the reflected defect. Then apply \cref{lem:moment-transfer,lem:tail-lift,lem:real-window,lem:zero-free,lem:factor-gaussian}. Since
+The exponential envelope follows from \cref{lem:auto-envelope}. Apply \cref{lem:moment-transfer,lem:tail-lift,lem:real-window,lem:zero-free,lem:factor-gaussian}. Since
 \[
 m\asymp_\rho\frac{L}{\log L},\qquad L=\log(1/\Delta),
 \]

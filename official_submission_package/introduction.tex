@@ -1,103 +1,99 @@
 \section{Introduction and main results}\label{sec:intro}
 
-The Gaussian decomposition principle used in the factor-recovery argument is the classical theorem of Cram\'er~\cite{Cramer1936}.
+Let $X'$ be an independent copy of a real random variable $X$. Wherever the moment generating functions are finite,
+\[
+M_{X-X'}(s)=M_X(s)M_X(-s).
+\]
+This product determines the symmetrized law, but it need not determine the law of $X$: replacing $X$ by $-X$ leaves the product unchanged. The Gaussian case is rigid. If $X-X'$ is Gaussian, Cram\'er's decomposition theorem implies that $X$ is Gaussian~\cite{Cramer1936}. We ask for a quantitative version when the reflected product is known to be approximately Gaussian only on a fixed real interval. The aim is to recover one factor and to determine the best possible dependence on the local error.
 
-The exact chi-square law of the sample variance is one of the classical signatures of Gaussian samples. The unrestricted converse for a fixed sample size $n\ge3$ remains a longstanding characterization problem. Existing results impose additional structure, including symmetry or infinite divisibility; see \cite{Ruben1974,Ruben1978,Bondesson1977,GolikovaKruglov2015,Kruglov2013,EjsmontLehner2017}. We do not claim to resolve that unrestricted problem. The sample variance is a chi-square quadratic form, and spherical averaging of its Laplace transform naturally brings in the symmetrized quantity $M_X(s)M_X(-s)$.
-
-For a centered variance-one random variable $X$, let $M_X(s)=\E e^{sX}$ whenever finite and define
+For a centered variance-one random variable $X$, write $M_X(s)=\E e^{sX}$ and define
 \begin{equation}\label{eq:defect-intro}
 R_X(s):=\log M_X(s)+\log M_X(-s)-s^2,
 \qquad
 \Delta_\rho(X):=\sup_{|s|\le\rho}|R_X(s)|.
 \end{equation}
-We write $d_{\mathrm K}(X,Z)$ for the Kolmogorov distance between the laws of $X$ and $Z$,
+We use the Kolmogorov distance
 \[
-d_{\mathrm K}(X,Z):=\sup_x\left|\Pp(X\le x)-\Pp(Z\le x)\right|.
+\dK(X,Z):=\sup_x\left|\Pp(X\le x)-\Pp(Z\le x)\right|,
 \]
-If $X'$ is an independent copy of $X$, then $M_{X-X'}(s)=M_X(s)M_X(-s)$. The difficulty is that reflection removes the Fourier phase. Our stability theorem shows that the factor can nevertheless be recovered, at the optimal logarithmic scale, from local real-axis information alone.
+and denote the standard Gaussian density and distribution function by $\phi$ and $\Phi$.
 
-A useful self-improvement is that the reflected defect already supplies the exponential integrability needed later. Indeed, if $\E X=0$, then Jensen's inequality gives $M_X(s)\ge1$. Hence, whenever $M_X$ is finite on $[-\rho,\rho]$ and $\Delta_\rho(X)\le\Delta$,
-\begin{equation}\label{eq:auto-envelope-intro}
-M_X(\rho)+M_X(-\rho)\le2e^{\rho^2+\Delta},
-\qquad
-\E e^{\rho|X|}\le2e^{\rho^2+\Delta}.
-\end{equation}
-Thus no independent exponential-moment assumption is needed in the reflection theorem.
+\subsection{Sharp recovery from local reflected information}
 
-The proof uses two scales. A fixed complex neighborhood yields high-order moment information for $X-X'$; after truncation, this produces a Gaussian product approximation on a disk of radius of order $\sqrt m$. Zero-freeness on this disk allows one to take a logarithm and recover the factor. The exact theorem, by contrast, follows from equality in Jensen's inequality after spherical averaging.
-
-\subsection*{Exact rigidity}
-The positive-semidefinite quadratic-form theorem below motivates the reflection condition.
-\begin{theorem}[Exact PSD rigidity]\label{thm:exact-psd}
-Let $X=(X_1,\ldots,X_d)$ have independent coordinates with $\E X_i=0$ and $\operatorname{Var}(X_i)=\sigma_i^2$. Let $A=A^{\mathsf T}\succeq0$ have rank $r\ge1$, and suppose
-\[
-X^{\mathsf T}AX\sim\chi_r^2.
-\]
-For every active coordinate $i$ with $A_{ii}>0$, assume that
-\[
-M_i(s)M_i(-s)\ge e^{\sigma_i^2s^2}
-\]
-for all $s$ in some neighborhood of the origin. Then every active $X_i$ is Gaussian, $X_i\sim\Normal(0,\sigma_i^2)$.
-\end{theorem}
-
-No separate MGF-existence hypothesis is required in \cref{thm:exact-psd}: the chi-square law of the quadratic form itself implies a square-exponential moment for every active coordinate, and therefore finiteness of its MGF on the whole real line; see \cref{sec:exact}.
-
-Characterizations based on quadratic forms have a long history. Converse results for sample variance and related forms use additional structural assumptions; see, for example, Christoph--Prohorov--Ulyanov, Kruglov, and Golikova--Kruglov \cite{ChristophProhorovUlyanov2001,Kruglov2013,GolikovaKruglov2015}. The condition here is different: infinite divisibility implies the reflected-MGF dominance through the L\'evy--Khintchine formula, but the converse fails and no symmetry is required. For an infinitely divisible centered law with finite variance, the representation gives, for every $s$ such that both $M_X(s)$ and $M_X(-s)$ are finite,
-\[
-\log M_X(s)+\log M_X(-s)-\sigma^2s^2
- =2\int\left(\cosh(sx)-1-\frac{s^2x^2}{2}\right)\nu(dx)\ge0.
-\]
-The converse fails. If $X$ takes the values $3$ and $-1/3$ with probabilities $1/10$ and $9/10$, then it is centered and has variance one. It is not infinitely divisible: if a bounded non-degenerate law of support diameter $d$ were an $n$-fold convolution of an i.i.d. root, that root would have support diameter at most $d/n$, and Popoviciu's inequality would give $\operatorname{Var}(X)/n\le d^2/(4n^2)$, which is impossible for large $n$. Its fourth cumulant is $46/9$, so $R_X(s)=23s^4/54+O(s^6)$ and the local dominance holds. This example is asymmetric. In contrast, a Rademacher variable $\varepsilon$ satisfies $R_\varepsilon(s)=2\log\cosh s-s^2=-s^4/6+O(s^6)$, which is negative for all sufficiently small nonzero $s$.
-
-The L\'evy--Khintchine representation used in this comparison is standard; see Sato~\cite{Sato1999}.
-
-\subsection*{Reflection stability}
-The quantitative result recovers a factor from local reflected-MGF information without assuming the dominance sign.
+The main result requires neither symmetry nor a sign condition on $R_X$.
 \begin{theorem}[Sharp reflection stability]\label{thm:sharp-upper}
 Fix $\rho>0$. There exist constants $C_\rho<\infty$ and $\Delta_0(\rho)\in(0,e^{-e})$ such that the following holds. Let $X$ satisfy
 \[
 \E X=0,\qquad \E X^2=1,
 \qquad M_X(s)<\infty\quad(|s|\le\rho),
 \]
-and suppose
-\[
-|R_X(s)|\le\Delta,
-\qquad |s|\le\rho,
-\]
-for some $0<\Delta\le\Delta_0(\rho)$. Then
+and suppose that $\Delta_\rho(X)\le\Delta$ for some $0<\Delta\le\Delta_0(\rho)$. Then
 \[
 \dK(X,\Normal(0,1))
 \le C_\rho\sqrt{\frac{\log\log(1/\Delta)}{\log(1/\Delta)}}.
 \]
 \end{theorem}
 
-Classical Cram\'er stability begins with a convolution that is already close to a Gaussian convolution in a global probability metric. Sapogov's work is an early cornerstone of this theory~\cite{Sapogov1951}; for the i.i.d. equal-summand case substantially stronger estimates are available, for example in Bobkov, Chistyakov, and G\"otze~\cite{BobkovChistyakovGotze2013}. In the present problem the input is different: $M_X(s)M_X(-s)$ is controlled only on a fixed real interval, and on the Fourier axis the reflected factorization becomes $|\varphi_X|^2$, which contains no phase information. The main task is therefore to convert local transform control into a global statement about one factor.
+The local hypothesis already controls the exponential moment used in the proof. Since $\E X=0$, Jensen's inequality gives $M_X(s)\ge1$. Consequently,
+\begin{equation}\label{eq:auto-envelope-intro}
+\E e^{\rho|X|}\le M_X(\rho)+M_X(-\rho)
+\le2e^{\rho^2+\Delta}.
+\end{equation}
+No additional uniform moment bound is assumed. If $\Delta_\rho(X)=0$, uniqueness of the MGF and Cram\'er's theorem give $X\sim\Normal(0,1)$.
 
-One could first try to convert the local reflected-MGF control into a global approximation for $X-X'$ and then invoke a general stability theorem for Cram\'er decomposition. Such an argument discards the structure responsible for the sharp modulus. Our proof instead keeps the reflected factorization throughout: high-order moment information constructs a zero-free disk for a truncated factor itself, after which the logarithm of that factor is controlled directly. The logarithmic coefficient step is a finite-disk estimate in the spirit of quantitative Marcinkiewicz theory; related connections between zero geometry and Gaussian approximation appear in Eremenko--Fryntov, Dinh--Ghosh--Tran--Tran, and Michelen--Sahasrabudhe~\cite{EremenkoFryntov2021,DinhGhoshTranTran2025,MichelenSahasrabudhe2026}. The distinctive step here is that the growing zero-free disk is derived from the local reflected-MGF input rather than imposed as a hypothesis.
-
-The order in \cref{thm:sharp-upper} cannot be improved uniformly. In fact, sharpness already occurs in a symmetric class for which no Fourier phase has to be reconstructed.
+The rate in \cref{thm:sharp-upper} is attained for every fixed observation radius. The lower-bound family is symmetric and has Gaussian-comparable densities.
 \begin{theorem}[Symmetric Laguerre lower bound]\label{thm:sharpness}
-There are constants $\rho,c,c_-,c_+>0$ and centered variance-one random variables $W_m$ with symmetric densities $f_m$ such that, for all sufficiently large $m$,
+Fix $\rho>0$. There are constants $c,c_-,c_+>0$ and centered variance-one random variables $W_m$ with symmetric densities $f_m$ such that, for all sufficiently large $m$,
 \[
 c_-\phi(x)\le f_m(x)\le c_+\phi(x),
-\qquad
-R_{W_m}(s)\ge0\quad(|s|\le\rho),
+\qquad R_{W_m}(s)\ge0\quad(s\in\R).
 \]
-and, with
+With $\Delta_m:=\sup_{|s|\le\rho}R_{W_m}(s)$, one has $\Delta_m\to0$ and
 \[
-\Delta_m:=\sup_{|s|\le\rho}R_{W_m}(s)\to0,
-\]
-\[
-\log\frac1{\Delta_m}=m\log m+O(m),
+\log\frac1{\Delta_m}=m\log m+O_\rho(m),
 \qquad
 \dK(W_m,\Normal(0,1))\ge c m^{-1/2}.
 \]
-Consequently, for some $c'>0$,
+In particular, for some $c_\rho'>0$ and all sufficiently large $m$,
 \[
 \dK(W_m,\Normal(0,1))
-\ge c'\sqrt{\frac{\log\log(1/\Delta_m)}{\log(1/\Delta_m)}}
+\ge c_\rho'\sqrt{\frac{\log\log(1/\Delta_m)}{\log(1/\Delta_m)}}.
 \]
-for all sufficiently large $m$.
 \end{theorem}
 
-Thus the logarithmic instability is already present when $M_X(-s)=M_X(s)$ and the factor on the real axis can be recovered by a positive square root. Reflection-induced phase loss is an additional difficulty for nonsymmetric factor recovery, but it is not the sole source of the optimal modulus.
+For this family, $M_{W_m}(-s)=M_{W_m}(s)$, so the real-axis MGF factor is the positive square root of the reflected product. The lower bound therefore concerns the passage from local transform information to a global probability metric, not only the loss of Fourier phase. In the nonsymmetric case, factor recovery must also deal with the identity $\varphi_{X-X'}(t)=|\varphi_X(t)|^2$.
+
+\subsection{Relation to decomposition and zero-free methods}
+
+Quantitative Gaussian decomposition has been studied since Sapogov~\cite{Sapogov1951}. The monograph of Linnik and Ostrovskii~\cite{LinnikOstrovskii1977} develops the analytic theory of decompositions, and Golinskii and Chistyakov~\cite{GolinskiiChistyakov1994} give order-sharp stability estimates in the L\'evy metric. Classical stability estimates in this setting start from global proximity of a convolution to a Gaussian law. For identically distributed summands, Bobkov, Chistyakov, and G\"otze~\cite{BobkovChistyakovGotze2013} obtain stronger Kolmogorov estimates than those available for general decompositions. Their equal-summand problem concerns $X+X'$, whereas the reflected product here corresponds to $X-X'$. More importantly, our hypothesis controls this product only on a fixed real interval, rather than controlling the convolution in a probability metric.
+
+A second connection is with Marcinkiewicz's theorem, which states that a characteristic function of the form $e^P$, with $P$ a polynomial, must be Gaussian or degenerate~\cite{Marcinkiewicz1939}. Golinskii~\cite{Golinskii1991} studies stability when $e^P$ is close to a characteristic function. Eremenko and Fryntov~\cite{EremenkoFryntov2021} derive Gaussian approximation from a zero-free vertical strip and a global growth condition. Dinh, Ghosh, Tran, and Tran~\cite[Theorem~2.2]{DinhGhoshTranTran2026} require only a zero-free disk and a growth bound on that disk. Related results for probability generating polynomials connect the locations of their zeros with central limit theorems~\cite{LebowitzPittelRuelleSpeer2016,MichelenSahasrabudhe2019,MichelenSahasrabudhe2026}.
+
+In our proof the zero-free region is not assumed. Local reflected-MGF control first gives accurate moments through order $2m$, where $m\asymp\log(1/\Delta)/\log\log(1/\Delta)$. Truncation at $N\asymp\sqrt m$ then yields a zero-free disk of radius $R\asymp\sqrt m$ for a single factor. If one uses only the bound $|\varphi_N(z)|\le e^{NR}$ in the disk theorem of Dinh et al., the resulting estimate is $O((1+\log R)/R)$. A direct Carath\'eodory coefficient estimate adapted to $N\asymp R$ gives $O(R^{-1})$ instead, as proved in \cref{lem:factor-gaussian}. This is the scale required for \cref{thm:sharp-upper}.
+
+Symmetric perturbations with densities comparable to the Gaussian also occur in the strong-distance counterexamples of Bobkov, Chistyakov, and G\"otze~\cite{BobkovChistyakovGotze2013}. The Laguerre perturbation in \cref{thm:sharpness} is chosen to cancel the first $2m-1$ moments and to give an explicit, nonnegative reflected defect of factorial size. These two features relate the local MGF error to the Kolmogorov lower bound at the same scale as the upper theorem.
+
+\subsection{Quadratic forms and the sample variance}
+
+Quadratic-form characterization provides a source of the reflected quantity. The classical sample-variance problem asks whether, for a fixed $n\ge3$, a chi-square law for $\sum_i(X_i-\bar X)^2$ forces an i.i.d. sample to be Gaussian. The unrestricted question is recorded in Kagan, Linnik, and Rao~\cite[p.~466]{KaganLinnikRao1973} and discussed by Ejsmont and Lehner~\cite{EjsmontLehner2017}, whose main results concern the free-probability analogue. Ruben~\cite{Ruben1974} proves the classical characterization for symmetric laws and for $n=2$. A chi-square hypothesis at two distinct sample sizes is treated by Ruben~\cite{Ruben1975} and Bondesson~\cite{Bondesson1977}. Golikova and Kruglov~\cite{GolikovaKruglov2015} obtain a sample-variance characterization for independent infinitely divisible variables with a common mean.
+
+For more general quadratic forms, see Ruben~\cite{Ruben1978} and the characterization and stability results for i.i.d. symmetric variables in Christoph, Prohorov, and Ulyanov~\cite{ChristophProhorovUlyanov2001}. We impose a different condition, namely local reflected-MGF dominance. The following theorem does not require the coordinates to have a common distribution.
+
+\begin{theorem}[Exact PSD rigidity]\label{thm:exact-psd}
+Let $X=(X_1,\ldots,X_d)$ have independent coordinates with $\E X_i=0$ and $\operatorname{Var}(X_i)=\sigma_i^2$. Let $A=A^{\mathsf T}\succeq0$ have rank $r\ge1$, and suppose that
+\[
+X^{\mathsf T}AX\sim\chi_r^2.
+\]
+For every active coordinate $i$, meaning $A_{ii}>0$, assume that
+\[
+M_i(s)M_i(-s)\ge e^{\sigma_i^2s^2}
+\]
+for all $s$ in a neighborhood of the origin. Then every active $X_i$ is Gaussian, with law $\Normal(0,\sigma_i^2)$.
+\end{theorem}
+
+The chi-square hypothesis itself supplies a square-exponential moment for each active coordinate, so MGF existence is not an additional assumption in this theorem. Among laws with a local MGF, infinite divisibility implies the dominance condition by the L\'evy--Khintchine formula~\cite{Sato1999}. The converse fails, and dominance does not require symmetry. Both points are made explicit in \cref{rem:dominance}.
+
+Taking $A=I_n-n^{-1}\mathbf1\mathbf1^{\mathsf T}$ gives the sample-variance characterization under dominance. In the quantitative version, a spherical Laplace observable transfers information about the quadratic form to the reflected defect. Under a fixed exponential envelope, Kolmogorov distance to $\chi_{n-1}^2$ controls this observable and hence the law of $X$; see \cref{cor:sample-var-kolmogorov}. This application retains the dominance assumption and does not settle the unrestricted sample-variance conjecture. We do not assert that its modulus is sharp.
+
+\noindent\textbf{Organization.}
+Section~\ref{sec:exact} proves the exact quadratic-form theorem and introduces spherical averaging. Section~\ref{sec:upper} proves the reflection upper bound, and Section~\ref{sec:sharpness} gives the matching lower bound and the total-variation obstruction. Section~\ref{sec:sample-var} develops the sample-variance application. The appendices contain the parameter choices and the Laguerre estimate.

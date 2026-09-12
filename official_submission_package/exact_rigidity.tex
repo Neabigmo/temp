@@ -1,6 +1,9 @@
 \section{Exact rigidity for chi-square quadratic forms}\label{sec:exact}
 
-We prove Theorem~\ref{thm:exact-psd} and then apply it to the ordinary sample variance. Write $A=B^{\mathsf T}B$, where $B\in\R^{r\times d}$ has full row rank, and let $b_i$ be the $i$th column of $B$. Thus $A_{ii}=\|b_i\|^2$.
+The proof uses the chi-square law to identify a spherical average of the product of the coordinate MGFs. Jensen's inequality and reflected dominance then force each coordinate defect to vanish. We first prove the theorem and then discuss the scope of its dominance assumption.
+
+\begin{proof}[Proof of \cref{thm:exact-psd}]
+Write $A=B^{\mathsf T}B$, where $B\in\R^{r\times d}$ has full row rank, and let $b_i$ be the $i$th column of $B$. Thus $A_{ii}=\|b_i\|^2$.
 
 We first note that the chi-square hypothesis automatically gives the MGF regularity needed below. Fix an active coordinate $i$, so $A_{ii}>0$, and let
 \[
@@ -80,8 +83,25 @@ M_i(s)M_i(-s)=e^{\sigma_i^2s^2}
 \]
 near the origin. If $\sigma_i^2=0$, then $X_i=0$ almost surely. If $\sigma_i^2>0$, an independent copy $X_i'$ gives that $X_i-X_i'$ has the MGF of $\Normal(0,2\sigma_i^2)$ near zero and hence has that Gaussian law. The L\'evy--Cram\'er decomposition theorem applied to the independent sum $X_i+(-X_i')$ then implies that $X_i$ is Gaussian.
 
-This proves Theorem~\ref{thm:exact-psd}. For Corollary~\ref{cor:exact-sample-var}, take
+\end{proof}
+
+\begin{remark}[Scope of reflected dominance]\label[remark]{rem:dominance}
+Infinite divisibility is sufficient for the dominance assumption, but it is not necessary. Let $X$ be centered, with variance $\sigma^2$, and suppose its MGF is finite near zero. If $X$ is infinitely divisible with L\'evy measure $\nu$, the L\'evy--Khintchine formula gives
 \[
-A=I_n-\frac1n\mathbf 1\mathbf 1^{\mathsf T}.
+\log M_X(s)+\log M_X(-s)-\sigma^2s^2
+=2\int_{\R}\left(\cosh(sx)-1-\frac{s^2x^2}{2}\right)\nu(dx)\ge0
 \]
-It is a rank-$n-1$ orthogonal projection, every diagonal entry is $(n-1)/n>0$, and its quadratic form is exactly $\sum_i(X_i-\bar X)^2$. The corollary follows immediately.
+where the MGFs are finite. The linear compensation terms cancel, and the Gaussian part cancels against its contribution to the variance. See Sato~\cite{Sato1999} for the L\'evy--Khintchine representation.
+
+For a bounded example outside the infinitely divisible class, take $X=3$ with probability $1/10$ and $X=-1/3$ with probability $9/10$. Then $\E X=0$, $\E X^2=1$, and $\E X^4-3=46/9$. Its reflected defect satisfies
+\[
+R_X(s)=\frac{23}{54}s^4+O(s^6),
+\]
+so $R_X(s)\ge0$ on a neighborhood of zero. A nondegenerate bounded law cannot be infinitely divisible: if its support has diameter $d$ and it is the sum of $n$ independent identically distributed variables, each summand has support diameter $d/n$. Its variance is at most $d^2/(4n^2)$, so the variance of the sum is at most $d^2/(4n)$ for every $n$, a contradiction. Here the variance bound follows by measuring the summand from the midpoint of its support.
+
+Dominance is not a consequence of symmetry either. For a symmetric Rademacher variable,
+\[
+R_X(s)=2\log\cosh s-s^2=-\frac{s^4}{6}+O(s^6)<0
+\]
+for all sufficiently small nonzero $s$. Thus the assumption is distinct from the symmetry conditions in the classical sample-variance results.
+\end{remark}

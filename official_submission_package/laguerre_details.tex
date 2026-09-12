@@ -12,7 +12,7 @@ a_m=\sqrt{\frac{m!}{\Gamma(m+1/2)}},
 Proposition~3.2 of Imekraz, Robert, and Thomann~\cite{ImekrazRobertThomann2016} applies for every $\alpha>-1$, hence in particular for $\alpha=-1/2$. It gives constants $C,c>0$, independent of $m$ and $r$, such that
 \[
 |\mathcal L_m^{(-1/2)}(r)|\le C(r\nu)^{-1/4}
-\quad (0\le r\le\nu^{-1}),
+\quad (0<r\le\nu^{-1}),
 \]
 \[
 |\mathcal L_m^{(-1/2)}(r)|\le C(r\nu)^{-1/4}
@@ -46,7 +46,9 @@ P_m(r):=\sqrt m\,e^{-2r/3}|L_m^{(-1/2)}(r)|
  |\mathcal L_m^{(-1/2)}(r)|.
 \]
 
-In the first two regions, $0\le r\le\nu/2$, the common estimate gives
+For $r>0$ the identities above hold literally. The estimate for $P_m(0)$ follows by continuity after the factors $r^{1/4}$ and $r^{-1/4}$ cancel.
+
+In the first two regions, $0<r\le\nu/2$, the common estimate gives
 \[
 P_m(r)
 \le C\nu^{1/4}r^{1/4}(r\nu)^{-1/4}e^{-r/6}

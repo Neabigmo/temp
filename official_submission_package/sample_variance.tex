@@ -4,20 +4,12 @@ Let $X_1,\ldots,X_n$ be i.i.d. copies of a centered variance-one random variable
 \[
 Q_n=\sum_{i=1}^n(X_i-\bar X)^2.
 \]
-For $r\ge1$, let $V$ be uniform on $S^{r-1}$. Recall the spherical transform
-\[
-\Psi_r(z):=\E_V e^{zV_1}.
-\]
-Define
-\[
-\mathfrak D_{r,\tau}(Q):=
-\sup_{|t|\le\tau}
-\left|e^{-t^2/2}\E\Psi_r(t\sqrt Q)-1\right|.
-\]
-This is the spherical Laplace observable associated with a squared radial projection; it is not itself a probability metric on the law of $Q$. Below we first derive the one-dimensional reflected defect from this observable and then show that, under the same exponential envelope used in the quantitative sample-variance theorem, ordinary Kolmogorov distance from the chi-square law controls the observable.
+This section applies reflection stability to $Q_n$. We first record the exact consequence of \cref{thm:exact-psd}. For stability, spherical averaging provides an intermediate transform quantity, which will be bounded in terms of the usual Kolmogorov distance in Section~\ref{subsec:sample-kolmogorov}.
+
+\subsection{The exact consequence}
 
 The exact sample-variance consequence of the quadratic-form theorem is the following.
-\begin{corollary}[Exact sample-variance characterization under dominance]\label{cor:exact-sample-var}
+\begin{corollary}[Exact sample-variance characterization under dominance]\label[corollary]{cor:exact-sample-var}
 Let $n\ge2$ and let $X_1,\ldots,X_n$ be i.i.d., centered, and variance one. If
 \[
 M_X(s)M_X(-s)\ge e^{s^2}
@@ -29,15 +21,33 @@ for all $s$ in some neighborhood of the origin, and
 then $X_i\sim\Normal(0,1)$.
 \end{corollary}
 
-As in \cref{thm:exact-psd}, no separate MGF-existence assumption is needed: the chi-square law of the quadratic form implies it automatically for every coordinate.
+\begin{proof}
+Take $A=I_n-n^{-1}\mathbf1\mathbf1^{\mathsf T}$ in \cref{thm:exact-psd}. This is a rank-$(n-1)$ orthogonal projection with every diagonal entry equal to $(n-1)/n>0$, and $X^{\mathsf T}AX=Q_n$.
+\end{proof}
+
+As in \cref{thm:exact-psd}, the chi-square law implies MGF existence for every coordinate. When $n=2$, dominance is not needed for the exact conclusion: $Q_2=(X_1-X_2)^2/2$, and the symmetry of $X_1-X_2$ identifies its law as $\Normal(0,2)$. Cram\'er's theorem then gives Gaussianity of $X$.
+
+\subsection{From spherical discrepancy to reflected defect}
+
+For $r\ge1$, let $V$ be uniform on $S^{r-1}$. Recall the spherical transform
+\[
+\Psi_r(z):=\E_V e^{zV_1},
+\]
+and define, for a nonnegative random variable $Q$ with finite displayed expectations,
+\[
+\mathfrak D_{r,\tau}(Q):=
+\sup_{|t|\le\tau}
+\left|e^{-t^2/2}\E\Psi_r(t\sqrt Q)-1\right|.
+\]
+This quantity vanishes for $Q\sim\chi_r^2$. It is a transform discrepancy, not a probability metric. Its role is to connect the quadratic form to an average of the one-dimensional reflected defect. The next subsection bounds it by Kolmogorov distance under an exponential envelope.
 
 The quantitative statement based on the spherical observable is the next theorem.
 \begin{theorem}[Sample-variance stability under spherical Laplace discrepancy]\label{thm:sample-var}
-Fix $n\ge3$, $\tau,K>0$, and $0<\rho'<\tau\sqrt{(n-1)/n}$. There are constants $C<\infty$ and $\varepsilon_0>0$, depending only on $(n,\tau,K,\rho')$, such that the following holds. Let $X_1,\ldots,X_n$ be i.i.d. copies of a centered variance-one $X$ with $\E e^{2\tau|X|}\le K$, and assume $R_X(s)\ge0$ for $|s|\le\tau$. If
+Fix $n\ge3$, $\tau,K>0$, and $0<\rho'<\tau\sqrt{(n-1)/n}$. There are constants $C<\infty$ and $\varepsilon_0\in(0,e^{-e})$, depending only on $(n,\tau,K,\rho')$, such that the following holds. Let $X_1,\ldots,X_n$ be i.i.d. copies of a centered variance-one $X$ with $\E e^{2\tau|X|}\le K$, and assume $R_X(s)\ge0$ for $|s|\le\tau$. If
 \[
 Q_n=\sum_{i=1}^n(X_i-\bar X)^2,
 \qquad
-\mathfrak D_{n-1,\tau}(Q_n)\le\varepsilon\le\varepsilon_0,
+\mathfrak D_{n-1,\tau}(Q_n)\le\varepsilon,\qquad 0<\varepsilon\le\varepsilon_0,
 \]
 then
 \[
@@ -46,7 +56,8 @@ then
 \]
 \end{theorem}
 
-The discrepancy-to-defect transfer is as follows. Let $r=n-1$, let $P=I_n-n^{-1}\mathbf1\mathbf1^{\mathsf T}$, and choose $B\in\R^{r\times n}$ with $B^{\mathsf T}B=P$ and $BB^{\mathsf T}=I_r$. If $V$ is uniform on $S^{r-1}$, then every column $b_i$ of $B$ has norm
+\begin{proof}
+Let $r=n-1$, let $P=I_n-n^{-1}\mathbf1\mathbf1^{\mathsf T}$, and choose $B\in\R^{r\times n}$ with $B^{\mathsf T}B=P$ and $BB^{\mathsf T}=I_r$. If $V$ is uniform on $S^{r-1}$, then every column $b_i$ of $B$ has norm
 \[
 q:=\|b_i\|=\sqrt{\frac{n-1}{n}},
 \]
@@ -62,11 +73,21 @@ The exact spherical transform gives, for $|t|\le\tau$,
 e^{-t^2/2}\E\Psi_r(t\sqrt{Q_n})
 =\E_V\exp\left(\sum_{i=1}^n\left[\log M_X(t\langle b_i,V\rangle)-\frac{t^2\langle b_i,V\rangle^2}{2}\right]\right).
 \end{equation}
-Jensen's inequality, exchangeability, and the symmetry of $V_1$ therefore imply
+Let $H_t(V)$ denote the exponent on the right. The identity uses $BB^{\mathsf T}=I_r$, which gives $\sum_i\langle b_i,V\rangle^2=1$. Each $\langle b_i,V\rangle$ has the law of $qV_1$, and symmetry gives
+\[
+\E_V H_\tau(V)=n\E D_X(aV_1)\ge0.
+\]
+Jensen's inequality and the definition of the discrepancy now give
+\[
+1\le\exp\{n\E D_X(aV_1)\}
+\le e^{-\tau^2/2}\E\Psi_r(\tau\sqrt{Q_n})
+\le1+\mathfrak D_{n-1,\tau}(Q_n).
+\]
+Taking logarithms yields
 \begin{equation}\label{eq:integrated-D}
 n\E D_X(aV_1)\le\log\bigl(1+\mathfrak D_{n-1,\tau}(Q_n)\bigr).
 \end{equation}
-Equation~\eqref{eq:integrated-D} connects the spherical observable to one-dimensional reflection control.
+We next turn this averaged estimate into a bound on an interior interval.
 
 For the pointwise transfer, the density of $V_1$ is
 \[
@@ -88,7 +109,11 @@ because $M_X(s)\ge1$ and $|x|e^{\tau|x|}\le(e\tau)^{-1}e^{2\tau|x|}$. If $M_*:=\
 \[
 D_X(s)\ge\bigl(M_*-L_h|s-s_0|\bigr)_+.
 \]
-Moreover, $|s_0|\ge M_*/L_h$, so the analogous tent centered at $-s_0$ has disjoint interior from the other one. Integrating the two tents against the density lower bound gives
+If $M_*=0$, the desired pointwise bound is immediate. Otherwise $|s_0|\ge M_*/L_h$ because $D_X(0)=0$. Put $\ell=\min\{h,M_*/L_h\}$. The intervals
+\[
+[s_0-\ell,s_0+\ell],\qquad [-s_0-\ell,-s_0+\ell]
+\]
+lie in the enlarged interval and have disjoint interiors, since $\ell\le|s_0|$. On each, integrate the corresponding tent. If $M_*\le L_hh$, its positive part has half-width $M_*/L_h$; if $M_*>L_hh$, restrict the tent to half-width $h$. Integrating against the density lower bound gives
 \[
 2m_h I_{L_h,h}(M_*)
  \le \frac1n\log\bigl(1+\mathfrak D_{n-1,\tau}(Q_n)\bigr),
@@ -101,7 +126,7 @@ M^2/L,& M\le Lh,\\
 2hM-Lh^2,& M>Lh.
 \end{cases}
 \]
-When $M\le Lh$, the integral is the area of a triangle of base $2M/L$; when $M>Lh$, it is the trapezoid obtained after the tent reaches the edge of the available interval. Writing $G(y;L,h)=\sqrt{Ly}$ when $y\le Lh^2$ and $G(y;L,h)=y/(2h)+Lh/2$ otherwise, we obtain
+In both cases $I_{L,h}(M)=\int_{-h}^h(M-L|u|)_+\,du$. Writing $G(y;L,h)=\sqrt{Ly}$ when $y\le Lh^2$ and $G(y;L,h)=y/(2h)+Lh/2$ otherwise, we obtain
 \begin{equation}\label{eq:pointwise-D}
 \sup_{|s|\le\rho'}D_X(s)
 \le\inf_{0<h<a-\rho'}G\left(\frac{\log(1+\mathfrak D_{n-1,\tau}(Q_n))}{2nm_h};L_h,h\right).
@@ -120,11 +145,14 @@ for all sufficiently small $\varepsilon$, where $C_1=C_1(n,\tau,K,\rho')$; here 
 \qquad
 \log\log(1/\Delta)=\log\log(1/\varepsilon)+O(1).
 \]
-Theorem~\ref{thm:sharp-upper}, with radius $\rho'$, therefore yields the displayed rate in \cref{thm:sample-var}. Notice that the exponential envelope in \cref{thm:sample-var} is used here to transfer the spherical average to a pointwise defect; it is no longer needed as an independent hypothesis of \cref{thm:sharp-upper} itself.
+Theorem~\ref{thm:sharp-upper}, with radius $\rho'$, yields the asserted rate. The exponential envelope was used to obtain the Lipschitz bound that transfers the spherical average to a pointwise defect.
+\end{proof}
 
-We next relate the spherical observable to an ordinary probability metric. Let $H_r\sim\chi_r^2$.
+\subsection{Transfer from Kolmogorov distance}\label{subsec:sample-kolmogorov}
 
-\begin{lemma}[Kolmogorov control of the spherical observable]\label{lem:kolmogorov-to-spherical}
+We now control the intermediate transform discrepancy by Kolmogorov distance. Let $H_r\sim\chi_r^2$.
+
+\begin{lemma}[Kolmogorov control of the spherical observable]\label[lemma]{lem:kolmogorov-to-spherical}
 Fix $r\ge1$ and $\tau>0$. Let $Q\ge0$ and suppose
 \[
 \E e^{2\tau\sqrt Q}\le A.
@@ -140,7 +168,7 @@ one has
 \end{lemma}
 
 \begin{proof}
-For $|t|\le\tau$, define
+If $\delta=0$, then $Q$ and $H_r$ have the same law and the discrepancy is zero. Suppose $0<\delta\le1$. For $|t|\le\tau$, define
 \[
 g_t(q):=e^{-t^2/2}\Psi_r(t\sqrt q),\qquad q\ge0.
 \]
@@ -192,8 +220,8 @@ and independence gives
 \end{equation}
 We therefore obtain the following standard-distance consequence.
 
-\begin{corollary}[Sample-variance stability in Kolmogorov distance]\label{cor:sample-var-kolmogorov}
-Fix $n\ge3$, $\tau,K>0$, and $0<\rho'<\tau\sqrt{(n-1)/n}$. There exist constants $C<\infty$ and $\delta_0>0$, depending only on $(n,\tau,K,\rho')$, such that the following holds. Let $X_1,\ldots,X_n$ be i.i.d. copies of a centered variance-one $X$ satisfying
+\begin{corollary}[Sample-variance stability in Kolmogorov distance]\label[corollary]{cor:sample-var-kolmogorov}
+Fix $n\ge3$, $\tau,K>0$, and $0<\rho'<\tau\sqrt{(n-1)/n}$. There exist constants $C<\infty$ and $\delta_0\in(0,e^{-e})$, depending only on $(n,\tau,K,\rho')$, such that the following holds. Let $X_1,\ldots,X_n$ be i.i.d. copies of a centered variance-one $X$ satisfying
 \[
 \E e^{2\tau|X|}\le K,
 \qquad
@@ -201,17 +229,18 @@ R_X(s)\ge0\quad(|s|\le\tau).
 \]
 If
 \[
-\delta:=\dK(Q_n,\chi^2_{n-1})\le\delta_0,
+0<\delta:=\dK(Q_n,\chi^2_{n-1})\le\delta_0,
 \]
 then
 \[
 \dK(X,\Normal(0,1))
 \le C\sqrt{\frac{\log\log(1/\delta)}{\log(1/\delta)}}.
 \]
+If $\delta=0$, then $X\sim\Normal(0,1)$.
 \end{corollary}
 
 \begin{proof}
-By \eqref{eq:sample-var-radial-envelope} and \cref{lem:kolmogorov-to-spherical},
+The case $\delta=0$ follows from \cref{cor:exact-sample-var}. For $\delta>0$, by \eqref{eq:sample-var-radial-envelope} and \cref{lem:kolmogorov-to-spherical},
 \[
 \mathfrak D_{n-1,\tau}(Q_n)\le C_0\sqrt\delta.
 \]
@@ -224,6 +253,8 @@ Apply \cref{thm:sample-var} with $\varepsilon=C_0\sqrt\delta$. Since
 the asserted rate follows after changing the constant.
 \end{proof}
 
-In the exact case, \cref{cor:exact-sample-var} gives Gaussianity under the same dominance condition. For $n=2$, the exact corollary is covered by the rank-one case of \cref{thm:exact-psd}: $A=I_2-\frac12\mathbf1\mathbf1^{\mathsf T}$ has rank one and both diagonal entries are positive. Thus the discrepancy-to-defect argument is a quantitative extension of the exact spherical-Jensen mechanism.
+\subsection{Scope and further questions}
 
-Several questions remain. It would be useful to determine whether the Kolmogorov-distance modulus in \cref{cor:sample-var-kolmogorov} is sharp, and whether the exponential envelope used to pass from a probability metric on $Q_n$ to the unbounded spherical Laplace observable can be weakened. Another direction is to replace local real-axis MGF control by weaker transform or moment information while retaining the optimal reflection modulus. Finally, a corresponding quantitative theory for general positive-semidefinite quadratic forms with non-identically distributed coordinates remains open.
+The application uses dominance to recover pointwise information from a nonnegative spherical average. The reflection theorem itself has no such sign assumption. The restriction $n\ge3$ in the quantitative argument allows us to use the density of a spherical coordinate; the exact $n=2$ case was treated separately above.
+
+The sharpness result in Section~\ref{sec:sharpness} concerns the reflected-MGF problem and does not establish sharpness of \cref{cor:sample-var-kolmogorov}. Determining the optimal sample-variance modulus remains a separate question. It would also be useful to weaken the exponential envelope used to control the unbounded spherical transform, or to develop a quantitative counterpart of \cref{thm:exact-psd} for non-identically distributed coordinates.

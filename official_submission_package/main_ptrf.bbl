@@ -1,6 +1,6 @@
 %% BioMed_Central_Bib_Style_v1.01
 
-\begin{thebibliography}{17}
+\begin{thebibliography}{27}
 % BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
 \ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
 \ifx \binits  \undefined \def \binits#1{#1}\fi
@@ -47,7 +47,7 @@
 \bibitem[\protect\citeauthoryear{Cram\'er}{1936}]{Cramer1936}
 \begin{barticle}
 \bauthor{\bsnm{Cram\'er}, \binits{H.}}:
-\batitle{\"uber eine eigenschaft der normalen verteilungsfunktion}.
+\batitle{{\"Uber eine Eigenschaft der normalen Verteilungsfunktion}}.
 \bjtitle{Mathematische Zeitschrift}
 \bvolume{41},
 \bfpage{405}--\blpage{414}
@@ -57,139 +57,59 @@
 \endbibitem
 
 %%% 2
-\bibitem[\protect\citeauthoryear{Ruben}{1974}]{Ruben1974}
+\bibitem[\protect\citeauthoryear{Sapogov}{1951}]{Sapogov1951}
 \begin{barticle}
-\bauthor{\bsnm{Ruben}, \binits{H.}}:
-\batitle{A new characterization of the normal distribution through the sample
-  variance}.
-\bjtitle{Sankhy\=a, Series A}
-\bvolume{36}(\bissue{4}),
-\bfpage{379}--\blpage{388}
-(\byear{1974})
+\bauthor{\bsnm{Sapogov}, \binits{N.A.}}:
+\batitle{The stability problem for a theorem of {Cram\'er}}.
+\bjtitle{Izvestiya Akademii Nauk SSSR. Seriya Matematicheskaya}
+\bvolume{15}(\bissue{3}),
+\bfpage{205}--\blpage{218}
+(\byear{1951}).
+\bcomment{In Russian}
 \end{barticle}
 \endbibitem
 
 %%% 3
-\bibitem[\protect\citeauthoryear{Ruben}{1978}]{Ruben1978}
-\begin{barticle}
-\bauthor{\bsnm{Ruben}, \binits{H.}}:
-\batitle{On quadratic forms and normality}.
-\bjtitle{Sankhy\=a, Series A}
-\bvolume{40},
-\bfpage{156}--\blpage{173}
-(\byear{1978})
-\end{barticle}
+\bibitem[\protect\citeauthoryear{Linnik and
+  Ostrovskii}{1977}]{LinnikOstrovskii1977}
+\begin{bbook}
+\bauthor{\bsnm{Linnik}, \binits{Y.V.}},
+\bauthor{\bsnm{Ostrovskii}, \binits{I.V.}}:
+\bbtitle{Decomposition of Random Variables and Vectors}.
+\bsertitle{Translations of Mathematical Monographs},
+vol. \bseriesno{48}.
+\bpublisher{American Mathematical Society},
+\blocation{Providence, RI}
+(\byear{1977}).
+\bcomment{Translated from the Russian}
+\end{bbook}
 \endbibitem
 
 %%% 4
-\bibitem[\protect\citeauthoryear{Bondesson}{1977}]{Bondesson1977}
+\bibitem[\protect\citeauthoryear{Golinskii and
+  Chistyakov}{1994}]{GolinskiiChistyakov1994}
 \begin{barticle}
-\bauthor{\bsnm{Bondesson}, \binits{L.}}:
-\batitle{The sample variance, properly normalized, is
-  {\ensuremath{\chi^2}}-distributed for the normal law only}.
-\bjtitle{Sankhy\=a, Series A}
-\bvolume{39},
-\bfpage{303}--\blpage{304}
-(\byear{1977})
+\bauthor{\bsnm{Golinskii}, \binits{L.B.}},
+\bauthor{\bsnm{Chistyakov}, \binits{G.P.}}:
+\batitle{Order sharp stability estimates for the decompositions of the normal
+  distribution in the {L\'evy} metric}.
+\bjtitle{Journal of Mathematical Sciences}
+\bvolume{72}(\bissue{1}),
+\bfpage{2848}--\blpage{2871}
+(\byear{1994})
+\doiurl{10.1007/BF01249901}
 \end{barticle}
 \endbibitem
 
 %%% 5
-\bibitem[\protect\citeauthoryear{Golikova and
-  Kruglov}{2015}]{GolikovaKruglov2015}
-\begin{barticle}
-\bauthor{\bsnm{Golikova}, \binits{N.N.}},
-\bauthor{\bsnm{Kruglov}, \binits{V.M.}}:
-\batitle{A characterisation of the gaussian distribution through the sample
-  variance}.
-\bjtitle{Sankhy\=a A}
-\bvolume{77}(\bissue{2}),
-\bfpage{330}--\blpage{336}
-(\byear{2015})
-\doiurl{10.1007/s13171-014-0060-5}
-\end{barticle}
-\endbibitem
-
-%%% 6
-\bibitem[\protect\citeauthoryear{Kruglov}{2013}]{Kruglov2013}
-\begin{barticle}
-\bauthor{\bsnm{Kruglov}, \binits{V.M.}}:
-\batitle{A characterization of the gaussian distribution}.
-\bjtitle{Stochastic Analysis and Applications}
-\bvolume{31}(\bissue{5}),
-\bfpage{872}--\blpage{875}
-(\byear{2013})
-\doiurl{10.1080/07362994.2013.817250}
-\end{barticle}
-\endbibitem
-
-%%% 7
-\bibitem[\protect\citeauthoryear{Ejsmont and Lehner}{2017}]{EjsmontLehner2017}
-\begin{barticle}
-\bauthor{\bsnm{Ejsmont}, \binits{W.}},
-\bauthor{\bsnm{Lehner}, \binits{F.}}:
-\batitle{Sample variance in free probability}.
-\bjtitle{Journal of Functional Analysis}
-\bvolume{273}(\bissue{7}),
-\bfpage{2488}--\blpage{2520}
-(\byear{2017})
-\doiurl{10.1016/j.jfa.2017.05.007}
-\end{barticle}
-\endbibitem
-
-%%% 8
-\bibitem[\protect\citeauthoryear{Christoph
-  et~al.}{2001}]{ChristophProhorovUlyanov2001}
-\begin{bchapter}
-\bauthor{\bsnm{Christoph}, \binits{G.}},
-\bauthor{\bsnm{Prohorov}, \binits{Y.}},
-\bauthor{\bsnm{Ulyanov}, \binits{V.}}:
-\bctitle{Characterization and stability problems for finite quadratic forms}.
-In: \beditor{\bsnm{Balakrishnan}, \binits{N.}},
-\beditor{\bsnm{Ibragimov}, \binits{I.A.}}, \betal (eds.)
-\bbtitle{Asymptotic Methods in Probability and Statistics with Applications},
-pp. \bfpage{39}--\blpage{50}.
-\bpublisher{Birkh{\"a}user},
-\blocation{Boston}
-(\byear{2001}).
-\doiurl{10.1007/978-1-4612-0209-7_3}
-\end{bchapter}
-\endbibitem
-
-%%% 9
-\bibitem[\protect\citeauthoryear{Sato}{1999}]{Sato1999}
-\begin{bbook}
-\bauthor{\bsnm{Sato}, \binits{K.-I.}}:
-\bbtitle{L{\'e}vy Processes and Infinitely Divisible Distributions}.
-\bsertitle{Cambridge Studies in Advanced Mathematics},
-vol. \bseriesno{68}.
-\bpublisher{Cambridge University Press},
-\blocation{Cambridge}
-(\byear{1999})
-\end{bbook}
-\endbibitem
-
-%%% 10
-\bibitem[\protect\citeauthoryear{Sapogov}{1951}]{Sapogov1951}
-\begin{barticle}
-\bauthor{\bsnm{Sapogov}, \binits{N.A.}}:
-\batitle{The stability problem for a theorem of cram\'er}.
-\bjtitle{Izvestiya Akademii Nauk SSSR. Seriya Matematicheskaya}
-\bvolume{15}(\bissue{3}),
-\bfpage{205}--\blpage{218}
-(\byear{1951})
-\end{barticle}
-\endbibitem
-
-%%% 11
 \bibitem[\protect\citeauthoryear{Bobkov
   et~al.}{2013}]{BobkovChistyakovGotze2013}
 \begin{barticle}
 \bauthor{\bsnm{Bobkov}, \binits{S.G.}},
 \bauthor{\bsnm{Chistyakov}, \binits{G.P.}},
 \bauthor{\bsnm{G\"otze}, \binits{F.}}:
-\batitle{Stability problems in cram\'er-type characterization in case of i.i.d.
-  summands}.
+\batitle{Stability problems in {Cram\'er}-type characterization in case of
+  {I.I.D.} summands}.
 \bjtitle{Theory of Probability and Its Applications}
 \bvolume{57}(\bissue{4}),
 \bfpage{568}--\blpage{588}
@@ -198,13 +118,39 @@ vol. \bseriesno{68}.
 \end{barticle}
 \endbibitem
 
-%%% 12
+%%% 6
+\bibitem[\protect\citeauthoryear{Marcinkiewicz}{1939}]{Marcinkiewicz1939}
+\begin{barticle}
+\bauthor{\bsnm{Marcinkiewicz}, \binits{J.}}:
+\batitle{Sur une propri\'et\'e de la loi de {Gau{\ss}}}.
+\bjtitle{Mathematische Zeitschrift}
+\bvolume{44},
+\bfpage{612}--\blpage{618}
+(\byear{1939})
+\doiurl{10.1007/BF01210677}
+\end{barticle}
+\endbibitem
+
+%%% 7
+\bibitem[\protect\citeauthoryear{Golinskii}{1991}]{Golinskii1991}
+\begin{barticle}
+\bauthor{\bsnm{Golinskii}, \binits{L.B.}}:
+\batitle{Stability estimates in the theorem of {J. Marcinkiewicz}}.
+\bjtitle{Journal of Soviet Mathematics}
+\bvolume{57},
+\bfpage{3193}--\blpage{3209}
+(\byear{1991})
+\doiurl{10.1007/BF01099017}
+\end{barticle}
+\endbibitem
+
+%%% 8
 \bibitem[\protect\citeauthoryear{Eremenko and
   Fryntov}{2021}]{EremenkoFryntov2021}
 \begin{barticle}
 \bauthor{\bsnm{Eremenko}, \binits{A.}},
 \bauthor{\bsnm{Fryntov}, \binits{A.}}:
-\batitle{Stability in the marcinkiewicz theorem}.
+\batitle{Stability in the {Marcinkiewicz} theorem}.
 \bjtitle{Journal of Mathematical Physics, Analysis, Geometry}
 \bvolume{17}(\bissue{4}),
 \bfpage{463}--\blpage{467}
@@ -213,21 +159,55 @@ vol. \bseriesno{68}.
 \end{barticle}
 \endbibitem
 
-%%% 13
-\bibitem[\protect\citeauthoryear{Dinh et~al.}{2025}]{DinhGhoshTranTran2025}
+%%% 9
+\bibitem[\protect\citeauthoryear{Dinh et~al.}{2026}]{DinhGhoshTranTran2026}
 \begin{botherref}
 \oauthor{\bsnm{Dinh}, \binits{T.-C.}},
 \oauthor{\bsnm{Ghosh}, \binits{S.}},
 \oauthor{\bsnm{Tran}, \binits{H.-S.}},
 \oauthor{\bsnm{Tran}, \binits{M.-H.}}:
 Gaussian fluctuations for spin systems and point processes: near-optimal rates
-  via quantitative Marcinkiewicz's theorem.
-To appear; arXiv:2107.08469, revised version
-(2025)
+  via quantitative {Marcinkiewicz}'s theorem.
+The Annals of Applied Probability
+(2026).
+Accepted for publication. Preprint: arXiv:2107.08469, version 3 (2025)
 \end{botherref}
 \endbibitem
 
-%%% 14
+%%% 10
+\bibitem[\protect\citeauthoryear{Lebowitz
+  et~al.}{2016}]{LebowitzPittelRuelleSpeer2016}
+\begin{barticle}
+\bauthor{\bsnm{Lebowitz}, \binits{J.L.}},
+\bauthor{\bsnm{Pittel}, \binits{B.}},
+\bauthor{\bsnm{Ruelle}, \binits{D.}},
+\bauthor{\bsnm{Speer}, \binits{E.R.}}:
+\batitle{Central limit theorems, {Lee--Yang} zeros, and graph-counting
+  polynomials}.
+\bjtitle{Journal of Combinatorial Theory, Series A}
+\bvolume{141},
+\bfpage{147}--\blpage{183}
+(\byear{2016})
+\doiurl{10.1016/j.jcta.2016.02.009}
+\end{barticle}
+\endbibitem
+
+%%% 11
+\bibitem[\protect\citeauthoryear{Michelen and
+  Sahasrabudhe}{2019}]{MichelenSahasrabudhe2019}
+\begin{barticle}
+\bauthor{\bsnm{Michelen}, \binits{M.}},
+\bauthor{\bsnm{Sahasrabudhe}, \binits{J.}}:
+\batitle{Central limit theorems from the roots of probability generating
+  functions}.
+\bjtitle{Advances in Mathematics}
+\bvolume{358},
+\bfpage{106840}
+(\byear{2019})
+\end{barticle}
+\endbibitem
+
+%%% 12
 \bibitem[\protect\citeauthoryear{Michelen and
   Sahasrabudhe}{2026}]{MichelenSahasrabudhe2026}
 \begin{barticle}
@@ -242,7 +222,146 @@ To appear; arXiv:2107.08469, revised version
 \end{barticle}
 \endbibitem
 
+%%% 13
+\bibitem[\protect\citeauthoryear{Kagan et~al.}{1973}]{KaganLinnikRao1973}
+\begin{bbook}
+\bauthor{\bsnm{Kagan}, \binits{A.M.}},
+\bauthor{\bsnm{Linnik}, \binits{Y.V.}},
+\bauthor{\bsnm{Rao}, \binits{C.R.}}:
+\bbtitle{Characterization Problems in Mathematical Statistics}.
+\bpublisher{John Wiley \& Sons},
+\blocation{New York}
+(\byear{1973})
+\end{bbook}
+\endbibitem
+
+%%% 14
+\bibitem[\protect\citeauthoryear{Ejsmont and Lehner}{2017}]{EjsmontLehner2017}
+\begin{barticle}
+\bauthor{\bsnm{Ejsmont}, \binits{W.}},
+\bauthor{\bsnm{Lehner}, \binits{F.}}:
+\batitle{Sample variance in free probability}.
+\bjtitle{Journal of Functional Analysis}
+\bvolume{273}(\bissue{7}),
+\bfpage{2488}--\blpage{2520}
+(\byear{2017})
+\doiurl{10.1016/j.jfa.2017.05.007}
+\end{barticle}
+\endbibitem
+
 %%% 15
+\bibitem[\protect\citeauthoryear{Ruben}{1974}]{Ruben1974}
+\begin{barticle}
+\bauthor{\bsnm{Ruben}, \binits{H.}}:
+\batitle{A new characterization of the normal distribution through the sample
+  variance}.
+\bjtitle{Sankhy\=a, Series A}
+\bvolume{36}(\bissue{4}),
+\bfpage{379}--\blpage{388}
+(\byear{1974})
+\end{barticle}
+\endbibitem
+
+%%% 16
+\bibitem[\protect\citeauthoryear{Ruben}{1975}]{Ruben1975}
+\begin{barticle}
+\bauthor{\bsnm{Ruben}, \binits{H.}}:
+\batitle{A further characterization of normality through the sample variance}.
+\bjtitle{Sankhy\=a, Series A}
+\bvolume{37}(\bissue{1}),
+\bfpage{72}--\blpage{81}
+(\byear{1975})
+\end{barticle}
+\endbibitem
+
+%%% 17
+\bibitem[\protect\citeauthoryear{Bondesson}{1977}]{Bondesson1977}
+\begin{barticle}
+\bauthor{\bsnm{Bondesson}, \binits{L.}}:
+\batitle{The sample variance, properly normalized, is
+  {\ensuremath{\chi^2}}-distributed for the normal law only}.
+\bjtitle{Sankhy\=a, Series A}
+\bvolume{39},
+\bfpage{303}--\blpage{304}
+(\byear{1977})
+\end{barticle}
+\endbibitem
+
+%%% 18
+\bibitem[\protect\citeauthoryear{Golikova and
+  Kruglov}{2015}]{GolikovaKruglov2015}
+\begin{barticle}
+\bauthor{\bsnm{Golikova}, \binits{N.N.}},
+\bauthor{\bsnm{Kruglov}, \binits{V.M.}}:
+\batitle{A characterisation of the {Gaussian} distribution through the sample
+  variance}.
+\bjtitle{Sankhy\=a A}
+\bvolume{77}(\bissue{2}),
+\bfpage{330}--\blpage{336}
+(\byear{2015})
+\doiurl{10.1007/s13171-014-0060-5}
+\end{barticle}
+\endbibitem
+
+%%% 19
+\bibitem[\protect\citeauthoryear{Ruben}{1978}]{Ruben1978}
+\begin{barticle}
+\bauthor{\bsnm{Ruben}, \binits{H.}}:
+\batitle{On quadratic forms and normality}.
+\bjtitle{Sankhy\=a, Series A}
+\bvolume{40},
+\bfpage{156}--\blpage{173}
+(\byear{1978})
+\end{barticle}
+\endbibitem
+
+%%% 20
+\bibitem[\protect\citeauthoryear{Christoph
+  et~al.}{2001}]{ChristophProhorovUlyanov2001}
+\begin{bchapter}
+\bauthor{\bsnm{Christoph}, \binits{G.}},
+\bauthor{\bsnm{Prohorov}, \binits{Y.}},
+\bauthor{\bsnm{Ulyanov}, \binits{V.}}:
+\bctitle{Characterization and stability problems for finite quadratic forms}.
+In: \beditor{\bsnm{Balakrishnan}, \binits{N.}},
+\beditor{\bsnm{Ibragimov}, \binits{I.A.}},
+\beditor{\bsnm{Nevzorov}, \binits{V.B.}} (eds.)
+\bbtitle{Asymptotic Methods in Probability and Statistics with Applications},
+pp. \bfpage{39}--\blpage{50}.
+\bpublisher{Birkh{\"a}user},
+\blocation{Boston}
+(\byear{2001}).
+\doiurl{10.1007/978-1-4612-0209-7_3}
+\end{bchapter}
+\endbibitem
+
+%%% 21
+\bibitem[\protect\citeauthoryear{Sato}{1999}]{Sato1999}
+\begin{bbook}
+\bauthor{\bsnm{Sato}, \binits{K.-I.}}:
+\bbtitle{L{\'e}vy Processes and Infinitely Divisible Distributions}.
+\bsertitle{Cambridge Studies in Advanced Mathematics},
+vol. \bseriesno{68}.
+\bpublisher{Cambridge University Press},
+\blocation{Cambridge}
+(\byear{1999})
+\end{bbook}
+\endbibitem
+
+%%% 22
+\bibitem[\protect\citeauthoryear{Ransford}{1995}]{Ransford1995}
+\begin{bbook}
+\bauthor{\bsnm{Ransford}, \binits{T.}}:
+\bbtitle{Potential Theory in the Complex Plane}.
+\bsertitle{London Mathematical Society Student Texts},
+vol. \bseriesno{28}.
+\bpublisher{Cambridge University Press},
+\blocation{Cambridge}
+(\byear{1995})
+\end{bbook}
+\endbibitem
+
+%%% 23
 \bibitem[\protect\citeauthoryear{Duren}{1983}]{Duren1983}
 \begin{bbook}
 \bauthor{\bsnm{Duren}, \binits{P.L.}}:
@@ -255,12 +374,12 @@ vol. \bseriesno{259}.
 \end{bbook}
 \endbibitem
 
-%%% 16
+%%% 24
 \bibitem[\protect\citeauthoryear{Esseen}{1945}]{Esseen1945}
 \begin{barticle}
 \bauthor{\bsnm{Esseen}, \binits{C.-G.}}:
-\batitle{Fourier analysis of distribution functions: A mathematical study of
-  the laplace-gaussian law}.
+\batitle{Fourier analysis of distribution functions. a mathematical study of
+  the {Laplace--Gaussian} law}.
 \bjtitle{Acta Mathematica}
 \bvolume{77},
 \bfpage{1}--\blpage{125}
@@ -269,18 +388,50 @@ vol. \bseriesno{259}.
 \end{barticle}
 \endbibitem
 
-%%% 17
+%%% 25
 \bibitem[\protect\citeauthoryear{Imekraz
   et~al.}{2016}]{ImekrazRobertThomann2016}
 \begin{barticle}
 \bauthor{\bsnm{Imekraz}, \binits{R.}},
 \bauthor{\bsnm{Robert}, \binits{D.}},
 \bauthor{\bsnm{Thomann}, \binits{L.}}:
-\batitle{On random hermite series}.
+\batitle{On random {Hermite} series}.
 \bjtitle{Transactions of the American Mathematical Society}
 \bvolume{368}(\bissue{4}),
 \bfpage{2763}--\blpage{2792}
 (\byear{2016})
+\doiurl{10.1090/tran/6607}
+\end{barticle}
+\endbibitem
+
+%%% 26
+\bibitem[\protect\citeauthoryear{Szeg{\H{o}}}{1975}]{Szego1975}
+\begin{bbook}
+\bauthor{\bsnm{Szeg{\H{o}}}, \binits{G.}}:
+\bbtitle{Orthogonal Polynomials},
+\bedition{4}th edn.
+\bsertitle{American Mathematical Society Colloquium Publications},
+vol. \bseriesno{23}.
+\bpublisher{American Mathematical Society},
+\blocation{Providence, RI}
+(\byear{1975})
+\end{bbook}
+\endbibitem
+
+%%% 27
+\bibitem[\protect\citeauthoryear{Bobkov
+  et~al.}{2016}]{BobkovChistyakovGotze2016}
+\begin{barticle}
+\bauthor{\bsnm{Bobkov}, \binits{S.G.}},
+\bauthor{\bsnm{Chistyakov}, \binits{G.P.}},
+\bauthor{\bsnm{G{\"o}tze}, \binits{F.}}:
+\batitle{Regularized distributions and entropic stability of {Cram{\'e}r}'s
+  characterization of the normal law}.
+\bjtitle{Stochastic Processes and their Applications}
+\bvolume{126}(\bissue{12}),
+\bfpage{3865}--\blpage{3887}
+(\byear{2016})
+\doiurl{10.1016/j.spa.2016.04.010}
 \end{barticle}
 \endbibitem
 

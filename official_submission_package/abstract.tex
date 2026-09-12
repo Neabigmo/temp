@@ -1,10 +1,10 @@
-We study Gaussian rigidity through the symmetrized moment generating function $M_X(s)M_X(-s)$. For independent centered coordinates $X=(X_i)$ and a positive-semidefinite matrix $A$, we prove that if $X^{\mathsf T}AX$ has a chi-square distribution and every active coordinate satisfies the local dominance $M_i(s)M_i(-s)\ge \exp(\sigma_i^2s^2)$, then all active coordinates are Gaussian. We then turn to the quantitative factor-recovery problem. If $X$ is centered with variance one and
+We study recovery of a Gaussian law from its symmetrized moment generating function on a fixed real interval. Let $X$ be centered with variance one, and suppose that its moment generating function is finite on $[-\rho,\rho]$. If
 \[
-\log M_X(s)+\log M_X(-s)-s^2
+\sup_{|s|\le\rho}\left|\log M_X(s)+\log M_X(-s)-s^2\right|\le\Delta,
 \]
-is uniformly bounded in absolute value by $\Delta$ on a fixed neighborhood of the origin, then
+then, for sufficiently small $\Delta$,
 \[
 d_{\mathrm K}(X,\mathcal N(0,1))
-\le C\sqrt{\frac{\log\log(1/\Delta)}{\log(1/\Delta)}}.
+\le C_\rho\sqrt{\frac{\log\log(1/\Delta)}{\log(1/\Delta)}}.
 \]
-No separate exponential-moment hypothesis is required: the local reflected-MGF bound itself yields the exponential envelope used in the proof. The order is optimal even within symmetric densities uniformly comparable with the Gaussian density, as shown by an even Laguerre perturbation. The proof converts local reflected-MGF information into high-order moments, produces a growing zero-free disk for a truncated characteristic function, and then applies logarithmic coefficient bounds and Esseen smoothing. As applications, we obtain exact and quantitative results for the sample variance, including a stability corollary stated directly in Kolmogorov distance from the chi-square law; a lattice example shows that no analogous total-variation stability can hold.
+For every fixed $\rho>0$, a symmetric Laguerre perturbation attains this order while its density remains uniformly comparable with the Gaussian density. Thus the logarithmic rate is necessary even in the symmetric case. The proof combines high-order moment comparison, truncation and a growing zero-free disk for one characteristic-function factor. We also prove an exact characterization for chi-square positive-semidefinite quadratic forms under coordinatewise reflected-MGF dominance. Spherical averaging connects this condition with the sample variance and yields a stability result from Kolmogorov distance to the chi-square law under a fixed exponential-moment bound.
