@@ -1,0 +1,94 @@
+\section{Introduction and main results}\label{sec:intro}
+
+The Gaussian decomposition principle used in the factor-recovery argument is the classical theorem of Cram\'er~\cite{Cramer1936}.
+
+The exact chi-square law of the sample variance is one of the classical signatures of Gaussian samples. The unrestricted converse for a fixed sample size $n\ge3$ remains a longstanding characterization problem. Existing results impose additional structure, including symmetry or infinite divisibility; see \cite{Ruben1974,Ruben1978,Bondesson1977,GolikovaKruglov2015,Kruglov2013,EjsmontLehner2017}. We do not claim to resolve that unrestricted problem. The sample variance is a chi-square quadratic form, and spherical averaging of its Laplace transform naturally brings in the symmetrized quantity $M_X(s)M_X(-s)$.
+
+For a centered variance-one random variable $X$, let $M_X(s)=\E e^{sX}$ whenever finite and define
+\begin{equation}\label{eq:defect-intro}
+R_X(s):=\log M_X(s)+\log M_X(-s)-s^2,
+\qquad
+\Delta_\rho(X):=\sup_{|s|\le\rho}|R_X(s)|.
+\end{equation}
+We write $d_{\mathrm K}(X,Z)$ for the Kolmogorov distance between the laws of $X$ and $Z$,
+\[
+d_{\mathrm K}(X,Z):=\sup_x\left|\Pp(X\le x)-\Pp(Z\le x)\right|.
+\]
+We work under the fixed exponential envelope
+\begin{equation}\label{eq:EI-intro}
+\E e^{2\tau|X|}\le K.
+\end{equation}
+If $X'$ is an independent copy of $X$, then $M_{X-X'}(s)=M_X(s)M_X(-s)$. The difficulty is that reflection removes the Fourier phase. Our stability theorem shows that the factor can nevertheless be recovered, at the optimal logarithmic scale, under \eqref{eq:EI-intro}.
+
+The proof uses two scales. A fixed complex neighborhood yields high-order moment information for $X-X'$; after truncation, this produces a Gaussian product approximation on a disk of radius of order $\sqrt m$. Zero-freeness on this disk allows one to take a logarithm and recover the factor. The exact theorem, by contrast, follows from equality in Jensen's inequality after spherical averaging.
+
+\subsection*{Exact rigidity}
+The positive-semidefinite quadratic-form theorem below motivates the reflection condition.
+\begin{theorem}[Exact PSD rigidity]\label{thm:exact-psd}
+Let $X=(X_1,\ldots,X_d)$ have independent coordinates with $\E X_i=0$ and $\operatorname{Var}(X_i)=\sigma_i^2$. Let $A=A^{\mathsf T}\succeq0$ have rank $r\ge1$, and suppose
+\[
+X^{\mathsf T}AX\sim\chi_r^2.
+\]
+For every active coordinate $i$ with $A_{ii}>0$, assume that $M_i(s)=\E e^{sX_i}$ is finite in a neighborhood of the origin and
+\[
+M_i(s)M_i(-s)\ge e^{\sigma_i^2s^2}
+\]
+there. Then every active $X_i$ is Gaussian, $X_i\sim\Normal(0,\sigma_i^2)$.
+\end{theorem}
+
+Characterizations based on quadratic forms have a long history. Converse results for sample variance and related forms use additional structural assumptions; see, for example, Christoph--Prohorov--Ulyanov, Kruglov, and Golikova--Kruglov \cite{ChristophProhorovUlyanov2001,Kruglov2013,GolikovaKruglov2015}. The condition here is different: infinite divisibility implies the reflected-MGF dominance through the L\'evy--Khintchine formula, but the converse fails and no symmetry is required. For an infinitely divisible centered law with finite variance, the representation gives, for every $s$ such that both $M_X(s)$ and $M_X(-s)$ are finite,
+\[
+\log M_X(s)+\log M_X(-s)-\sigma^2s^2
+ =2\int\left(\cosh(sx)-1-\frac{s^2x^2}{2}\right)\nu(dx)\ge0.
+\]
+The converse fails. If $X$ takes the values $3$ and $-1/3$ with probabilities $1/10$ and $9/10$, then it is centered and has variance one. It is not infinitely divisible: if a bounded non-degenerate law of support diameter $d$ were an $n$-fold convolution of an i.i.d. root, that root would have support diameter at most $d/n$, and Popoviciu's inequality would give $\operatorname{Var}(X)/n\le d^2/(4n^2)$, which is impossible for large $n$. Its fourth cumulant is $46/9$, so $R_X(s)=23s^4/54+O(s^6)$ and the local dominance holds. This example is asymmetric. In contrast, a Rademacher variable $\varepsilon$ satisfies $R_\varepsilon(s)=2\log\cosh s-s^2=-s^4/6+O(s^6)$, which is negative for all sufficiently small nonzero $s$.
+
+The L\'evy--Khintchine representation used in this comparison is standard; see Sato~\cite{Sato1999}.
+
+\subsection*{Reflection stability}
+The quantitative result recovers a factor from local reflected-MGF information without assuming the dominance sign.
+\begin{theorem}[Sharp reflection stability]\label{thm:sharp-upper}
+Fix $\rho,\tau,K>0$. There exist constants $C<\infty$ and $\Delta_0\in(0,e^{-e})$, depending only on $(\rho,\tau,K)$, such that the following holds. If
+\[
+\E X=0,\qquad \E X^2=1,\qquad \E e^{2\tau|X|}\le K,
+\]
+and
+\[
+|R_X(s)|\le\Delta,
+\qquad |s|\le\rho,
+\]
+for some $0<\Delta\le\Delta_0$, then
+\[
+\dK(X,\Normal(0,1))
+\le C\sqrt{\frac{\log\log(1/\Delta)}{\log(1/\Delta)}}.
+\]
+\end{theorem}
+
+Classical Cram\'er stability starts from a two-factor convolution $F*G$ that is already close to a Gaussian convolution in a global probability metric such as Kolmogorov or L\'evy distance. The reflected convolution $F*\widetilde F$ is therefore a legitimate special case of that general framework. The equal-factor case $F*F$ retains the Fourier phase and admits stronger iid estimates, as in the theory of Bobkov, Chistyakov, and G\"otze \cite{Sapogov1951,BobkovChistyakovGotze2013}. In the present problem the available input is different: the quantity $M_X(s)M_X(-s)$ is controlled only through $R_X(s)$ on a fixed real interval, and its Fourier counterpart $|\varphi_X|^2$ has lost the phase. The main difficulty is not that reflection lies outside Cram\'er-type theory, but that local transform information must be converted into global factor recovery without phase information.
+
+One could first try to convert the local reflected-MGF control into a global approximation for $X-X'$ and then invoke a general stability theorem for Cram\'er decomposition. Such an argument discards the structure responsible for the sharp modulus. Our proof instead keeps the reflected factorization throughout: high-order moment information constructs a zero-free disk for a truncated factor itself, after which the logarithm of that factor is controlled directly. The logarithmic coefficient step is a finite-disk estimate in the spirit of quantitative Marcinkiewicz theory; the zero-free disk here is derived from the reflected-MGF analysis rather than assumed, as in the quantitative results of Eremenko and Fryntov and of Dinh, Ghosh, Tran, and Tran \cite{EremenkoFryntov2021,DinhGhoshTranTran2025}.
+
+The order in this theorem cannot be improved uniformly in general. The obstruction is supplied by high-order odd perturbations whose first $m$ odd moments vanish.
+\begin{theorem}[Laguerre lower bound]\label{thm:sharpness}
+There are constants $\rho,\tau,K,c>0$ and centered variance-one random variables $W_m$ such that, for all sufficiently large $m$,
+\[
+\E e^{2\tau|W_m|}\le K,
+\qquad
+R_{W_m}(s)\ge0\quad (|s|\le\rho),
+\]
+and, with
+\[
+\Delta_m:=\sup_{|s|\le\rho}R_{W_m}(s)\to0,
+\]
+\[
+\log\frac1{\Delta_m}=2m\log m+O(m),
+\qquad
+\dK(W_m,\Normal(0,1))\ge c m^{-1/2}.
+\]
+Consequently, for some $c'>0$,
+\[
+\dK(W_m,\Normal(0,1))
+\ge c'\sqrt{\frac{\log\log(1/\Delta_m)}{\log(1/\Delta_m)}}
+\]
+for all sufficiently large $m$.
+\end{theorem}

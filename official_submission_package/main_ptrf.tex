@@ -1,0 +1,40 @@
+% Canonical PTRF / Springer Nature submission entry point.
+% This flat package includes the class and bibliography style needed to compile it.
+% Official package: https://www.springernature.com/gp/authors/campaigns/latex-author-support/see-where-our-services-will-take-you/18782940
+\documentclass[pdflatex,sn-mathphys-num]{sn-jnl}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{microtype}
+\usepackage{hyperref}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Pp}{\mathbb P}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Normal}{\mathcal N}
+\newcommand{\dK}{d_{\mathrm K}}
+\newcommand{\DeltaR}{\Delta_\rho}
+\theoremstyle{thmstyleone}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\usepackage{cleveref}
+\crefname{theorem}{Theorem}{Theorems}
+\crefname{lemma}{Lemma}{Lemmas}
+\crefname{proposition}{Proposition}{Propositions}
+\crefname{corollary}{Corollary}{Corollaries}
+\crefname{definition}{Definition}{Definitions}
+\begin{document}
+\title[Gaussian Rigidity from Symmetrized Moment Generating Functions]{Gaussian Rigidity from Symmetrized Moment Generating Functions: Chi-Square Quadratic Forms and Sharp Reflection Stability}
+\author*[1]{\fnm{Author} \sur{Name}}\email{author@example.com}
+\affil*[1]{\orgdiv{Department of Mathematics}, \orgname{Institution Name}, \orgaddress{\city{City}, \country{Country}}}
+\abstract{\input{abstract}}
+\keywords{Gaussian characterization; symmetrized moment generating function; chi-square quadratic forms; sample variance; Cram\'er stability; zero-free characteristic functions}
+\pacs[MSC Classification]{60E05, 60E10, 62E10}
+\maketitle
+\input{paper_body}
+\bibliography{references}
+\end{document}

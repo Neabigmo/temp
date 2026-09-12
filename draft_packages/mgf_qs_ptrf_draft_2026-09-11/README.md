@@ -2,10 +2,12 @@
 
 This package is the reviewer-aligned 2026-09-11 revision of the MGF-QS/PTRF draft. Its central object is the one-dimensional reflected MGF defect; chi-square quadratic forms and sample variance are treated as exact and quantitative applications of that theory.
 
+> **Canonical version notice:** the active manuscript is now the flat [`official_submission_package`](../../official_submission_package/) directory at repository root. Make all future manuscript and referee-response changes there only. This dated directory is retained as historical Round 2 provenance.
+
 ## Entry points
 
-- `main_ptrf.tex` — PTRF/Springer Nature entry point. Copy the folder contents into the official Springer Nature LaTeX template package containing `sn-jnl.cls`; the local smoke compile used the December 2024 template package.
-- `main_portable.tex` — locally compilable article-class version used for QA.
+- `main_ptrf.tex` — historical PTRF/Springer Nature entry point for this dated snapshot.
+- `main_portable.tex` — historical locally compilable article-class version used for QA.
 - `abstract.tex` — shared abstract text used by both entry points.
 - `paper_body.tex` — shared section and appendix inputs; front matter is kept in each entry point.
 - `NOVELTY_AUDIT.md` — literature boundary and claims discipline.

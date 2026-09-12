@@ -1,0 +1,24 @@
+\section{Parameter selection for the sharp upper bound}\label{app:parameters}
+
+This appendix records a non-circular order of choices for the five-step proof. Fix $(\rho,\tau,K)$ and an interior analytic radius. Let $\omega_0>0$ be the lower bound for the harmonic measure of the real diameter in the smaller half-disk used in the propagation step. Choose $A>8$ and then choose $c_0>0$ so small that
+\[
+(A+3)c_0<\omega_0.
+\]
+With $m=\lfloor c_0L/\log L\rfloor$, this makes the fixed-disk Cauchy estimate dominate all factorial losses in the moment-transfer lemma.
+
+Fix a finite target exponent $\Gamma>4$. Choose the truncation factor $B$ sufficiently large that the tail-lifting estimate has exponent $\beta_B>4\Gamma$. After $B$ is fixed, let $C_T$ denote the constant in the real-axis Taylor remainder and choose $a_0>0$ so small that
+\[
+C_Ta_0^2<e^{-2\Gamma},
+\qquad
+4(1-\omega_0)(Ba_0+a_0^2)<\frac{\omega_0\Gamma}{2},
+\qquad
+a_0^2<\frac{\omega_0\Gamma}{4},
+\qquad
+-\log(C_Ta_0^2)>4\Gamma.
+\]
+The two Taylor-remainder contributions are then bounded by $e^{-\Gamma m}$ after absorbing fixed multiplicative constants, while the truncation contribution is also bounded by $e^{-\Gamma m}$ because $\beta_B>4\Gamma$. Thus the real-axis estimate in Lemma~\ref{lem:real-window} uses the target exponent $\Gamma$, while the complex propagation estimate gives
+\[
+\gamma_*:=\omega_0\Gamma-4(1-\omega_0)(Ba_0+a_0^2)
+\ge\frac{\omega_0\Gamma}{2}>a_0^2.
+\]
+Finally choose the fixed Esseen fraction $0<\theta<1/4$ so that the cubic remainder in the logarithmic expansion is at most one quarter of the Gaussian quadratic damping on $|t|\le\theta R$. These choices are made in the order $A\to c_0\to\Gamma\to B\to a_0\to\theta$, and no later choice affects an earlier inequality.

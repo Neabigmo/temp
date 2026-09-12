@@ -2,6 +2,10 @@
 
 这是 `8.22统计` 理论研究工作区的 GitHub 镜像，供网页端研究会话读取和审阅。仓库保留完整的历史推导、审计脚本和工作日志；结论必须以文档中的证据等级为准，不能把 relaxed Hankel 截断结果直接当作 genuine probability law。
 
+## 当前官方投稿版本
+
+MGF-QS / PTRF 稿件的唯一后续工作入口是 [`official_submission_package/`](official_submission_package/)。该目录是扁平的官方 Springer 投稿包；今后的正文、证明、参考文献、PDF 和回复信调整只在此目录进行。`draft_packages/mgf_qs_ptrf_draft_2026-09-11/` 仅作为历史 Round 2 快照保留。
+
 ## 网页端首选读取顺序
 
 0. `C2C_WEB_INTERACTION.md`：读取网页端、发送交接消息、验证回显和失败恢复规范。
