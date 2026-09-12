@@ -1,6 +1,30 @@
 \section{Exact rigidity for chi-square quadratic forms}\label{sec:exact}
 
-We prove Theorem~\ref{thm:exact-psd} and then apply it to the ordinary sample variance. Write $A=B^{\mathsf T}B$, where $B\in\R^{r\times d}$ has full row rank, and let $b_i$ be the $i$th column of $B$. If $V$ is uniform on $S^{r-1}$, write
+We prove Theorem~\ref{thm:exact-psd} and then apply it to the ordinary sample variance. Write $A=B^{\mathsf T}B$, where $B\in\R^{r\times d}$ has full row rank, and let $b_i$ be the $i$th column of $B$. Thus $A_{ii}=\|b_i\|^2$.
+
+We first note that the chi-square hypothesis automatically gives the MGF regularity needed below. Fix an active coordinate $i$, so $A_{ii}>0$, and let
+\[
+Q:=X^{\mathsf T}AX\sim\chi_r^2.
+\]
+Independence and centering imply
+\[
+\E(Q\mid X_i)=A_{ii}X_i^2+\sum_{j\ne i}A_{jj}\sigma_j^2.
+\]
+For every $0<c<1/2$, conditional Jensen therefore yields
+\[
+\exp\!\left(cA_{ii}X_i^2+c\sum_{j\ne i}A_{jj}\sigma_j^2\right)
+\le \E(e^{cQ}\mid X_i).
+\]
+Taking expectations and using the chi-square MGF gives
+\begin{equation}\label{eq:auto-square-exp}
+\E e^{cA_{ii}X_i^2}<\infty.
+\end{equation}
+Consequently $M_i(s)<\infty$ for every $s\in\R$, by Young's inequality
+\[
+sx\le cA_{ii}x^2+\frac{s^2}{4cA_{ii}}.
+\]
+
+If $V$ is uniform on $S^{r-1}$, write
 \[
 \Psi_r(z):=\E_V e^{zV_1}.
 \]
@@ -15,9 +39,9 @@ Since $X^{\mathsf T}AX\sim\chi_r^2$, the final quantity in \eqref{eq:spherical-t
 \E_{G,V}e^{t\langle G,V\rangle}=e^{t^2/2},
 \qquad G\sim\Normal(0,I_r).
 \end{equation}
-All expectations below are legitimate for sufficiently small $|t|$, because the coordinate MGFs exist on a common neighborhood of the origin and the sphere is compact.
+Only active coordinates enter the product, because $A_{ii}=0$ implies $b_i=0$.
 
-More explicitly, each active coordinate may initially have its own neighborhood $|s|<\rho_i$ on which the MGF and the dominance condition are available. Since there are finitely many coordinates, reducing the radius to $\rho_*:=\min_i\rho_i>0$ gives one common interval for the spherical argument.
+For each active coordinate, let the local dominance hold on $|s|<\rho_i$. Since there are finitely many active coordinates, reducing to a common radius $\rho_*:=\min_i\rho_i>0$ makes all subsequent expressions valid for sufficiently small $|t|$.
 
 Define
 \[
@@ -48,13 +72,13 @@ where the last equality uses the mean of $\chi_r^2$. Since $V$ and $-V$ have the
  -\sigma_i^2t^2\langle b_i,V\rangle^2\right]\\
  &=\sum_{i=1}^d\E_V R_i\bigl(t\langle b_i,V\rangle\bigr)\ge0,
 \end{align*}
-where $R_i(s)=\log M_i(s)+\log M_i(-s)-\sigma_i^2s^2$. Hence $\E_VH_t(V)=0$, and every summand in the last display has zero expectation.
+where $R_i(s)=\log M_i(s)+\log M_i(-s)-\sigma_i^2s^2$. Hence $\E_VH_t(V)=0$, and every nonnegative summand in the last display has zero expectation.
 
 For an active coordinate, $A_{ii}=\|b_i\|^2>0$. If $r\ge2$, the random variable $\langle b_i,V\rangle$ has a density that is strictly positive on the interior of $[-\|b_i\|,\|b_i\|]$. Continuity of $R_i$ therefore implies $R_i(s)=0$ on a neighborhood of the origin. If $r=1$, then $V\in\{-1,1\}$ and varying $t$ directly gives the same conclusion, because $R_i$ is even. Thus, for every active coordinate,
 \[
 M_i(s)M_i(-s)=e^{\sigma_i^2s^2}
 \]
-near the origin. If $\sigma_i^2=0$, then $X_i=0$ almost surely. If $\sigma_i^2>0$, an independent copy $X_i'$ gives that $X_i-X_i'$ has the MGF of $\Normal(0,2\sigma_i^2)$ near zero and hence has that Gaussian law. The L\'evy--Cr\'amer decomposition theorem applied to the independent sum $X_i+(-X_i')$ then implies that $X_i$ is Gaussian.
+near the origin. If $\sigma_i^2=0$, then $X_i=0$ almost surely. If $\sigma_i^2>0$, an independent copy $X_i'$ gives that $X_i-X_i'$ has the MGF of $\Normal(0,2\sigma_i^2)$ near zero and hence has that Gaussian law. The L\'evy--Cram\'er decomposition theorem applied to the independent sum $X_i+(-X_i')$ then implies that $X_i$ is Gaussian.
 
 This proves Theorem~\ref{thm:exact-psd}. For Corollary~\ref{cor:exact-sample-var}, take
 \[

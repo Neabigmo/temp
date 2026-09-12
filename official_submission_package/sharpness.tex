@@ -1,137 +1,133 @@
 \section{Optimality and obstruction results}\label{sec:sharpness}
 
-\subsection{A Laguerre lower-bound family}
+\subsection{A symmetric Laguerre lower-bound family}
 
-We give the lower-bound construction in full because it identifies the scale in Theorem~\ref{thm:sharp-upper}. The only analytic input needed for the probability construction is the following uniform Laguerre envelope; its normalization and four-region proof are recorded in Appendix~\ref{app:laguerre}.
-\begin{lemma}[Uniform Laguerre envelope]\label{lem:laguerre-envelope}
-\begin{equation}\label{eq:CL}
-C_L:=\sup_{m\ge1,\,x\in\R}\left|x e^{-x^2}L_m^{(1/2)}(3x^2/2)\right|<\infty.
+The sharp modulus does not require an asymmetric perturbation. We construct a symmetric family whose densities are uniformly comparable with the Gaussian density and for which the reflected defect is nonnegative. The only analytic input is the following uniform Laguerre envelope; its normalization and four-region proof are recorded in Appendix~\ref{app:laguerre}.
+
+\begin{lemma}[Uniform even Laguerre envelope]\label{lem:laguerre-envelope}
+\begin{equation}\label{eq:CE}
+C_E:=\sup_{m\ge2,\,x\in\R}
+\sqrt m\,e^{-x^2}\left|L_m^{(-1/2)}(3x^2/2)\right|<\infty.
 \end{equation}
 \end{lemma}
 \begin{proof}
-The four-region estimate and the conversion from the normalized Laguerre function are given in Appendix~\ref{app:laguerre}.
+See Appendix~\ref{app:laguerre}.
 \end{proof}
 
-Fix $0<\epsilon<1/4$, let $\phi$ be the standard Gaussian density, and define
+Fix $0<\epsilon<1/4$, let $\phi$ be the standard Gaussian density, and define, for $m\ge2$,
 \[
-p_m(x):=x e^{-x^2}L_m^{(1/2)}(3x^2/2),
-\qquad h_m(x):=\frac{p_m(x)}{C_L},
-\qquad f_m(x):=\phi(x)(1+\epsilon h_m(x)).
+h_m(x):=\frac{(-1)^m\sqrt m}{C_E}
+ e^{-x^2}L_m^{(-1/2)}(3x^2/2),
+\qquad
+f_m(x):=\phi(x)(1+\epsilon h_m(x)).
 \]
-By \eqref{eq:CL}, $f_m$ is a nonnegative probability density. It is normalized because $h_m$ is odd. The change of variables $r=3x^2/2$ and Laguerre orthogonality show that
+By \eqref{eq:CE}, $|h_m|\le1$, so
+\begin{equation}\label{eq:gaussian-comparable-density}
+(1-\epsilon)\phi(x)\le f_m(x)\le(1+\epsilon)\phi(x).
+\end{equation}
+In particular $f_m$ is nonnegative and has exponential moments of every fixed order uniformly in $m$.
+
+The perturbation is even. With $r=3x^2/2$, Laguerre orthogonality for parameter $-1/2$ gives, for $0\le k<m$,
 \[
-\int_\R x^{2k+1}h_m(x)\phi(x)\,dx=0,
-\qquad 0\le k<m.
+\int_{\R}x^{2k}h_m(x)\phi(x)\,dx
+=C_{m,k}\int_0^\infty r^{k-1/2}e^{-r}L_m^{(-1/2)}(r)\,dr=0,
 \]
-In particular, the corresponding variable $U_m$ is centered. Its variance is one because $x^2h_m(x)\phi(x)$ is odd. To record the generating-function calculation behind the exact MGF, set
+where $C_{m,k}\ne0$ is an irrelevant deterministic factor. The cases $k=0$ and $k=1$ show that $f_m$ has total mass one and variance one, while evenness gives mean zero. Let $W_m$ have density $f_m$.
+
+To compute the MGF exactly, set
 \[
-I_m(s):=\frac1{\sqrt{2\pi}}\int_\R x e^{sx-3x^2/2}L_m^{(1/2)}(3x^2/2)\,dx.
+J_m(s):=\frac1{\sqrt{2\pi}}
+\int_{\R}e^{sx-3x^2/2}L_m^{(-1/2)}(3x^2/2)\,dx.
 \]
 The Laguerre generating function gives, for $|t|<1$,
 \begin{align*}
-\sum_{m\ge0}I_m(s)t^m
-&=\frac{(1-t)^{-3/2}}{\sqrt{2\pi}}\int_\R x
+\sum_{m\ge0}J_m(s)t^m
+&=\frac{(1-t)^{-1/2}}{\sqrt{2\pi}}
+\int_{\R}
 \exp\left(sx-\frac{3x^2}{2(1-t)}\right)dx\\
-&=\frac{s}{3\sqrt3}\exp\left(\frac{s^2(1-t)}6\right)\\
-&=\frac{s}{3\sqrt3}e^{s^2/6}
+&=\frac1{\sqrt3}\exp\left(\frac{s^2(1-t)}6\right)\\
+&=\frac1{\sqrt3}e^{s^2/6}
 \sum_{m\ge0}\frac{(-s^2/6)^m}{m!}t^m.
 \end{align*}
-Thus $I_m(s)=\frac{s}{3\sqrt3}e^{s^2/6}(-s^2/6)^m/m!$. Dividing the perturbation integral by $e^{s^2/2}$ yields the exact MGF
-\begin{equation}\label{eq:laguerre-mgf}
-M_{U_m}(s)=e^{s^2/2}(1+u_m(s)),
-\qquad
-u_m(s)=\frac{\epsilon}{C_L}\frac{s}{3\sqrt3}e^{-s^2/3}\frac{(-s^2/6)^m}{m!}.
-\end{equation}
-Therefore, with
+Thus
 \[
-a_m:=\frac{\epsilon}{3\sqrt3 C_L6^m m!},
+J_m(s)=\frac1{\sqrt3}e^{s^2/6}\frac{(-s^2/6)^m}{m!}.
 \]
-we have $|u_m(s)|\le a_m|s|^{2m+1}$ on the real axis.
+After multiplying by the factor $(-1)^m\sqrt m/C_E$ in $h_m$ and dividing by the Gaussian MGF $e^{s^2/2}$, we obtain
+\begin{equation}\label{eq:even-laguerre-mgf}
+M_{W_m}(s)=e^{s^2/2}(1+v_m(s)),
+\qquad
+v_m(s):=
+\frac{\epsilon\sqrt m}{\sqrt3\,C_E}
+ e^{-s^2/3}\frac{(s^2/6)^m}{m!}.
+\end{equation}
+In particular $v_m(s)\ge0$ on the real axis. Since $W_m$ is symmetric,
+\begin{equation}\label{eq:even-laguerre-defect}
+R_{W_m}(s)=2\log(1+v_m(s))\ge0.
+\end{equation}
 
-Let $J_m=N_m^+-N_m^-$, where $N_m^+$ and $N_m^-$ are independent Poisson variables with mean $\lambda_m/2$, independent also of $U_m$, and set
+Fix $\rho=1$. For $m\ge1$, $s\mapsto e^{-s^2/3}s^{2m}$ is increasing on $[0,1]$, so
 \[
-\lambda_m:=96a_m^2\rho^{4m-2},
-\qquad
-W_m:=\frac{U_m+J_m}{\sqrt{1+\lambda_m}}.
+\Delta_m:=\sup_{|s|\le1}R_{W_m}(s)
+=2\log(1+v_m(1)).
 \]
-The independence gives
-\[
-M_{U_m+J_m}(q)=M_{U_m}(q)M_{J_m}(q),
-\qquad
-M_{J_m}(q)=\exp\bigl(\lambda_m(\cosh q-1)\bigr).
-\]
-Then $W_m$ is centered and variance one. If $q=s/\sqrt{1+\lambda_m}$, its reflected defect is exactly
-\begin{equation}\label{eq:laguerre-defect}
-R_{W_m}(s)
- =\log(1-u_m(q)^2)
- +2\lambda_m\left(\cosh q-1-\frac{q^2}{2}\right).
+Since $v_m(1)\to0$, we have $\Delta_m\asymp v_m(1)$, and Stirling's formula gives
+\begin{equation}\label{eq:even-laguerre-delta}
+\log\frac1{\Delta_m}=m\log m+O(m).
 \end{equation}
-For all sufficiently large $m$, $|u_m(q)|\le1/2$ on $|s|\le\rho$. Using $-\log(1-v)\le2v$ for $0\le v\le1/4$ and $\cosh q-1-q^2/2\ge q^4/24$, the choice of $\lambda_m$ gives
+Hence
 \[
-R_{W_m}(s)\ge\frac{\lambda_m q^4}{16}\ge0.
-\]
-The logarithmic term in \eqref{eq:laguerre-defect} is nonpositive, so the upper Taylor bound gives
-\[
-R_{W_m}(s)\le\frac{\lambda_m\cosh(\rho)q^4}{12}.
-\]
-If also $\lambda_m\le1$, evaluation at $s=\rho$ yields
-\[
-\frac{\lambda_m\rho^4}{64}\le\Delta_m:=\sup_{|s|\le\rho}R_{W_m}(s)
-\le\frac{\lambda_m\rho^4\cosh(\rho)}{12}.
-\]
-Thus $\Delta_m\asymp\lambda_m$ and Stirling's formula gives
-\[
-\log\frac1{\Delta_m}=2m\log m+O(m).
-\]
-Consequently,
-\[
-\log\log(1/\Delta_m)=\log m+\log\log m+O(1),
-\qquad
-\frac{\log\log(1/\Delta_m)}{\log(1/\Delta_m)}\asymp\frac1m,
-\]
-and hence
-\[
-m^{-1/2}\asymp
-\sqrt{\frac{\log\log(1/\Delta_m)}{\log(1/\Delta_m)}}.
+\sqrt{\frac{\log\log(1/\Delta_m)}{\log(1/\Delta_m)}}
+\asymp m^{-1/2}.
 \]
 
-The fixed exponential envelope is uniform: $f_m\le(1+\epsilon)\phi$, while
+It remains to prove a Kolmogorov discrepancy of this order. The value at the origin is
 \[
-\E e^{b|J_m|}\le2e^{\lambda_m(\cosh b-1)}
+L_m^{(-1/2)}(0)=\frac{(1/2)_m}{m!}
+=\frac1{4^m}{2m\choose m}\asymp m^{-1/2}.
 \]
-and $\sup_m\lambda_m<\infty$. Finally, the half-axis discrepancy is explicit. With $r=3x^2/2$, one has $x\,dx=dr/3$ on $(0,\infty)$, and hence
+Moreover,
+\begin{equation}\label{eq:laguerre-origin-series}
+\frac{L_m^{(-1/2)}(r)}{L_m^{(-1/2)}(0)}
+=\sum_{k=0}^m
+\frac{(-m)_k}{(1/2)_k\,k!}r^k.
+\end{equation}
+Choose a fixed $c_0>0$ so small that $e^{2c_0}-1\le1/2$. For $0\le r\le c_0/m$, using $|(-m)_k|\le m^k$ and $(1/2)_k\ge2^{-k}k!$ gives
 \[
-\int_0^\infty h_m(x)\phi(x)\,dx
- =\frac{1}{3C_L\sqrt{2\pi}}
- \int_0^\infty e^{-r}L_m^{(1/2)}(r)\,dr.
+\left|
+\frac{L_m^{(-1/2)}(r)}{L_m^{(-1/2)}(0)}-1
+\right|
+\le\sum_{k\ge1}\frac{(2mr)^k}{(k!)^2}
+\le e^{2c_0}-1\le\frac12.
 \]
-The Laguerre generating function gives
+Therefore $L_m^{(-1/2)}(r)$ keeps the sign of its value at the origin and is at least half as large there. Put
 \[
-\sum_{m\ge0}t^m\int_0^\infty e^{-r}L_m^{(1/2)}(r)\,dr
- =(1-t)^{-3/2}\int_0^\infty e^{-r/(1-t)}\,dr
- =(1-t)^{-1/2}.
+x_m:=\sqrt{\frac{2c_0}{3m}}.
 \]
-Comparing coefficients yields $\int_0^\infty e^{-r}L_m^{(1/2)}(r)\,dr=(1/2)_m/m!$. Therefore
+For $0\le x\le x_m$, \eqref{eq:CE} and the preceding lower bound show that $h_m(x)$ has the fixed sign $(-1)^m$ and
 \[
-\int_0^\infty h_m(x)\phi(x)\,dx
- =\frac{1}{3C_L\sqrt{2\pi}}\frac{(1/2)_m}{m!},
+|h_m(x)|\ge c_1
 \]
-and $(1/2)_m/m!\asymp m^{-1/2}$ gives $|F_{U_m}(0)-1/2|\asymp m^{-1/2}$. Moreover,
+with $c_1>0$ independent of $m$. Since $f_m-\phi=\epsilon h_m\phi$ is even and has total integral zero, its integral over $(-\infty,0]$ vanishes. Consequently
 \[
-|F_{U_m+J_m}(0)-F_{U_m}(0)|\le\Pp(J_m\ne0)\le\lambda_m=o(m^{-1/2}).
+\begin{aligned}
+\dK(W_m,\Normal(0,1))
+&\ge |F_{W_m}(x_m)-\Phi(x_m)|\\
+&=\epsilon\left|\int_0^{x_m}h_m(x)\phi(x)\,dx\right|
+\ge c_2x_m
+\ge c_3m^{-1/2}.
+\end{aligned}
 \]
-The normalization in $W_m$ leaves the threshold zero unchanged. Consequently
-\[
-d_{\mathrm K}(W_m,\Normal(0,1))\ge c m^{-1/2}.
-\]
-Together with $\log(1/\Delta_m)=2m\log m+O(m)$, this proves Theorem~\ref{thm:sharpness} and rules out every uniform power-law modulus $C\Delta^\alpha$, $\alpha>0$.
+Together with \eqref{eq:even-laguerre-delta}, this proves \cref{thm:sharpness}. In particular no uniform power-law modulus $C\Delta^\alpha$, $\alpha>0$, can replace the logarithmic modulus in \cref{thm:sharp-upper}.
+
+The construction is symmetric, so on the real axis $M_{W_m}(-s)=M_{W_m}(s)$ and there is no phase ambiguity in recovering the MGF factor from its reflected product. Thus the matching lower bound isolates a more basic source of instability: recovering a global distribution from extremely accurate transform information on only a fixed real interval.
 
 \subsection{Failure of total-variation stability}
 
 Throughout this subsection, $d_{\mathrm{TV}}(\mu,\nu):=\sup_A|\mu(A)-\nu(A)|$.
 
 \begin{proposition}[Strong-distance obstruction]\label{prop:tv}
-There is no uniform total-variation stability theorem under the assumptions of \cref{thm:sharp-upper}: a standardized Poisson lattice family can satisfy a fixed exponential-integrability bound and have reflected defect tending to zero while its total-variation distance from every absolutely continuous Gaussian law equals one.
+There is no uniform total-variation stability theorem under the assumptions of \cref{thm:sharp-upper}: a standardized Poisson lattice family has reflected defect tending to zero on every fixed interval while its total-variation distance from every absolutely continuous Gaussian law equals one.
 \end{proposition}
 
 Let $N_\lambda\sim\operatorname{Poisson}(\lambda)$ and $X_\lambda=(N_\lambda-\lambda)/\sqrt\lambda$. Its centered cumulant generating function is
@@ -151,7 +147,7 @@ For fixed $b>0$, the inequality $e^u-1-u\le u^2e^{|u|}/2$ gives
 \le \E e^{bX_\lambda}+\E e^{-bX_\lambda}
 \le 2\exp\left(\frac{b^2}{2}e^{b/\sqrt\lambda}\right),
 \]
-so the family has a fixed exponential-integrability bound for each fixed $b$. Nevertheless $X_\lambda$ is lattice-valued, whereas $\Normal(0,1)$ is absolutely continuous, so
+so the family even has a fixed exponential-integrability bound for each fixed $b$. Nevertheless $X_\lambda$ is lattice-valued, whereas $\Normal(0,1)$ is absolutely continuous, so
 \[
 d_{\mathrm{TV}}(\mathcal L(X_\lambda),\mathcal N(0,1))=1.
 \]

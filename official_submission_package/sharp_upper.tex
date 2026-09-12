@@ -13,33 +13,61 @@ For probability measures $\mu$ and $\nu$, write
 \[
 d_{\mathrm{TV}}(\mu,\nu):=\sup_A|\mu(A)-\nu(A)|.
 \]
-We prove \cref{thm:sharp-upper} through five lemmas.
+All constants in this section may depend on the fixed radius $\rho$, but not on $\Delta$.
+
+\subsection{Automatic exponential integrability}
+
+\begin{lemma}[Local reflected control supplies an exponential envelope]\label{lem:auto-envelope}
+Under the hypotheses of \cref{thm:sharp-upper}, if $\Delta\le1$, then
+\[
+M_X(s)\le e^{s^2+\Delta}\qquad(|s|\le\rho)
+\]
+and
+\begin{equation}\label{eq:auto-envelope}
+\E e^{\rho|X|}\le M_X(\rho)+M_X(-\rho)
+\le2e^{\rho^2+1}.
+\end{equation}
+Consequently $\E e^{\rho|Y|}$ is bounded by a constant depending only on $\rho$.
+\end{lemma}
+
+\begin{proof}
+Since $\E X=0$, Jensen's inequality gives $M_X(s)\ge e^{s\E X}=1$ for every $s$ in the domain of the MGF. Hence $\log M_X(s)\ge0$. The defect bound gives
+\[
+\log M_X(s)+\log M_X(-s)\le s^2+\Delta,
+\]
+so each of the two nonnegative logarithms is at most $s^2+\Delta$. This proves the first bound. Moreover $e^{\rho|x|}\le e^{\rho x}+e^{-\rho x}$, which gives \eqref{eq:auto-envelope}. Finally,
+\[
+\E e^{\rho|Y|}
+\le \E e^{\rho(|X|+|X'|)}
+=(\E e^{\rho|X|})^2.
+\]
+\end{proof}
 
 \subsection{Half-disk propagation}
 
 \begin{lemma}[Two-constants estimate on a half-disk]\label{lem:two-constants}
-Let $D_R^+=\{z\in\C:|z|<R,\ \Im z>0\}$. Suppose that $F$ is holomorphic on a neighborhood of $\overline{D_R^+}$ and satisfies
+Let $D_R^+=\{z\in\C:|z|<R,\ \Im z>0\}$. Suppose that $H$ is holomorphic on a neighborhood of $\overline{D_R^+}$ and satisfies
 \[
-|F(x)|\le a\quad (|x|\le R),
+|H(x)|\le a\quad (|x|\le R),
 \qquad
-|F(z)|\le b\quad (|z|=R,\ \Im z\ge0),
+|H(z)|\le b\quad (|z|=R,\ \Im z\ge0),
 \]
-where $0<a\le b$, then for every fixed $0<\eta<1$ there is $\omega_\eta>0$, depending only on $\eta$, such that
+where $0<a\le b$. Then for every fixed $0<\eta<1$ there is $\omega_\eta>0$, depending only on $\eta$, such that
 \[
-\log|F(z)|\le \omega_\eta\log a+(1-\omega_\eta)\log b,
+\log|H(z)|\le \omega_\eta\log a+(1-\omega_\eta)\log b,
 \qquad |z|\le\eta R,\quad \Im z\ge0.
 \]
 The same estimate holds in the lower half-disk.
 \end{lemma}
 
 \begin{proof}
-For $\delta>0$, the function $u_\delta(z):=\log(|F(z)|+\delta)$ is subharmonic. Its boundary values are at most $\log(a+\delta)$ on the diameter and at most $\log(b+\delta)$ on the semicircle. The two-constants theorem for subharmonic functions therefore bounds $u_\delta$ by the corresponding harmonic-measure combination. Under the scaling $z=Rw$, the half-disk $D_R^+$ becomes the unit half-disk, and the inner region $|z|\le\eta R$ becomes $|w|\le\eta$. The harmonic measure of the diameter is positive on this compact inner region, so its minimum is a constant $\omega_\eta>0$ depending only on $\eta$, not on $R$, $m$, or $\Delta$. Letting $\delta\downarrow0$ gives the assertion.
+For $\delta>0$, the function $u_\delta(z):=\log(|H(z)|+\delta)$ is subharmonic. Its boundary values are at most $\log(a+\delta)$ on the diameter and at most $\log(b+\delta)$ on the semicircle. The two-constants theorem for subharmonic functions therefore bounds $u_\delta$ by the corresponding harmonic-measure combination. Under the scaling $z=Rw$, the half-disk $D_R^+$ becomes the unit half-disk, and the inner region $|z|\le\eta R$ becomes $|w|\le\eta$. The harmonic measure of the diameter is positive on this compact inner region, so its minimum is a constant $\omega_\eta>0$ depending only on $\eta$, not on $R$, $m$, or $\Delta$. Letting $\delta\downarrow0$ gives the assertion.
 \end{proof}
 
 \subsection{High-order moments of the reflected variable}
 
 \begin{lemma}[Local defect to high-order moments]\label{lem:moment-transfer}
-Fix $\rho,\tau,K$. For every $A>0$ there is $c_0=c_0(A,\rho,\tau,K)>0$ such that, with
+For every $A>0$ there is $c_0=c_0(A,\rho)>0$ such that, with
 \[
 m=\left\lfloor c_0\frac{L}{\log L}\right\rfloor,
 \]
@@ -56,12 +84,16 @@ In particular,
 \end{lemma}
 
 \begin{proof}
-Choose $0<\rho_0<\min\{\rho,2\tau\}$ and put $D_{\rho_0}^{\pm}:=\{z:|z|<\rho_0,\ \pm\Im z>0\}$. Exponential integrability gives a bound $|F(z)|\le B_0$ on the two semicircular arcs, with $B_0$ depending only on $(\rho,\tau,K)$. On the real diameter, the defect hypothesis gives
+Set $\rho_0=\rho/2$ and put $D_{\rho_0}^{\pm}:=\{z:|z|<\rho_0,\ \pm\Im z>0\}$. By \cref{lem:auto-envelope}, $M_Y$ is holomorphic in the strip $|\Re z|<\rho$, and on the two semicircular arcs $|z|=\rho_0$,
 \[
-|F(s)|=e^{s^2}|e^{R_X(s)}-1|\le C_0\Delta,
-\qquad |s|\le\rho_0,
+|M_Y(z)|\le \E e^{\rho_0|Y|}\le C_\rho.
 \]
-where $F(s)=M_Y(s)-e^{s^2}$ and $Y=X-X'$. For sufficiently small $\Delta$, the diameter bound is no larger than the arc bound. Apply Lemma~\ref{lem:two-constants} with a fixed $\eta<1$ to $D_{\rho_0}^{+}$ and $D_{\rho_0}^{-}$. For $r_0:=\eta\rho_0$, write $\omega_0:=\omega_\eta$. Thus there are constants $r_0>0$, $\omega_0>0$, and $C_1<\infty$ such that
+Thus $|F(z)|\le B_0(\rho)$ there. On the real diameter, the defect hypothesis gives
+\[
+|F(s)|=e^{s^2}|e^{R_X(s)}-1|\le C_0(\rho)\Delta,
+\qquad |s|\le\rho_0.
+\]
+For sufficiently small $\Delta$, the diameter bound is no larger than the arc bound. Apply \cref{lem:two-constants} with a fixed $\eta<1$ to $D_{\rho_0}^{+}$ and $D_{\rho_0}^{-}$. For $r_0:=\eta\rho_0$, write $\omega_0:=\omega_\eta$. Thus there are constants $r_0>0$, $\omega_0>0$, and $C_1<\infty$, depending only on $\rho$, such that
 \[
 \sup_{|z|\le r_0}|F(z)|\le C_1\Delta^{\omega_0}.
 \]
@@ -73,11 +105,11 @@ For $k\le2m$, use $\log(k!)\le k\log k$ and $k\log k\le2m\log(2m)$ to obtain
 \[
 \begin{aligned}
 \log\bigl(C_1k!r_0^{-k}\Delta^{\omega_0}\bigr)
-&\le -\omega_0L+2m\log(2m)+2m|\log r_0|+O(1)\\
-&\le -\omega_0L+O(c_0L),
+&\le -\omega_0L+2m\log(2m)+2m|\log r_0|+O_\rho(1)\\
+&\le -\omega_0L+O_\rho(c_0L),
 \end{aligned}
 \]
-when $m=\lfloor c_0L/\log L\rfloor$ and $L$ is large. Since $m\log m\le c_0L$ up to a fixed lower-order adjustment, choosing $c_0$ with $(A+3)c_0<\omega_0$ absorbs the $O(c_0L)$ term and gives $|F^{(k)}(0)|\le e^{-Am\log m}$. Since $F^{(k)}(0)=\E Y^k-\E G^k$, the moment conclusion follows. Finally,
+when $m=\lfloor c_0L/\log L\rfloor$ and $L$ is large. Since $m\log m\le c_0L+o(L)$, choosing $c_0$ sufficiently small, depending on $(A,\rho)$, gives $|F^{(k)}(0)|\le e^{-Am\log m}$. Since $F^{(k)}(0)=\E Y^k-\E G^k$, the moment conclusion follows. Finally,
 \[
 \E G^{2m}=\frac{(2m)!}{m!}\le(Cm)^m,
 \]
@@ -91,8 +123,7 @@ There are constants $C,c>0$ with the following property. For every sufficiently 
 \[
 \Pp(|X|>N)\le C e^{-\beta_Bm},
 \]
-where $\beta_B\to\infty$ as $B\to\infty$.
-If $X_N$ denotes the conditional law $X\mid\{|X|\le N\}$, then
+where $\beta_B\to\infty$ as $B\to\infty$. If $X_N$ denotes the conditional law $X\mid\{|X|\le N\}$, then
 \[
 d_{\mathrm{TV}}(\mathcal L(X),\mathcal L(X_N))\le C e^{-\beta_Bm}.
 \]
@@ -104,12 +135,11 @@ Moreover
 \end{lemma}
 
 \begin{proof}
-Let $a$ be a median of $X$. Since $\E X^2=1$, $|a|\le\sqrt2$.
-For every $p\ge1$, conditioning on $X$ and using the median event on the opposite side gives
+For every $p\ge1$, conditional Jensen and $\E(Y\mid X)=X$ give
 \[
-\E|X-a|^p\le2\E|X-X'|^p.
+|X|^p=|\E(Y\mid X)|^p\le \E(|Y|^p\mid X),
 \]
-Indeed, if $x\ge a$, then $\Pp(X'\le a)\ge1/2$ and $|x-X'|\ge x-a$ on that event; the case $x\le a$ is symmetric. Taking $p=2m$ and using Lemma~\ref{lem:moment-transfer} gives $\|X-a\|_{2m}\le C\sqrt m$, and the triangle inequality gives $\|X\|_{2m}\le C\sqrt m$. Hence, for $N=B\sqrt m>\sqrt2$,
+and hence $\E|X|^p\le\E|Y|^p$. Taking $p=2m$ and using \cref{lem:moment-transfer} gives $\|X\|_{2m}\le C\sqrt m$. Therefore, for $N=B\sqrt m$,
 \[
 \Pp(|X|>N)
 \le \left(\frac{\|X\|_{2m}}{N}\right)^{2m}
@@ -119,7 +149,7 @@ Thus one may take $\beta_B=\frac12\log(B^2/C_0)$ for sufficiently large $B$. If 
 \[
 d_{\mathrm{TV}}(\mathcal L(X),\mathcal L(X_N))\le p_N.
 \]
-The exponential envelope also gives
+By \eqref{eq:auto-envelope}, the exponential envelope implied by the defect bound also gives, for some $c=c(\rho)>0$,
 \[
 \E\bigl(|X|\mathbf1_{\{|X|>N\}}\bigr)\le Ce^{-cN},
 \qquad
@@ -137,7 +167,7 @@ It follows that $|\E X_N|+|\operatorname{Var}(X_N)-1|\le C(1+N^2)e^{-cN}$ after 
 \subsection{Product approximation on a growing interval}
 
 \begin{lemma}[Real-axis product approximation]\label{lem:real-window}
-For $B$ fixed sufficiently large, there is $a_0=a_0(B,\rho,\tau,K)>0$ such that, with
+For $B$ fixed sufficiently large, there is $a_0=a_0(B,\rho)>0$ such that, with
 \[
 R=a_0\sqrt m
 \]
@@ -166,11 +196,11 @@ Taylor's inequality and the moment comparison give
  |\E(iY)^k-\E(iG)^k|,
 \end{aligned}
 \]
-where $G\sim\Normal(0,2)$. On $|t|\le2R$, the two Taylor-remainder terms are bounded by $(Ca_0^2)^m$ after Stirling, while the moment-mismatch term is super-exponentially smaller by Lemma~\ref{lem:moment-transfer}. Choose $a_0$ small. Since $\varphi_Y(t)=\varphi_X(t)\varphi_X(-t)$ and the truncation error is bounded by Lemma~\ref{lem:tail-lift}, transfer to $X_N$ gives
+where $G\sim\Normal(0,2)$. On $|t|\le2R$, the two Taylor-remainder terms are bounded by $(Ca_0^2)^m$ after Stirling, while the moment-mismatch term is super-exponentially smaller by \cref{lem:moment-transfer}. Choose $a_0$ small. Since $\varphi_Y(t)=\varphi_X(t)\varphi_X(-t)$ and the truncation error is bounded by \cref{lem:tail-lift}, transfer to $X_N$ gives
 \[
 \varphi_N(t)\varphi_N(-t)=\varphi_{X_N-X_N'}(t)=e^{-t^2}+O(e^{-\Gamma m}).
 \]
-The constants in the $O(\cdot)$ term are absorbed by the choice of the fixed target exponent in Appendix~\ref{app:parameters}.
+The constants in the $O(\cdot)$ term are absorbed by the parameter choices in Appendix~\ref{app:parameters}.
 \end{proof}
 
 \subsection{A zero-free disk}
@@ -204,21 +234,32 @@ the explicit growth bound
 \le\log2+4(Ba_0+a_0^2)m,
 \qquad |z|\le2R,
 \]
-holds. On the real diameter, Lemma~\ref{lem:real-window} gives $\log|\mathcal F_N|\le-\Gamma m$. Apply Lemma~\ref{lem:two-constants} with radius $2R$ and $\eta=1/2$ in the upper and lower half-disks. With $\omega_0:=\omega_{1/2}$, this gives
+holds. On the real diameter, \cref{lem:real-window} gives $\log|\mathcal F_N|\le-\Gamma m$. Apply \cref{lem:two-constants} with radius $2R$ and $\eta=1/2$ in the upper and lower half-disks. With $\omega_0:=\omega_{1/2}$, this gives
 \[
 \log|\mathcal F_N(z)|
-\le-\left[\omega_0\Gamma-4(1-\omega_0)(Ba_0+a_0^2)\right]m+O(1).
+\le-\gamma_{\mathrm{raw}}m+O(1),
+\qquad
+\gamma_{\mathrm{raw}}:=\omega_0\Gamma-4(1-\omega_0)(Ba_0+a_0^2).
 \]
-Appendix~\ref{app:parameters} chooses $B$ and then $a_0$ so that the bracket is a number $\gamma_*>a_0^2$. Since
+Appendix~\ref{app:parameters} chooses $B$ and then $a_0$ so that $\gamma_{\mathrm{raw}}>a_0^2$. Choose once and for all
+\[
+a_0^2<\gamma_*<\gamma_{\mathrm{raw}}.
+\]
+For all sufficiently large $m$, the $O(1)$ term is then absorbed and
+\[
+|\mathcal F_N(z)|\le e^{-\gamma_*m},
+\qquad |z|\le R.
+\]
+Since
 \[
 \inf_{|z|\le R}|e^{-z^2}|\ge e^{-R^2}=e^{-a_0^2m},
 \]
-we have the relative estimate
+we have
 \[
 \frac{|\mathcal F_N(z)|}{|e^{-z^2}|}
-\le e^{-(\gamma_*-a_0^2)m}.
+\le e^{-(\gamma_*-a_0^2)m}<\frac12
 \]
-Since $\gamma_*>a_0^2$, this is less than $1/2$ for all sufficiently large $m$. Hence
+for all sufficiently large $m$. Hence
 \[
 |\varphi_N(z)\varphi_N(-z)|
 \ge\frac12|e^{-z^2}|>0,
@@ -229,7 +270,7 @@ and therefore $\varphi_N(z)\ne0$ on the disk.
 \subsection{From zero-freeness to Gaussian approximation}
 
 \begin{lemma}[From zero-freeness to Gaussian approximation]\label{lem:factor-gaussian}
-Under the conclusions of Lemma~\ref{lem:zero-free},
+Under the conclusions of \cref{lem:zero-free},
 \[
 \dK(X_N,\Normal(\mu_N,\sigma_N^2))\le \frac{C}{R},
 \]
@@ -240,7 +281,7 @@ where $\mu_N=\E X_N$ and $\sigma_N^2=\operatorname{Var}(X_N)$. Consequently
 \end{lemma}
 
 \begin{proof}
-The disk $D_R:=\{z:|z|<R\}$ is simply connected, and Lemma~\ref{lem:zero-free} gives $\varphi_N\ne0$ there. Hence there is a unique analytic logarithm on $D_R$ satisfying $\psi_N(0)=0$; write
+The disk $D_R:=\{z:|z|<R\}$ is simply connected, and \cref{lem:zero-free} gives $\varphi_N\ne0$ there. Hence there is a unique analytic logarithm on $D_R$ satisfying $\psi_N(0)=0$; write
 \[
 \psi_N(z)=\log\varphi_N(z),\qquad \psi_N(0)=0.
 \]
@@ -264,7 +305,7 @@ because $N/R=B/a_0$ is fixed. Define the cubic remainder
 \[
 E_N(t):=\psi_N(t)-i\mu_Nt+\frac{\sigma_N^2t^2}{2}.
 \]
-By Lemma~\ref{lem:tail-lift}, for all sufficiently large $m$,
+By \cref{lem:tail-lift}, for all sufficiently large $m$,
 \[
 |\mu_N|=o(R^{-1}),
 \qquad
@@ -298,25 +339,40 @@ Let $g_N$ be the density of $\Normal(\mu_N,\sigma_N^2)$. The Esseen smoothing in
  +O(T^{-1}),
 \end{aligned}
 \]
-where $\|g_N\|_\infty=(\sqrt{2\pi}\sigma_N)^{-1}$ and the last form uses $\sigma_N^2\ge1/2$.
-With $T=\theta R$, the integral is bounded by
+where $\|g_N\|_\infty=(\sqrt{2\pi}\sigma_N)^{-1}$ and the last form uses $\sigma_N^2\ge1/2$. With $T=\theta R$, the integral is bounded by
 \[
 \frac{C}{R}\int_{-T}^{T}t^2e^{-ct^2}\,dt
 \le\frac{C}{R}\int_\R t^2e^{-ct^2}\,dt
  =O(R^{-1}),
 \]
-and the cutoff term is also $O(R^{-1})$. The tail lemma gives $d_{\mathrm K}(X,X_N)\le d_{\mathrm{TV}}(\mathcal L(X),\mathcal L(X_N))$ and exponentially small mean and variance shifts. Since the Gaussian distribution function has a bounded density, these shifts contribute $o(R^{-1})$. Thus the displayed bound holds, and the triangle inequality gives the consequence for $X$.
+and the cutoff term is also $O(R^{-1})$.
+
+It remains to compare the nearby Gaussian with the standard one. For $\sigma$ in a fixed compact subset of $(0,\infty)$,
+\begin{equation}\label{eq:gaussian-parameter-kolmogorov}
+\dK(\Normal(\mu,\sigma^2),\Normal(0,1))
+\le C\bigl(|\mu|+|\sigma-1|\bigr).
+\end{equation}
+Indeed, the translation term is bounded by $C|\mu|$ using the bounded Gaussian density, while the mean-value theorem in $\sigma$ gives
+\[
+\sup_x|\Phi(x/\sigma)-\Phi(x)|
+\le C|\sigma-1|,
+\]
+because $\sup_y|y|\phi(y)<\infty$. Since $\sigma_N^2\in[1/2,3/2]$, also $|\sigma_N-1|\le C|\sigma_N^2-1|$. Thus \cref{lem:tail-lift} and \eqref{eq:gaussian-parameter-kolmogorov} show that the Gaussian parameter shift is $o(R^{-1})$. Finally,
+\[
+\dK(X,X_N)\le d_{\mathrm{TV}}(\mathcal L(X),\mathcal L(X_N))=o(R^{-1}),
+\]
+so the triangle inequality yields the consequence for $X$.
 \end{proof}
 
 \begin{proof}[Proof of \cref{thm:sharp-upper}]
-Apply Lemmas~\ref{lem:moment-transfer}, \ref{lem:tail-lift}, \ref{lem:real-window}, \ref{lem:zero-free}, and \ref{lem:factor-gaussian}. Since
+First apply \cref{lem:auto-envelope}; this is exactly where the exponential envelope formerly imposed as a separate hypothesis is obtained from the reflected defect. Then apply \cref{lem:moment-transfer,lem:tail-lift,lem:real-window,lem:zero-free,lem:factor-gaussian}. Since
 \[
-m\asymp\frac{L}{\log L},\qquad L=\log(1/\Delta),
+m\asymp_\rho\frac{L}{\log L},\qquad L=\log(1/\Delta),
 \]
 we have
 \[
 \frac1{\sqrt m}
-\asymp
+\asymp_\rho
 \sqrt{\frac{\log L}{L}},
 \]
 which is the claimed rate.

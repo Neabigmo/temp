@@ -14,11 +14,15 @@ We write $d_{\mathrm K}(X,Z)$ for the Kolmogorov distance between the laws of $X
 \[
 d_{\mathrm K}(X,Z):=\sup_x\left|\Pp(X\le x)-\Pp(Z\le x)\right|.
 \]
-We work under the fixed exponential envelope
-\begin{equation}\label{eq:EI-intro}
-\E e^{2\tau|X|}\le K.
+If $X'$ is an independent copy of $X$, then $M_{X-X'}(s)=M_X(s)M_X(-s)$. The difficulty is that reflection removes the Fourier phase. Our stability theorem shows that the factor can nevertheless be recovered, at the optimal logarithmic scale, from local real-axis information alone.
+
+A useful self-improvement is that the reflected defect already supplies the exponential integrability needed later. Indeed, if $\E X=0$, then Jensen's inequality gives $M_X(s)\ge1$. Hence, whenever $M_X$ is finite on $[-\rho,\rho]$ and $\Delta_\rho(X)\le\Delta$,
+\begin{equation}\label{eq:auto-envelope-intro}
+M_X(\rho)+M_X(-\rho)\le2e^{\rho^2+\Delta},
+\qquad
+\E e^{\rho|X|}\le2e^{\rho^2+\Delta}.
 \end{equation}
-If $X'$ is an independent copy of $X$, then $M_{X-X'}(s)=M_X(s)M_X(-s)$. The difficulty is that reflection removes the Fourier phase. Our stability theorem shows that the factor can nevertheless be recovered, at the optimal logarithmic scale, under \eqref{eq:EI-intro}.
+Thus no independent exponential-moment assumption is needed in the reflection theorem.
 
 The proof uses two scales. A fixed complex neighborhood yields high-order moment information for $X-X'$; after truncation, this produces a Gaussian product approximation on a disk of radius of order $\sqrt m$. Zero-freeness on this disk allows one to take a logarithm and recover the factor. The exact theorem, by contrast, follows from equality in Jensen's inequality after spherical averaging.
 
@@ -29,12 +33,14 @@ Let $X=(X_1,\ldots,X_d)$ have independent coordinates with $\E X_i=0$ and $\oper
 \[
 X^{\mathsf T}AX\sim\chi_r^2.
 \]
-For every active coordinate $i$ with $A_{ii}>0$, assume that $M_i(s)=\E e^{sX_i}$ is finite in a neighborhood of the origin and
+For every active coordinate $i$ with $A_{ii}>0$, assume that
 \[
 M_i(s)M_i(-s)\ge e^{\sigma_i^2s^2}
 \]
-there. Then every active $X_i$ is Gaussian, $X_i\sim\Normal(0,\sigma_i^2)$.
+for all $s$ in some neighborhood of the origin. Then every active $X_i$ is Gaussian, $X_i\sim\Normal(0,\sigma_i^2)$.
 \end{theorem}
+
+No separate MGF-existence hypothesis is required in \cref{thm:exact-psd}: the chi-square law of the quadratic form itself implies a square-exponential moment for every active coordinate, and therefore finiteness of its MGF on the whole real line; see \cref{sec:exact}.
 
 Characterizations based on quadratic forms have a long history. Converse results for sample variance and related forms use additional structural assumptions; see, for example, Christoph--Prohorov--Ulyanov, Kruglov, and Golikova--Kruglov \cite{ChristophProhorovUlyanov2001,Kruglov2013,GolikovaKruglov2015}. The condition here is different: infinite divisibility implies the reflected-MGF dominance through the L\'evy--Khintchine formula, but the converse fails and no symmetry is required. For an infinitely divisible centered law with finite variance, the representation gives, for every $s$ such that both $M_X(s)$ and $M_X(-s)$ are finite,
 \[
@@ -48,40 +54,41 @@ The L\'evy--Khintchine representation used in this comparison is standard; see S
 \subsection*{Reflection stability}
 The quantitative result recovers a factor from local reflected-MGF information without assuming the dominance sign.
 \begin{theorem}[Sharp reflection stability]\label{thm:sharp-upper}
-Fix $\rho,\tau,K>0$. There exist constants $C<\infty$ and $\Delta_0\in(0,e^{-e})$, depending only on $(\rho,\tau,K)$, such that the following holds. If
+Fix $\rho>0$. There exist constants $C_\rho<\infty$ and $\Delta_0(\rho)\in(0,e^{-e})$ such that the following holds. Let $X$ satisfy
 \[
-\E X=0,\qquad \E X^2=1,\qquad \E e^{2\tau|X|}\le K,
+\E X=0,\qquad \E X^2=1,
+\qquad M_X(s)<\infty\quad(|s|\le\rho),
 \]
-and
+and suppose
 \[
 |R_X(s)|\le\Delta,
 \qquad |s|\le\rho,
 \]
-for some $0<\Delta\le\Delta_0$, then
+for some $0<\Delta\le\Delta_0(\rho)$. Then
 \[
 \dK(X,\Normal(0,1))
-\le C\sqrt{\frac{\log\log(1/\Delta)}{\log(1/\Delta)}}.
+\le C_\rho\sqrt{\frac{\log\log(1/\Delta)}{\log(1/\Delta)}}.
 \]
 \end{theorem}
 
-Classical Cram\'er stability starts from a two-factor convolution $F*G$ that is already close to a Gaussian convolution in a global probability metric such as Kolmogorov or L\'evy distance. The reflected convolution $F*\widetilde F$ is therefore a legitimate special case of that general framework. The equal-factor case $F*F$ retains the Fourier phase and admits stronger iid estimates, as in the theory of Bobkov, Chistyakov, and G\"otze \cite{Sapogov1951,BobkovChistyakovGotze2013}. In the present problem the available input is different: the quantity $M_X(s)M_X(-s)$ is controlled only through $R_X(s)$ on a fixed real interval, and its Fourier counterpart $|\varphi_X|^2$ has lost the phase. The main difficulty is not that reflection lies outside Cram\'er-type theory, but that local transform information must be converted into global factor recovery without phase information.
+Classical Cram\'er stability begins with a convolution that is already close to a Gaussian convolution in a global probability metric. Sapogov's work is an early cornerstone of this theory~\cite{Sapogov1951}; for the i.i.d. equal-summand case substantially stronger estimates are available, for example in Bobkov, Chistyakov, and G\"otze~\cite{BobkovChistyakovGotze2013}. In the present problem the input is different: $M_X(s)M_X(-s)$ is controlled only on a fixed real interval, and on the Fourier axis the reflected factorization becomes $|\varphi_X|^2$, which contains no phase information. The main task is therefore to convert local transform control into a global statement about one factor.
 
-One could first try to convert the local reflected-MGF control into a global approximation for $X-X'$ and then invoke a general stability theorem for Cram\'er decomposition. Such an argument discards the structure responsible for the sharp modulus. Our proof instead keeps the reflected factorization throughout: high-order moment information constructs a zero-free disk for a truncated factor itself, after which the logarithm of that factor is controlled directly. The logarithmic coefficient step is a finite-disk estimate in the spirit of quantitative Marcinkiewicz theory; the zero-free disk here is derived from the reflected-MGF analysis rather than assumed, as in the quantitative results of Eremenko and Fryntov and of Dinh, Ghosh, Tran, and Tran \cite{EremenkoFryntov2021,DinhGhoshTranTran2025}.
+One could first try to convert the local reflected-MGF control into a global approximation for $X-X'$ and then invoke a general stability theorem for Cram\'er decomposition. Such an argument discards the structure responsible for the sharp modulus. Our proof instead keeps the reflected factorization throughout: high-order moment information constructs a zero-free disk for a truncated factor itself, after which the logarithm of that factor is controlled directly. The logarithmic coefficient step is a finite-disk estimate in the spirit of quantitative Marcinkiewicz theory; related connections between zero geometry and Gaussian approximation appear in Eremenko--Fryntov, Dinh--Ghosh--Tran--Tran, and Michelen--Sahasrabudhe~\cite{EremenkoFryntov2021,DinhGhoshTranTran2025,MichelenSahasrabudhe2026}. The distinctive step here is that the growing zero-free disk is derived from the local reflected-MGF input rather than imposed as a hypothesis.
 
-The order in this theorem cannot be improved uniformly in general. The obstruction is supplied by high-order odd perturbations whose first $m$ odd moments vanish.
-\begin{theorem}[Laguerre lower bound]\label{thm:sharpness}
-There are constants $\rho,\tau,K,c>0$ and centered variance-one random variables $W_m$ such that, for all sufficiently large $m$,
+The order in \cref{thm:sharp-upper} cannot be improved uniformly. In fact, sharpness already occurs in a symmetric class for which no Fourier phase has to be reconstructed.
+\begin{theorem}[Symmetric Laguerre lower bound]\label{thm:sharpness}
+There are constants $\rho,c,c_-,c_+>0$ and centered variance-one random variables $W_m$ with symmetric densities $f_m$ such that, for all sufficiently large $m$,
 \[
-\E e^{2\tau|W_m|}\le K,
+c_-\phi(x)\le f_m(x)\le c_+\phi(x),
 \qquad
-R_{W_m}(s)\ge0\quad (|s|\le\rho),
+R_{W_m}(s)\ge0\quad(|s|\le\rho),
 \]
 and, with
 \[
 \Delta_m:=\sup_{|s|\le\rho}R_{W_m}(s)\to0,
 \]
 \[
-\log\frac1{\Delta_m}=2m\log m+O(m),
+\log\frac1{\Delta_m}=m\log m+O(m),
 \qquad
 \dK(W_m,\Normal(0,1))\ge c m^{-1/2}.
 \]
@@ -92,3 +99,5 @@ Consequently, for some $c'>0$,
 \]
 for all sufficiently large $m$.
 \end{theorem}
+
+Thus the logarithmic instability is already present when $M_X(-s)=M_X(s)$ and the factor on the real axis can be recovered by a positive square root. Reflection-induced phase loss is an additional difficulty for nonsymmetric factor recovery, but it is not the sole source of the optimal modulus.
